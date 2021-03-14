@@ -1,0 +1,18 @@
+.yell{
+    height: 100vh;
+    background-color: goldenrod;
+    width: 100vw;
+}
+
+.ui.pointer.overview{
+    background-color: black;
+}
+
+.ui .overview{
+    margin-left: 20vh;
+    background-color: gray;
+}
+
+.ui.overview a{
+    font-size: 1.5rem;
+}

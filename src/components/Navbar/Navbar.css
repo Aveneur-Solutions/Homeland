@@ -1,137 +1,158 @@
-.NavbarItems{
-    background: rgba(249,194,39,255);
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    position: relative;
+@font-face {
+  font-family: "Oswald-Regular";
+  src: local("Oswald-Regular"),
+    url(../../fonts/Oswald-Bold.ttf) format("truetype");
+}
+.NavbarItems {
+  background: rgba(249, 194, 39, 255);
+  height: 100%;
+  padding: 1% 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 900;
+  position: relative;
 }
 
-.navbar-logo{
-    color: #fff;
-    justify-self: start;
-    cursor: pointer;
+.navbar-logo {
+  color: #fff;
+  justify-self: start;
+  cursor: pointer;
+  width: 5%;
 }
 
-.nav-menu{
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    grid-gap: 10px;
-    list-style: none;
-    text-align: center;
-    width: 70vw;
-    justify-content: start;
-    margin-left: 6rem;
+.nav-menu {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 10px;
+  list-style: none;
+  text-align: center;
+  width: 70vw;
+  justify-content: start;
+  margin-left: 6rem;
 }
 
-.nav-links{
-    color: #675832;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-}
-.nav-links:hover{
-    color: #fff;
-    border-radius: 4px;
-    transition: all 0.2s ease-out;
+.nav-menu li a {
+  font-family: "Oswald-Regular";
 }
 
-.fa-bars{
-    color: #675832;
-    font-size: 2rem;
+.nav-links {
+  color: #675832;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+.nav-links:hover {
+  color: #fff;
+  border-radius: 4px;
+  transition: all 0.2s ease-out;
 }
 
-.nav-links-mobile{
-    display: none;
+.fa-bars {
+  color: #675832;
+  font-size: 2rem;
 }
 
-.menu-icon{
-    display: none;
+.nav-links-mobile {
+  display: none;
 }
 
-button{
-    background-color: transparent;
-    border: none;
-    color: #675832;
-    font-weight:600;
-    font-size: 0.8rem;
-    cursor: pointer;
+.menu-icon {
+  display: none;
 }
 
-.right-content{
-    color: #675832;
-    position: absolute;
-    right: 15rem;
-    width: 20vw;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem;
+.login-content button {
+  background-color: transparent;
+  border: none;
+  color: #675832;
+  font-weight: 600;
+  font-size: 0.8rem;
+  font-family: 'Oswald-Regular';
+  letter-spacing:.1rem;
+  cursor: pointer;
+}
+
+.login-content button:hover{
+    color: white;
+}
+
+.right-content {
+  color: #675832;
+  position: absolute;
+  right: 15rem;
+  width: 20vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.right-content h6 {
+  font-family: "Oswald-Regular";
 }
 
 @media screen and (max-width: 960px) {
-    .NavbarItems{
-        position: relative;
-    }
+  .NavbarItems {
+    position: relative;
+  }
 
-    .nav-menu{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 500px;
-        position: absolute;
-        top: 80px;
-        left: -100%;
-        opacity: 1;
-        transition: all 0.5s ease;
-    }
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+  }
 
-    .nav-menu.active{
-        background: rgba(249,194,39,255);
-        left: 0;
-        opacity: 1;
-        transition: all 0.5s ease;
-        z-index: 1;
-    }
+  .nav-menu.active {
+    background: rgba(249, 194, 39, 255);
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
 
-    .nav-links{
-        text-align: center;
-        padding: 2rem;
-        width: 100%;
-        display: table;
-    }
+  .nav-links {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+  }
 
-    .nav-links:hover{
-        background-color: #675832;
-        border-radius: 0;
-    }
+  .nav-links:hover {
+    background-color: #675832;
+    border-radius: 0;
+  }
 
-    .navbar-logo{
-        position: absolute;
-        top: 0;
-        left: 0;
-        transform: translate(25%, 50%);
-    }
+  .navbar-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(25%, 50%);
+  }
 
-    .menu-icon{
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        transform: translate(-100%, 60%);
-        cursor: pointer;
-    }
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    cursor: pointer;
+  }
 
-    .fa-times{
-        color: #fff;
-        font-size: 2rem;
-    }
+  .fa-times {
+    color: #fff;
+    font-size: 2rem;
+  }
 
-    button{ 
-        display: none;
-    }
-    .right-content{
-        display: none;
-    }
-    
+  button {
+    display: none;
+  }
+  .right-content {
+    display: none;
+  }
 }
