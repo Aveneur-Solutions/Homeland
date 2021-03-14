@@ -15,6 +15,20 @@ const Overview = () => {
           in utmost affordability.
         </p>
       </div>
+      <div className="fontsonly">
+        <div className="fontss font1">
+          <i className="iconsize fontss fas fa-building"></i>
+          <p>Affordable</p>
+        </div>
+        <div className="fontss">
+            <i className=" iconsize fontss fas fa-hand-holding-usd"></i>
+          <p>Safe Investment</p>
+        </div>
+        <div className="fontss">
+          <i className="iconsize fontss fab fa-envira"></i>
+          <p>Green Environment</p>
+        </div>
+      </div>
       <div>
         <img
           className="overviewimg"
