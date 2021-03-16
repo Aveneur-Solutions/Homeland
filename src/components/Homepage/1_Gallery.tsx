@@ -16,7 +16,8 @@ export default class Gallery extends Component {
     };
     return (
       <div className="slider">
-        <Slider {...settings}>
+        <Slider {...settings}
+        className="slideroverflowcontrol">
           <div className="gallery_img ">
             <img
               className="logoimg"
