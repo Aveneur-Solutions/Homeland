@@ -23,5 +23,5 @@ class HomeStore{
     }
 }
 
-export default createContext(new HomeStore);
+export default createContext(new HomeStore());
 

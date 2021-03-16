@@ -1,4 +1,4 @@
-import React, { Component, useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import { Menu, Sticky, } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 import { observer } from "mobx-react-lite";
