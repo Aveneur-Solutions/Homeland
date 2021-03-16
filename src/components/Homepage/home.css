@@ -39,3 +39,9 @@
 color: goldenrod;
     background-color: goldenrod;
 }
+
+@media screen and (max-width: 960px) {
+    .overview{
+        margin-left:0vh;
+    }
+}

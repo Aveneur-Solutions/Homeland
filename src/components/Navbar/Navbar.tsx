@@ -35,11 +35,11 @@ class Navbar extends Component {
         </ul>
         <div className="right-content">
           <h6>CONTACT US</h6>
-          <i className="fab fa-youtube"></i>
-          <i className="fab fa-facebook-square"></i>
-          <i className="fas fa-phone"></i>
+          <i className="navfont fab fa-youtube"></i>
+          <i className="navfont fab fa-facebook-square"></i>
+          <i className="navfont fas fa-phone"></i>
           <h6>02 4881 1616</h6>
-          <i className="fas fa-cart-plus"></i>
+          <i className="navfont fas fa-cart-plus"></i>
         </div>
         <div className="login-content">
           <button>LOG IN</button>

@@ -32,6 +32,9 @@
   justify-content: start;
   margin-left: 6rem;
 }
+.navfont{
+  font-size: 1.5rem;
+}
 
 .nav-menu li a {
   font-family: "Oswald-Regular";
@@ -94,18 +97,28 @@
 @media screen and (max-width: 960px) {
   .NavbarItems {
     position: relative;
+    background: rgba(249, 194, 39, 255);
+    height: 10vh;
+    padding: 1% 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 900;
+    position: relative;
   }
 
   .nav-menu {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 500px;
+    height: 100vh;
     position: absolute;
     top: 80px;
     left: -100%;
     opacity: 1;
     transition: all 0.5s ease;
+    margin: 0;
   }
 
   .nav-menu.active {
@@ -113,7 +126,7 @@
     left: 0;
     opacity: 1;
     transition: all 0.5s ease;
-    z-index: 1;
+    z-index: 6;
   }
 
   .nav-links {
@@ -132,7 +145,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    transform: translate(25%, 50%);
+    height: 10vh;
+    width: 10vh;
   }
 
   .menu-icon {
