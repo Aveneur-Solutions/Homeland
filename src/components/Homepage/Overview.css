@@ -1,0 +1,63 @@
+
+.yell {
+  height: 120vh;
+  width: 100vw;
+  background-image: linear-gradient(#ffffff, #e7e6e1);
+}
+
+.fontsonly {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0px;
+  font-family: "Oswald-Regular";
+}
+.fontss {
+  text-align: center;
+  margin: 0px 30px;
+}
+.iconsize {
+  font-size: 2rem;
+}
+
+.font1 {
+  text-align: center;
+}
+
+.fontss p {
+  font-family: "Oswald-Regular";
+}
+.overviewheading h1 {
+  margin-top: 3%;
+  text-align: center;
+  font-size: 3rem;
+  font-family: "Oswald-Regular";
+}
+
+.overviewpara p {
+  padding: 2% 15%;
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: "Oswald-Regular";
+}
+
+.overviewimg {
+  display: block;
+  margin: 0px auto;
+  width: 50vw;
+  height: 80vh;
+}
+@media screen and (max-width: 960px) {
+  .fontsonly {
+    width: 100vw;
+    overflow: hidden;
+  }
+  .overviewimg {
+    display: block;
+    margin: 0px auto;
+    width: 70vw;
+    height: 40vh;
+  }
+  .overviewheading h1 {
+    margin-top: 12%;
+  }
+}

@@ -1,12 +1,14 @@
 import './App.css';
-import ImageSlider from './components/ImageSlider/ImageSlider';
+import Gallery from './components/Homepage/1_Gallery';
+import States from './components/Homepage/2_States';
 import Navbar from './components/Navbar/Navbar'
 
 function App() {
   return (
     <div className="App">
      <Navbar/>
-     <ImageSlider/>
+     <Gallery/>
+     <States/>
     </div>
   );
 }

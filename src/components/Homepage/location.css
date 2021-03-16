@@ -1,0 +1,23 @@
+.yell1{
+    height: 100vh;
+    background-color: #e3e1dd;
+}
+.map{
+    width: 100vw;
+    height:100vh;
+    border:0;
+}
+.proximity{
+    height: 170px;
+    width: 400px;
+    position:absolute;
+    display: flex;margin: 30% 10%;
+    background-color: goldenrod;
+    z-index: 2;
+}
+
+.proximity p{
+    padding: 10%;
+    font-size: 1.5rem;
+    font-family: "Oswald-Regular";
+}

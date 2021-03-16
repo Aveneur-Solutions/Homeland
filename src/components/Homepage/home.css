@@ -1,0 +1,47 @@
+
+.navfont.item{
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: white;
+    background-color: goldenrod;font-family: "Oswald-Regular";
+}
+
+.ui.pointing.menu{
+    background-color: #1e212d;
+    border-radius: 0;
+}
+
+.ui.pointing.menu a{
+    color: white;
+}
+
+.ui.pointing.menu a:hover{
+    color: goldenrod;
+}
+.overview{
+    margin-left: 25vh;
+}
+
+.ui.menu .active.item{
+    color: white;
+    background-color: goldenrod;
+}
+
+.ui.menu .active.item:hover{
+    color: white;
+    background-color: goldenrod;
+}
+.ui.pointing.menu .active.item::after{
+
+    background-color: goldenrod;
+}
+.ui.pointing.menu .active.item:hover:after {
+color: goldenrod;
+    background-color: goldenrod;
+}
+
+@media screen and (max-width: 960px) {
+    .overview{
+        margin-left:0vh;
+    }
+}
