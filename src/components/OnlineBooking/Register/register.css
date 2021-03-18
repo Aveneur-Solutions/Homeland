@@ -61,14 +61,6 @@ input:focus{
     transition-duration: .2s;
 }
 
-#links{
-    margin-top: 15%;
-}
-#links a{
-    color: #000;
-    border-bottom: 1px solid #000;
-}
-
 @media screen and (max-width: 968px) {
     .register{
         background: none #f8f9fa;
