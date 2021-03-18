@@ -30,6 +30,7 @@ input[type=email],input[type=password] {
     border: none;
     border-bottom: 1px solid black;
     margin-top: 15px;
+    padding: 2px;
 }
 input:focus{
     outline: none;
@@ -66,4 +67,24 @@ input:focus{
 #links a{
     color: #000;
     border-bottom: 1px solid #000;
+}
+
+@media screen and (max-width: 968px) {
+    .login{
+        background: none #f8f9fa;
+    }
+    .login-container{
+         width: 80%;
+        height: 60%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+     #btn{
+        height: 5vh;
+    }
+    .button{
+        display: block;
+        width: 100%;
+        height: 5vh;
+    }
 }
