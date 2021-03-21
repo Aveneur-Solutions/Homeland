@@ -7,7 +7,7 @@ import Gallery_2 from "../OurStory/2_Gallery";
 const UnitList = () => {
   return (
     <>
-    <Gallery_2/>
+      <Gallery_2 />
       <Table celled textAlign="center" padded>
         <Table.Header>
           <Table.Row>
@@ -127,9 +127,11 @@ const UnitList = () => {
           </Table.Row>
         </Table.Body>
       </Table>
-      <div className="projectbottom buttondiv"><Link to="./unitlist">
+      <div className="projectbottom buttondiv">
+        <Link to="./unitlist">
           <button className="nextbutton">Next</button>
-        </Link></div>
+        </Link>
+      </div>
     </>
   );
 };
