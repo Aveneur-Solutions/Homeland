@@ -11,7 +11,7 @@ export const MenuItems = [
     },
     {
         title: 'ONLINE BOOKING',
-        url: '#',
+        url: '/onlineBooking',
         cName: 'nav-links'
     },
     {

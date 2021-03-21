@@ -48,7 +48,7 @@ const OnlineBooking = () => {
                         <div className="upload">
                             <p>Upload Photo :</p>
                             <input type="file" id="img" name="img" accept="image/*"></input>
-                            <p><i>size maximum 300 kb</i></p>
+                            <p><i>size maximum 300kb</i></p>
                         </div>
                         <table>
                             <tr className= "thead">

@@ -83,6 +83,9 @@
 .login-content button:hover{
     color: white;
 }
+.login-content button:focus{
+  outline: none;
+}
 
 .right-content {
   color: #675832;

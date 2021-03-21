@@ -3,14 +3,14 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
+    height: 200vh;
     position: relative;
 }
 
 .online-booking-container{
     border: none;
     width: 50%;
-    height: 100vh;
+    height: 150vh;
     position: absolute;
     top: 15%;
     left: 5%;
@@ -63,6 +63,7 @@ table{
     width: 100%;
     margin-top: 2%;
     text-align: left;
+
 }
 
 .thead{

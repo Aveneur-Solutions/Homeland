@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './login.css'
 
 const Login = () => {
@@ -22,10 +23,10 @@ const Login = () => {
                         </div>
                         <div id="links">
                             <div className="forget-pas">
-                                <a href="#">Forget Password?</a>
+                                <Link to="#">Forget Password?</Link>
                             </div>
                             <div className="reg-acc">
-                               <a href="#">Register an Account</a> 
+                               <Link to="/register">Register an Account</Link> 
                             </div>
                         </div>
                     </div>

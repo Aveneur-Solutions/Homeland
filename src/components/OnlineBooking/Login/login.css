@@ -64,7 +64,7 @@ input:focus{
 #links{
     margin-top: 15%;
 }
-#links a{
+#links Link{
     color: #000;
     border-bottom: 1px solid #000;
 }
