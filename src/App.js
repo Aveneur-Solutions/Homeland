@@ -1,5 +1,9 @@
 import './App.css';
 import Navbar from './components/Navbar/Navbar'
+
+import { Route } from "react-router-dom";
+import OnlineBooking from './components/OnlineBooking/OnlineBooking/OnlineBooking'
+
 import { Route,Switch } from "react-router-dom";
 import MainHome from './components/Homepage/MainHome';
 import OurStory from './components/OurStory/ourStory';
@@ -8,9 +12,15 @@ import Login from './components/OnlineBooking/Login/Login';
 import OurProject from './components/OurProject/OurProject';
 import UnitList from './components/OurProject/UnitList';
 
+
 function App() {
   return (
     <div className="App">
+
+     {/* <Navbar/>
+     <Gallery/>
+     <States/> */}
+     <OnlineBooking></OnlineBooking>
      <Navbar/>
      <Switch>
         <Route exact path="/" component={MainHome} />

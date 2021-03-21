@@ -29,17 +29,18 @@ input[type=email], input[type=password], input[type=text] {
     width: 100%;
     border: none;
     border-bottom: 1px solid black;
-    margin-top: 15px;
+    margin-top: 10px;
+    padding: 2px;
 }
 input:focus{
     outline: none;
 }
-#psw{
-    margin-top: 10px;
+.form-container div{
+    margin-top: 2%;
 }
 #btn{
     text-align: center;
-    margin-top: 30px;
+    margin-top: 15%;
 }
 
 .button{
@@ -60,10 +61,39 @@ input:focus{
     transition-duration: .2s;
 }
 
-#links{
-    margin-top: 15%;
+@media screen and (max-width: 968px) {
+    .register{
+        background: none #f8f9fa;
+    }
+
+    .register-container{
+        width: 80%;
+        height: 80%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    #btn{
+        height: 5vh;
+    }
+    .button{
+        display: block;
+        width: 100%;
+        height: 5vh;
+    }
 }
-#links a{
-    color: #000;
-    border-bottom: 1px solid #000;
-}
+/* @media screen and (max-width: 1024px) {
+    .register-container{
+        width: 80%;
+        height: 60%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .form-container div{
+        font-size: 1.6rem;
+    }
+    .button{
+        display: block;
+        width: 100%;
+        height: 5vh;
+    }
+} */

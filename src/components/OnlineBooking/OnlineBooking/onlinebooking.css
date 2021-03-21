@@ -1,0 +1,75 @@
+.online-booking{
+    background-image: url("../Login/Building.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    position: relative;
+}
+
+.online-booking-container{
+    border: none;
+    width: 50%;
+    height: 100vh;
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    background: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 2%;
+}
+.online-booking-container h1{
+    text-align: center;
+}
+
+input[type=email], input[type=password], input[type=text] {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid black;
+    margin-top: 10px;
+    padding: 2px;
+}
+input:focus{
+    outline: none;
+}
+.form-container div{
+    margin-top: 2%;
+}
+
+#btn{
+    text-align: center;
+    margin-top: 15%;
+}
+
+.button{
+    width: 30%;
+    height: 25px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(249, 194, 39, 255);
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+}
+.button:focus{
+    outline: none;
+}
+.button:hover{
+    background: #fca311;
+    transition-duration: .2s;
+}
+
+table{
+    width: 100%;
+    margin-top: 2%;
+    text-align: left;
+}
+
+.thead{
+    background: rgba(249, 194, 39, 255);
+    color: #fff;
+}
+
+td{
+    border-bottom: 1px solid grey;
+}
