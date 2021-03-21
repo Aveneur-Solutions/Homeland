@@ -4,13 +4,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./gallerystate.css";
 
-const Popups =() => {
-    <img
-    className="logo2img"
-    src={process.env.PUBLIC_URL + "/images/dummy/1.jpg"}
-    alt=""
-  />
-}
 export default class GalleryState extends Component {
   render() {
     const settings = {
