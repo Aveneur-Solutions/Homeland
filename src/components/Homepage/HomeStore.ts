@@ -1,10 +1,14 @@
-import { action, observable } from "mobx";
+import { action, makeObservable, observable } from "mobx";
 import { createContext } from "react";
 
 class HomeStore{
-    @observable showOverview = false;
+    constructor(){
+        makeObservable(this);
+    }
+    @observable showOverview = true;
     @observable showLocation =false;
     @observable showGallery =false;
+    
     
     @action setOverviewVisibility = () => {
         this.showOverview = true;

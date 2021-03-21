@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Menu, Sticky, } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 import { observer } from "mobx-react-lite";
@@ -9,25 +9,10 @@ import "./home.css"
 import GalleryState from "./Gallery";
 
 const States = () => {
-  const [activeItem, setActiveItem] = useState("");
 
   const store = useContext(HomeStore);
   const { setOverviewVisibility, setLocationVisibility, setGalleryVisibility, showGallery, showOverview, showLocation} = store;
 
-   const OverviewOnClick = () => {
-    setActiveItem("Overview");
-    setOverviewVisibility();
-   }
-
-   const LocationOnClick = () => {
-    setActiveItem("Location");
-    setLocationVisibility();
-   }
-
-   const GalleryOnClick = () => {
-    setActiveItem("Gallery");
-    setGalleryVisibility();
-   }
 
   return (
     <div>
@@ -35,20 +20,20 @@ const States = () => {
       <Menu pointing>
         <Menu.Item
           name="Overview"
-          active={activeItem === "Overview"}
-          onClick= {()=> OverviewOnClick()}
+          active={showOverview}
+          onClick= {()=> setOverviewVisibility()}
           className = "overview navfont"
         />
         <Menu.Item
           name="Location"
-          active={activeItem === "Location"}
-          onClick= {()=> LocationOnClick()}
+          active={showLocation}
+          onClick= {()=> setLocationVisibility()}
           className = "navfont"
         />
         <Menu.Item
           name="Gallery"
-          active={activeItem === "Gallery"}
-          onClick= {()=> GalleryOnClick()}
+          active={showGallery}
+          onClick= {()=> setGalleryVisibility()}
           className = "navfont"
         />
       </Menu>
