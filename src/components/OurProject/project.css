@@ -1,0 +1,77 @@
+.filtercontainer{
+    padding: 50px;
+}
+.projectbg{
+
+  background-image: linear-gradient(#ffffff, #e7e6e1);
+}
+.cardcontainer{
+    padding: 50px;
+}
+
+.cardsize{
+    width: 30vw;
+    margin-top: 50px;
+    margin-right: 100px;
+    transition: ease-in-out .35s;
+}
+.cardsize:hover{
+    margin-top: 30px;
+    transition: ease-in-out .35s;
+    margin-right: 100px;
+}
+.iconselect{
+    text-align: center;
+    padding-top: 3%;
+    font-size: 2rem;color: rgb(126, 126, 126);
+}
+
+.cardtoprow{
+    font-size: .8rem;
+    text-align: center;
+    color: goldenrod;
+}
+.cardtoplabel{
+    text-align: center;
+    color: black;
+}
+
+.cardbottomrow{
+    font-size: .7rem;
+}
+.buttondiv{
+    /* height: 25vh; */
+    width: 10vw;
+    display: block;
+    justify-content: center;align-items: center;
+    text-align: center;
+    margin: 0px auto;
+}
+.nextbutton{
+    background: cover;
+    height: 5vh;
+    width: 10vw;
+    border-radius: 20px;border: none;
+    box-shadow: 0px 4px 5px black ;
+    transition: ease-in .2s;
+    background-color: goldenrod;
+    color: white;
+    font-weight: 900;
+}
+.nextbutton:focus{
+    outline: none;
+}
+.nextbutton:hover{
+    cursor: pointer;
+    background-color: white;
+    transition: ease-in .2s;
+    color: black;
+    
+}
+.projectbottom{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    height: 20vh;
+    width: 100vw;
+}

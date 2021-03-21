@@ -14,12 +14,17 @@
   font-weight: 900;
   position: relative;
 }
+.forlink{
+  margin: 0%;
+  padding: 0%;
+  width: 10%;
+}
 
 .navbar-logo {
   color: #fff;
   justify-self: start;
   cursor: pointer;
-  width: 5%;
+  width: 56%;
 }
 
 .nav-menu {
@@ -126,6 +131,7 @@
     left: 0;
     opacity: 1;
     transition: all 0.5s ease;
+    /* margin-top: -17px; */
     z-index: 6;
   }
 
