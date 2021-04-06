@@ -1,7 +1,6 @@
 import './App.css';
 import Navbar from './components/Navbar/Navbar'
 
-import { Route } from "react-router-dom";
 import OnlineBooking from './components/OnlineBooking/OnlineBooking/OnlineBooking'
 
 import { Route,Switch } from "react-router-dom";
@@ -11,6 +10,7 @@ import Register from './components/OnlineBooking/Register/Register';
 import Login from './components/OnlineBooking/Login/Login';
 import OurProject from './components/OurProject/OurProject';
 import UnitList from './components/OurProject/UnitList';
+import MainInfo from './components/OurProject/MainInfo';
 
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
      {/* <Navbar/>
      <Gallery/>
      <States/> */}
-     <OnlineBooking></OnlineBooking>
+     {/* <OnlineBooking/> */}
      <Navbar/>
      <Switch>
         <Route exact path="/" component={MainHome} />
@@ -29,6 +29,7 @@ function App() {
         <Route exact path="/register" component={Register}/>
         <Route exact path="/login" component={Login}/>
         <Route exact path="/unitlist" component={UnitList}/>
+        <Route exact path="/maininfo" component={MainInfo}/>
       </Switch>
      {/* <Register/> */}
      {/* <OurStory/> */}

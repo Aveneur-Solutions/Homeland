@@ -128,7 +128,7 @@ const UnitList = () => {
         </Table.Body>
       </Table>
       <div className="projectbottom buttondiv">
-        <Link to="./unitlist">
+        <Link to="./mainInfo">
           <button className="nextbutton">Next</button>
         </Link>
       </div>
