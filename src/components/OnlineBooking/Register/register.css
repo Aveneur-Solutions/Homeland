@@ -1,3 +1,10 @@
+:root{
+    --primary-color: rgba(249, 194, 39, 255);
+    --hover-color: #fca311;
+    --background-font-color: #fff;
+    --media-background-color: #f8f9fa;
+}
+
 .register{
     background-image: url("../Login/Building.jpg");
     background-size: cover;
@@ -8,12 +15,11 @@
 
 .register-container{
     border: none;
-    width: 25%;
-    height: 60%;
+    width: 30%;
     position: absolute;
     top: 15%;
     left: 5%;
-    background: #fff;
+    background: var(--background-font-color);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 2%;
 }
@@ -38,32 +44,28 @@ input:focus{
 .form-container div{
     margin-top: 2%;
 }
-#btn{
-    text-align: center;
-    margin-top: 15%;
-}
-
 .button{
     width: 30%;
-    height: 25px;
     border: none;
     border-radius: 5px;
-    background: rgba(249, 194, 39, 255);
+    background: var(--primary-color);
     cursor: pointer;
-    color: #fff;
+    color: var(--background-font-color);
     font-weight: bold;
+    display: block;
+    margin: 10% auto auto 50%;
 }
 .button:focus{
     outline: none;
 }
 .button:hover{
-    background: #fca311;
+    background: var(--hover-color);
     transition-duration: .2s;
 }
 
 @media screen and (max-width: 968px) {
     .register{
-        background: none #f8f9fa;
+        background: none var(--media-background-color);
     }
 
     .register-container{
@@ -71,14 +73,13 @@ input:focus{
         height: 80%;
         left: 50%;
         transform: translateX(-50%);
+        position: relative;
     }
     #btn{
-        height: 5vh;
+        width: 100%;
     }
     .button{
-        display: block;
-        width: 100%;
-        height: 5vh;
+        margin: auto auto auto 45%;
     }
 }
 /* @media screen and (max-width: 1024px) {

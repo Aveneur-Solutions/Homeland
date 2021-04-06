@@ -3,16 +3,16 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
+    height: 250vh;
     position: relative;
 }
 
 .online-booking-container{
     border: none;
     width: 50%;
-    height: 100vh;
+    height: 200vh;
     position: absolute;
-    top: 15%;
+    top: 2%;
     left: 5%;
     background: #fff;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -37,32 +37,17 @@ input:focus{
 }
 
 #btn{
-    text-align: center;
+    height: 20%;
     margin-top: 15%;
-}
-
-.button{
-    width: 30%;
-    height: 25px;
-    border: none;
-    border-radius: 5px;
-    background: rgba(249, 194, 39, 255);
-    cursor: pointer;
-    color: #fff;
-    font-weight: bold;
-}
-.button:focus{
-    outline: none;
-}
-.button:hover{
-    background: #fca311;
-    transition-duration: .2s;
+    margin-left: -44%;
 }
 
 table{
     width: 100%;
     margin-top: 2%;
+    margin-bottom: 7%;
     text-align: left;
+
 }
 
 .thead{
@@ -72,4 +57,67 @@ table{
 
 td{
     border-bottom: 1px solid grey;
+}
+
+.amount{
+    padding: 5%;
+    font-weight: 300;
+}
+.amount input{
+    margin-left: 20px;
+    height: 22px;
+}
+
+.visa-logo{
+    width: 6%;
+    border: 2px solid #adb5bd;
+    cursor: pointer;
+    margin-left: 6px;
+}
+.visa-logo.selected{
+    width: 6%;
+    border: 2px solid rgba(249, 194, 39, 255);
+    cursor: pointer;
+    margin-left: 6px;
+}
+.payment-method{
+    display: flex;
+    align-items: center;
+}
+.payment-method h6{
+    font-weight: 300;
+    font-size: small;
+}
+
+.select-payment button{
+    margin-left: 25%;
+    margin-top: 5%;
+    width: 20%;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(249, 194, 39, 255);
+    color: #fff;
+    font-weight: bold;
+    display: block;
+}
+.select-payment button:hover{
+    background: #fca311;
+    transition-duration: .2s;
+}
+
+.checkbox-container{
+    width: 55%;
+    height: 150px;
+    border: none;
+    background: #e5e5e5;
+    text-align: center;
+    padding: 10px;
+}
+.checkbox{
+    display: flex;
+}
+.checkbox1{
+    
+    flex-direction: column;
 }

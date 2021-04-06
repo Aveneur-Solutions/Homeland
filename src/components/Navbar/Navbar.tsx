@@ -46,7 +46,9 @@ class Navbar extends Component {
           <i className="navfont fas fa-cart-plus"></i>
         </div>
         <div className="login-content">
-          <button>LOG IN</button>
+          <Link to="/login">
+            <button>LOG IN</button>
+          </Link>
         </div>
       </nav>
     );
