@@ -8,6 +8,7 @@ import Register from './components/OnlineBooking/Register/Register';
 import Login from './components/OnlineBooking/Login/Login';
 import OurProject from './components/OurProject/OurProject';
 import UnitList from './components/OurProject/UnitList';
+import MainInfo from './components/OurProject/MainInfo';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route exact path="/register" component={Register}/>
         <Route exact path="/login" component={Login}/>
         <Route exact path="/unitlist" component={UnitList}/>
+        <Route exact path="/maininfo" component={MainInfo}/>
       </Switch>
     </div>
   );
