@@ -1,20 +1,20 @@
-import React, { useContext } from "react";
-import ProjectStore from "./ProjectStore";
+// import React, { useContext } from "react";
+// import ProjectStore from "./ProjectStore";
 import { CardItems } from "./CardItems";
 import { Card, Image, Grid, Icon } from "semantic-ui-react";
 import "./project.css";
-const CardMaker = () => {
-  const store = useContext(ProjectStore);
-  const {
-    setPriceFilter,
-    setSizeFilter,
-    showCard,
-    filterCardPrice,
-    filterCardSize,
-  } = store;
-};
+// const CardMaker = () => {
+//   const store = useContext(ProjectStore);
+//   const {
+//     setPriceFilter,
+//     setSizeFilter,
+//     showCard,
+//     filterCardPrice,
+//     filterCardSize,
+//   } = store;
+// };
 const Cards = () => {
-  const cardItem = CardItems.sort();
+  // const cardItem = CardItems.sort();
   return (
     <div className="cardcontainer">
       <h2>Featured Units</h2>
@@ -22,7 +22,7 @@ const Cards = () => {
       <Grid columns={2} divided>
         {CardItems.map((item, index) => {
           return (
-            <div className="cardsize">
+            <div className="cardsize" key={index}>
               <Card fluid key={index}>
                 <Image
                   className="cardhover"
