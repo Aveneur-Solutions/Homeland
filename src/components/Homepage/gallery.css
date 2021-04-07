@@ -16,7 +16,7 @@
   line-height: 0;
 
   position: absolute;
-  top: 50%;
+  top: 45%;
 
   display: flex;
   z-index: 5;
@@ -67,7 +67,7 @@
 }
 
 .slick-prev {
-  left: -25px;
+  left: -250px;
 }
 [dir="rtl"] .slick-prev {
   right: -25px;
