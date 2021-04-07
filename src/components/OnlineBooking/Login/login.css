@@ -41,18 +41,19 @@ input[type=email],input[type=password] {
 }
 input:focus{
     outline: none;
+    border-bottom: 2px solid var(--secondary-color);
+    transition-duration: .2s;
 }
 #psw{
     margin-top: 10px;
 }
 #btn{
-    text-align: center;
     margin-top: 30px;
 }
 
 .button{
-    width: 30%;
-    height: 25px;
+    width: 20%;
+    height: 30px;
     border: none;
     border-radius: 5px;
     background: var(--primary-color);
@@ -71,10 +72,7 @@ input:focus{
 #links{
     margin-top: 15%;
 }
-#links Link{
-    color: var(--secondary-color);
-    border-bottom: 1px solid var(--secondary-color);
-}
+
 
 @media screen and (max-width: 968px) {
     .login{
@@ -82,13 +80,12 @@ input:focus{
     }
     .login-container{
         width: 80%;
-        height: 65%;
         left: 50%;
         transform: translateX(-50%);
     }
-     #btn{
+     /* #btn{
         height: 5vh;
-    }
+    } */
     .button{
         display: block;
         width: 100%;

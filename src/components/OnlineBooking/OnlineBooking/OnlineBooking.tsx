@@ -98,31 +98,47 @@ class OnlineBooking extends Component  {
                                     </div>
                                     <button>Select</button>
                                 </div>
-                                <div className="checkbox-container">
-                                    <h4>Where did you hear about us?</h4>
+                                <div className="section">   
+                                    <div className="checkbox-container">
+                                    <h4 style={{textAlign: 'center'}}>Where did you hear about us?</h4>
                                     <div className="checkbox">
-                                        <div className="checkbox1">
-                                        <label htmlFor="fb"><b>Facebook</b></label>
-                                        <input type="checkbox" name="fb"></input>
-                                        <label htmlFor="google"><b>Google</b></label>
-                                        <input type="checkbox" name="google"></input>
-                                        <label htmlFor="billboard"><b>Billboard</b></label>
-                                        <input type="checkbox" name="billboard"></input>
-                                        <label htmlFor="others"><b>Others</b></label>
-                                    </div>
-                                    <div className="checkbox2">
-                                         <input type="checkbox" name="others"></input>
-                                        <label htmlFor="youtube"><b>Youtube</b></label>
-                                        <input type="checkbox" name="youtube"></input>
-                                        <label htmlFor="newspaper"><b>Newspaper</b></label>
-                                        <input type="checkbox" name="newspaper"></input>
-                                        <label htmlFor="someone"><b>Someone I know</b></label>
-                                        <input type="checkbox" name="someone"></input>
-                                    </div>
+                                        <div className="checkbox-content-1">
+                                            <div className="checkbox-item">
+                                                <input type="checkbox" name="fb"></input>
+                                                <label htmlFor="fb"><b>Facebook</b></label>
+                                            </div>
+                                            <div className="checkbox-item">
+                                                <input type="checkbox" name="google"></input>
+                                                <label htmlFor="google"><b>Google</b></label>
+                                            </div>
+                                            <div className="checkbox-item">
+                                                <input type="checkbox" name="billboard"></input>
+                                                <label htmlFor="billboard"><b>Billboard</b></label>
+                                            </div>
+                                            <div className="checkbox-item">
+                                                <input type="checkbox" name="others"></input>
+                                                <label htmlFor="others"><b>Others</b></label>
+                                            </div>
+                                        </div>
+                                        <div className="checkbox-content-2">
+                                            <div className="checkbox-item">
+                                                <input type="checkbox" name="youtube"></input>
+                                                <label htmlFor="youtube"><b>Youtube</b></label>
+                                            </div>
+                                            <div className="checkbox-item">
+                                                <input type="checkbox" name="newspaper"></input>
+                                                <label htmlFor="newspaper"><b>Newspaper</b></label>
+                                            </div>
+                                            <div className="checkbox-item">
+                                                <input type="checkbox" name="someone"></input>
+                                                <label htmlFor="someone"><b>Someone I know</b></label>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            <div id="btn">
-                                <button className="button">Submit</button>
+                                <button className="btn">Proceed For Check Out</button>
+                                <p>Are you interested about home loan? If yes, please fill out the form and submit</p>
+                                <button className="btn">EBL Home Loan Form</button>
                             </div>
                         </form>
                     </div>
