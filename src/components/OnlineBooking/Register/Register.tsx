@@ -5,6 +5,8 @@ import "./register.css";
 const Register = () => {
   return (
     <div className="register">
+      
+      <div className="register-container">
       <Link to="./login">
         <div className="backbtn">
           <div className="backbtn1">
@@ -12,7 +14,6 @@ const Register = () => {
           </div>
         </div>
       </Link>
-      <div className="register-container">
         <h1>REGISTER</h1>
         <form action="">
           <div className="form-container">
