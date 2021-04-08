@@ -13,6 +13,7 @@
     width: 30vw;
     margin-top: 50px;
     margin-right: 100px;
+    position: relative;
     transition: ease-in-out .35s;
 }
 .cardsize:hover{
@@ -43,16 +44,16 @@
     /* height: 25vh; */
     width: 10vw;
     display: block;
-    justify-content: center;align-items: center;
-    text-align: center;
-    margin: 0px auto;
+    justify-content: center;
+    align-items: center;
 }
 .nextbutton{
+    position: relative;
     background: cover;
     height: 5vh;
     width: 10vw;
-    border-radius: 20px;border: none;
-    box-shadow: 0px 4px 5px black ;
+    border-radius: 5px;border: none;
+    box-shadow: 0px 1px 1px black ;
     transition: ease-in .2s;
     background-color: goldenrod;
     color: white;
@@ -74,4 +75,35 @@
     padding: 0;
     height: 20vh;
     width: 100vw;
+}
+
+.nextbutton1{
+    position: relative;
+    background: cover;
+    height: 5vh;
+    /* float: left; */
+    margin-left: 50%;
+    width: 10vw;
+    border-radius: 5px;border: none;
+    box-shadow: 0px 1px 1px black ;
+    transition: ease-in .2s;
+    background-color: goldenrod;
+    color: white;
+    font-weight: 900;
+}
+.nextbutton1:focus{
+    outline: none;
+}
+.nextbutton1:hover{
+    cursor: pointer;
+    background-color: white;
+    transition: ease-in .2s;
+    color: black;
+}
+.buttondiv1{
+    /* height: 25vh; */
+    width: 10vw;
+    display: block;
+    /* justify-content: center;
+    align-items: center; */
 }

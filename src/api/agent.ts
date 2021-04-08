@@ -1,5 +1,17 @@
 import axios, { AxiosResponse } from "axios";
+import IFlat from "../models/unit";
 import IUser, { IUserLogin, IUserLoginWithOtp } from "../models/user";
+
+axios.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem("jwt");
+    if (token) config.headers.Authorization = `Bearer ${token}`;
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
 
 axios.defaults.baseURL = "https://www.homeland.aveneur.com/api";
 
@@ -13,10 +25,15 @@ const request = {
 };
 
 const User = {
-  login: (body: IUserLogin) => request.post("user/login", body),
+  login: (body: IUserLogin) => request.post("/user/login", body),
   loginWithOtp: (body: IUserLoginWithOtp): Promise<IUser> =>
-    request.post("user/loginWithOtp", body),
+    request.post("/user/loginWithOtp", body),
   currentUser: (): Promise<IUser> => request.get("user"),
 };
 
-export default { User };
+const Flat = {
+  list: (): Promise<IFlat[]> => request.get("/flat"),
+  featuredList: (): Promise<IFlat[]> => request.get("/flat"),
+}
+
+export default { User, Flat };
