@@ -180,11 +180,6 @@ class OnlineBooking extends Component {
                   </div>
                 </div>
                 <button className="btn">Proceed For Check Out</button>
-                <p>
-                  Are you interested about home loan? If yes, please fill out
-                  the form and submit
-                </p>
-                <button className="btn">EBL Home Loan Form</button>
               </div>
             </form>
           </div>

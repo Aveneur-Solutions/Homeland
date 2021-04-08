@@ -66,6 +66,21 @@ input:focus{
     transition-duration: .2s;
 }
 
+.backbtn{
+    position: absolute;
+    margin:5% 5%;
+    background-color: goldenrod;
+    width: 3vw;
+    height: 3vh;
+    text-align: center;
+    border-radius: 80px;
+    cursor: pointer;
+}
+.backbtn h3{
+    position: absolute;
+    margin:0% 35%;  
+}
+
 @media screen and (max-width: 968px) {
     .register{
         background: none var(--media-background-color);
@@ -82,6 +97,20 @@ input:focus{
     }
     .button{
         margin: auto auto auto 45%;
+    }
+    .backbtn{
+        position: absolute;
+        margin:10% 5%;
+        background-color: goldenrod;
+        width: 10vw;
+        height: 5vh;
+        text-align: center;
+        border-radius: 80px;
+        cursor: pointer;
+    }
+    .backbtn h3{
+        position: absolute;
+        margin:22% 35%;  
     }
 }
 /* @media screen and (max-width: 1024px) {
