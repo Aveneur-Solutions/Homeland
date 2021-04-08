@@ -24,7 +24,7 @@ const Login = () => {
     setPhoneNo(data.phoneNumber);
     login(data).then(() => setOtp(true));
   };
-
+  
   return (
     <div className="login">
       <div className="login-container">
@@ -64,7 +64,6 @@ const Login = () => {
           </div>
         </form>
         {otp && <LoginWithOtp phoneNo={phoneNo} />}
-
         <div id="links">
           <div className="forget-pas">
             <Link to="#">Forget Password?</Link>

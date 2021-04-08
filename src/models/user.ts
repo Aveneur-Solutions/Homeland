@@ -11,5 +11,5 @@ export interface IUserLoginWithOtp {
 export default interface IUser {
   phoneNumber: string;
   token: string;
-  fullName: string;
+  fullname: string;
 }

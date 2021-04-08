@@ -1,6 +1,17 @@
 import axios, { AxiosResponse } from "axios";
 import IUser, { IUserLogin, IUserLoginWithOtp } from "../models/user";
 
+axios.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem("jwt");
+    if (token) config.headers.Authorization = `Bearer ${token}`;
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+
 axios.defaults.baseURL = "http://localhost:5000/api";
 
 const responseBody = (response: AxiosResponse) => response.data;

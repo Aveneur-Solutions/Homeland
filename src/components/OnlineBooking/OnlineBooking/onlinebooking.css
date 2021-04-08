@@ -1,20 +1,27 @@
+:root{
+    --primary-color: rgba(249, 194, 39, 255);
+    --secondary-color: #000;
+    --hover-color: #fca311;
+    --background-font-color: #fff;
+    --media-background-color: #f8f9fa;
+}
+
 .online-booking{
     background-image: url("../Login/Building.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 250vh;
+    height: 190vh;
     position: relative;
 }
 
 .online-booking-container{
     border: none;
     width: 50%;
-    height: 200vh;
     position: absolute;
     top: 2%;
     left: 5%;
-    background: #fff;
+    background: var(--background-font-color);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 2%;
 }
@@ -25,7 +32,7 @@
 input[type=email], input[type=password], input[type=text] {
     width: 100%;
     border: none;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--secondary-color);
     margin-top: 10px;
     padding: 2px;
 }
@@ -51,8 +58,8 @@ table{
 }
 
 .thead{
-    background: rgba(249, 194, 39, 255);
-    color: #fff;
+    background: var(--primary-color);
+    color: var(--background-font-color);
 }
 
 td{
@@ -76,7 +83,7 @@ td{
 }
 .visa-logo.selected{
     width: 6%;
-    border: 2px solid rgba(249, 194, 39, 255);
+    border: 2px solid var(--primary-color);
     cursor: pointer;
     margin-left: 6px;
 }
@@ -96,28 +103,71 @@ td{
     padding: 5px;
     border-radius: 5px;
     border: none;
-    background-color: rgba(249, 194, 39, 255);
-    color: #fff;
+    background-color: var(--primary-color);
+    color: var(--background-font-color);
     font-weight: bold;
     display: block;
 }
 .select-payment button:hover{
-    background: #fca311;
+    background: var(--hover-color);
     transition-duration: .2s;
 }
 
 .checkbox-container{
-    width: 55%;
-    height: 150px;
+    width: 100%;
+    padding: 2%;
     border: none;
     background: #e5e5e5;
-    text-align: center;
-    padding: 10px;
 }
 .checkbox{
-    display: flex;
+    margin-left: 10%;
+    display: grid;
+    grid-template-columns: auto auto;
 }
-.checkbox1{
-    
-    flex-direction: column;
+
+.section{
+    width: 60%;
+}
+.btn{
+    width: 80%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--background-font-color);
+    font-weight: bold;
+    display: block;
+    margin: 5% auto auto auto;
+}
+.btn:hover{
+    background: var(--hover-color);
+    transition-duration: .2s;
+}
+
+.section p{
+    margin-top: 3%;
+}
+
+@media screen and (max-width: 968px){
+    .online-booking{
+        background: none var(--media-background-color);
+    }
+    .online-booking-container{
+        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .checkbox-container{
+    width: 100%;
+}
+    .checkbox{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (width: 1024px){
+    .online-booking-container{
+        width: 80%;
+    }
 }

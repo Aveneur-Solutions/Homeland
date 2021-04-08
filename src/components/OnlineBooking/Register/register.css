@@ -1,5 +1,6 @@
 :root{
     --primary-color: rgba(249, 194, 39, 255);
+    --secondary-color: #000;
     --hover-color: #fca311;
     --background-font-color: #fff;
     --media-background-color: #f8f9fa;
@@ -34,7 +35,7 @@
 input[type=email], input[type=password], input[type=text] {
     width: 100%;
     border: none;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--secondary-color);
     margin-top: 10px;
     padding: 2px;
 }
@@ -57,6 +58,8 @@ input:focus{
 }
 .button:focus{
     outline: none;
+    border-bottom: 2px solid var(--secondary-color);
+    transition-duration: .2s;
 }
 .button:hover{
     background: var(--hover-color);
@@ -70,7 +73,6 @@ input:focus{
 
     .register-container{
         width: 80%;
-        height: 80%;
         left: 50%;
         transform: translateX(-50%);
         position: relative;
