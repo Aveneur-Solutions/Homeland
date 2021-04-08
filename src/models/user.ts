@@ -13,3 +13,10 @@ export default interface IUser {
   token: string;
   fullname: string;
 }
+
+export default interface IUserRegister {
+  firstName: string;
+  lastName: string;
+  phoneNumber: string;
+  password: string;
+}

@@ -183,6 +183,7 @@ const OnlineBooking = () => {
                     </div>
                   </div>
                 </div>
+                <button className="btn">Proceed For Check Out</button>
               </div>
               <button className="btn">Proceed For Check Out</button>
               <p>

@@ -47,4 +47,12 @@ export default class UserStore {
     this.rootStore.commonStore.removeToken();
     this.user = null;
   };
+
+  @action register = () => {
+    try {
+      
+    } catch (error) {
+      console.log(error)
+    }
+  }
 }

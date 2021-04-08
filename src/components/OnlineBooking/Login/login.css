@@ -47,19 +47,19 @@ input:focus{
 #psw{
     margin-top: 10px;
 }
-#btn{
-    margin-top: 30px;
-}
 
 .button{
-    width: 20%;
+    display: block;
+    width: 40%;
     height: 30px;
+    /* left: 5% */
     border: none;
     border-radius: 5px;
     background: var(--primary-color);
     cursor: pointer;
     color: var(--background-font-color);
     font-weight: bold;
+    margin: 30px auto 0px auto;
 }
 .button:focus{
     outline: none;
@@ -69,12 +69,33 @@ input:focus{
     transition-duration: .2s;
 }
 
+
 #links{
     margin-top: 15%;
 }
 #links Link{
     color: var(--secondary-color);
     border-bottom: 1px solid var(--secondary-color);
+}
+
+.otpbutton{
+    display: block;
+    width: 80%;
+    height: 30px;
+    margin: 20px auto;
+    border: none;
+    border-radius: 5px;
+    background: var(--primary-color);
+    cursor: pointer;
+    color: var(--background-font-color);
+    font-weight: bold;
+}
+.otpbutton:focus{
+    outline: none;
+}
+.otpbutton:hover{
+    background: var(--hover-color);
+    transition-duration: .2s;
 }
 
 @media screen and (max-width: 968px) {
@@ -92,6 +113,12 @@ input:focus{
     .button{
         display: block;
         width: 100%;
+        height: 5vh;
+    }
+    .otpbutton{
+        margin: 20px auto;
+        display: block;
+        width: 80%;
         height: 5vh;
     }
 }

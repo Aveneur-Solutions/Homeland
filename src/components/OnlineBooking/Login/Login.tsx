@@ -54,12 +54,11 @@ const Login = () => {
               ></input>
               {errors.password && <span>Password is required</span>}
             </div>
-            <div id="btn">
+            <div>
               <button type="submit" className="button">
                 Submit
               </button>
             </div>
-
             {/* eikhane chilo div id="links" */}
           </div>
         </form>

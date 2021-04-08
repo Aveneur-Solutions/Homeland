@@ -12,13 +12,15 @@ const OurProject = () => {
       <Grid className="projectbg">
         <Grid.Column width={3}>
           <FilterCard />
+          <div className="projectbottom buttondiv1">
+            <Link to="./unitlist">
+              <button className="nextbutton1">Search</button>
+            </Link>
+          </div>
         </Grid.Column>
         <Grid.Column width={13}>
           <Cards />
         </Grid.Column>
-      <div className="projectbottom buttondiv"><Link to="./unitlist">
-          <button className="nextbutton">Next</button>
-        </Link></div>
       </Grid>
     </>
   );

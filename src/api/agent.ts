@@ -1,4 +1,5 @@
 import axios, { AxiosResponse } from "axios";
+import IFlat from "../models/unit";
 import IUser, { IUserLogin, IUserLoginWithOtp } from "../models/user";
 
 axios.interceptors.request.use(
@@ -12,7 +13,7 @@ axios.interceptors.request.use(
   }
 );
 
-axios.defaults.baseURL = "http://localhost:5000/api";
+axios.defaults.baseURL = "https://www.homeland.aveneur.com/api";
 
 const responseBody = (response: AxiosResponse) => response.data;
 
@@ -24,10 +25,15 @@ const request = {
 };
 
 const User = {
-  login: (body: IUserLogin) => request.post("user/login", body),
+  login: (body: IUserLogin) => request.post("/user/login", body),
   loginWithOtp: (body: IUserLoginWithOtp): Promise<IUser> =>
-    request.post("user/loginWithOtp", body),
+    request.post("/user/loginWithOtp", body),
   currentUser: (): Promise<IUser> => request.get("user"),
 };
 
-export default { User };
+const Flat = {
+  list: (): Promise<IFlat[]> => request.get("/flat"),
+  featuredList: (): Promise<IFlat[]> => request.get("/flat"),
+}
+
+export default { User, Flat };
