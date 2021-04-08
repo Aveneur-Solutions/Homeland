@@ -1,6 +1,5 @@
-import React from "react";
-import Gallery_2 from "../OurStory/2_Gallery";
-import { Grid, Image } from "semantic-ui-react";
+import Gallery2 from "../OurStory/2_Gallery";
+import { Grid } from "semantic-ui-react";
 import Cards from "./Card";
 import FilterCard from "./FilterCard";
 import { observer } from "mobx-react-lite";
@@ -9,7 +8,7 @@ import { Link } from "react-router-dom";
 const OurProject = () => {
   return (
     <>
-      <Gallery_2 />
+      <Gallery2 />
       <Grid className="projectbg">
         <Grid.Column width={3}>
           <FilterCard />

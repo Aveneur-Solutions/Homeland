@@ -24,6 +24,7 @@ const Login = () => {
     setPhoneNo(data.phoneNumber);
     login(data).then(() => setOtp(true));
   };
+  
   return (
     <div className="login">
       <div className="login-container">
@@ -32,7 +33,7 @@ const Login = () => {
           <div className="form-container">
             <div id="uname">
               <label htmlFor="uname">
-                <b>EPHONE</b>
+                <b>PHONE</b>
               </label>
               <input
                 type="text"
