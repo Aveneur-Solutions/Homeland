@@ -1,32 +1,34 @@
-import React, { useContext } from "react";
+import {useContext, useEffect } from "react";
 import ProjectStore from "./ProjectStore";
 import { CardItems } from "./CardItems";
 import { Card, Image, Grid, Icon } from "semantic-ui-react";
 import "./project.css";
+import { RootStoreContext } from "../../stores/rootStore";
+import { observer } from "mobx-react-lite";
 const CardMaker = () => {
   const store = useContext(ProjectStore);
-  const {
-    setPriceFilter,
-    setSizeFilter,
-    showCard,
-    filterCardPrice,
-    filterCardSize,
-  } = store;
 };
+
+
+
 const Cards = () => {
-  const cardItem = CardItems.sort();
+  const rootStore = useContext(RootStoreContext);
+const { featuredFlats,listfeatured } = rootStore.flatStore;
+  useEffect( () => {
+    listfeatured()
+  },[listfeatured])
+  
   return (
     <div className="cardcontainer">
       <h2>Featured Units</h2>
-
       <Grid columns={2} divided>
-        {CardItems.map((item, index) => {
+        {featuredFlats.map((item) => {
           return (
             <div className="cardsize">
-              <Card fluid key={index}>
+              <Card fluid>
                 <Image
                   className="cardhover"
-                  src={process.env.PUBLIC_URL + item.image}
+                  src={process.env.PUBLIC_URL + "/images/dummy/1.jpg"}
                   wrapped
                   ui={false}
                 />
@@ -35,7 +37,7 @@ const Cards = () => {
                     <Grid.Row>
                       <Grid.Column>
                         <Card.Header className="cardtoprow ">
-                          Unit ID<h4 className="cardtoplabel">{item.unit}</h4>
+                          Unit ID<h4 className="cardtoplabel">{item.id}</h4>
                         </Card.Header>
                       </Grid.Column>
                       <Grid.Column>
@@ -54,16 +56,16 @@ const Cards = () => {
                       <Grid.Column>
                         <Card.Meta>
                           <span className="cardbottomrow">
-                            Building: {item.buildingnum}
+                            Building: {item.buildingNumber}
                           </span>
                         </Card.Meta>
                         <Card.Meta>
                           <span className="cardbottomrow">
-                            Level: {item.levelnum}
+                            Level: {item.level}
                           </span>
                         </Card.Meta>
                       </Grid.Column>
-                      <Grid.Column>
+                      {/* <Grid.Column>
                         <Card.Meta>
                           <span className="cardbottomrow">
                             Net Area: {item.totalarea}
@@ -74,9 +76,9 @@ const Cards = () => {
                             Common Area: {item.commonarea}
                           </span>
                         </Card.Meta>
-                      </Grid.Column>
+                      </Grid.Column> */}
                       <Grid.Column className="iconselect">
-                        <Icon name='check circle outline' />
+                       {item.isBooked && <Icon name='check circle outline'/>}
                       </Grid.Column>
                     </Grid.Row>
                   </Grid>
@@ -90,4 +92,4 @@ const Cards = () => {
   );
 };
 
-export default Cards;
+export default observer(Cards);
