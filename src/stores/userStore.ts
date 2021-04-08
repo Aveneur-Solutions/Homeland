@@ -28,7 +28,7 @@ export default class UserStore {
         this.rootStore.commonStore.setToken(user.token);
       });
     } catch (error) {
-      console.log(error);
+      throw error;
     }
   };
 
@@ -50,9 +50,8 @@ export default class UserStore {
 
   @action register = () => {
     try {
-      
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 }

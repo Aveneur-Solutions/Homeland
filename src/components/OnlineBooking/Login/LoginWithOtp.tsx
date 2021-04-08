@@ -1,5 +1,5 @@
 import { observer } from "mobx-react-lite";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router";
 import { IUserLoginWithOtp } from "../../../models/user";
@@ -11,7 +11,7 @@ interface IProps {
 
 const LoginWithOtp: React.FC<IProps> = ({ phoneNo }) => {
   const rootStore = useContext(RootStoreContext);
-  const { loginWithOtp } = rootStore.userStore;
+  const { loginWithOtp, user } = rootStore.userStore;
   const { logginIn, booking } = rootStore.navStore;
 
   const history = useHistory();
@@ -22,11 +22,18 @@ const LoginWithOtp: React.FC<IProps> = ({ phoneNo }) => {
     formState: { errors },
   } = useForm<IUserLoginWithOtp>();
 
+  useEffect(() => {
+    if (logginIn && user) {
+      history.push("/");
+    }
+    if (booking && user) {
+      history.push("/onlineBooking");
+    }
+    console.log(user);
+  }, [user]);
+
   const onSubmit = (data: IUserLoginWithOtp) => {
-    loginWithOtp(data).then(() => {
-      if (logginIn) history.push("/");
-      if (booking) history.push("/onlineBooking");
-    });
+    loginWithOtp(data).catch((error) => console.log(error));
   };
 
   return (

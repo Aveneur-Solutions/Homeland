@@ -16,9 +16,8 @@ const Navbar = () => {
   const [clicked, setClicked] = useState(false);
 
   useEffect(() => {
-    console.log(user);
     if (token && !user) {
-      getUser().then(() => console.log(user));
+      getUser();
     }
   }, [token, getUser, user]);
 
