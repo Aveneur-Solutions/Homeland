@@ -72,7 +72,10 @@ input:focus{
 #links{
     margin-top: 15%;
 }
-
+#links Link{
+    color: var(--secondary-color);
+    border-bottom: 1px solid var(--secondary-color);
+}
 
 @media screen and (max-width: 968px) {
     .login{
@@ -83,9 +86,9 @@ input:focus{
         left: 50%;
         transform: translateX(-50%);
     }
-     /* #btn{
+    #btn{
         height: 5vh;
-    } */
+    }
     .button{
         display: block;
         width: 100%;
