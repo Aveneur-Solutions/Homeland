@@ -9,20 +9,20 @@ const BuildingSlider = () => {
           <div className="textcontainer">
             <div className="textshere">
               <Label image>
-                <img src="/images/icons/bed.png" />3 BEDS
+                <img src="/images/icons/bed.png" alt="" />3 BEDS
               </Label>
               <Label image>
-                <img src="/images/icons/bath.png" />2 BATHS
+                <img src="/images/icons/bath.png" alt="" />2 BATHS
               </Label>
               <Label image>
-                <img src="/images/icons/balcony.png" />1 BALCONY
+                <img src="/images/icons/balcony.png" alt="" />1 BALCONY
               </Label>
               <Label image>
-                <img src="/images/icons/level.png" />
+                <img src="/images/icons/level.png" alt="" />
                 Level 1
               </Label>
               <Label image>
-                <img src="/images/icons/netarea.png" />
+                <img src="/images/icons/netarea.png" alt="" />
                 Net Area: 764 sft
               </Label>
               <div className="okay">
@@ -47,20 +47,20 @@ const BuildingSlider = () => {
           <div className="textcontainer">
             <div className="textshere">
               <Label image>
-                <img src="/images/icons/bed.png" />3 BEDS
+                <img src="/images/icons/bed.png" alt="" />3 BEDS
               </Label>
               <Label image>
-                <img src="/images/icons/bath.png" />2 BATHS
+                <img src="/images/icons/bath.png" alt="" />2 BATHS
               </Label>
               <Label image>
-                <img src="/images/icons/balcony.png" />1 BALCONY
+                <img src="/images/icons/balcony.png" alt="" />1 BALCONY
               </Label>
               <Label image>
-                <img src="/images/icons/level.png" />
+                <img src="/images/icons/level.png" alt="" />
                 Level 1
               </Label>
               <Label image>
-                <img src="/images/icons/netarea.png" />
+                <img src="/images/icons/netarea.png" alt="" />
                 Net Area: 764 sft
               </Label>
               <div className="okay">

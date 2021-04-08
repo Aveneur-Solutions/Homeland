@@ -3,7 +3,7 @@ import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Table, Label, Menu, Icon } from "semantic-ui-react";
 import { RootStoreContext } from "../../stores/rootStore";
-import Gallery_2 from "../OurStory/2_Gallery";
+import Gallery2 from "../OurStory/2_Gallery";
 
 const UnitList = () => {
   const rootStore = useContext(RootStoreContext);
@@ -13,8 +13,7 @@ const UnitList = () => {
     },[listfeatured])
   return (
     <>
-      <Gallery_2 />
-        
+      <Gallery2 />
       <Table celled textAlign="center" padded>
         <Table.Header>
           <Table.Row>

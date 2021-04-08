@@ -25,7 +25,7 @@ const { featuredFlats,listfeatured } = rootStore.flatStore;
         {featuredFlats.map((item) => {
           return (
             <div className="cardsize">
-              <Card fluid>
+              <Card fluid key={item.id}>
                 <Image
                   className="cardhover"
                   src={process.env.PUBLIC_URL + "/images/dummy/1.jpg"}
