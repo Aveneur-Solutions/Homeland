@@ -8,7 +8,7 @@ export default class NavStore {
         makeObservable(this);
     }
 
-    @observable logginIn = false;
+    @observable logginIn = true;
     @observable booking = false;
 
     @action normalLogin = () => {

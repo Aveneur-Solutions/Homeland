@@ -1,15 +1,13 @@
 import {useContext, useEffect } from "react";
-import ProjectStore from "./ProjectStore";
-import { CardItems } from "./CardItems";
+// import ProjectStore from "./ProjectStore";
 import { Card, Image, Grid, Icon } from "semantic-ui-react";
 import "./project.css";
 import { RootStoreContext } from "../../stores/rootStore";
 import { observer } from "mobx-react-lite";
-const CardMaker = () => {
-  const store = useContext(ProjectStore);
-};
 
-
+// const CardMaker = () => {
+//   const store = useContext(ProjectStore);
+// };
 
 const Cards = () => {
   const rootStore = useContext(RootStoreContext);

@@ -1,7 +1,7 @@
 import { observer } from "mobx-react-lite";
 import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Table, Label, Menu, Icon } from "semantic-ui-react";
+import { Table } from "semantic-ui-react";
 import { RootStoreContext } from "../../stores/rootStore";
 import Gallery2 from "../OurStory/2_Gallery";
 

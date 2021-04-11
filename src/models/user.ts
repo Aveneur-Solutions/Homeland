@@ -14,7 +14,7 @@ export default interface IUser {
   fullname: string;
 }
 
-export default interface IUserRegister {
+export interface IUserRegister {
   firstName: string;
   lastName: string;
   phoneNumber: string;

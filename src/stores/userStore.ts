@@ -1,6 +1,10 @@
 import { action, makeObservable, observable, runInAction } from "mobx";
 import agent from "../api/agent";
-import IUser, { IUserLogin, IUserLoginWithOtp } from "../models/user";
+import IUser, {
+  IUserLogin,
+  IUserLoginWithOtp,
+  IUserRegister,
+} from "../models/user";
 import { RootStore } from "./rootStore";
 
 export default class UserStore {
@@ -48,10 +52,23 @@ export default class UserStore {
     this.user = null;
   };
 
-  @action register = () => {
+  @action registration = async (body: IUserRegister) => {
     try {
+      await agent.User.register(body);
     } catch (error) {
       console.log(error);
     }
   };
+
+  @action registerWithOtp = async (body: IUserLoginWithOtp) => {
+    try {
+      const user = await agent.User.registerWithOtp(body);
+      runInAction(() => {
+        this.user = user;
+        this.rootStore.commonStore.setToken(user.token);
+      })
+    } catch (error) {
+      console.log(error)
+    }
+  }
 }

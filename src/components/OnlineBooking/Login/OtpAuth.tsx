@@ -7,11 +7,13 @@ import { RootStoreContext } from "../../../stores/rootStore";
 
 interface IProps {
   phoneNo: string;
+  func: (body: IUserLoginWithOtp) => Promise<void>;
+  buttonText: string;
 }
 
-const LoginWithOtp: React.FC<IProps> = ({ phoneNo }) => {
+const OtpAuth: React.FC<IProps> = ({ phoneNo, func, buttonText }) => {
   const rootStore = useContext(RootStoreContext);
-  const { loginWithOtp, user } = rootStore.userStore;
+  const { user } = rootStore.userStore;
   const { logginIn, booking } = rootStore.navStore;
 
   const history = useHistory();
@@ -30,10 +32,10 @@ const LoginWithOtp: React.FC<IProps> = ({ phoneNo }) => {
       history.push("/onlineBooking");
     }
     console.log(user);
-  }, [user]);
+  }, [user, booking, history, logginIn]);
 
   const onSubmit = (data: IUserLoginWithOtp) => {
-    loginWithOtp(data).catch((error) => console.log(error));
+    func(data).catch((error) => console.log(error));
   };
 
   return (
@@ -51,10 +53,10 @@ const LoginWithOtp: React.FC<IProps> = ({ phoneNo }) => {
       />
       {errors.otp && <span>Please enter a valid OTP</span>}
       <button type="submit" className="button">
-        Login
+        {buttonText}
       </button>
     </form>
   );
 };
 
-export default observer(LoginWithOtp);
+export default observer(OtpAuth);
