@@ -11,7 +11,7 @@ export default class Gallery extends Component {
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
-      autoplay: true,
+      // autoplay: true,
       autoplaySpeed: 3900,
       arrows: true,
     };
@@ -24,7 +24,6 @@ export default class Gallery extends Component {
               <div className="element one "></div>
               <div className="element1 yy2"><h1>মাঝে</h1></div>
               <div className="element second y2"></div>
-
 
               <div className="element1 x1"><h1>জীবন</h1></div>
               <div className="element one"></div>

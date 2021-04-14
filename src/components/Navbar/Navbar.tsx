@@ -84,7 +84,7 @@ const Navbar = () => {
       <div className="login-content">
         {user ? ( 
           <>
-          <div className="for user">
+          <div className="foruser">
             <Dropdown text={user.fullname} options={options}></Dropdown> 
             </div>
           </>
