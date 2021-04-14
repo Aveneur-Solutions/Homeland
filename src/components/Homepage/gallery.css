@@ -202,6 +202,14 @@
     color: white;
   }
 }
+@media screen and (min-width: 1904px) {
+  .x1 {
+    position: absolute;
+    z-index: 0;
+    margin: 46.2% -50%;
+    color: white;
+  }
+}
 @media screen and (max-width: 960px) {
   .slideroverflowcontrol {
     width: 100vw;
