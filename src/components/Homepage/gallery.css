@@ -30,7 +30,7 @@
   border: 5px solid #fff;
 }
 .element1 h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child {
-  margin-top: 55%;
+  margin-top: 50%;
   transform: translateY(-50%);
 }
 
@@ -54,7 +54,7 @@
 .x1 {
   position: absolute;
   z-index: 0;
-  margin: 50% -50%;
+  margin: 58.5% -50%;
   color: white;
 }
 .yy2 {
@@ -194,6 +194,14 @@
 }
 
 
+@media screen and (max-width: 1920px) {
+  .x1 {
+    position: absolute;
+    z-index: 0;
+    margin: 57.5% -50%;
+    color: white;
+  }
+}
 @media screen and (max-width: 960px) {
   .slideroverflowcontrol {
     width: 100vw;
@@ -300,10 +308,3 @@
   }
 }
 
-@media screen and (max-width: 2560px) {
-  .x1 {
-    position: absolute;
-    z-index: 0;
-    margin: 58.5% -50%;
-  }
-}
