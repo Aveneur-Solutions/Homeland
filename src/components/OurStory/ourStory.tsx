@@ -4,6 +4,7 @@ import Gallery_2 from './2_Gallery';
 import './ourStory.css'
 import {ourStory} from './storyInfo'
 import  Logo from './logo.png'
+import SvgComponent from '../Navbar/logosvg';
 
 class OurStory extends Component {
     render() {
@@ -19,7 +20,7 @@ class OurStory extends Component {
             })}
         </div>
         <div className="main-logo">
-            <img height="200px" width="200px" src={Logo} alt="logo"/>
+            <SvgComponent/>
         </div>
         </div>
         );

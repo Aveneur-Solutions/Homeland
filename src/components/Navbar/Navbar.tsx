@@ -1,7 +1,9 @@
 import { observer } from "mobx-react-lite";
 import { useContext, useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
+import { Dropdown } from "semantic-ui-react";
 import { RootStoreContext } from "../../stores/rootStore";
+import SvgComponent from "./logosvg";
 import { MenuItems } from "./MenuItems";
 import "./Navbar.css";
 
@@ -14,6 +16,7 @@ const Navbar = () => {
   const history = useHistory();
 
   const [clicked, setClicked] = useState(false);
+  const [dropDown, setDropdown] = useState(false);
 
   useEffect(() => {
     console.log(user);
@@ -26,19 +29,26 @@ const Navbar = () => {
     setClicked(!clicked);
   };
 
+  const handleDropdown = () => {
+    setDropdown(!dropDown)
+  }
   const handleLogout = () => {
     logout();
     history.push("/");
   };
 
+  const options = [
+    { key: 1, text: 'My Allotments', value: 1 },
+    { key: 2, text: 'My Bookings', value: 2 },
+    { key: 3, text: 'Transfer Allotments', value: 3 },
+    { key: 4, text: 'Profile Settings', value: 4 },
+    { key: 4, text: 'Logout', value: 4 },
+  ]
+
   return (
     <nav className="NavbarItems">
       <Link to="/" className="forlink">
-        <img
-          className="navbar-logo"
-          src={process.env.PUBLIC_URL + "/images/logo.png"}
-          alt="Homeland-logo"
-        />
+          <SvgComponent/>
       </Link>
       <div className="menu-icon" onClick={handleClick}>
         <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
@@ -73,8 +83,12 @@ const Navbar = () => {
         <i className="navfont fas fa-cart-plus"></i>
       </div>
       <div className="login-content">
-        {user ? (
-          <button onClick={handleLogout}>{user.fullname}</button>
+        {user ? ( 
+          <>
+          <div className="for user">
+            <Dropdown text={user.fullname} options={options}></Dropdown> 
+            </div>
+          </>
         ) : (
           <Link to="/login">
             <button onClick={normalLogin}>LOG IN</button>

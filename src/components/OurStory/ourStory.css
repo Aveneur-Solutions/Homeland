@@ -11,10 +11,11 @@
     color: #6c757d;
 }
 
-.main-logo img{
-    background-color: black;
+.main-logo{
     display: block;
-    margin: 0px auto;
+    width: 30vw;
+    height: 60vh;
+    margin: -100px auto;
 }
 
 @media screen and (max-width: 968px) {
