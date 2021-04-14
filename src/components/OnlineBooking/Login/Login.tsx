@@ -3,13 +3,13 @@ import { useForm } from "react-hook-form";
 import "./login.css";
 import { useContext, useState } from "react";
 import { RootStoreContext } from "../../../stores/rootStore";
-import LoginWithOtp from "./LoginWithOtp";
+import OtpAuth from "./OtpAuth";
 import { IUserLogin } from "../../../models/user";
 import { observer } from "mobx-react-lite";
 
 const Login = () => {
   const rootStore = useContext(RootStoreContext);
-  const { login } = rootStore.userStore;
+  const { login, loginWithOtp } = rootStore.userStore;
 
   const [phoneNo, setPhoneNo] = useState("");
   const [otp, setOtp] = useState(false);
@@ -24,7 +24,7 @@ const Login = () => {
     setPhoneNo(data.phoneNumber);
     login(data).then(() => setOtp(true));
   };
-  
+
   return (
     <div className="login">
       <div className="login-container">
@@ -62,7 +62,9 @@ const Login = () => {
             {/* eikhane chilo div id="links" */}
           </div>
         </form>
-        {otp && <LoginWithOtp phoneNo={phoneNo} />}
+        {otp && (
+          <OtpAuth phoneNo={phoneNo} func={loginWithOtp} buttonText="Login" />
+        )}
         <div id="links">
           <div className="forget-pas">
             <Link to="#">Forget Password?</Link>

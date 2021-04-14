@@ -19,9 +19,8 @@ const Navbar = () => {
   const [dropDown, setDropdown] = useState(false);
 
   useEffect(() => {
-    console.log(user);
     if (token && !user) {
-      getUser().then(() => console.log(user));
+      getUser();
     }
   }, [token, getUser, user]);
 

@@ -1,13 +1,9 @@
 import { BookingItem as book } from "./BookingItem";
 import { Method } from "./PaymentItems";
 import "./onlinebooking.css";
-import { useContext, useState } from "react";
-import { RootStoreContext } from "../../../stores/rootStore";
+import { useState } from "react";
 
 const OnlineBooking = () => {
-  // const rootStore = useContext(RootStoreContext)
-  // const {user} = rootStore.userStore
-
   const [clicked, setClicked] = useState(false);
 
   const handleClick = () => {
