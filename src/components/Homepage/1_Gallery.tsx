@@ -12,44 +12,49 @@ export default class Gallery extends Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,
+      autoplaySpeed: 3900,
       arrows: true,
     };
     return (
       <div className="slider">
-        <Slider {...settings}
-        className="slideroverflowcontrol">
+        <Slider {...settings} className="slideroverflowcontrol">
           <div className="gallery_img ">
+            <div className="centerbangla">
+              <div className="element1 y1"><h1>সবুজের</h1></div> 
+              <div className="element one "></div>
+              <div className="element1 yy2"><h1>মাঝে</h1></div>
+              <div className="element second y2"></div>
+
+
+              <div className="element1 x1"><h1>জীবন</h1></div>
+              <div className="element one"></div>
+              <div className="element1 xx2"><h1>আনন্দ</h1></div>
+              <div className="element second x2"></div>
+            </div>
             <img
               className="logoimg"
-              src={process.env.PUBLIC_URL + "/images/dummy/1.jpg"}
+              src={process.env.PUBLIC_URL + "/images/h1.jpg"}
               alt=""
             />
           </div>
           <div className="gallery_img">
             <img
               className="logoimg"
-              src={process.env.PUBLIC_URL + "/images/dummy/1.jpg"}
+              src={process.env.PUBLIC_URL + "/images/h2.jpg"}
               alt=""
             />
           </div>
           <div className="gallery_img">
             <img
               className="logoimg"
-              src={process.env.PUBLIC_URL + "/images/dummy/1.jpg"}
+              src={process.env.PUBLIC_URL + "/images/h3.jpg"}
               alt=""
             />
           </div>
           <div className="gallery_img">
             <img
               className="logoimg"
-              src={process.env.PUBLIC_URL + "/images/dummy/1.jpg"}
-              alt=""
-            />
-          </div>
-          <div className="gallery_img">
-            <img
-              className="logoimg"
-              src={process.env.PUBLIC_URL + "/images/dummy/1.jpg"}
+              src={process.env.PUBLIC_URL + "/images/h4.jpg"}
               alt=""
             />
           </div>

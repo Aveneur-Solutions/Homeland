@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../Homepage/gallery.css";
 
-export default class Gallery_2 extends Component {
+export default class ProjectGallery extends Component {
   render() {
     const settings = {
       infinite: true,
@@ -20,28 +20,21 @@ export default class Gallery_2 extends Component {
           <div className="gallery_img ">
             <img
               className="logoimg"
-              src={process.env.PUBLIC_URL + "/images/o1.jpg"}
+              src={process.env.PUBLIC_URL + "/images/p1.jpg"}
               alt=""
             />
           </div>
           <div className="gallery_img">
             <img
               className="logoimg"
-              src={process.env.PUBLIC_URL + "/images/o2.jpg"}
+              src={process.env.PUBLIC_URL + "/images/p2.jpg"}
               alt=""
             />
           </div>
           <div className="gallery_img">
             <img
               className="logoimg"
-              src={process.env.PUBLIC_URL + "/images/o3.jpg"}
-              alt=""
-            />
-          </div>
-          <div className="gallery_img">
-            <img
-              className="logoimg"
-              src={process.env.PUBLIC_URL + "/images/o4.jpg"}
+              src={process.env.PUBLIC_URL + "/images/p3.jpg"}
               alt=""
             />
           </div>

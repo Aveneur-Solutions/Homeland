@@ -6,38 +6,38 @@
 .NavbarItems {
   background: rgba(249, 194, 39, 255);
   height: 100%;
-  padding: 1% 0%;
+  padding: 0% 0%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 900;
   position: relative;
 }
-.forlink{
+.forlink {
   margin: 0%;
   padding: 0%;
-  width: 10%;
+  width: 6%;
 }
 
 .navbar-logo {
   color: #fff;
   justify-self: start;
   cursor: pointer;
-  width: 56%;
+  width: 86%;
 }
 
 .nav-menu {
   display: grid;
   grid-template-columns: repeat(4, auto);
-  grid-gap: 10px;
+  grid-gap: 20px;
   list-style: none;
   text-align: center;
-  width: 70vw;
+  width: 75vw;
   justify-content: start;
   margin-left: 6rem;
 }
-.navfont{
+.navfont {
   font-size: 1.5rem;
 }
 
@@ -75,15 +75,15 @@
   color: #675832;
   font-weight: 600;
   font-size: 0.8rem;
-  font-family: 'Oswald-Regular';
-  letter-spacing:.1rem;
+  font-family: "Oswald-Regular";
+  letter-spacing: 0.1rem;
   cursor: pointer;
 }
 
-.login-content button:hover{
-    color: white;
+.login-content button:hover {
+  color: white;
 }
-.login-content button:focus{
+.login-content button:focus {
   outline: none;
 }
 
@@ -102,6 +102,187 @@
   font-family: "Oswald-Regular";
 }
 
+.activeuser p {
+  /* margin-top: 0px; */
+  font-weight: 900;
+  font-size: 1rem;
+  position: absolute;
+}
+.logosize {
+  height: 10vh;
+  width: 10vw;
+}
+
+.cls-1 {
+  background-color: "#fff";
+}
+
+#mtn,
+#mgn {
+  position: absolute;
+  left: 0;
+  top: -10%;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  overflow: visible;
+}
+
+#mtn {
+  animation: floating 3s ease-in-out 0s alternate;
+}
+#mgn {
+  animation: floating-mgn 3s ease-in-out 0s alternate;
+}
+#lowerstep {
+  animation: floating-lowerstep 3s ease-in-out 0s alternate;
+}
+#upperstep {
+  animation: floating-upperstep 3s ease-in-out 0s alternate;
+}
+#stepone {
+  animation: floating-stepone 3s ease-in-out 0s alternate;
+}
+#steptwo {
+  animation: floating-steptwo 3s ease-in-out 0s alternate;
+}
+#stepthree {
+  animation: floating-stepthree 3s ease-in-out 0s alternate;
+}
+#stepfour {
+  animation: floating-stepfour 3s ease-in-out 0s alternate;
+}
+#stepfive {
+  animation: floating-stepfive 3s ease-in-out 0s alternate;
+}
+#stepsix {
+  animation: floating-stepsix 3s ease-in-out 0s alternate;
+}
+#stepseven {
+  animation: floating-stepseven 3s ease-in-out 0s alternate;
+}
+#stepeight {
+  animation: floating-stepeight 3s ease-in-out 0s alternate;
+}
+
+@keyframes floating {
+  100% {
+    transform: translate(0, 0);
+  }
+  0% {
+    transform: translate(100%, 0);
+  }
+}
+
+@keyframes floating-mgn {
+  100% {
+    transform: translate(1, 0);
+  }
+  0% {
+    transform: translate(-100%, 0);
+  }
+}
+
+@keyframes floating-lowerstep {
+  100% {
+    transform: translate(0%, 0%);
+  }
+  0% {
+    transform: translate(0%, 60%);
+  }
+}
+@keyframes floating-upperstep {
+  100% {
+    transform: translate(0%, 0%);
+  }
+  0% {
+    transform: translate(0%, -100%);
+  }
+}
+@keyframes floating-stepone {
+  100% {
+    transform: translate(0%, 0%);
+  }
+  0% {
+    transform: translate(0%, -80%);
+  }
+}
+@keyframes floating-steptwo {
+  100% {
+    transform: translate(0%, 0%);
+  }
+  0% {
+    transform: translate(0%, -150%);
+  }
+}
+@keyframes floating-stepthree {
+  100% {
+    transform: translate(0%, 0%);
+  }
+  0% {
+    transform: translate(0%, -100%);
+  }
+}
+@keyframes floating-stepfour {
+  100% {
+    transform: translate(0%, 0%);
+  }
+  0% {
+    transform: translate(0%, -80%);
+  }
+}
+@keyframes floating-stepfive {
+  100% {
+    transform: translate(0%, 0%);
+  }
+  0% {
+    transform: translate(0%, 80%);
+  }
+}
+@keyframes floating-stepsix {
+  100% {
+    transform: translate(0%, 0%);
+  }
+  0% {
+    transform: translate(0%, 150%);
+  }
+}
+@keyframes floating-stepseven {
+  100% {
+    transform: translate(0%, 0%);
+  }
+  0% {
+    transform: translate(0%, 100%);
+  }
+}
+@keyframes floating-stepeight {
+  100% {
+    transform: translate(0%, 0%);
+  }
+  0% {
+    transform: translate(0%, 80%);
+  }
+}
+
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 5s linear alternate infinite;
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 822;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  
+}
+
 @media screen and (max-width: 960px) {
   .NavbarItems {
     position: relative;
@@ -114,6 +295,9 @@
     font-size: 1rem;
     font-weight: 900;
     position: relative;
+  }
+  .forlink {
+    width: 30%;
   }
 
   .nav-menu {

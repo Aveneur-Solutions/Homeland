@@ -1,4 +1,4 @@
-import Gallery2 from "../OurStory/2_Gallery";
+import ProjectGallery from "./ProjectGallery"
 import { Grid } from "semantic-ui-react";
 import Cards from "./Card";
 import FilterCard from "./FilterCard";
@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const OurProject = () => {
   return (
     <>
-      <Gallery2 />
+      <ProjectGallery />
       <Grid className="projectbg">
         <Grid.Column width={3}>
           <FilterCard />

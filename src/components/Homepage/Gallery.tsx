@@ -33,7 +33,7 @@ export default class GalleryState extends Component {
     };
     return (
       
-      <div className="slider1">
+      <div className="slider">
         <Slider {...settings}
         className="slider2">
           <div className="gallery1_img ">
