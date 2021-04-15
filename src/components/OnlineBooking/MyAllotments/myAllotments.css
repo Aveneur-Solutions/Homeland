@@ -1,0 +1,72 @@
+:root{
+    --primary-color: rgba(249, 194, 39, 255);
+    --secondary-color: #000;
+    --hover-color: #fca311;
+    --background-font-color: #fff;
+    --media-background-color: #f8f9fa;
+}
+
+.my-allotment{
+    background-image: url("./MyAlottlemts.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    position: relative;
+}
+
+.my-allotment-container{
+    border: none;
+    width: 60%;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--background-font-color);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 1%;
+}
+
+.allotment-content{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.profile{
+    
+}
+.table-content{
+    padding: 2%;
+}
+
+.transfer-button{
+    width: 12%;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    background-color: grey;
+    color: var(--background-font-color);
+    font-weight: bold;
+    display: block;
+    margin: 5% 0 10% auto;
+    cursor: pointer;
+}
+.transfer-button:hover{
+    background-color: rgb(46, 42, 42);
+}
+
+.allotment-down-payment{
+     width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.allotment-down-payment div{
+    background-color: var(--primary-color);
+    border-radius: 3px;
+    width: 5%;
+    padding: 1%;
+    display: flex;
+    justify-content: center;
+    color: red;
+    font-weight: 800;
+}

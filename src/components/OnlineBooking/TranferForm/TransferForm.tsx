@@ -10,33 +10,9 @@ class TransferForm extends Component  {
                     <h1>Transfer Form</h1>
                     <div className="form-container">
                         <form action="">
-                            <div id="first-name">
-                                <label htmlFor="first-name"><b>New allottee's First Name :</b></label>
-                                <input type="text" name="first-name" required></input>
-                            </div>
-                            <div id="second-name">
-                                <label htmlFor="second-name"><b>New allottee's Second Name :</b></label>
-                                <input type="text" name="second-name" required></input>
-                            </div>
-                            <div id="address">
-                                <label htmlFor="address"><b>New allottee's Address :</b></label>
-                                <input type="text" name="address" required></input>
-                            </div>
-                            <div id="uname">
-                                <label htmlFor="uname"><b>New allottee's Email :</b></label>
-                                <input type="email"  name="uname" required></input>
-                            </div>
-                            <div id="nid">
-                                <label htmlFor="nid"><b>New allottee's NID :</b></label>
-                                <input type="text" name="nid" required></input>
-                            </div>
                             <div id="phone">
                                 <label htmlFor="phone"><b>New allottee's Phone :</b></label>
                                 <input type="email" name="phone" required></input>
-                            </div>
-                            <div id="dob">
-                                <label htmlFor="dob"><b>New allottee's Birth Date :</b></label>
-                                <input type="text" name="dob" required></input>
                             </div>
                             <div className="upload">
                                 <p>Upload Photo :</p>
@@ -67,8 +43,11 @@ class TransferForm extends Component  {
                             </table>
                             <button className="btn">Transfer</button>
                         </form>
+                        <h5 style={{textAlign: 'center'}}>Number of days left for the down payment</h5>
                         <div className="down-payment">
-                            <div className="day"></div>
+                            <div className="day">7</div>
+                            <div className="hour">7</div>
+                            <div className="sec">7</div>
                         </div>
                     </div>
                 </div>

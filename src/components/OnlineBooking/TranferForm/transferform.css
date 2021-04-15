@@ -11,7 +11,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 200vh;
+    height: 100vh;
     position: relative;
 }
 
@@ -75,17 +75,38 @@ td{
     color: var(--background-font-color);
     font-weight: bold;
     display: block;
-    margin: 5% 0 auto auto;
+    margin: 5% 0 10% auto;
+    cursor: pointer;
 }
 .btn:hover{
     background: var(--hover-color);
     transition-duration: .2s;
 }
 
+.down-payment{
+    margin-bottom: -8%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.down-payment div{
+    background-color: var(--primary-color);
+    border-radius: 3px;
+    width: 5%;
+    padding: 1%;
+    display: flex;
+    justify-content: center;
+    color: red;
+    font-weight: 800;
+}
+.hour{
+    margin-left: .5%;
+    margin-right: .5%;
+}
+
 @media screen and (max-width: 968px){
     .online-booking{
         background: none var(--media-background-color);
-        height: auto;
     }
     .online-booking-container{
         width: 100%;
