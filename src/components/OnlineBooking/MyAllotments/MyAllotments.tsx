@@ -10,12 +10,18 @@ const MyAllotments = () => {
                 <h1 style={{textAlign: 'center'}}>My Allotments</h1>
                 <div className="allotment-content">
                     <div className="profile">
-                        <img width="100px" style={{borderRadius: '50px'}} src={process.env.PUBLIC_URL + "/images/profile.png"} alt=""/>
-                        <p>NAME: Zunaid</p>
-                        <p>ADDRESS: Dick Avenue</p>
-                        <p>PHONE: 69420</p>
-                        <p>EMAIL: gay@gmail.com</p>
-                        <img width="200px" style={{backgroundColor: "black"}} src={process.env.PUBLIC_URL + "/images/logo.png"} alt=""/>
+                        <div className="profile-img">
+                            <img width="100px" style={{borderRadius: '50px'}} src={process.env.PUBLIC_URL + "/images/profile.png"} alt=""/>
+                        </div>
+                        <div className="profile-content">
+                            <p>NAME: Zunaid</p>
+                            <p>ADDRESS: Dick Avenue</p>
+                            <p>PHONE: 69420</p>
+                            <p>EMAIL: gay@gmail.com</p>
+                        </div>
+                        <div className="profile-homeland-logo">
+                            <img width="150px" style={{backgroundColor: "black"}} src={process.env.PUBLIC_URL + "/images/logo.png"} alt=""/>
+                        </div>
                     </div>
                     <div className="table-content">
                         <h3>Alloted:</h3>

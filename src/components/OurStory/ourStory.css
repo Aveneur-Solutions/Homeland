@@ -11,6 +11,7 @@
     color: #6c757d;
 }
 
+
 .main-logo{
     display: block;
     width: 30vw;
@@ -20,13 +21,16 @@
 
 @media screen and (max-width: 968px) {
     .our-story{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    padding: 10%;
-    color: #6c757d;
-}
-
+        display: grid;
+        grid-template-rows: 2fr 2fr 2fr;
+        text-align: start;
+        margin-bottom: 10%;
+    }
+    .our-story-content{
+        margin-bottom: 20%;
+        text-align: center;
+    }
+    .main-logo{
+        width: 60vw;
+    }
 }
