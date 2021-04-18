@@ -63,6 +63,7 @@ const Navbar = () => {
                 onClick={
                   item.url === "/onlineBooking" && !user
                     ? bookingLogin
+                    : item.url === "/ourProject" ? setFeatured
                     : () => {}
                 }
               >

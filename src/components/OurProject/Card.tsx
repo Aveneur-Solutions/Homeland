@@ -22,8 +22,8 @@ const { featuredFlats,listfeatured } = rootStore.flatStore;
       <Grid columns={2} divided>
         {featuredFlats.map((item) => {
           return (
-            <div className="cardsize ">
-              <Card fluid key={item.id}>
+            <div className="cardsize " key={item.id}>
+              <Card fluid>
                 <Image
                   className="cardhover"
                   src={process.env.PUBLIC_URL + "/images/dummy/1.jpg"}
