@@ -10,6 +10,13 @@ export default class NavStore {
 
     @observable logginIn = true;
     @observable booking = false;
+    @observable featured = true;
+    @observable searchUnit = false;
+
+    @action setUnitSearch = () => {
+        this.searchUnit = true;
+        this.featured = false;
+    }
 
     @action normalLogin = () => {
         this.logginIn = true;

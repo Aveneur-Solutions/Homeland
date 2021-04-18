@@ -1,11 +1,15 @@
-import ProjectGallery from "./ProjectGallery"
+import ProjectGallery from "./ProjectGallery";
 import { Grid } from "semantic-ui-react";
 import Cards from "./Card";
 import FilterCard from "./FilterCard";
 import { observer } from "mobx-react-lite";
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { RootStoreContext } from "../../stores/rootStore";
+import UnitList from "./UnitList";
 
 const OurProject = () => {
+  const rootStore = useContext(RootStoreContext);
+  const { featured, setUnitSearch, searchUnit } = rootStore.navStore;
   return (
     <>
       <ProjectGallery />
@@ -13,13 +17,14 @@ const OurProject = () => {
         <Grid.Column width={3}>
           <FilterCard />
           <div className="projectbottom buttondiv1">
-            <Link to="./unitlist">
-              <button className="nextbutton1">Search</button>
-            </Link>
+            <button className="nextbutton1" onClick={() => setUnitSearch()}>
+              Search
+            </button>
           </div>
         </Grid.Column>
         <Grid.Column width={13}>
-          <Cards />
+          {featured && <Cards />}
+          {searchUnit && <UnitList />}
         </Grid.Column>
       </Grid>
     </>

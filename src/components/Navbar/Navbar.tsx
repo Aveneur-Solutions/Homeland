@@ -1,7 +1,7 @@
 import { observer } from "mobx-react-lite";
 import { useContext, useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { Dropdown } from "semantic-ui-react";
+import { Dropdown, Popup } from "semantic-ui-react";
 import { RootStoreContext } from "../../stores/rootStore";
 import SvgComponent from "./logosvg";
 import { MenuItems } from "./MenuItems";
@@ -31,19 +31,11 @@ const Navbar = () => {
   const handleDropdown = () => {
     setDropdown(!dropDown)
   }
+ 
   const handleLogout = () => {
     logout();
     history.push("/");
   };
-
-  const options = [
-    { key: 1, text: 'My Allotments', value: 1 },
-    { key: 2, text: 'My Bookings', value: 2 },
-    { key: 3, text: 'Transfer Allotments', value: 3 },
-    { key: 4, text: 'Profile Settings', value: 4 },
-    { key: 4, text: 'Logout', value: 4 },
-  ]
-
   return (
     <nav className="NavbarItems">
       <Link to="/" className="forlink">
@@ -83,11 +75,18 @@ const Navbar = () => {
       </div>
       <div className="login-content">
         {user ? ( 
-          <>
-          <div className="foruser">
-            <Dropdown text={user.fullname} options={options}></Dropdown> 
+          <div className="for user">
+            <Dropdown text={user.fullname} >
+          
+              <Dropdown.Menu>
+                <Dropdown.Item text='My Allotments'/>
+                <Dropdown.Item text='My Bookings'/>
+                <Dropdown.Item text='Transfer Allotments'/>
+                <Dropdown.Item text='Profile Settings'/>
+                <Dropdown.Item text='Logout' onClick={handleLogout}/>
+              </Dropdown.Menu>
+            </Dropdown> 
             </div>
-          </>
         ) : (
           <Link to="/login">
             <button onClick={normalLogin}>LOG IN</button>

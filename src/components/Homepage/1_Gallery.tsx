@@ -20,15 +20,31 @@ export default class Gallery extends Component {
         <Slider {...settings} className="slideroverflowcontrol">
           <div className="gallery_img ">
             <div className="centerbangla">
-              <div className="element1 y1"><h1>সবুজের</h1></div> 
-              <div className="element one "></div>
-              <div className="element1 yy2"><h1>মাঝে</h1></div>
-              <div className="element second y2"></div>
-
-              <div className="element1 x1"><h1>জীবন</h1></div>
-              <div className="element one"></div>
-              <div className="element1 xx2"><h1>আনন্দ</h1></div>
-              <div className="element second x2"></div>
+              <div className="shelf">
+                <div className="door left">
+                  <div className="door1 left"></div>
+                  <div className="door1 left"></div>
+                </div>
+                <div className="door right"></div>
+                <div className="elements">
+                  <div className="toprow">
+                    <div className="element y1">
+                      <h1>সবুজের</h1>
+                    </div>
+                    <div className="element yy2">
+                      <h1>মাঝে</h1>
+                    </div>
+                  </div>
+                  <div className="toprow">
+                    <div className="element">
+                      <h1>জীবন</h1>
+                    </div>
+                    <div className="element xx2">
+                      <h1>আনন্দ</h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <img
               className="logoimg"

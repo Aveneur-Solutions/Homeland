@@ -10,23 +10,36 @@
     padding: 8%;
     color: #6c757d;
 }
-
 .main-logo{
     display: block;
     width: 30vw;
     height: 60vh;
-    margin: -100px auto;
+    margin: 0px auto;
+}
+.vdosize{
+    width: 100vw;
+    height: 70vh;
+    position: relative;
+}
+.hundred{
+    overflow: hidden;
 }
 
 @media screen and (max-width: 968px) {
     .our-story{
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    padding: 10%;
+    margin-top: 10vh; 
     color: #6c757d;
 }
-
+.vdosize{
+    width: 100vw;
+    height: 26vh;
+    position: relative;
+}
+.main-logo{
+    display: block;
+    width: 60vw;
+    height: 40vh;
+    margin: 0px auto 0px auto;
+}
 }

@@ -3,8 +3,7 @@ import React, { Component } from 'react'
 import Gallery_2 from './2_Gallery';
 import './ourStory.css'
 import {ourStory} from './storyInfo'
-import  Logo from './logo.png'
-import SvgComponent from '../Navbar/logosvg';
+import SvgComponent1 from './logosvg1';
 
 class OurStory extends Component {
     render() {
@@ -20,7 +19,7 @@ class OurStory extends Component {
             })}
         </div>
         <div className="main-logo">
-            <SvgComponent/>
+            <SvgComponent1/>
         </div>
         </div>
         );
