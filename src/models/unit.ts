@@ -8,5 +8,7 @@ export default interface IFlat{
     noOfBaths: number,
     noOfBalconies: number,
     bookingPrice: number,
-    isBooked: boolean
+    isBooked: boolean,
+    NetArea: string,
+    CommonArea:string
 }
