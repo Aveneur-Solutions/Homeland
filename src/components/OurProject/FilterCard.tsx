@@ -1,28 +1,46 @@
-import React, { Component } from 'react'
-import { Menu } from 'semantic-ui-react'
-import "./project.css"
+import { Menu } from "semantic-ui-react";
+import "./project.css";
 
-export default class FilterCard extends Component {
-  state = { activeItem: 'closest' }
+const FilterCard = () => {
+  return (
+    <Menu text vertical className="filtercontainer">
+      <Menu.Item header>Search By</Menu.Item>
+      <form>
+        <Menu.Item name="Price" />
+        <label>
+          <input
+            name="range1"
+            type="checkbox"
+            // checked={this.state.isGoing}
+            // onChange={this.handleInputChange}
+          />
+          3000000-3199999
+        </label>
+        <br />
+        <label>
+          <input
+            name="range2"
+            type="checkbox"
+            // checked={this.state.isGoing}
+            // onChange={this.handleInputChange}
+          />
+          3200000-3399999
+        </label>
+        <br />
+        <label>
+          <input
+            name="range3"
+            type="checkbox"
+            // checked={this.state.isGoing}
+            // onChange={this.handleInputChange}
+          />
+          3400000-3600000
+        </label>
+        <br />
+        <Menu.Item name="Size" />
+      </form>
+    </Menu>
+  );
+};
 
-
-  render() {
-    const { activeItem } = this.state
-
-    return (
-      <Menu text vertical className="filtercontainer">
-        <Menu.Item header>Search By</Menu.Item>
-        <Menu.Item
-          name='Price'
-          active={activeItem === 'closest'}
-        //   onClick={this.handleItemClick}
-        />
-        <Menu.Item
-          name='Size'
-          active={activeItem === 'mostComments'}
-        //   onClick={this.handleItemClick}
-        />
-      </Menu>
-    )
-  }
-}
+export default FilterCard;
