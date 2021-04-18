@@ -5,7 +5,7 @@
 }
 .NavbarItems {
   background: rgba(249, 194, 39, 255);
-  height: 100%;
+  height: 10vh;
   padding: 0% 0%;
   display: flex;
   justify-content: center;
@@ -16,9 +16,11 @@
   position: relative;
 }
 .forlink {
-  margin: 0%;
+  /* margin: 40% 0%; */
+    top: -25%;
   padding: 0%;
-  width: 6%;
+  width: 8%;
+  position: absolute;
 }
 
 .navbar-logo {
@@ -91,12 +93,41 @@
 .right-content {
   color: #675832;
   position: absolute;
-  right: 15rem;
+  right: 21rem;
   width: 20vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
+}
+.foruser{
+  width: 20vw;
+}
+.dropname{
+  color: #675832;
+  margin-right: -20vw;
+}
+.dropmenu{
+  animation: floating-dropdown 2s ease-in 0s alternate;
+}
+
+@keyframes floating-dropdown {
+  100% {
+    transform: translate(0, 0);
+  }
+  0% {
+    transform: translate(0, -10%);
+  }
+}
+@media screen and (min-width: 1920px) {
+  .foruser{
+    width: 15vw;
+    color: #675832;
+  }
+  .right-content {
+    right: 24rem;
+    width: 20vw;
+  }
 }
 
 .right-content h6 {
@@ -280,10 +311,15 @@
   }
 }
 
-@media screen and (min-width: 2560px) {
-  
+@media screen and (min-width:1920px){
+  .forlink {
+    margin: 0% auto;
+      top: -25%;
+    padding: 0%;
+    width: 6%;
+    position: absolute;
+  }
 }
-
 @media screen and (max-width: 960px) {
   .NavbarItems {
     position: relative;

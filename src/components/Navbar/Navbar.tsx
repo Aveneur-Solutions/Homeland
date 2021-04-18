@@ -1,23 +1,24 @@
 import { observer } from "mobx-react-lite";
-import { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { Dropdown, Popup } from "semantic-ui-react";
+import { Dropdown, Transition } from "semantic-ui-react";
 import { RootStoreContext } from "../../stores/rootStore";
 import SvgComponent from "./logosvg";
 import { MenuItems } from "./MenuItems";
 import "./Navbar.css";
 
 const Navbar = () => {
+
   const rootStore = useContext(RootStoreContext);
-  const { normalLogin, bookingLogin } = rootStore.navStore;
+  const { normalLogin, bookingLogin, setFeatured } = rootStore.navStore;
   const { getUser, user, logout } = rootStore.userStore;
   const { token } = rootStore.commonStore;
 
   const history = useHistory();
 
   const [clicked, setClicked] = useState(false);
-  const [dropDown, setDropdown] = useState(false);
-
+  const [allotment, setAllotment] = useState(false);
+  const [transfer, setTransfer] = useState(false);
   useEffect(() => {
     if (token && !user) {
       getUser();
@@ -28,25 +29,24 @@ const Navbar = () => {
     setClicked(!clicked);
   };
 
-  const handleDropdown = () => {
-    setDropdown(!dropDown)
-  }
+  const handleAllotment = () => {
+    setAllotment(!allotment);
+    history.push("/my-allotments");
+  };
+
+  const handleTransfer = () => {
+    setTransfer(!transfer);
+    history.push("./transfer-form");
+  };
   const handleLogout = () => {
     logout();
     history.push("/");
   };
 
-  const options = [
-    { key: 1, text: 'My Allotments', value: 1},
-    { key: 2, text: 'My Bookings', value: 2 },
-    { key: 3, text: 'Transfer Allotments', value: 3 },
-    { key: 4, text: 'Profile Settings', value: 4 },
-    { key: 4, text: 'Logout', value: 4 },
-  ]
   return (
     <nav className="NavbarItems">
       <Link to="/" className="forlink">
-          <SvgComponent/>
+        <SvgComponent />
       </Link>
       <div className="menu-icon" onClick={handleClick}>
         <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
@@ -63,6 +63,7 @@ const Navbar = () => {
                 onClick={
                   item.url === "/onlineBooking" && !user
                     ? bookingLogin
+                    : item.url === "/ourProject" ? setFeatured
                     : () => {}
                 }
               >
@@ -81,19 +82,32 @@ const Navbar = () => {
         <i className="navfont fas fa-cart-plus"></i>
       </div>
       <div className="login-content">
-        {user ? ( 
-          <div className="for user">
-            <Dropdown text={user.fullname} >
-          
-              <Dropdown.Menu>
-                <Dropdown.Item text='My Allotments'/>
-                <Dropdown.Item text='My Bookings'/>
-                <Dropdown.Item text='Transfer Allotments'/>
-                <Dropdown.Item text='Profile Settings'/>
-                <Dropdown.Item text='Logout' onClick={handleLogout}/>
-              </Dropdown.Menu>
-            </Dropdown> 
-            </div>
+        {user ? (
+          <div className="foruser">
+            <Dropdown className="dropname" text={user.fullname} >
+                <Dropdown.Menu
+                  className="dropmenu"
+                  style={{
+                    top: "50px",
+                    right: "0",
+                    left: "70px",
+                    width: "20px",
+                  }}
+                >
+                  <Dropdown.Item
+                    text="My Allotments "
+                    onClick={handleAllotment}
+                  />
+                  <Dropdown.Item text="My Bookings" />
+                  <Dropdown.Item
+                    text="Transfer Allotments"
+                    onClick={handleTransfer}
+                  />
+                  <Dropdown.Item text="Profile Settings" />
+                  <Dropdown.Item text="Logout" onClick={handleLogout} />
+                </Dropdown.Menu>
+            </Dropdown>
+          </div>
         ) : (
           <Link to="/login">
             <button onClick={normalLogin}>LOG IN</button>

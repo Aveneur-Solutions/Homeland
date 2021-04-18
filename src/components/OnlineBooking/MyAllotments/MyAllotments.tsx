@@ -2,6 +2,7 @@ import React from 'react'
 import './myAllotments.css'
 import { allotmentItems as allotment} from './allotmentItems'
 import {transferredItems as transferred} from './allotmentItems'
+import { observer } from 'mobx-react-lite'
 
 const MyAllotments = () => {
     return (
@@ -88,4 +89,4 @@ const MyAllotments = () => {
     )
 }
 
-export default MyAllotments
+export default observer(MyAllotments)
