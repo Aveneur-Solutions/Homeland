@@ -63,18 +63,18 @@ const { featuredFlats,listfeatured } = rootStore.flatStore;
                           </span>
                         </Card.Meta>
                       </Grid.Column>
-                      {/* <Grid.Column>
+                      <Grid.Column>
                         <Card.Meta>
                           <span className="cardbottomrow">
-                            Net Area: {item.totalarea}
+                            Net Area: {item.netArea}
                           </span>
                         </Card.Meta>
                         <Card.Meta>
                           <span className="cardbottomrow">
-                            Common Area: {item.commonarea}
+                            Common Area: {item.commonArea}
                           </span>
                         </Card.Meta>
-                      </Grid.Column> */}
+                      </Grid.Column>
                       <Grid.Column className="iconselect">
                        {item.isBooked && <Icon name='check circle outline'/>}
                       </Grid.Column>
