@@ -17,6 +17,10 @@ export default class NavStore {
         this.searchUnit = true;
         this.featured = false;
     }
+    @action setFeatured = () => {
+        this.searchUnit = false;
+        this.featured = true;
+    }
 
     @action normalLogin = () => {
         this.logginIn = true;

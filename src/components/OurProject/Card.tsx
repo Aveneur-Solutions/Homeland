@@ -22,7 +22,7 @@ const { featuredFlats,listfeatured } = rootStore.flatStore;
       <Grid columns={2} divided>
         {featuredFlats.map((item) => {
           return (
-            <div className="cardsize">
+            <div className="cardsize ">
               <Card fluid key={item.id}>
                 <Image
                   className="cardhover"
@@ -34,7 +34,7 @@ const { featuredFlats,listfeatured } = rootStore.flatStore;
                   <Grid columns={3} divided>
                     <Grid.Row>
                       <Grid.Column>
-                        <Card.Header className="cardtoprow ">
+                        <Card.Header className="cardtoprow  ">
                           Unit ID<h4 className="cardtoplabel">{item.id}</h4>
                         </Card.Header>
                       </Grid.Column>
