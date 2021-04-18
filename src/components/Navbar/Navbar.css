@@ -12,6 +12,7 @@
   align-items: center;
   font-size: 1.2rem;
   font-weight: 900;
+  z-index:200;
   position: relative;
 }
 .forlink {
@@ -129,19 +130,19 @@
 }
 
 #mtn {
-  animation: floating 3s ease-in-out 0s alternate;
+  animation: floating 3s ease-in-out 0s  alternate;
 }
 #mgn {
-  animation: floating-mgn 3s ease-in-out 0s alternate;
+  animation: floating-mgn 3s ease-in-out 0s  alternate;
 }
 #lowerstep {
-  animation: floating-lowerstep 3s ease-in-out 0s alternate;
+  animation: floating-lowerstep 3s ease-in-out 0s  alternate;
 }
 #upperstep {
-  animation: floating-upperstep 3s ease-in-out 0s alternate;
+  animation: floating-upperstep 3s ease-in-out 0s  alternate;
 }
 #stepone {
-  animation: floating-stepone 3s ease-in-out 0s alternate;
+  animation: floating-stepone 3s ease-in-out 0s  alternate;
 }
 #steptwo {
   animation: floating-steptwo 3s ease-in-out 0s alternate;

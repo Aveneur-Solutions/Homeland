@@ -2,94 +2,105 @@
 
 .centerbangla {
   position: absolute;
-  margin: 15vh 40vw;
-  height: 40vh;
+  margin: 10vh 4.3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
   width: 20vw;
 }
+.toprow{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10rem;
+}
+
 .element {
-  display: inline-block;
   background-color: transparent;
-  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
   width: 50%;
-  /* color: white; */
+  color: white;
   text-align: center;
   opacity: 1;
   font-family: 'SolaimanLipi', sans-serif;
   border: 5px solid white;
   border-radius: 5px;
 }
-.element1 {
-  display: inline-block;
-  background-color: transparent;
-  height: 50%;
-  width: 50%;
-  color: white;
-  text-align: center;
-  opacity: 1;
-  font-family: 'SolaimanLipi', sans-serif;
-  border: 5px solid #fff;
-}
-.element1 h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child {
-  margin-top: 50%;
-  transform: translateY(-50%);
-}
-
-.one {
-  /* transform: rotateY(40deg); */
-  transform-origin: center left;
-  animation: one 5s infinite;
-  animation-direction: alternate;
-  background-color: rgb(58, 58, 58);
-}
-.y2 {
-  float: right;
-}
-.x2 {
-  float: right;
-}
-.y1 {
+.shelf {
   position: absolute;
-  color: white;
+  width: 30rem;
+  height: 21rem;
+  margin: 0 auto;
+  border: 0.5rem solid goldenrod;
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  perspective: 130rem;
+  box-shadow: inset 0 0 2rem rgba(0, 0, 0, 0.2);
 }
-.x1 {
+.door {
   position: absolute;
-  z-index: 0;
-  margin: 58.5% -50%;
-  color: white;
+  width: 14.8rem;
+  height: 20rem;
+  display: flex;
+  box-sizing: border-box;
+  padding: 1rem;
+  background-color: goldenrod;
+  align-items: center;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  outline: 1px solid transparent;
 }
-.yy2 {
-  position: absolute;
-  color: white;
-}
-.xx2 {
-  position: absolute;
-  color: white;
-}
+  .door::before {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.1);
+    content: "";
+  }
+  .door.left {
+    border-radius: 0 0.75rem 0.75rem 0;
+    justify-content: flex-end;
+    animation: 
+      leftDoorOpen 3.5s ease-out forwards 1s,
+      leftDoorFlap 15s linear infinite forwards 9s;
+    transform-origin: 0 0 0;
+  }
+  .door.right {
+    right: 0;
+    border-radius: 0.75rem 0 0 0.75rem;
+    animation: 
+      rightDoorOpen 3s ease-out forwards 1.5s,
+      rightDoorFlap 10s linear infinite forwards 8s;
+    transform-origin: 100% 0 0;
+  }
 
-@keyframes one {
-  0% {
-    transform: rotateY(0);
+  @keyframes leftDoorOpen {
+    60% {transform: rotateY(-115deg)}
+    100% {transform: rotateY(-110deg)}
   }
-  100% {
-    transform: rotateY(90deg);
+  @keyframes rightDoorOpen {
+    60% {transform: rotateY(125deg)}
+    100% {transform: rotateY(120deg)}
   }
-}
-
-.second {
-  transform-origin: center right;
-  animation: second 5s infinite;
-  animation-direction: alternate;
-  background-color: rgb(58, 58, 58);
-}
-
-@keyframes second {
-  0% {
-    transform: rotateY(0);
+  @keyframes rightDoorFlap {
+    0% { transform: rotateY(120deg)}
+    5% {transform: rotateY(125deg)}
+    15% {transform: rotateY(117deg)}
+    25% {transform: rotateY(123deg)}
+    30% {transform: rotateY(120deg)}
+    100% {transform: rotateY(120deg)}
   }
-  100% {
-    transform: rotateY(-90deg);
+  @keyframes leftDoorFlap {
+    0% { transform: rotateY(-110deg)}
+    5% {transform: rotateY(-115deg)}
+    15% {transform: rotateY(-107deg)}
+    25% {transform: rotateY(-113deg)}
+    30% {transform: rotateY(-110deg)}
+    100% {transform: rotateY(-110deg)}
   }
-}
 
 .gallery_img {
   display: flex;
@@ -195,12 +206,12 @@
 
 
 @media screen and (min-width: 1920px) {
-  .x1 {
+  /* .x1 {
     position: absolute;
     z-index: 0;
     margin: 57.5% -50%;
     color: white;
-  }
+  } */
 }
 @media screen and (min-width: 1903px) {
   .x1 {
@@ -210,7 +221,7 @@
     color: white;
   }
 }
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1170px) {
   .slideroverflowcontrol {
     width: 100vw;
     overflow: hidden;
@@ -314,5 +325,27 @@
     overflow: hidden;
     padding: 50px 20px 50px 20px;
   }
+
+  .centerbangla {
+    position: absolute;
+    margin: 10vh 20vw;
+    height: 40vh;
+    width: 60vw;
+}
+.shelf {
+  height: 21rem;
+}
+.door {
+  width: 7rem;
+  height: 20rem;
+  display: flex;
+  box-sizing: border-box;
+  padding: 1rem;
+  background-color: goldenrod;
+  align-items: center;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  outline: 1px solid transparent;
+}
+
 }
 
