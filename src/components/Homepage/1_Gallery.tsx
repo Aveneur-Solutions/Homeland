@@ -23,7 +23,6 @@ export default class Gallery extends Component {
               <div className="shelf">
                 <div className="door left">
                   <div className="door1 left"></div>
-                  <div className="door1 left"></div>
                 </div>
                 <div className="door right"></div>
                 <div className="elements">

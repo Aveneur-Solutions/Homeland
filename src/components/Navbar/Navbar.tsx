@@ -31,7 +31,6 @@ const Navbar = () => {
   const handleDropdown = () => {
     setDropdown(!dropDown)
   }
-
   const handleLogout = () => {
     logout();
     history.push("/");

@@ -4,7 +4,6 @@ import Gallery_2 from './2_Gallery';
 import './ourStory.css'
 import {ourStory} from './storyInfo'
 import SvgComponent1 from './logosvg1';
-import SvgComponent from '../Navbar/logosvg';
 
 class OurStory extends Component {
     render() {
