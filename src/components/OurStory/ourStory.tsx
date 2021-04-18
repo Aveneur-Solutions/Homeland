@@ -4,6 +4,7 @@ import Gallery_2 from './2_Gallery';
 import './ourStory.css'
 import {ourStory} from './storyInfo'
 import SvgComponent1 from './logosvg1';
+import SvgComponent from '../Navbar/logosvg';
 
 class OurStory extends Component {
     render() {
@@ -12,7 +13,7 @@ class OurStory extends Component {
             <Gallery_2/>
             <div className="our-story">
             {ourStory.map((story, index) =>{
-                return <div className={story.cName} key={index} style={{width: '20vw'}}>
+                return <div className="our-story-content" key={index}>
                     <h3>{story.title}</h3>
                     <h5>{story.para}</h5>
                 </div>

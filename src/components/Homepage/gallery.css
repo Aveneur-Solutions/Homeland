@@ -213,11 +213,11 @@
     color: white;
   } */
 }
-@media screen and (min-width: 1904px) {
+@media screen and (min-width: 1903px) {
   .x1 {
     position: absolute;
     z-index: 0;
-    margin: 46.2% -50%;
+    margin: 52% -50%;
     color: white;
   }
 }

@@ -1,0 +1,122 @@
+:root{
+    --primary-color: rgba(249, 194, 39, 255);
+    --secondary-color: #000;
+    --hover-color: #fca311;
+    --background-font-color: #fff;
+    --media-background-color: #f8f9fa;
+}
+
+.online-booking{
+    background-image: url("../Login/Building.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    position: relative;
+}
+
+.online-booking-container{
+    border: none;
+    width: 50%;
+    position: absolute;
+    top: 2%;
+    left: 5%;
+    background: var(--background-font-color);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 2%;
+}
+.online-booking-container h1{
+    text-align: center;
+}
+
+input[type=email], input[type=password], input[type=text] {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--secondary-color);
+    margin-top: 10px;
+    padding: 2px;
+}
+input:focus{
+    outline: none;
+}
+.form-container div{
+    margin-top: 2%;
+}
+
+#btn{
+    height: 20%;
+    margin-top: 15%;
+    margin-left: -44%;
+}
+
+table{
+    width: 100%;
+    margin-top: 2%;
+    margin-bottom: 7%;
+    text-align: left;
+
+}
+
+.thead{
+    background: var(--primary-color);
+    color: var(--background-font-color);
+}
+
+td{
+    border-bottom: 1px solid grey;
+}
+
+.btn{
+    width: 30%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--background-font-color);
+    font-weight: bold;
+    display: block;
+    margin: 5% 0 10% auto;
+    cursor: pointer;
+}
+.btn:hover{
+    background: var(--hover-color);
+    transition-duration: .2s;
+}
+
+.down-payment{
+    margin-bottom: -8%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.down-payment div{
+    background-color: var(--primary-color);
+    border-radius: 3px;
+    width: 5%;
+    padding: 1%;
+    display: flex;
+    justify-content: center;
+    color: red;
+    font-weight: 800;
+}
+.hour{
+    margin-left: .5%;
+    margin-right: .5%;
+}
+
+@media screen and (max-width: 968px){
+    .online-booking{
+        background: none var(--media-background-color);
+    }
+    .online-booking-container{
+        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media screen and (width: 1024px){
+    .online-booking-container{
+        width: 80%;
+    }
+}

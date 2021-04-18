@@ -31,11 +31,19 @@ const Navbar = () => {
   const handleDropdown = () => {
     setDropdown(!dropDown)
   }
- 
+
   const handleLogout = () => {
     logout();
     history.push("/");
   };
+
+  const options = [
+    { key: 1, text: 'My Allotments', value: 1},
+    { key: 2, text: 'My Bookings', value: 2 },
+    { key: 3, text: 'Transfer Allotments', value: 3 },
+    { key: 4, text: 'Profile Settings', value: 4 },
+    { key: 4, text: 'Logout', value: 4 },
+  ]
   return (
     <nav className="NavbarItems">
       <Link to="/" className="forlink">
