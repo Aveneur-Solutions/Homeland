@@ -11,26 +11,36 @@
     color: #6c757d;
 }
 
-
 .main-logo{
     display: block;
     width: 30vw;
     height: 60vh;
-    margin: -100px auto;
+    margin: 0px auto;
+}
+.vdosize{
+    width: 100vw;
+    height: 70vh;
+    position: relative;
+}
+.hundred{
+    overflow: hidden;
 }
 
 @media screen and (max-width: 968px) {
     .our-story{
-        display: grid;
-        grid-template-rows: 2fr 2fr 2fr;
-        text-align: start;
-        margin-bottom: 10%;
-    }
-    .our-story-content{
-        margin-bottom: 20%;
-        text-align: center;
-    }
-    .main-logo{
-        width: 60vw;
-    }
+    display: flex;
+    margin-top: 10vh; 
+    color: #6c757d;
+}
+.vdosize{
+    width: 100vw;
+    height: 26vh;
+    position: relative;
+}
+.main-logo{
+    display: block;
+    width: 60vw;
+    height: 40vh;
+    margin: 0px auto 0px auto;
+}
 }

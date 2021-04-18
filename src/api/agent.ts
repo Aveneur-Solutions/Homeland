@@ -17,7 +17,7 @@ axios.interceptors.request.use(
   }
 );
 
-axios.defaults.baseURL = "http://localhost:5000/api";
+axios.defaults.baseURL = "https://www.homeland.aveneur.com/api";
 
 const responseBody = (response: AxiosResponse) => response.data;
 
