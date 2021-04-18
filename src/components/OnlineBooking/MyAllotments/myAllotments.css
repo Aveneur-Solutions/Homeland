@@ -32,9 +32,6 @@
     grid-template-columns: 1fr 2fr;
 }
 
-.profile{
-    
-}
 .table-content{
     padding: 2%;
 }
@@ -69,4 +66,33 @@
     justify-content: center;
     color: red;
     font-weight: 800;
+}
+
+@media screen and (max-width: 968px) {
+    .my-allotment{
+        background: none var(--media-background-color);
+    }
+    .my-allotment-container{
+        top: 0;
+        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .my-allotment-container h1{
+        margin-bottom: 20%;
+    }
+    
+    .profile img{
+        width: 80px;
+    }
+
+    .allotment-content{
+        display: flex;
+        flex-direction: column;
+    }
+    .profile{
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        margin-bottom: 10%;
+    }
 }

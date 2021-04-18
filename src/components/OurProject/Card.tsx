@@ -22,8 +22,8 @@ const { featuredFlats,listfeatured } = rootStore.flatStore;
       <Grid columns={2} divided>
         {featuredFlats.map((item) => {
           return (
-            <div className="cardsize">
-              <Card fluid key={item.id}>
+            <div className="cardsize " key={item.id}>
+              <Card fluid>
                 <Image
                   className="cardhover"
                   src={process.env.PUBLIC_URL + "/images/dummy/1.jpg"}
@@ -34,7 +34,7 @@ const { featuredFlats,listfeatured } = rootStore.flatStore;
                   <Grid columns={3} divided>
                     <Grid.Row>
                       <Grid.Column>
-                        <Card.Header className="cardtoprow ">
+                        <Card.Header className="cardtoprow  ">
                           Unit ID<h4 className="cardtoplabel">{item.id}</h4>
                         </Card.Header>
                       </Grid.Column>
@@ -75,9 +75,7 @@ const { featuredFlats,listfeatured } = rootStore.flatStore;
                           </span>
                         </Card.Meta>
                       </Grid.Column>
-                      <Grid.Column className="iconselect">
-                       {item.isBooked && <Icon name='check circle outline'/>}
-                      </Grid.Column>
+                    
                     </Grid.Row>
                   </Grid>
                 </Card.Content>

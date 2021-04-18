@@ -13,7 +13,8 @@ const OurProject = () => {
   return (
     <>
       <ProjectGallery />
-      <Grid className="projectbg">
+      <div className="projectbg">
+      <Grid >
         <Grid.Column width={3}>
           <FilterCard />
           <div className="projectbottom buttondiv1">
@@ -27,6 +28,8 @@ const OurProject = () => {
           {searchUnit && <UnitList />}
         </Grid.Column>
       </Grid>
+      </div>
+      
     </>
   );
 };
