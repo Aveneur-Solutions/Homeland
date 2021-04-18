@@ -91,12 +91,32 @@
 .right-content {
   color: #675832;
   position: absolute;
-  right: 15rem;
+  right: 21rem;
   width: 20vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
+}
+.foruser{
+  width: 20vw;
+}
+.dropname{
+  color: #675832;
+  margin-right: -20vw;
+}
+.foruser > .ui.dropdown .menu .dropmenu{
+  left: 62px;
+}
+@media screen and (min-width: 1920px) {
+  .foruser{
+    width: 15vw;
+    color: #675832;
+  }
+  .right-content {
+    right: 24rem;
+    width: 20vw;
+  }
 }
 
 .right-content h6 {
@@ -279,11 +299,6 @@
     stroke-dashoffset: 0;
   }
 }
-
-@media screen and (min-width: 2560px) {
-  
-}
-
 @media screen and (max-width: 960px) {
   .NavbarItems {
     position: relative;

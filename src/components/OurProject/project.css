@@ -2,11 +2,12 @@
     padding: 50px;
 }
 .projectbg{
-
+overflow: hidden;
+width: 100vw;
   background-image: linear-gradient(#ffffff, #e7e6e1);
 }
 .cardcontainer{
-    padding: 50px;
+    padding: 4%;
 }
 
 .cardsize{
