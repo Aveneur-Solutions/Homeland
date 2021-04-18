@@ -18,7 +18,7 @@ const OurProject = () => {
         <Grid.Column width={3}>
           <FilterCard />
           <div className="projectbottom buttondiv1">
-            <button className="nextbutton1" onClick={() => setUnitSearch()}>
+            <button className="nextbutton1" onClick={setUnitSearch}>
               Search
             </button>
           </div>

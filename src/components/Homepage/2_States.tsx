@@ -17,7 +17,8 @@ const States = () => {
   return (
     <div>
       <Sticky>
-      <Menu pointing>
+      <Menu pointing
+      className="ponting">
         <Menu.Item
           name="Overview"
           active={showOverview}
