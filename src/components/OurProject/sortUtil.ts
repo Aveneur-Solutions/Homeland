@@ -13,62 +13,57 @@ interface SizeRange {
   sizeRange4: boolean;
 }
 
-const sortFlats = (flats: IFlat[], priceRange: PriceRange, sizeRange: SizeRange) => {
+const pushToArray = (
+  flats: IFlat[],
+  sortedUnits: IFlat[],
+  sortingFactor: string,
+  minRange: number,
+  maxRange: number
+) => {
+  let temp = flats.filter((flat) => {
+    if (sortingFactor === "price") {
+      return flat.price <= maxRange && flat.price >= minRange;
+    }
+    if (sortingFactor === "size") {
+      return flat.size <= maxRange && flat.size >= minRange;
+    }
+  });
+  temp.forEach((flat) => {
+    let exist = sortedUnits.find((su) => su.id === flat.id);
+    if (!exist) sortedUnits.push(flat);
+  });
+};
+
+const sortFlats = (
+  flats: IFlat[],
+  priceRange: PriceRange,
+  sizeRange: SizeRange
+) => {
   let sortedUnits: IFlat[] = [];
+
+  // sort according to price
   if (priceRange.priceRange1) {
-    let temp = flats.filter(
-      (flat) => flat.price <= 3199999 && flat.price >= 3000000
-    );
-    temp.forEach((flat) => {
-      let exist = sortedUnits.find((su) => su.id === flat.id);
-      if (!exist) sortedUnits.push(flat);
-    });
+    pushToArray(flats, sortedUnits, "price", 3000000, 3199999);
   }
   if (priceRange.priceRange2) {
-    let temp = flats.filter(
-      (flat) => flat.price <= 3399999 && flat.price >= 3200000
-    );
-    temp.forEach((flat) => {
-      let exist = sortedUnits.find((su) => su.id === flat.id);
-      if (!exist) sortedUnits.push(flat);
-    });
+    pushToArray(flats, sortedUnits, "price", 3200000, 3399999);
   }
   if (priceRange.priceRange3) {
-    let temp = flats.filter(
-      (flat) => flat.price <= 3600000 && flat.price >= 3400000
-    );
-    temp.forEach((flat) => {
-      let exist = sortedUnits.find((su) => su.id === flat.id);
-      if (!exist) sortedUnits.push(flat);
-    });
+    pushToArray(flats, sortedUnits, "price", 3400000, 3600000);
   }
+
+  // sort according to price
   if (sizeRange.sizeRange1) {
-    let temp = flats.filter((flat) => flat.size <= 920 && flat.size >= 900);
-    temp.forEach((flat) => {
-      let exist = sortedUnits.find((su) => su.id === flat.id);
-      if (!exist) sortedUnits.push(flat);
-    });
+    pushToArray(flats, sortedUnits, "size", 900, 920);
   }
   if (sizeRange.sizeRange2) {
-    let temp = flats.filter((flat) => flat.size <= 950 && flat.size >= 921);
-    temp.forEach((flat) => {
-      let exist = sortedUnits.find((su) => su.id === flat.id);
-      if (!exist) sortedUnits.push(flat);
-    });
+    pushToArray(flats, sortedUnits, "size", 921, 950);
   }
   if (sizeRange.sizeRange3) {
-    let temp = flats.filter((flat) => flat.size <= 980 && flat.size >= 951);
-    temp.forEach((flat) => {
-      let exist = sortedUnits.find((su) => su.id === flat.id);
-      if (!exist) sortedUnits.push(flat);
-    });
+    pushToArray(flats, sortedUnits, "size", 951, 980);
   }
   if (sizeRange.sizeRange4) {
-    let temp = flats.filter((flat) => flat.size <= 1000 && flat.size >= 981);
-    temp.forEach((flat) => {
-      let exist = sortedUnits.find((su) => su.id === flat.id);
-      if (!exist) sortedUnits.push(flat);
-    });
+    pushToArray(flats, sortedUnits, "size", 981, 1000);
   }
   return sortedUnits;
 };
