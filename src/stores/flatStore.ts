@@ -14,11 +14,11 @@ export default class FlatStore {
   @observable flats: IFlat[] = [];
   @observable featuredFlats: IFlat[] = [];
 
-  @action listfeatured = async() => {
+  @action listflats = async() => {
     try {
-        const flat = await agent.Flat.featuredList();  
+        const flats = await agent.Flat.list();  
         runInAction(() => {
-            this.featuredFlats = flat;
+            this.flats = flats;
         })
     } catch (error) {
         console.log(error);
