@@ -7,67 +7,67 @@ function SvgComponent(props: any) {
       viewBox="0 0 1000 1000"
     >
       <path
-          fill="#FFF"
+          fill="goldenrod"
         id="mgn"
         className="cls-1"
         d="M399.46,385.45V332.15l-44.11,0-.07-104.81H296.68V768.78h58.68l-.07-104.85h44.1v-53.3h-44.1V520.28h29.57l.07-44.5H355.27l0-90.33ZM384.9,371H340.79l0,119.31H384.9v15.53l-44.2,0,.08,119.35H384.9v24.32H340.77l0,104.84H311.18V241.8h29.61V346.65H384.9Z"
       />
       <path
-          fill="#FFF"
+          fill="goldenrod"
         id="mtn"
         className="cls-1"
         d="M563.44,610.63v53.29l44.11,0,.07,104.81h58.61V227.3H607.55l.07,104.85h-44.1v53.3h44.1V475.8H578.05l-.07,44.5h29.66l0,90.33ZM578,625.12h44.11l0-119.31H578V490.27l44.2,0L622.12,371H578V346.64h44.13l0-104.84h29.61V754.28H622.11V649.43H578Z"
       />
       <path
-          fill="#FFF"
+          fill="goldenrod"
         id="stepone"
         className="cls-1"
         d="M384.86,227.3l.07,100.19v19.14l58.61-.06V227.3ZM429,332.16H399.41V241.8H429Z"
       />
       <path
-          fill="#FFF"
+          fill="goldenrod"
         id="steptwo"
         className="cls-1"
         d="M519.4,227.31l.07,100.19v19.14l58.61-.06V227.31Zm44.17,104.85H534V241.81h29.62Z"
       />
       <path
-          fill="#FFF"
+          fill="goldenrod"
         id="stepfour"
         className="cls-1"
         d="M519.4,370.81,519.47,471v19.14l58.61-.06V370.81Zm44.17,104.85H534V385.3h29.62Z"
       />
       <path
-          fill="#FFF"
+          fill="goldenrod"
         id="stepthree"
         className="cls-1"
         d="M384.86,370.81,384.92,471v19.14l58.61-.06V370.81ZM429,475.66H399.41V385.3H429Z"
       />
       <path
-          fill="#FFF"
+          fill="goldenrod"
         id="stepseven"
         className="cls-1"
         d="M384.86,649.43l.07,100.19v19.14l58.61-.06V649.43ZM429,754.28H399.41V663.93H429Z"
       />
       <path
-          fill="#FFF"
+          fill="goldenrod"
         id="stepeight"
         className="cls-1"
         d="M519.4,649.44l.07,100.19v19.14l58.61-.06V649.44Zm44.17,104.85H534V663.94h29.62Z"
       />
       <path
-          fill="#FFF"
+          fill="goldenrod"
         id="stepfive"
         className="cls-1"
         d="M384.86,505.8,384.92,606v19.14l58.61-.06V505.8ZM429,610.65H399.41V520.3H429Z"
       />
       <path
-          fill="#FFF"
+          fill="goldenrod"
         id="stepsix"
         className="cls-1"
         d="M519.4,505.81,519.47,606v19.14l58.61-.06V505.81Zm44.17,104.85H534V520.3h29.62Z"
       />
       <rect
-          fill="#FFF"
+          fill="goldenrod"
         id="lowerstep"
         className="cls-1"
         x="341.66"
@@ -76,7 +76,7 @@ function SvgComponent(props: any) {
         height="14.5"
       />
       <rect
-          fill="#FFF"
+          fill="goldenrod"
         id="upperstep"
         className="cls-1"
         x="341.66"
