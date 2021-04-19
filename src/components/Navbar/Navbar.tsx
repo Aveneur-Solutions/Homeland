@@ -67,23 +67,23 @@ const Navbar = () => {
       <ul className={clicked ? "nav-menu active" : "nav-menu"}>
         {MenuItems.map((item, index) => {
           return (
-            <>
-              <li key={index}>
-                <Link
-                  className={item.cName}
-                  to={
-                    item.url === "/onlineBooking" && !user ? "/login" : item.url
-                  }
-                  onClick={
-                    item.url === "/onlineBooking" && !user
-                      ? bookingLogin
-                      : () => {}
-                  }
-                >
-                  {item.title}
-                </Link>
-              </li>
-            </>
+
+            <li key={index}>
+              <Link
+                className={item.cName}
+                to={
+                  item.url === "/onlineBooking" && !user ? "/login" : item.url
+                }
+                onClick={
+                  item.url === "/onlineBooking" && !user
+                    ? bookingLogin
+                    : item.url === "/ourProject" ? setFeatured
+                    : () => {}
+                }
+              >
+                {item.title}
+              </Link>
+            </li>
           );
         })}
         {isTabletOrMobileDevice && <li>

@@ -1,29 +1,21 @@
-import {useContext, useEffect } from "react";
-// import ProjectStore from "./ProjectStore";
 import { Card, Image, Grid, Icon } from "semantic-ui-react";
 import "./project.css";
-import { RootStoreContext } from "../../stores/rootStore";
 import { observer } from "mobx-react-lite";
+import IFlat from "../../models/unit";
 
-// const CardMaker = () => {
-//   const store = useContext(ProjectStore);
-// };
+interface IProps {
+  featuredFlats: IFlat[]
+}
 
-const Cards = () => {
-  const rootStore = useContext(RootStoreContext);
-const { featuredFlats,listfeatured } = rootStore.flatStore;
-  useEffect( () => {
-    listfeatured()
-  },[listfeatured])
-  
+const Cards: React.FC<IProps> = ({featuredFlats}) => {  
   return (
     <div className="cardcontainer">
       <h2>Featured Units</h2>
       <Grid columns={2} divided>
         {featuredFlats.map((item) => {
           return (
-            <div className="cardsize ">
-              <Card fluid key={item.id}>
+            <div className="cardsize " key={item.id}>
+              <Card fluid>
                 <Image
                   className="cardhover"
                   src={process.env.PUBLIC_URL + "/images/dummy/1.jpg"}
@@ -75,7 +67,6 @@ const { featuredFlats,listfeatured } = rootStore.flatStore;
                           </span>
                         </Card.Meta>
                       </Grid.Column>
-                    
                     </Grid.Row>
                   </Grid>
                 </Card.Content>
