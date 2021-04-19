@@ -7,6 +7,7 @@
   background: rgba(249, 194, 39, 255);
   height: 10vh;
   padding: 0% 0%;
+  margin: 0%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,19 +16,23 @@
   z-index:200;
   position: relative;
 }
+.ui.pointing.menu{
+  margin: 0% 0%;
+  height: 11vh;
+}
 .forlink {
   /* margin: 40% 0%; */
-    top: -25%;
+    transform: -15%;
   padding: 0%;
   width: 8%;
   position: absolute;
 }
 
 .navbar-logo {
-  color: #fff;
+  color: goldenrod;
   justify-self: start;
   cursor: pointer;
-  width: 86%;
+  width: 100%;
 }
 
 .nav-menu {
@@ -49,7 +54,7 @@
 }
 
 .nav-links {
-  color: #675832;
+  color: goldenrod;
   text-decoration: none;
   padding: 0.5rem 1rem;
 }
@@ -60,8 +65,9 @@
 }
 
 .fa-bars {
-  color: #675832;
-  font-size: 2rem;
+  color: goldenrod;
+  transform: 10%;
+  font-size: 3rem;
 }
 
 .nav-links-mobile {
@@ -75,7 +81,7 @@
 .login-content button {
   background-color: transparent;
   border: none;
-  color: #675832;
+  color: goldenrod;
   font-weight: 600;
   font-size: 0.8rem;
   font-family: "Oswald-Regular";
@@ -91,7 +97,7 @@
 }
 
 .right-content {
-  color: #675832;
+  color: goldenrod;
   position: absolute;
   right: 21rem;
   width: 20vw;
@@ -104,7 +110,7 @@
   width: 20vw;
 }
 .dropname{
-  color: #675832;
+  color: white;
   margin-right: -20vw;
 }
 .dropmenu{
@@ -122,7 +128,7 @@
 @media screen and (min-width: 1920px) {
   .foruser{
     width: 15vw;
-    color: #675832;
+    color: goldenrod;
   }
   .right-content {
     right: 24rem;
@@ -316,7 +322,7 @@
     margin: 0% auto;
       top: -25%;
     padding: 0%;
-    width: 6%;
+    width: 5.6%;
     position: absolute;
   }
 }

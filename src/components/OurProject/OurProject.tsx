@@ -81,6 +81,7 @@ const OurProject = () => {
             {searchUnit && <UnitList sortedFlats={sortedFlats} />}
           </Grid.Column>
         </Grid>
+
       </div>
     </>
   );
