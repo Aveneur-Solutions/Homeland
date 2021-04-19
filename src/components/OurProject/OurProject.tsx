@@ -1,15 +1,21 @@
 import ProjectGallery from "./ProjectGallery";
 import { Grid } from "semantic-ui-react";
-import Cards from "./Card";
+import Card from "./Card";
 import FilterCard from "./FilterCard";
 import { observer } from "mobx-react-lite";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { RootStoreContext } from "../../stores/rootStore";
 import UnitList from "./UnitList";
 
 const OurProject = () => {
   const rootStore = useContext(RootStoreContext);
   const { featured, setUnitSearch, searchUnit } = rootStore.navStore;
+  const { featuredFlats, listfeatured } = rootStore.flatStore;
+
+  useEffect(() => {
+    listfeatured();
+  }, [listfeatured]);
+
   return (
     <>
       <ProjectGallery />
@@ -24,7 +30,7 @@ const OurProject = () => {
           </div>
         </Grid.Column>
         <Grid.Column width={13}>
-          {featured && <Cards />}
+          {featured && <Card featuredFlats={featuredFlats} />}
           {searchUnit && <UnitList />}
         </Grid.Column>
       </Grid>

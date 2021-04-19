@@ -17,7 +17,8 @@ axios.interceptors.request.use(
   }
 );
 
-axios.defaults.baseURL = "https://www.homeland.aveneur.com/api";
+// axios.defaults.baseURL = "https://www.homeland.aveneur.com/api";
+axios.defaults.baseURL = "http://localhost:5000/api";
 
 const responseBody = (response: AxiosResponse) => response.data;
 
@@ -43,4 +44,6 @@ const Flat = {
   featuredList: (): Promise<IFlat[]> => request.get("/flat"),
 };
 
-export default { User, Flat };
+const agent = { User, Flat };
+
+export default agent;
