@@ -106,6 +106,7 @@ const Navbar = () => {
               <Dropdown.Menu
                 className="dropmenu"
                 style={{
+                  backgroundColor:"goldenrod",
                   top: "50px",
                   right: "0",
                   left: "70px",

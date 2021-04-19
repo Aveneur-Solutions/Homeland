@@ -130,6 +130,13 @@
     width: 15vw;
     color: goldenrod;
   }
+  .forlink {
+    margin: 0% auto;
+      top: 0%;
+    padding: 0%;
+    width: 5.6%;
+    position: absolute;
+  }
   .right-content {
     right: 24rem;
     width: 20vw;
@@ -318,13 +325,7 @@
 }
 
 @media screen and (min-width:1920px){
-  .forlink {
-    margin: 0% auto;
-      top: -25%;
-    padding: 0%;
-    width: 5.6%;
-    position: absolute;
-  }
+  
 }
 @media screen and (max-width: 960px) {
   .NavbarItems {
@@ -396,7 +397,10 @@
 
   .fa-times {
     color: #fff;
-    font-size: 2rem;
+    font-size: 4rem;
+    /* transform: 20%; */
+    margin: -20% 0%;
+    /* transition: ease-in 2s; */
   }
 
   button {
