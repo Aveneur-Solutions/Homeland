@@ -58,17 +58,16 @@ const Navbar = () => {
 
   return (
     <Menu pointing className="NavbarItems">
-      <Link to="/" className="forlink">
+      <Link to={"/"} className= "forlink">
         <SvgComponent />
       </Link>
       <div className="menu-icon" onClick={handleClick}>
         <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
       </div>
-      <ul className={clicked ? "nav-menu active" : "nav-menu"}>
+      <ul className={clicked ? "nav-menu active" : "nav-menu"} >
         {MenuItems.map((item, index) => {
           return (
-
-            <li key={index}>
+            <li key={index} onClick={handleClick}>
               <Link
                 className={item.cName}
                 to={
@@ -86,8 +85,8 @@ const Navbar = () => {
             </li>
           );
         })}
-        {isTabletOrMobileDevice && <li>
-          {user ? <Link to="">{user?.fullname}</Link> : <Link to="/login"></Link>}
+        {isTabletOrMobileDevice && <li onClick={handleClick}>
+          {user ? <Link to="">{user?.fullname}</Link> : <Link to="/login" >LOGIN</Link>}
         </li>}
         
       </ul>
@@ -106,6 +105,7 @@ const Navbar = () => {
               <Dropdown.Menu
                 className="dropmenu"
                 style={{
+                  backgroundColor:"goldenrod",
                   top: "50px",
                   right: "0",
                   left: "70px",
