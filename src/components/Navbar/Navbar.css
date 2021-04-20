@@ -324,9 +324,7 @@
   }
 }
 
-@media screen and (min-width:1920px){
-  
-}
+
 @media screen and (max-width: 960px) {
   .NavbarItems {
     position: relative;
@@ -362,7 +360,7 @@
     left: 0;
     opacity: 1;
     transition: all 0.5s ease;
-    /* margin-top: -17px; */
+    margin-top: 10px;
     z-index: 6;
   }
 

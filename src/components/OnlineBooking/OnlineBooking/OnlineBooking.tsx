@@ -14,70 +14,9 @@ const OnlineBooking = () => {
     <div className="online-booking">
       <div className="online-booking-container">
         <h1>Online Booking</h1>
-        <div className="form-container">
+        <div className="form-container1">
           <form action="">
-            <div id="first-name">
-              <label htmlFor="first-name">
-                <b>First Name :</b>
-              </label>
-              <input type="text" name="first-name" required></input>
-            </div>
-            <div id="second-name">
-              <label htmlFor="second-name">
-                <b>Second Name :</b>
-              </label>
-              <input type="text" name="second-name" required></input>
-            </div>
-            <div id="address">
-              <label htmlFor="address">
-                <b>Address :</b>
-              </label>
-              <input type="text" name="address" required></input>
-            </div>
-            <div id="uname">
-              <label htmlFor="uname">
-                <b>Email :</b>
-              </label>
-              <input type="email" name="uname" required></input>
-            </div>
-            <div id="nid">
-              <label htmlFor="nid">
-                <b>NID :</b>
-              </label>
-              <input type="text" name="nid" required></input>
-            </div>
-            <div id="phone">
-              <label htmlFor="phone">
-                <b>Phone :</b>
-              </label>
-              <input type="email" name="phone" required></input>
-            </div>
-            <div id="dob">
-              <label htmlFor="dob">
-                <b>Birth Date :</b>
-              </label>
-              <input type="text" name="dob" required></input>
-            </div>
-            <div id="psw">
-              <label htmlFor="psw">
-                <b>Password :</b>
-              </label>
-              <input type="password" name="psw" required></input>
-            </div>
-            <div id="con-psw">
-              <label htmlFor="con-psw">
-                <b>Confirm Password :</b>
-              </label>
-              <input type="password" name="con-psw" required></input>
-            </div>
-            <div className="upload">
-              <p>Upload Photo :</p>
-              <input type="file" id="img" name="img" accept="image/*"></input>
-              <p>
-                <i>size maximum 300kb</i>
-              </p>
-            </div>
-            <table>
+            <table className="tableBook">
               <thead>
                 <tr className="thead">
                   <th>Unit ID</th>
