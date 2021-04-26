@@ -9,6 +9,7 @@ import Login from './components/OnlineBooking/Login/Login';
 import OurProject from './components/OurProject/OurProject';
 import UnitList from './components/OurProject/UnitList';
 import MainInfo from './components/OurProject/MainInfo';
+import Profile from './components/ProfileSettings/Profile';
 import TransferForm from './components/OnlineBooking/TranferForm/TransferForm'
 import MyAllotments from './components/OnlineBooking/MyAllotments/MyAllotments'
 
@@ -28,6 +29,7 @@ function App() {
         <Route exact path="/maininfo" component={MainInfo}/>
         <Route exact path="/transfer-form" component={TransferForm}/>
         <Route exact path="/my-allotments" component={MyAllotments}/>
+        <Route exact path="/my-profile" component={Profile}/>
       </Switch>
     </div>
   );

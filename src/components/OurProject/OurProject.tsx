@@ -8,12 +8,14 @@ import { RootStoreContext } from "../../stores/rootStore";
 import UnitList from "./UnitList";
 import IFlat from "../../models/unit";
 import sortFlats from "./sortUtil";
-
+import { useMediaQuery } from "react-responsive";
 const OurProject = () => {
   const rootStore = useContext(RootStoreContext);
   const { featured, setUnitSearch, searchUnit } = rootStore.navStore;
   const { flats, listflats } = rootStore.flatStore;
-
+  const isTabletOrMobileDevice = useMediaQuery({
+    query: "(max-device-width: 1224px)",
+  });
   const [sortedFlats, setSortedFlats] = useState<IFlat[]>([]);
 
   const [priceRange, setPriceRange] = useState({
@@ -52,7 +54,7 @@ const OurProject = () => {
     e.preventDefault();
 
     // sorting the list of flats by a custom function
-    let sortedUnits = sortFlats(flats, priceRange, sizeRange)
+    let sortedUnits = sortFlats(flats, priceRange, sizeRange);
 
     setSortedFlats(sortedUnits);
     setUnitSearch();
@@ -66,8 +68,24 @@ const OurProject = () => {
     <>
       <ProjectGallery />
       <div className="projectbg">
-        <Grid>
-          <Grid.Column width={3}>
+        {!isTabletOrMobileDevice ? (
+          <Grid>
+            <Grid.Column width={3}>
+              <FilterCard
+                onFormSubmit={onFormSubmit}
+                onPriceChange={onPriceChange}
+                onSizeChange={onSizeChange}
+                priceRange={priceRange}
+                sizeRange={sizeRange}
+              />
+            </Grid.Column>
+            <Grid.Column width={13}>
+              {featured && <Card featuredFlats={flats} />}
+              {searchUnit && <UnitList sortedFlats={sortedFlats} />}
+            </Grid.Column>
+          </Grid>
+        ) : (
+          <div>
             <FilterCard
               onFormSubmit={onFormSubmit}
               onPriceChange={onPriceChange}
@@ -75,13 +93,11 @@ const OurProject = () => {
               priceRange={priceRange}
               sizeRange={sizeRange}
             />
-          </Grid.Column>
-          <Grid.Column width={13}>
             {featured && <Card featuredFlats={flats} />}
             {searchUnit && <UnitList sortedFlats={sortedFlats} />}
-          </Grid.Column>
-        </Grid>
-
+           
+             </div>
+        )}
       </div>
     </>
   );
