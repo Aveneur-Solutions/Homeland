@@ -47,6 +47,11 @@ const Navbar = () => {
     history.push("/my-allotments");
   };
 
+  const handleProfile = () => {
+    setAllotment(!allotment);
+    history.push("/my-profile");
+  };
+
   const handleTransfer = () => {
     setTransfer(!transfer);
     history.push("./transfer-form");
@@ -108,7 +113,7 @@ const Navbar = () => {
                   backgroundColor:"goldenrod",
                   top: "50px",
                   right: "0",
-                  left: "70px",
+                  left: "20px",
                   width: "20px",
                 }}
               >
@@ -121,7 +126,8 @@ const Navbar = () => {
                   text="Transfer Allotments"
                   onClick={handleTransfer}
                 />
-                <Dropdown.Item text="Profile Settings" />
+                <Dropdown.Item text="Profile Settings" 
+                onClick={handleProfile}/>
                 <Dropdown.Item text="Logout" onClick={handleLogout} />
               </Dropdown.Menu>
             </Dropdown>

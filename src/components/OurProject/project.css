@@ -1,15 +1,38 @@
 .filtercontainer{
-    padding: 40px;
+    padding: 0% 0% 0% 20%;
+}
+.filterpad{
+    padding: 9% 0% 9% 0%;
 }
 .projectbg{
 overflow: hidden;
 width: 100vw;
+height: 150%;
   background-image: linear-gradient(#ffffff, #e7e6e1);
 }
 .cardcontainer{
     padding: 4%;
 }
-
+.ui.vertical.menu{
+    width: 100%;
+}
+.pR{
+    margin-right: 10px;
+}
+.hsize p{
+    font-size: 10px;
+    /* margin:0% 2% ; */
+}
+.tbl{
+    padding: 2%;
+}
+.tblpc{
+    margin-top: 2%;
+    margin-right: 2%;
+}
+.tbmh{
+    background-color:#1e212d;
+}
 .cardsize{
     width: 30vw;
     margin-top: 50px;
@@ -42,70 +65,73 @@ width: 100vw;
 .cardbottomrow{
     font-size: .7rem;
 }
-.buttondiv{
-    /* height: 25vh; */
-    width: 10vw;
-    display: block;
-    justify-content: center;
-    align-items: center;
-}
 .nextbutton{
-    position: relative;
     background: cover;
     height: 5vh;
     width: 10vw;
     border-radius: 5px;border: none;
     box-shadow: 0px 1px 1px black ;
-    transition: ease-in .2s;
-    background-color: goldenrod;
     color: white;
+    /* margin-top: 10vh; */
     font-weight: 900;
 }
-.nextbutton:focus{
-    outline: none;
+.nextbuttonmobile{
+    background: cover;
+    height: 5vh;
+    width: 20vw;
+    border-radius: 5px;border: none;
+    box-shadow: 0px 1px 1px black ;
+    color: white;
+    font-weight: 900;
 }
 .nextbutton:hover{
     cursor: pointer;
-    background-color: white;
+    background-color: goldenrod;
     transition: ease-in .2s;
-    color: black;
-    
+    color: white;  
 }
 .projectbottom{
-    display: flex;
-    margin: 0;
-    padding: 0;
-    height: 20vh;
-    width: 100vw;
+    margin: 5% auto 10% auto;
+    width: 10vw;
+}
+.projectbottom1{
+    margin: 10% 0% 10% 0%;
+    width: 10vw;
 }
 
-.nextbutton1{
-    position: relative;
-    background: cover;
-    height: 5vh;
-    /* float: left; */
-    margin-left: 50%;
-    width: 10vw;
-    border-radius: 5px;border: none;
-    box-shadow: 0px 1px 1px black ;
-    transition: ease-in .2s;
-    background-color: goldenrod;
-    color: white;
-    font-weight: 900;
+.projectbottommobile{
+    margin: 0% auto 10% auto;
+    width: 20vw;
 }
-.nextbutton1:focus{
-    outline: none;
+.searchmobile{
+    margin: 5% auto 10% 0%;
+    width: 20vw;
 }
-.nextbutton1:hover{
-    cursor: pointer;
-    background-color: white;
-    transition: ease-in .2s;
-    color: black;
+.cardsizeformob{
+    width: 100%;
+    margin-bottom: 5%;
 }
-.buttondiv1{
-    /* height: 25vh; */
-    width: 10vw;
-    display: block;
-    /* justify-content: center;
-    align-items: center; */
+.cardsizeformob1{
+    width: 80%;
+    margin-bottom: 5%;;
+}
+.mobilecentercard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ui.button{
+    padding: 0%;
+}
+ td {
+  border: 1px solid black;
+}
+.price{
+    font-size: 2rem;
+}
+.size{
+    font-size: 2rem;
+}
+.searchhead{
+    font-size: 2.5rem;
 }

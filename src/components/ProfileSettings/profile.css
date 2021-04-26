@@ -1,0 +1,52 @@
+.profile-headcontainer{
+    width: 100vw;
+    height: 10vh;
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+.profile-header{
+    margin: 2% auto; 
+}
+.profile-imageheadcontainer{
+/* background-color: orange; */
+display: flex;
+justify-content: center;
+}
+
+.profile-imagecontainer, .oldp-container, .oldp-containerm{
+    display: flex;
+    justify-content: center;
+    /* background-color: orangered; */
+}
+.profile-margin{
+    margin:1%;
+}
+.profile-image{
+    margin: 1% 0%;
+}
+
+.oldp{
+    display: grid;
+    margin: 1% 0%;
+    width: 25%;
+    height: 30%;
+}
+.oldpm{
+    display: grid;
+    margin: 1% 0%;
+    width: 50%;
+    height: 30%;
+}
+.oldp-container Button{
+    width: 12%;
+}
+
+.oldp-containerm Button{
+    width: 30%;
+}
+
+.profile-bottom-div{
+    height: 10vh;
+}
