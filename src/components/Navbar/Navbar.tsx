@@ -31,6 +31,7 @@ const Navbar = () => {
 
   const [clicked, setClicked] = useState(false);
   const [allotment, setAllotment] = useState(false);
+  const [bookings, setBookings] = useState(false);
   const [transfer, setTransfer] = useState(false);
   useEffect(() => {
     if (token && !user) {
@@ -50,6 +51,11 @@ const Navbar = () => {
   const handleProfile = () => {
     setAllotment(!allotment);
     history.push("/my-profile");
+  };
+
+  const handleBookings = () => {
+    setBookings(!bookings);
+    history.push("/my-bookings");
   };
 
   const handleTransfer = () => {
@@ -121,7 +127,10 @@ const Navbar = () => {
                   text="My Allotments "
                   onClick={handleAllotment}
                 />
-                <Dropdown.Item text="My Bookings" />
+                <Dropdown.Item
+                  text="My Bookings" 
+                  onClick={handleBookings}
+                />
                 <Dropdown.Item
                   text="Transfer Allotments"
                   onClick={handleTransfer}
