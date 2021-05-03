@@ -12,4 +12,13 @@ export default interface IFlat {
   downPaymentDays: number;
   netArea: number;
   commonArea: number;
+  images: IImage[];
+}
+
+export interface IImage{
+  imageLocation: string;
+}
+
+export interface IGalleryImage{
+  imageLocation: string;
 }

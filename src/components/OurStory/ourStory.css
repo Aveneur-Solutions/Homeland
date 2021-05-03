@@ -1,13 +1,16 @@
 .main-story{
     background-color: #e9ecef;
+    width: 100vw;
+    display: inline-flex;
+    overflow: hidden;
 }
 
 .our-story{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    width: 50vw;
+    justify-content: left;
     text-align: center;
-    padding: 8%;
+    /* padding: 10%; */
     color: #6c757d;
 }
 .main-logo{
@@ -16,13 +19,27 @@
     height: 60vh;
     margin: 0px auto;
 }
-.vdosize{
+.logoContainer{
     width: 100vw;
+    height: 100%;
+    background-color: #1e222d;
+}
+.vdosize{
+    width: 70vw;
+    /* margin-left: -500px; */
     height: 70vh;
     position: relative;
 }
 .hundred{
     overflow: hidden;
+}
+
+.our-story-content{
+    padding: 8% 25%;
+}
+.our-story-content h2{
+    margin: 2% 0% -7% 7%;
+    font-size: 2rem;
 }
 
 @media screen and (max-width: 968px) {

@@ -6,23 +6,15 @@ import "./gallery.css";
 
 export default class Gallery extends Component {
   render() {
-    const settings = {
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      // autoplay: true,
-      autoplaySpeed: 3900,
-      arrows: true,
-    };
+    
     return (
       <div className="slider">
-        <Slider {...settings} className="slideroverflowcontrol">
+        <div className="slideroverflowcontrol">
           <div className="gallery_img ">
             <div className="centerbangla">
               <div className="shelf">
                 <div className="door left">
-                  <div className="door1 left"></div>
+                  <div className="door1 "></div>
                 </div>
                 <div className="door right"></div>
                 <div className="elements">
@@ -72,7 +64,7 @@ export default class Gallery extends Component {
               alt=""
             />
           </div>
-        </Slider>
+        </div>
       </div>
     );
   }

@@ -88,13 +88,13 @@ function SvgComponent(props: any) {
       <g>
         <path
           className="path"
-          strokeWidth="4" stroke="white" 
+          strokeWidth="4" stroke="goldenrod" 
           fill="#FFF"
           d="M296.7,787.3h2.2v20.4h29.1v-20.4h2.1v45.9h-2.1v-23.6h-29.1v23.6h-2.2V787.3z"
         />
         <path
           className="path"
-          strokeWidth="4" stroke="white" 
+          strokeWidth="4" stroke="goldenrod" 
           fill="#FFF"
           d="M349.7,793.5c3.6-4.8,8.8-7.2,15.5-7.2c6.8,0,12,2.4,15.6,7.1c3.2,4.3,4.8,10,4.8,16.9c0,7-1.6,12.7-4.8,16.9
 		c-3.6,4.7-8.8,7-15.6,7c-6.8,0-12-2.3-15.5-7c-3.2-4.2-4.8-9.8-4.8-16.9C344.9,803.4,346.6,797.7,349.7,793.5z M351.3,825.7
@@ -103,35 +103,35 @@ function SvgComponent(props: any) {
         />
         <path
           className="path"
-          strokeWidth="4" stroke="white" 
+          strokeWidth="4" stroke="goldenrod" 
           fill="#FFF"
           d="M400.6,787.3h3.1l16.7,32.3l16.1-32.3h3v45.9h-1.9V790l-16.6,32.2h-1.3L402.5,790v43.2h-1.9V787.3z"
         />
         <path
           className="path"
-          strokeWidth="4" stroke="white" 
+          strokeWidth="4" stroke="goldenrod" 
           fill="#FFF"
           d="M456.3,787.3h28v2h-25.9v19H479v2h-20.5v20.9H485v2.1h-28.7V787.3z"
         />
         <path className="path"
-          strokeWidth="4" stroke="white" 
+          strokeWidth="4" stroke="goldenrod" 
           fill="#FFF" d="M499,787.3h2.2v43.9h24.3v2.1H499V787.3z" />
         <path
           className="path"
-          strokeWidth="4" stroke="white" 
+          strokeWidth="4" stroke="goldenrod" 
           fill="#FFF"
           d="M549.9,787.3h2.4l17.4,45.9h-2.1l-5.9-15.6h-21.4l-6,15.6h-2.1L549.9,787.3z M561,815.7l-9.8-25.9l-10,25.9
 		H561z"
         />
         <path
           className="path"
-          strokeWidth="4" stroke="white" 
+          strokeWidth="4" stroke="goldenrod" 
           fill="#FFF"
           d="M580.8,787.3h2.2l28.8,42.3v-42.3h2.1v45.9h-2.1L582.9,791v42.2h-2.1V787.3z"
         />
         <path
           className="path"
-          strokeWidth="4" stroke="white" 
+          strokeWidth="4" stroke="goldenrod" 
           fill="#FFF"
           d="M630.8,787.3h10.5c6.8,0,11.7,0.7,14.7,2.2c6.8,3.4,10.2,10.3,10.2,20.7c0,10.6-3.4,17.5-10.2,20.7
 		c-3.2,1.5-8.1,2.2-14.7,2.2h-10.5V787.3z M641.8,831.3c6.2,0,10.7-0.8,13.7-2.3c5.7-3,8.5-9.2,8.5-18.7c0-7.7-2-13.4-6.1-17
