@@ -310,17 +310,19 @@
 }
 
 .path {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: dash 5s linear alternate infinite;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 100;
+  color: black;
+  background-color: black;
+  animation: dash 10s  infinite;
 }
 
 @keyframes dash {
   0% {
-    stroke-dashoffset: 822;
+    stroke-dashoffset: 0;
   }
   100% {
-    stroke-dashoffset: 0;
+    stroke-dashoffset: 100%;
   }
 }
 

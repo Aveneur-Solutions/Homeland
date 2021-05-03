@@ -6,12 +6,12 @@ export const ourStory = [
     },
     {
         title: 'we will',
-        para: 'Operate business profitably Bring happiness among all who comes to be associated with our work. Deliver homes to new market segments.',
+        para: 'Operate business profitably. Bring happiness among all who comes to be associated with our work. Deliver homes to new market segments.',
         cName: 'we-will'
     },
     {
         title: 'we must',
-        para: 'have faith strive to do the best be sincere',
+        para: 'Have faith. Strive to do the best. Be sincere',
         cName: 'we-must'
     }
 ]
