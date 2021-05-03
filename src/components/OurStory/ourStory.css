@@ -1,8 +1,14 @@
 .main-story{
     background-color: #e9ecef;
     width: 100vw;
+    height: 100%;
     display: inline-flex;
     overflow: hidden;
+}
+.vdosize-mob{
+    width: 100vw;
+    height: 26vh;
+    position: relative;
 }
 
 .our-story{
@@ -12,6 +18,12 @@
     text-align: center;
     /* padding: 10%; */
     color: #6c757d;
+}
+.our-story-mob{
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .main-logo{
     display: block;
@@ -41,18 +53,24 @@
     margin: 2% 0% -7% 7%;
     font-size: 2rem;
 }
+.our-story-content h4{
+text-align: center;
+}
+.text-wrapper1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 20vh; */
+}
+.text-wrapper1 h2, h4{
+    text-align: center;
+}
+.storySlider{
+    margin-top: 20vh;
+}
 
 @media screen and (max-width: 968px) {
-    .our-story{
-    display: flex;
-    margin-top: 10vh; 
-    color: #6c757d;
-}
-.vdosize{
-    width: 100vw;
-    height: 26vh;
-    position: relative;
-}
+
 .main-logo{
     display: block;
     width: 60vw;
