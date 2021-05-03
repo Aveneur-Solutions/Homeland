@@ -1,0 +1,119 @@
+:root{
+    --primary-color: rgba(249, 194, 39, 255);
+    --secondary-color: #000;
+    --hover-color: #fca311;
+    --background-font-color: #fff;
+    --media-background-color: #f8f9fa;
+}
+
+.my-allotment{
+    background-image: url("./MyBookings.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    position: relative;
+}
+
+.my-allotment-container{
+    border: none;
+    width: 60%;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--background-font-color);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 1%;
+}
+.profile{
+    margin-left: 2vw;
+}
+.allotment-content{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+.table-content{
+    padding: 2%;
+}
+.table-1 > table {
+    border-collapse: collapse;
+}
+.table-1 > table td{
+    border: none;
+    padding: 2vh;
+    text-align: center;
+}
+.table-1 > table th{
+    padding: 0.3vh;
+    text-align: center;
+}
+
+.profile-homeland-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    width: 70%;
+}
+
+.headingText{
+    color: #EDD069;
+}
+
+.payment-history{
+    margin-top: 4vh;
+}
+
+.payment-history div{
+    display: flex;
+    padding-bottom: 2vh;
+}
+.payment-history label{
+    color: #9D9D9D;
+}
+.payment-history p{
+    color: #000;
+}
+
+@media screen and (max-width: 968px) {
+    .my-allotment{
+        background: none var(--media-background-color);
+    }
+    .my-allotment-container{
+        top: 0;
+        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .my-allotment-container h1{
+        margin-bottom: 20%;
+    }
+    
+    .profile img{
+        width: 80px;
+    }
+    .profile-homeland-logo{
+        height: 100%;
+        width: 70%;
+    }
+
+    .allotment-content{
+        display: flex;
+        flex-direction: column;
+    }
+    .profile{
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        margin-bottom: 10%;
+    }
+}
+
+@media screen and (max-width: 667px){
+    .table-content{
+        padding-left: 0%;
+    }
+    .table-1 > table td, table th{
+        padding: 1vh;
+    }
+}
