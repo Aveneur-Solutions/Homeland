@@ -127,7 +127,7 @@ const Navbar = () => {
               </Dropdown.Menu>
             </Dropdown>
             ) : (
-              <Link to="/login">LOGIN</Link>
+              <Link to="/login" onClick={handleClick}>LOGIN</Link>
             )}
           </li>
         )}
@@ -173,7 +173,7 @@ const Navbar = () => {
               </Dropdown>
             </div>
           ) : (
-            <Link to="/login">
+            <Link to="/login" >
               <button onClick={normalLogin}>LOG IN</button>
             </Link>
           )}

@@ -68,7 +68,11 @@ text-align: center;
 .storySlider{
     margin-top: 20vh;
 }
-
+.bgblack{
+    background-color: black;
+    float: right;
+    width: 100vw;
+}
 @media screen and (max-width: 968px) {
 
 .main-logo{
