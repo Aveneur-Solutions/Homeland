@@ -40,7 +40,9 @@ height: 150%;
     position: relative;
     transition: ease-in-out .35s;
 }
-
+.mob-gallery{
+    height: 10vh;
+}
 .cardsize:hover{
     margin-top: 30px;
     transition: ease-in-out .35s;
