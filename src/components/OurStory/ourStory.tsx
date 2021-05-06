@@ -41,7 +41,7 @@ const OurStory = () => {
                     key={index}
                     data-aos="fade-up"
                   >
-                    <h2>{story.title}</h2>
+                    <h2 style={{color:"goldenrod"}}>{story.title}</h2>
                     <h4 style={{ width: "20vw" }}>{story.para}</h4>
                   </div>
                 );

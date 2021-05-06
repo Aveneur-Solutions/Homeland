@@ -19,10 +19,10 @@ export default class Storytexts extends Component {
           <div className="our-story-mob">
             <div className="our-story-content-mob">
               <div className="text-wrapper1">
-                <h2 className="">We believe</h2>
+                <h2 style={{color:"goldenrod"}}>We believe</h2>
               </div>
               <div className="text-wrapper1">
-                <h4 className="">Togetherness is happiness</h4>
+                <h4 style={{color:"#1e222d"}}>Togetherness is happiness</h4>
               </div>
             </div>
           </div>
@@ -30,10 +30,10 @@ export default class Storytexts extends Component {
           <div className="our-story-mob">
             <div className="our-story-content-mob">
               <div className="text-wrapper1">
-                <h2 className="">We Will</h2>
+                <h2 style={{color:"goldenrod"}}>We Will</h2>
               </div>
               <div className="text-wrapper1">
-                <h4 className="">
+                <h4 style={{color:"#1e222d"}}>
                   Operate business profitably. Bring happiness among all who
                   comes to be associated with our work. Deliver homes to new
                   market segments.
@@ -41,14 +41,14 @@ export default class Storytexts extends Component {
               </div>
             </div>
           </div>
-
+          
           <div className="our-story-mob">
             <div className="our-story-content-mob">
               <div className="text-wrapper1">
-                <h2 className="">We Must</h2>
+                <h2 style={{color:"goldenrod"}}>We Must</h2>
               </div>
               <div className="text-wrapper1">
-                <h4 className="">
+                <h4 style={{color:"#1e222d"}}>
                 Have faith. Strive to do the best. Be sincere
                 </h4>
               </div>
