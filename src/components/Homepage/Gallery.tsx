@@ -3,9 +3,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./gallerystate.css";
+import { observer } from "mobx-react-lite";
 
-export default class GalleryState extends Component {
-  render() {
+const GalleryState = () => {
     const settings = {
       className: "center",
       centerMode: true,
@@ -148,5 +148,6 @@ export default class GalleryState extends Component {
         </Slider>
       </div>
     );
-  }
-}
+};
+
+export default observer(GalleryState);
