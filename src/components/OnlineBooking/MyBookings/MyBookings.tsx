@@ -5,10 +5,10 @@ import { observer } from "mobx-react-lite";
 
 const MyBookings = () => {
   return (
-    <div className="my-allotment">
-      <div className="my-allotment-container">
+    <div className="my-booking">
+      <div className="my-booking-container">
         <h1 style={{ textAlign: "center" }}>My Bookings</h1>
-        <div className="allotment-content">
+        <div className="booking-content">
           <div className="profile">
             <div className="profile-img">
               <img
@@ -26,11 +26,13 @@ const MyBookings = () => {
             </div>
             <div className="profile-homeland-logo">
               <img
-                width="150px"
-                style={{ backgroundColor: "black" }}
-                src={process.env.PUBLIC_URL + "/images/logo.png"}
+                width="100px"
+                style={{marginBottom:"12px"}}
+                src={process.env.PUBLIC_URL + "/images/logo_yellow.png"}
                 alt=""
               />
+              <p>HOMELAND</p>
+              <p>TOGETHERNESSS IS HAPPINESS</p>
             </div>
           </div>
           <div className="table-content">
