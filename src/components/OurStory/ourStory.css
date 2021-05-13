@@ -1,5 +1,5 @@
 .main-story{
-    background-color: #e9ecef;
+    background-image: linear-gradient(#e9ecef, #fff);
     width: 100vw;
     height: 100%;
     display: inline-flex;
@@ -28,13 +28,14 @@
 .main-logo{
     display: block;
     width: 30vw;
-    height: 60vh;
+    height: 100%;
     margin: 0px auto;
+    /* background-color: #e9ecef; */
 }
 .logoContainer{
     width: 100vw;
     height: 100%;
-    background-color: #1e222d;
+    /* background-color: #e9ecef; */
 }
 .vdosize{
     width: 70vw;
@@ -71,6 +72,32 @@ text-align: center;
 .bgblack{
     background-color: black;
     width: 100vw;
+}
+.mandv{
+    margin: 30px 0px 0px 0px;
+}
+.Mission{
+    height: 20vh;
+    width: 50vw;
+    margin: 0 auto 0 auto;
+    padding: 0px 0 0px 100px;
+}
+.Mission h1{
+    padding: 50px 0 0 0;
+}
+
+.Vision{
+    height: 20vh;
+    width: 50vw;
+    margin: 0 auto 0 auto;
+    padding: 0 0 0px 100px;
+}
+.Vision h1{
+    padding: 100px 0 0 0;
+}
+.bgofmain{
+    
+    /* background-color: #e9ecef; */
 }
 @media screen and (max-width: 968px) {
 

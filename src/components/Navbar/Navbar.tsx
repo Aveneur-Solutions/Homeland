@@ -80,7 +80,7 @@ const Navbar = () => {
               <Link
                 className={item.cName}
                 to={
-                  item.url === "/onlineBooking" && !user ? "/login" : item.url
+                  item.url === "/onlineBooking" && !user ? "/onlineBooking" : item.url
                 }
                 onClick={
                   item.url === "/onlineBooking" && !user

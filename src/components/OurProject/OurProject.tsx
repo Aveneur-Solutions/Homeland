@@ -9,7 +9,10 @@ import UnitList from "./UnitList";
 import IFlat from "../../models/unit";
 import sortFlats from "./sortUtil";
 import { useMediaQuery } from "react-responsive";
+import { LocomotiveScrollProvider } from "react-locomotive-scroll";
+import { useRef } from "react";
 const OurProject = () => {
+  const containerRef = useRef(null);
   const rootStore = useContext(RootStoreContext);
   const { featured, setUnitSearch, searchUnit } = rootStore.navStore;
   const { flats, listflats } = rootStore.flatStore;
@@ -65,41 +68,64 @@ const OurProject = () => {
   }, [listflats]);
 
   return (
-    <>
-      <ProjectGallery />
-      <div className="projectbg">
-        {!isTabletOrMobileDevice ? (
-          <Grid>
-            <Grid.Column width={3}>
-              <FilterCard
-                onFormSubmit={onFormSubmit}
-                onPriceChange={onPriceChange}
-                onSizeChange={onSizeChange}
-                priceRange={priceRange}
-                sizeRange={sizeRange}
-              />
-            </Grid.Column>
-            <Grid.Column width={13}>
-              {featured && <Card featuredFlats={flats} />}
-              {searchUnit && <UnitList sortedFlats={sortedFlats} />}
-            </Grid.Column>
-          </Grid>
-        ) : (
-          <div>
-            <FilterCard
-              onFormSubmit={onFormSubmit}
-              onPriceChange={onPriceChange}
-              onSizeChange={onSizeChange}
-              priceRange={priceRange}
-              sizeRange={sizeRange}
-            />
-            {featured && <Card featuredFlats={flats} />}
-            {searchUnit && <UnitList sortedFlats={sortedFlats} />}
-           
-             </div>
-        )}
-      </div>
-    </>
+    <div className="projectmainbg">
+      <LocomotiveScrollProvider
+        options={{
+          smooth: true,
+          getDirection: true,
+          // ... all available Locomotive Scroll instance options
+        }}
+        watch={
+          [
+            //...all the dependencies you want to watch to update the scroll
+          ]
+        }
+        containerRef={containerRef}
+      >
+        <main
+          data-scroll-container
+          data-scroll
+          data-scroll-speed="3"
+          data-scroll-position="top"
+          data-scroll-delay="0.05"
+          ref={containerRef}
+          
+        >
+          <ProjectGallery />
+          <div className="projectbg">
+            {!isTabletOrMobileDevice ? (
+              <Grid>
+                <Grid.Column width={3}>
+                  <FilterCard
+                    onFormSubmit={onFormSubmit}
+                    onPriceChange={onPriceChange}
+                    onSizeChange={onSizeChange}
+                    priceRange={priceRange}
+                    sizeRange={sizeRange}
+                  />
+                </Grid.Column>
+                <Grid.Column width={13}>
+                  {featured && <Card featuredFlats={flats} />}
+                  {searchUnit && <UnitList sortedFlats={sortedFlats} />}
+                </Grid.Column>
+              </Grid>
+            ) : (
+              <div>
+                <FilterCard
+                  onFormSubmit={onFormSubmit}
+                  onPriceChange={onPriceChange}
+                  onSizeChange={onSizeChange}
+                  priceRange={priceRange}
+                  sizeRange={sizeRange}
+                />
+                {featured && <Card featuredFlats={flats} />}
+                {searchUnit && <UnitList sortedFlats={sortedFlats} />}
+              </div>
+            )}
+          </div>
+        </main>
+      </LocomotiveScrollProvider>
+    </div>
   );
 };
 
