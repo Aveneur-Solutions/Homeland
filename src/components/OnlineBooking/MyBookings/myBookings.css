@@ -6,7 +6,7 @@
     --media-background-color: #f8f9fa;
 }
 
-.my-allotment{
+.my-booking{
     background-image: url("./MyBookings.jpg");
     background-size: cover;
     background-position: center;
@@ -15,7 +15,7 @@
     position: relative;
 }
 
-.my-allotment-container{
+.my-booking-container{
     border: none;
     width: 60%;
     position: absolute;
@@ -29,7 +29,7 @@
 .profile{
     margin-left: 2vw;
 }
-.allotment-content{
+.booking-content{
     display: grid;
     grid-template-columns: 1fr 2fr;
 }
@@ -51,10 +51,13 @@
 
 .profile-homeland-logo{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 50%;
-    width: 70%;
+    width: 75%;
+    font-weight: bold;
+    color: #9D9D9D;
 }
 
 .headingText{
@@ -77,16 +80,16 @@
 }
 
 @media screen and (max-width: 968px) {
-    .my-allotment{
+    .my-booking{
         background: none var(--media-background-color);
     }
-    .my-allotment-container{
+    .my-booking-container{
         top: 0;
         width: 100%;
         left: 50%;
         transform: translateX(-50%);
     }
-    .my-allotment-container h1{
+    .my-booking-container h1{
         margin-bottom: 20%;
     }
     
@@ -94,11 +97,10 @@
         width: 80px;
     }
     .profile-homeland-logo{
-        height: 100%;
-        width: 70%;
+        display: none;
     }
 
-    .allotment-content{
+    .booking-content{
         display: flex;
         flex-direction: column;
     }

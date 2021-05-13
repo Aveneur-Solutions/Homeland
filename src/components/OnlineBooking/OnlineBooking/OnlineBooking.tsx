@@ -16,31 +16,36 @@ const OnlineBooking = () => {
         <h1>Online Booking</h1>
         <div className="form-container1">
           <form action="">
-            <table className="tableBook">
-              <thead>
-                <tr className="thead">
-                  <th>Unit ID</th>
-                  <th>Size</th>
-                  <th>Bedrooms</th>
-                  <th>Price</th>
-                  <th>Price</th>
-                  <th>Select</th>
-                </tr>
-              </thead>
-              <tbody>
-                {book.map((item, index) => {
-                  return (
-                    <tr key={index}>
-                      <td>{item.unit}</td>
-                      <td>{item.size}</td>
-                      <td>{item.bedrooms}</td>
-                      <td>{item.price1}</td>
-                      <td>{item.price2}</td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
+            <div className="table-1">
+              <table className="tableBook">
+                <thead>
+                  <tr className="thead">
+                    <th>Unit ID</th>
+                    <th>Size</th>
+                    <th>Bedrooms</th>
+                    <th>Price</th>
+                    <th>Price</th>
+                    <th>Select</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {book.map((item, index) => {
+                    return (
+                      <tr
+                        style={{ borderBottom: "1px solid #E5E5E5" }}
+                        key={index}
+                      >
+                        <td>{item.unit}</td>
+                        <td>{item.size}</td>
+                        <td>{item.bedrooms}</td>
+                        <td>{item.price1}</td>
+                        <td>{item.price2}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
             <div className="amount">
               <label htmlFor="number">
                 <b>Amount</b>
@@ -53,9 +58,7 @@ const OnlineBooking = () => {
                 {Method.map((selected, index) => {
                   return (
                     <img
-                      className={
-                        clicked ? "visa-logo selected" : "visa-logo"
-                      }
+                      className={clicked ? "visa-logo selected" : "visa-logo"}
                       key={index}
                       src={process.env.PUBLIC_URL + selected.img}
                       alt={selected.alt}
