@@ -3,6 +3,9 @@ import "./project.css";
 import { observer } from "mobx-react-lite";
 import IFlat from "../../models/unit";
 import { useMediaQuery } from "react-responsive";
+import { useContext } from "react";
+import { RootStoreContext } from "../../stores/rootStore";
+import { history } from "../..";
 
 interface IProps {
   featuredFlats: IFlat[];
@@ -12,6 +15,15 @@ const Cards: React.FC<IProps> = ({ featuredFlats }) => {
   const isTabletOrMobileDevice = useMediaQuery({
     query: "(max-device-width: 1224px)",
   });
+
+  const rootStore = useContext(RootStoreContext);
+  const { selectFlats } = rootStore.flatStore;
+
+  const handleCardClick = (flat: IFlat) => {
+    selectFlats(flat);
+    history.push("/maininfo");
+  };
+
   return (
     <div className="cardcontainer">
       <h2>Featured Units</h2>
@@ -19,11 +31,18 @@ const Cards: React.FC<IProps> = ({ featuredFlats }) => {
         <Grid columns={2} divided>
           {featuredFlats.map((item) => {
             return (
-              <div className="cardsize " key={item.id}>
+              <div
+                className="cardsize"
+                key={item.id}
+                onClick={() => handleCardClick(item)}
+              >
                 <Card fluid>
                   <Image
                     className="cardhover"
-                    src={"https://www.homeland.aveneur.com/Images" + item.images[0].imageLocation}
+                    src={
+                      "https://www.homeland.aveneur.com/Images" +
+                      item.images[0].imageLocation
+                    }
                     wrapped
                     ui={false}
                   />
@@ -82,8 +101,9 @@ const Cards: React.FC<IProps> = ({ featuredFlats }) => {
             );
           })}
         </Grid>
-      ): <div>
-        {featuredFlats.map((item) => {
+      ) : (
+        <div>
+          {featuredFlats.map((item) => {
             return (
               <div className="cardsizeformob " key={item.id}>
                 <Card fluid>
@@ -147,8 +167,8 @@ const Cards: React.FC<IProps> = ({ featuredFlats }) => {
               </div>
             );
           })}
-      </div>
-      }
+        </div>
+      )}
     </div>
   );
 };
