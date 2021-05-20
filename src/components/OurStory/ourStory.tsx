@@ -18,14 +18,14 @@ const OurStory = () => {
   const isTabletOrMobileDevice = useMediaQuery({
     query: "(max-device-width: 1224px)",
   });
-  const settingsStory = {
-    infinite: true,
-    speed: 1000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    fade: true,
-  };
+  // const settingsStory = {
+  //   infinite: true,
+  //   speed: 1000,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   autoplay: true,
+  //   fade: true,
+  // };
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, []);

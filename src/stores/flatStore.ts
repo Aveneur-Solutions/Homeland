@@ -13,15 +13,32 @@ export default class FlatStore {
   @observable flat: IFlat | null = null;
   @observable flats: IFlat[] = [];
   @observable featuredFlats: IFlat[] = [];
+  @observable selectedFlats: IFlat[] = [];
 
-  @action listflats = async() => {
+  @action listflats = async () => {
     try {
-        const flats = await agent.Flat.list();  
-        runInAction(() => {
-            this.flats = flats;
-        })
+      const flats = await agent.Flat.list();
+      runInAction(() => {
+        this.flats = flats;
+      });
+      console.log(this.selectedFlats.length);
     } catch (error) {
-        console.log(error);
+      console.log(error);
     }
-  }
+  };
+
+  @action selectFlats = (flat: IFlat) => {
+    this.selectedFlats.push(flat);
+  };
+
+  @action unselectFlats = (flat: IFlat) => {
+    let temp = this.selectedFlats.slice();
+    const index = temp.indexOf(flat);
+    temp.splice(index, 1);
+    this.selectedFlats = temp;
+  };
+
+  @action clearSelectedFlats = () => {
+    this.selectedFlats = [];
+  };
 }

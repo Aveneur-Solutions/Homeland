@@ -11,10 +11,12 @@ import sortFlats from "./sortUtil";
 import { useMediaQuery } from "react-responsive";
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 import { useRef } from "react";
+
 const OurProject = () => {
   const containerRef = useRef(null);
   const rootStore = useContext(RootStoreContext);
-  const { featured, setUnitSearch, searchUnit } = rootStore.navStore;
+  const { featured, setUnitSearch, setFeatured, searchUnit } =
+    rootStore.navStore;
   const { flats, listflats } = rootStore.flatStore;
   const isTabletOrMobileDevice = useMediaQuery({
     query: "(max-device-width: 1224px)",
@@ -50,7 +52,6 @@ const OurProject = () => {
       ...sizeRange,
       [name]: checked,
     });
-    console.log(sizeRange);
   };
 
   const onFormSubmit = (e: SyntheticEvent<HTMLFormElement>) => {
@@ -64,8 +65,9 @@ const OurProject = () => {
   };
 
   useEffect(() => {
+    setFeatured();
     listflats();
-  }, [listflats]);
+  }, [listflats, setFeatured]);
 
   return (
     <div className="projectmainbg">
@@ -89,7 +91,6 @@ const OurProject = () => {
           data-scroll-position="top"
           data-scroll-delay="0.05"
           ref={containerRef}
-          
         >
           <ProjectGallery />
           <div className="projectbg">
