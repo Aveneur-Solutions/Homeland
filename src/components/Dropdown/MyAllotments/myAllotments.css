@@ -11,7 +11,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
+    height: 140vh;
     position: relative;
 }
 
@@ -25,6 +25,7 @@
     background: var(--background-font-color);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 1%;
+    height: 81%;
 }
 
 .allotment-content{
@@ -70,11 +71,12 @@
 
 @media screen and (max-width: 968px) {
     .my-allotment{
-        background: none var(--media-background-color);
+        background: none var(--media-background-color);   
     }
     .my-allotment-container{
         top: 0;
         width: 100%;
+        height: auto;
         left: 50%;
         transform: translateX(-50%);
     }
