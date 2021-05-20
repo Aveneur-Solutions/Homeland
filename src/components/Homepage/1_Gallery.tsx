@@ -7,11 +7,11 @@ import "./gallery.css";
 const Gallery = () => {
   const settings = {
     infinite: true,
-    speed: 2000,
+    speed: 2500,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2500,
     arrows: false,
     fade: true,
     
@@ -35,18 +35,17 @@ const Gallery = () => {
                 <div className="elements">
                   <div className="toprow">
                     <div className="element y1">
-                      <h1>সবুজের</h1>
+                      <h1 className="sloganhead">সবুজের</h1>
                     </div>
                     <div className="element yy2">
-                      <h1>মাঝে</h1>
                     </div>
                   </div>
                   <div className="toprow">
                     <div className="element">
-                      <h1>জীবন</h1>
+                      
                     </div>
                     <div className="element xx2">
-                      <h1>আনন্দ</h1>
+                      
                     </div>
                   </div>
                 </div>
@@ -68,18 +67,50 @@ const Gallery = () => {
                 <div className="elements">
                   <div className="toprow">
                     <div className="element y1">
-                      <h1>সবুজের</h1>
+                      <h1 className="sloganhead">সবুজের</h1>
                     </div>
                     <div className="element yy2">
-                      <h1>মাঝে</h1>
+                      <h1 className="sloganhead">মাঝে</h1>
                     </div>
                   </div>
                   <div className="toprow">
                     <div className="element">
-                      <h1>জীবন</h1>
+                      
                     </div>
                     <div className="element xx2">
-                      <h1>আনন্দ</h1>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <img
+              className="logoimg"
+              src={process.env.PUBLIC_URL + "/images/h4.jpg"}
+              alt=""
+            />
+          </div>
+          <div className="gallery_img ">
+            <div className="centerbangla">
+              <div className="shelf">
+                <div className="door left">
+                  <div className="door1 "></div>
+                </div>
+                <div className="door right"></div>
+                <div className="elements">
+                  <div className="toprow">
+                    <div className="element y1">
+                      <h1 className="sloganhead">সবুজের</h1>
+                    </div>
+                    <div className="element yy2">
+                      <h1 className="sloganhead">মাঝে</h1>
+                    </div>
+                  </div>
+                  <div className="toprow">
+                    <div className="element">
+                      <h1 className="sloganhead">জীবন</h1>
+                    </div>
+                    <div className="element xx2">
                     </div>
                   </div>
                 </div>
@@ -101,18 +132,18 @@ const Gallery = () => {
                 <div className="elements">
                   <div className="toprow">
                     <div className="element y1">
-                      <h1>সবুজের</h1>
+                      <h1 className="sloganhead">সবুজের</h1>
                     </div>
                     <div className="element yy2">
-                      <h1>মাঝে</h1>
+                      <h1 className="sloganhead">মাঝে</h1>
                     </div>
                   </div>
                   <div className="toprow">
                     <div className="element">
-                      <h1>জীবন</h1>
+                      <h1 className="sloganhead">জীবন</h1>
                     </div>
                     <div className="element xx2">
-                      <h1>আনন্দ</h1>
+                      <h1 className="sloganhead">আনন্দ</h1>
                     </div>
                   </div>
                 </div>

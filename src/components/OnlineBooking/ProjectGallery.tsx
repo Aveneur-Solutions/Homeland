@@ -20,25 +20,26 @@ const ProjectGallery = () => {
   return (
     <div className="slider">
       {!isTabletOrMobileDevice ? (
+        
         <Slider {...settings}>
           <div className="gallery_img ">
             <img
               className="logoimg"
-              src={process.env.PUBLIC_URL + "/images/p1.jpg"}
+              src={process.env.PUBLIC_URL + "/images/o1.jpg"}
               alt=""
             />
           </div>
           <div className="gallery_img">
             <img
               className="logoimg"
-              src={process.env.PUBLIC_URL + "/images/p2.jpg"}
+              src={process.env.PUBLIC_URL + "/images/o2.jpg"}
               alt=""
             />
           </div>
           <div className="gallery_img">
             <img
               className="logoimg"
-              src={process.env.PUBLIC_URL + "/images/p3.jpg"}
+              src={process.env.PUBLIC_URL + "/images/o3.jpg"}
               alt=""
             />
           </div>
@@ -49,21 +50,21 @@ const ProjectGallery = () => {
             <div className="gallery_img ">
               <img
                 className="logoimg"
-                src={process.env.PUBLIC_URL + "/images/p1.jpg"}
+                src={process.env.PUBLIC_URL + "/images/o1.jpg"}
                 alt=""
               />
             </div>
             <div className="gallery_img">
               <img
                 className="logoimg"
-                src={process.env.PUBLIC_URL + "/images/p2.jpg"}
+                src={process.env.PUBLIC_URL + "/images/o2.jpg"}
                 alt=""
               />
             </div>
             <div className="gallery_img">
               <img
                 className="logoimg"
-                src={process.env.PUBLIC_URL + "/images/p3.jpg"}
+                src={process.env.PUBLIC_URL + "/images/o3.jpg"}
                 alt=""
               />
             </div>

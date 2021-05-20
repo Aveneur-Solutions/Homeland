@@ -1,18 +1,19 @@
 import './App.css';
 import Navbar from './components/Navbar/Navbar'
-import OnlineBooking from './components/OnlineBooking/OnlineBooking/OnlineBooking'
+import OnlineBooking from './components/OnlineBooking/OnlineBooking'
 import { Route,Switch } from "react-router-dom";
 import MainHome from './components/Homepage/MainHome';
 import OurStory from './components/OurStory/ourStory';
-import Register from './components/OnlineBooking/Register/Register';
-import Login from './components/OnlineBooking/Login/Login';
+import Register from './components/Dropdown/Register/Register';
+import Login from './components/Dropdown/Login/Login';
 import OurProject from './components/OurProject/OurProject';
-import UnitList from './components/OurProject/UnitList';
-import MainInfo from './components/OurProject/MainInfo';
+import UnitList from './components/OnlineBooking/UnitList';
+import MainInfo from './components/OnlineBooking/MainInfo';
 import Profile from './components/ProfileSettings/Profile';
-import TransferForm from './components/OnlineBooking/TranferForm/TransferForm'
-import MyAllotments from './components/OnlineBooking/MyAllotments/MyAllotments'
-import MyBookings from './components/OnlineBooking/MyBookings/MyBookings';
+import TransferForm from './components/Dropdown/TransferForm/TransferForm'
+import MyAllotments from './components/Dropdown/MyAllotments/MyAllotments'
+import MyBookings from './components/Dropdown/MyBookings/MyBookings';
+
 
 
 function App() {
@@ -22,8 +23,8 @@ function App() {
      <Switch>
         <Route exact path="/" component={MainHome} />
         <Route exact path="/ourStory" component={OurStory}/>
-        <Route exact path="/ourProject" component={OnlineBooking}/>
-        <Route exact path="/onlineBooking" component={OurProject}/>
+        <Route exact path="/ourProject" component={OurProject}/>
+        <Route exact path="/onlineBooking" component={OnlineBooking}/>
         <Route exact path="/register" component={Register}/>
         <Route exact path="/login" component={Login}/>
         <Route exact path="/unitlist" component={UnitList}/>

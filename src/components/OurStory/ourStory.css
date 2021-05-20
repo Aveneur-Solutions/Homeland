@@ -1,9 +1,10 @@
 .main-story{
     background-image: linear-gradient(#e9ecef, #fff);
     width: 100vw;
-    height: 100%;
+    height: 100vh;
     display: inline-flex;
     overflow: hidden;
+    margin-bottom: 10vh;
 }
 .vdosize-mob{
     width: 100vw;
@@ -28,19 +29,21 @@
 .main-logo{
     display: block;
     width: 30vw;
-    height: 100%;
+    height: 10vh;
     margin: 0px auto;
     /* background-color: #e9ecef; */
 }
 .logoContainer{
     width: 100vw;
-    height: 100%;
+    height: 85vh;
     /* background-color: #e9ecef; */
 }
 .vdosize{
-    width: 70vw;
-    /* margin-left: -500px; */
-    height: 70vh;
+    width: 100vw;
+    height: 60vh;
+    background-color: black;
+    border-radius: 50px 0px 0px 50px;
+    overflow: hidden;
     position: relative;
 }
 .hundred{
@@ -70,35 +73,64 @@ text-align: center;
     margin-top: 20vh;
 }
 .bgblack{
-    background-color: black;
-    width: 100vw;
+    margin-top: 15vh;
 }
-.mandv{
+/* .mandv{
     margin: 30px 0px 0px 0px;
-}
+} */
 .Mission{
-    height: 20vh;
-    width: 50vw;
-    margin: 0 auto 0 auto;
-    padding: 0px 0 0px 100px;
+    height: 100vh;
+    width: 70vw;
+    margin-left: 20vh;
+    /* margin-bottom: 50vh; */
 }
 .Mission h1{
-    padding: 50px 0 0 0;
+    font-size: 4rem;
+    color: goldenrod ;
+    padding: 20px 0 0 0;
+    padding-top: 20vh;
+}
+.Mission p{
+    font-size: 2rem;
+    color: #1e212d ;
+    padding: 20px 0 0 0;
 }
 
 .Vision{
-    height: 20vh;
-    width: 50vw;
-    margin: 0 auto 0 auto;
-    padding: 0 0 0px 100px;
+    height: 100vh;
+    width: 70vw;
+    margin-left: 20vh;
 }
 .Vision h1{
-    padding: 100px 0 0 0;
+    font-size: 5rem;
+    color: goldenrod ;
+    padding: 20px 0 0 0;
+    padding-top: 20vh;
 }
-.bgofmain{
-    
-    /* background-color: #e9ecef; */
+.Vision p{
+    font-size: 2rem;
+    color: #1e212d ;
+    padding: 50px 0 0 0;
 }
+.projectbutton-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -20vh;
+}
+.projectbutton{
+height: 5vh;
+width: 15vw;
+margin-left: -1.3%;
+border: none;
+color: goldenrod;
+background-color: #1e212d ;
+border-radius: 10px;
+font-weight: bolder;
+}
+.projectbutton:hover{
+    cursor: pointer;
+    }
 @media screen and (max-width: 968px) {
 
 .main-logo{

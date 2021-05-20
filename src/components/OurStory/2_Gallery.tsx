@@ -16,7 +16,7 @@ const Gallery_2 = () => {
           <ReactPlayer
             className="vdosize"
             width="60vw"
-            height="70vh"
+            height="58.5vh"
             playing={true}
             playbackRate={0.5}
             url="https://www.youtube.com/watch?v=-1AH7tF2IOI"

@@ -9,6 +9,12 @@
   height: 70vh;
   width: 100vw;
 }
+.sloganhead{
+  font-size: 2rem;
+  color:  white;
+  z-index: 2;
+}
+
 .toprow{
   display: flex;
   justify-content: center;
@@ -112,6 +118,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: black;
 }
 
 .gallery_img img {
