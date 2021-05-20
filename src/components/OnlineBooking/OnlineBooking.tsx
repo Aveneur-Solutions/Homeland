@@ -10,10 +10,11 @@ import IFlat from "../../models/unit";
 import sortFlats from "./sortUtil";
 import { useMediaQuery } from "react-responsive";
 import { useRef } from "react";
+
 const OurProject = () => {
-  const containerRef = useRef(null);
   const rootStore = useContext(RootStoreContext);
-  const { featured, setUnitSearch, searchUnit } = rootStore.navStore;
+  const { featured, setUnitSearch, setFeatured, searchUnit } =
+    rootStore.navStore;
   const { flats, listflats } = rootStore.flatStore;
   const isTabletOrMobileDevice = useMediaQuery({
     query: "(max-device-width: 1224px)",
@@ -63,43 +64,44 @@ const OurProject = () => {
   };
 
   useEffect(() => {
+    setFeatured();
     listflats();
-  }, [listflats]);
+  }, [listflats, setFeatured]);
 
   return (
     <div className="projectmainbg">
-          <ProjectGallery />
-          <div className="projectbg">
-            {!isTabletOrMobileDevice ? (
-              <Grid>
-                <Grid.Column width={3}>
-                  <FilterCard
-                    onFormSubmit={onFormSubmit}
-                    onPriceChange={onPriceChange}
-                    onSizeChange={onSizeChange}
-                    priceRange={priceRange}
-                    sizeRange={sizeRange}
-                  />
-                </Grid.Column>
-                <Grid.Column width={13}>
-                  {featured && <Card featuredFlats={flats} />}
-                  {searchUnit && <UnitList sortedFlats={sortedFlats} />}
-                </Grid.Column>
-              </Grid>
-            ) : (
-              <div>
-                <FilterCard
-                  onFormSubmit={onFormSubmit}
-                  onPriceChange={onPriceChange}
-                  onSizeChange={onSizeChange}
-                  priceRange={priceRange}
-                  sizeRange={sizeRange}
-                />
-                {featured && <Card featuredFlats={flats} />}
-                {searchUnit && <UnitList sortedFlats={sortedFlats} />}
-              </div>
-            )}
+      <ProjectGallery />
+      <div className="projectbg">
+        {!isTabletOrMobileDevice ? (
+          <Grid>
+            <Grid.Column width={3}>
+              <FilterCard
+                onFormSubmit={onFormSubmit}
+                onPriceChange={onPriceChange}
+                onSizeChange={onSizeChange}
+                priceRange={priceRange}
+                sizeRange={sizeRange}
+              />
+            </Grid.Column>
+            <Grid.Column width={13}>
+              {featured && <Card featuredFlats={flats} />}
+              {searchUnit && <UnitList sortedFlats={sortedFlats} />}
+            </Grid.Column>
+          </Grid>
+        ) : (
+          <div>
+            <FilterCard
+              onFormSubmit={onFormSubmit}
+              onPriceChange={onPriceChange}
+              onSizeChange={onSizeChange}
+              priceRange={priceRange}
+              sizeRange={sizeRange}
+            />
+            {featured && <Card featuredFlats={flats} />}
+            {searchUnit && <UnitList sortedFlats={sortedFlats} />}
           </div>
+        )}
+      </div>
     </div>
   );
 };

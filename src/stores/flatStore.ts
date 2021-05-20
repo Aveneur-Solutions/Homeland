@@ -13,6 +13,7 @@ export default class FlatStore {
   @observable flat: IFlat | null = null;
   @observable flats: IFlat[] = [];
   @observable featuredFlats: IFlat[] = [];
+  @observable selectedFlats: IFlat[] = [];
 
   @action listflats = async() => {
     try {
@@ -24,4 +25,19 @@ export default class FlatStore {
         console.log(error);
     }
   }
+
+  @action selectFlats = (flat: IFlat) => {
+    this.selectedFlats.push(flat);
+  };
+
+  @action unselectFlats = (flat: IFlat) => {
+    let temp = this.selectedFlats.slice();
+    const index = temp.indexOf(flat);
+    temp.splice(index, 1);
+    this.selectedFlats = temp;
+  };
+
+  @action clearSelectedFlats = () => {
+    this.selectedFlats = [];
+  };
 }
