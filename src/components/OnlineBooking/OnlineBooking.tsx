@@ -9,13 +9,14 @@ import UnitList from "./UnitList";
 import IFlat from "../../models/unit";
 import sortFlats from "./sortUtil";
 import { useMediaQuery } from "react-responsive";
-import { useRef } from "react";
+import "./project.css";
 
 const OurProject = () => {
   const rootStore = useContext(RootStoreContext);
   const { featured, setUnitSearch, setFeatured, searchUnit } =
     rootStore.navStore;
   const { flats, listflats } = rootStore.flatStore;
+
   const isTabletOrMobileDevice = useMediaQuery({
     query: "(max-device-width: 1224px)",
   });

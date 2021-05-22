@@ -1,10 +1,19 @@
 import { BookingItem as book } from "./BookingItem";
 import { Method } from "./PaymentItems";
 import "./onlinebooking.css";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { RootStoreContext } from "../../stores/rootStore";
+import { observer } from "mobx-react-lite";
 
 const OnlineBooking = () => {
+  const rootStore = useContext(RootStoreContext);
+  const { cartItems, initCart, removeFromCart } = rootStore.flatStore;
+
   const [clicked, setClicked] = useState(false);
+
+  // useEffect(() => {
+  //   initCart();
+  // }, [initCart]);
 
   const handleClick = () => {
     setClicked(!clicked);
@@ -29,17 +38,24 @@ const OnlineBooking = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {book.map((item, index) => {
+                  {cartItems.map((item) => {
                     return (
                       <tr
                         style={{ borderBottom: "1px solid #E5E5E5" }}
-                        key={index}
+                        key={item.id}
                       >
-                        <td>{item.unit}</td>
+                        <td>{item.id}</td>
                         <td>{item.size}</td>
-                        <td>{item.bedrooms}</td>
-                        <td>{item.price1}</td>
-                        <td>{item.price2}</td>
+                        <td>{item.noOfBedrooms}</td>
+                        <td>{item.price}</td>
+                        <td>{item.bookingPrice}</td>
+                        <td>
+                          <i
+                            className="fas fa-trash"
+                            style={{ cursor: "pointer" }}
+                            onClick={() => removeFromCart(item)}
+                          />
+                        </td>
                       </tr>
                     );
                   })}
@@ -131,4 +147,4 @@ const OnlineBooking = () => {
   );
 };
 
-export default OnlineBooking;
+export default observer(OnlineBooking);

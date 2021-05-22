@@ -35,6 +35,11 @@
   width: 100%;
 }
 
+.nav-item:hover {
+  cursor: pointer;
+  color: white;
+}
+
 .nav-menu {
   display: grid;
   grid-template-columns: repeat(4, auto);
