@@ -16,7 +16,7 @@ const BuildingInfo = () => {
   };
 
   const rootStore = useContext(RootStoreContext);
-  const { selectedFlats, clearSelectedFlats } = rootStore.flatStore;
+  const { selectedFlats, clearSelectedFlats, addToCart } = rootStore.flatStore;
 
   useEffect(() => {
     return () => {
@@ -30,7 +30,7 @@ const BuildingInfo = () => {
         <Slider {...settings1} className="slideroverflowcontrol">
           {selectedFlats.map((flat) => (
             <div key={flat.id}>
-              <BuildingSlider image={flat.images[0].imageLocation} />
+              <BuildingSlider flat={flat} action={addToCart} />
             </div>
           ))}
         </Slider>

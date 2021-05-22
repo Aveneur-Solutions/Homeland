@@ -17,7 +17,7 @@ const MainInfo = () => {
       </div>
       {!isTabletOrMobileDevice ? (
         <div>
-          <div className="similar-units">
+          {/* <div className="similar-units">
             <div>
               <Button
                 className="nextbutton"
@@ -34,7 +34,7 @@ const MainInfo = () => {
                 Buy Now
               </Button>
             </div>
-          </div>
+          </div> */}
           <div className="sizeofsimilar">
             <div className="similarunitheader">
               <h1>SIMILAR UNITS</h1>

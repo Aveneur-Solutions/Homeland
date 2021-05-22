@@ -6,6 +6,7 @@ import { RootStoreContext } from "../../stores/rootStore";
 import SvgComponent from "./logosvg";
 import { MenuItems } from "./MenuItems";
 import { useMediaQuery } from "react-responsive";
+import { history } from "../..";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -25,12 +26,11 @@ const Navbar = () => {
   const { getUser, user, logout } = rootStore.userStore;
   const { token } = rootStore.commonStore;
 
-  const history = useHistory();
-
   const [clicked, setClicked] = useState(false);
   const [allotment, setAllotment] = useState(false);
   const [bookings, setBookings] = useState(false);
   const [transfer, setTransfer] = useState(false);
+
   useEffect(() => {
     if (token && !user) {
       getUser();
@@ -80,7 +80,9 @@ const Navbar = () => {
               <Link
                 className={item.cName}
                 to={
-                  item.url === "/onlineBooking" && !user ? "/onlineBooking" : item.url
+                  item.url === "/onlineBooking" && !user
+                    ? "/onlineBooking"
+                    : item.url
                 }
                 onClick={
                   item.url === "/onlineBooking" && !user
@@ -99,35 +101,37 @@ const Navbar = () => {
           <li>
             {user ? (
               <Dropdown className="dropname-mob " text={user.fullname}>
-              <Dropdown.Menu
-                className="dropmenu-mob"
-                style={{
-                  backgroundColor: "white",
-                  top: "50px",
-                  right: "0",
-                  left: "10px",
-                  width: "20px",
-                  fontWeight:900
-                }}
-              >
-                <Dropdown.Item
-                  text="My Allotments "
-                  onClick={handleAllotment}
-                />
-                <Dropdown.Item text="My Bookings" onClick={handleBookings} />
-                <Dropdown.Item
-                  text="Transfer Allotments"
-                  onClick={handleTransfer}
-                />
-                <Dropdown.Item
-                  text="Profile Settings"
-                  onClick={handleProfile}
-                />
-                <Dropdown.Item text="Logout" onClick={handleLogout} />
-              </Dropdown.Menu>
-            </Dropdown>
+                <Dropdown.Menu
+                  className="dropmenu-mob"
+                  style={{
+                    backgroundColor: "white",
+                    top: "50px",
+                    right: "0",
+                    left: "10px",
+                    width: "20px",
+                    fontWeight: 900,
+                  }}
+                >
+                  <Dropdown.Item
+                    text="My Allotments "
+                    onClick={handleAllotment}
+                  />
+                  <Dropdown.Item text="My Bookings" onClick={handleBookings} />
+                  <Dropdown.Item
+                    text="Transfer Allotments"
+                    onClick={handleTransfer}
+                  />
+                  <Dropdown.Item
+                    text="Profile Settings"
+                    onClick={handleProfile}
+                  />
+                  <Dropdown.Item text="Logout" onClick={handleLogout} />
+                </Dropdown.Menu>
+              </Dropdown>
             ) : (
-              <Link to="/login" onClick={handleClick}>LOGIN</Link>
+              <Link to="/login" onClick={handleClick}>
+                LOGIN
+              </Link>
             )}
           </li>
         )}
@@ -138,7 +142,10 @@ const Navbar = () => {
         <i className="navfont fab fa-facebook-square"></i>
         <i className="navfont fas fa-phone"></i>
         <h6>02 4881 1616</h6>
-        <i className="navfont fas fa-cart-plus"></i>
+        <i
+          className="navfont fas fa-cart-plus nav-item"
+          onClick={() => history.push("/cart")}
+        ></i>
       </div>
       {!isTabletOrMobileDevice && (
         <div className="login-content">
@@ -173,7 +180,7 @@ const Navbar = () => {
               </Dropdown>
             </div>
           ) : (
-            <Link to="/login" >
+            <Link to="/login">
               <button onClick={normalLogin}>LOG IN</button>
             </Link>
           )}

@@ -76,6 +76,7 @@ height: 150%;
     color: white;
     /* margin-top: 10vh; */
     font-weight: 900;
+    padding: 80px !important;
 }
 .nextbuttonmobile{
     background: cover;
@@ -122,9 +123,7 @@ height: 150%;
     justify-content: center;
     align-items: center;
 }
-.ui.button{
-    padding: 0%;
-}
+
  td {
   border: 1px solid black;
 }
