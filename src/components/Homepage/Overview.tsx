@@ -1,11 +1,15 @@
 import { observer } from "mobx-react-lite";
-import React from "react";
 import "./Overview.css";
+import Aos from "aos";
+import { useEffect } from "react";
 const Overview = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
-    <div className="yell">
-      <div className="overviewheading">
-        <h1>HOMELAND GAZIPUR</h1>
+    <div className="yell" data-aos="fade-up">
+      <div className="overviewheading" >
+        <h1 >HOMELAND GAZIPUR</h1>
       </div>
       <div className="overviewpara">
         <p>

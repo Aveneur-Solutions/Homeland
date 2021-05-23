@@ -4,8 +4,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./gallerystate.css";
 import { observer } from "mobx-react-lite";
+import { useEffect } from "react";
+import Aos from "aos";
 
 const GalleryState = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
     const settings = {
       className: "center",
       centerMode: true,
@@ -33,7 +38,7 @@ const GalleryState = () => {
     };
     return (
       
-      <div className="slider">
+      <div className="slider" data-aos="fade-up">
         <Slider {...settings}
         className="slider2">
           <div className="gallery1_img ">

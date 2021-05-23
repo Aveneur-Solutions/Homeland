@@ -8,6 +8,7 @@ import Aos from "aos";
 import { ourProject } from "./buildings";
 import ProjectStore from "./ProjectStore";
 import { observer } from "mobx-react-lite";
+import SvgComponent2 from "./SvgProj";
 
 const OurProject = () => {
   const store = useContext(ProjectStore);
@@ -53,7 +54,7 @@ const OurProject = () => {
           </div>
           {showNothing ? (
             <div className="building2">
-              <p>Click on the buildings to display info.</p>
+              <SvgComponent2 data-aos="fade-up"/>
             </div>
           ) : (
             <div className="building3"></div>
