@@ -18,76 +18,64 @@ const OurStory = () => {
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, []);
-    return (
+  return (
     <>
       {!isTabletOrMobileDevice ? (
         <>
-          
-              <div>
-              </div>
-              <div className="main-story">
-                <div className="our-story">
-                  {ourStory.map((story, index) => {
-                    return (
-                      <div
-                        className="our-story-content container-fluid"
-                        key={index}
-                        data-aos="fade-up"
-                      >
-                        <h2 style={{ color: "goldenrod" }}>{story.title}</h2>
-                        <h4 style={{ width: "20vw" }}>{story.para}</h4>
-                      </div>
-                    );
-                  })}
-                </div>
-                <div className="bgblack"  aos-init aos-animate>
-                  <Gallery_2 />
-                </div>
-              </div>
-              <div className="mandv">
-                <div className="Mission" 
-                        data-aos="fade-up">
-                  <h1
+          <div></div>
+          <div className="main-story">
+            <div className="our-story">
+              {ourStory.map((story, index) => {
+                return (
+                  <div
+                    className="our-story-content container-fluid"
+                    key={index}
+                    data-aos="fade-down"
                   >
-                    Our Mission
-                  </h1>
-                  <p
-                  >
-                    HOMELAND has the client interest on top priority. It is not
-                    just committed to offer high quality yet affordable housing
-                    but also ensures that the entire acquisition process is fair
-                    and equitable for the clients. It will strive to ensure that
-                    the clients can truly appreciate the value proposition of
-                    the entire offering, thus establishing a long-term
-                    relationship with the brand based on happiness and trust.
-                  </p>
-                </div>
-              </div>
-              <div className="mandv">
-                <div className="Vision" 
-                        data-aos="fade-up">
-                  <h1
-                  >
-                    Our Vision
-                  </h1>
-                  <p
-                  >
-                    God Willing HOMELAND will continue to develop affordable
-                    housing projects across the country with the goal of greater
-                    social inclusion in the housing market thus propagating its
-                    philosophy of “togetherness is happiness.”
-                  </p>
-                </div>
-              </div>
+                    <h2 style={{ color: "goldenrod" }}>{story.title}</h2>
+                    <h4 style={{ width: "20vw" }}>{story.para}</h4>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="bgblack" aos-init aos-animate>
+              <Gallery_2 />
+            </div>
+          </div>
+          <div className="mandv" data-aos="fade-up">
+            <div className="Mission">
+              <h1>Our Mission</h1>
+              <p>
+                HOMELAND has the client interest on top priority. It is not just
+                committed to offer high quality yet affordable housing but also
+                ensures that the entire acquisition process is fair and
+                equitable for the clients. It will strive to ensure that the
+                clients can truly appreciate the value proposition of the entire
+                offering, thus establishing a long-term relationship with the
+                brand based on happiness and trust.
+              </p>
+            </div>
+          </div>
+          <div className="mandv" data-aos="fade-up">
+            <div className="Vision">
+              <h1>Our Vision</h1>
+              <p>
+                God Willing HOMELAND will continue to develop affordable housing
+                projects across the country with the goal of greater social
+                inclusion in the housing market thus propagating its philosophy
+                of “togetherness is happiness.”
+              </p>
+            </div>
+          </div>
 
-              <div className="logoContainer" data-aos="fade-up">
-                <div className="main-logo">
-                  <SvgComponent1 />
-                </div>
-              </div>
-              <div className="projectbutton-container">
-                <button className="projectbutton"> Look At Our Projects</button>
-              </div>
+          <div className="logoContainer" data-aos="fade-up">
+            <div className="main-logo">
+              <SvgComponent1 />
+            </div>
+          </div>
+          <div className="projectbutton-container">
+            <button className="projectbutton"> Look At Our Projects</button>
+          </div>
         </>
       ) : (
         <>

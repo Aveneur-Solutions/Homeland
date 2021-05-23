@@ -1,0 +1,59 @@
+.project_section1{
+    height: 90vh;
+}
+.building{
+    height: 100vh;
+    width: 60%;
+    /* background-color: yellow; */
+    overflow: auto;
+    box-shadow: goldenrod;
+    
+}
+.buildingcontainer{
+    width: 100vw;
+    /* background-color: blue; */
+    /* display:inline-block;
+    align-items: center;
+    justify-content: center; */
+}
+.buildTuples{
+    margin: 1.5vw;
+}
+.buildTuples1 div{
+
+    border-radius: 10px;
+    transition: transform .2s;
+}
+.buildTuples1 div:hover{transform: scale(1.1); 
+}
+.ui.grid {
+    margin: 0;
+}
+.building2{
+    height: 100vh;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+.building3{
+    height: 100vh;
+    width: 40%;
+    background-color: green;
+}
+
+.projectheading{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.projectheading h1{
+    font-size: 3rem;
+}
+.lineproject{
+    height: 10px;
+    width: 20vw;
+    border-radius: 20px;
+    background-color: goldenrod;
+}

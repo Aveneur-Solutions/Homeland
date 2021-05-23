@@ -2,7 +2,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../Homepage/gallery.css";
-import "./project.css";
+import "./booking.css";
 import { useMediaQuery } from "react-responsive";
 const ProjectGallery = () => {
   const settings = {

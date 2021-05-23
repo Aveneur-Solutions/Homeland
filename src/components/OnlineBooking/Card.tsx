@@ -1,5 +1,5 @@
 import { Card, Image, Grid } from "semantic-ui-react";
-import "./project.css";
+import "./booking.css";
 import { observer } from "mobx-react-lite";
 import IFlat from "../../models/unit";
 import { useMediaQuery } from "react-responsive";

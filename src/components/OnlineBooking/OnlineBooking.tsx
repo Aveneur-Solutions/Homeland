@@ -9,7 +9,7 @@ import UnitList from "./UnitList";
 import IFlat from "../../models/unit";
 import sortFlats from "./sortUtil";
 import { useMediaQuery } from "react-responsive";
-import "./project.css";
+import "./booking.css";
 
 const OurProject = () => {
   const rootStore = useContext(RootStoreContext);
