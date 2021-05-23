@@ -1,4 +1,5 @@
 import axios, { AxiosResponse } from "axios";
+import { IImage } from "../models/image";
 import IFlat from "../models/unit";
 import IUser, {
   IUserLogin,
@@ -43,7 +44,10 @@ const Flat = {
   list: (): Promise<IFlat[]> => request.get("/flat"),
   featuredList: (): Promise<IFlat[]> => request.get("/flat"),
 };
+const Gallery = {
+  getAllImages: (): Promise<IImage[]> => request.get("/Adminstrator/Images")
+}
 
-const agent = { User, Flat };
+const agent = { User, Flat, Gallery };
 
 export default agent;
