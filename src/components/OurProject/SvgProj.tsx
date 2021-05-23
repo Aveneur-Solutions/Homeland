@@ -11,30 +11,36 @@ const SvgComponent2 = () => {
     >
       <style>
         {
-          ".prefix__st0{fill:#1f212c}.prefix__st1{fill:#d3a641}.prefix__st2{fill:#fff}.prefix__st8{opacity:.5;fill:#8eacde}.prefix__st9{fill:#c5adae}.prefix__st10{fill:#b59c9a}.prefix__st11{fill:#e3d3cb}"
+          ".prefix__st0{fill:#daa520}.prefix__st1{fill:#2b2e38}.prefix__st2{fill:#fff}.prefix__st8{opacity:.5;fill:#d0a92c}.prefix__st9{fill:#c5adae}.prefix__st10{fill:#b59c9a}.prefix__st11{fill:#e3d3cb}"
         }
       </style>
       <path className="prefix__st0" d="M173.3 113.6V505l112.8 65.5V179.1z" />
-      <path 
-      id="pon4" className="prefix__st1" d="M268.6 502.7l-28-16.2v42.3l28 16.2z" />
       <path
-      id="pon4"
+        id="pon4"
+        className="prefix__st1"
+        d="M268.6 502.7l-28-16.2v42.3l28 16.2z"
+      />
+      <path
+        id="pon4"
         className="prefix__st2"
         d="M241.8 528.2l25.7 14.9v-39.8l-25.7-14.9z"
       />
       <path
-      id="pon4"
+        id="pon4"
         className="prefix__st1"
         d="M265.8 504.3l-22.4-13v35.9l22.4 13zM217.3 472.7l-28-16.2v42.3l28 16.2z"
       />
       <path
-      id="pon4"
+        id="pon4"
         className="prefix__st2"
         d="M190.4 498.2l25.7 14.9v-39.8l-25.7-14.9z"
       />
-      <path id="pon4"
-      className="prefix__st1" d="M214.5 474.3l-22.4-13v35.9l22.4 13z" />
-      <path fill="#2b2e38" d="M286 179.1v391.4l136.4-78.8V100.3z" />
+      <path
+        id="pon4"
+        className="prefix__st1"
+        d="M214.5 474.3l-22.4-13v35.9l22.4 13z"
+      />
+      <path fill="#493c0f" d="M286 179.1v391.4l136.4-78.8V100.3z" />
       <path fill="#e0bf7c" d="M173.2 104.7L286 170.1l136.4-78.8-113-65.5z" />
       <path fill="#42454c" d="M413.5 91.3L309.4 31l-127.3 73.7L286 165z" />
       <path
@@ -351,24 +357,20 @@ const SvgComponent2 = () => {
             d="M190.1 366.5l13 7.5 13 7.5v-62.1l-13-7.6-13-7.5v20.1z"
           />
           <path
-          
             className="prefix__st1"
             d="M214.5 320.3l-11.4-6.5-11.3-6.6v58.3l11.3 6.6 11.4 6.5v-40.1z"
           />
           <path className="prefix__st10" d="M229.5 365v20.4l-17.4 10V375z" />
           <path
-          
             className="prefix__st11"
             d="M163.1 346.8l24.5 14.1 24.5 14.1 17.4-10-1.5-.9-15.9 9.3-46.2-26.6 16.1-9.3-1.4-.8z"
           />
           <path
-          
             className="prefix__st9"
             d="M212.1 375v20.4l-24.5-14.1-24.5-14.1v-20.4l24.5 14.1z"
           />
           <g>
             <path
-            
               className="prefix__st9"
               d="M233.7 367.3v30.5l-17.3-10-1.6-11.3c-.1 0 19-9.5 18.9-9.2z"
             />
@@ -393,7 +395,6 @@ const SvgComponent2 = () => {
               d="M214.7 376.5l24.5 14.1 24.5 14.1 17.4-10-1.4-.8-16 9.2-46.1-26.6 16.1-9.2-1.4-.8z"
             />
             <path
-            
               className="prefix__st9"
               d="M263.7 404.7v20.5l-24.5-14.1-24.5-14.2v-20.4l24.5 14.1z"
             />
@@ -401,7 +402,6 @@ const SvgComponent2 = () => {
         </g>
         <g id="pon3">
           <path
-          
             className="prefix__st9"
             d="M182 420.4v30.5l-17.3-10-1.6-11.3z"
           />
@@ -418,7 +418,6 @@ const SvgComponent2 = () => {
             d="M214.5 403.2l-11.4-6.6-11.3-6.5V448.4l11.3 6.5 11.4 6.6v-40.1z"
           />
           <path
-          
             className="prefix__st10"
             d="M229.5 447.8v20.5l-17.4 10v-20.4z"
           />
@@ -427,11 +426,10 @@ const SvgComponent2 = () => {
             d="M163.1 429.6l24.5 14.1 24.5 14.2 17.4-10.1-1.5-.8-15.9 9.2-46.2-26.6 16.1-9.2-1.4-.8z"
           />
           <path
-          
             className="prefix__st9"
             d="M212.1 457.9v20.4l-24.5-14.1-24.5-14.1v-20.5l24.5 14.1z"
           />
-          <g >
+          <g>
             <path
               className="prefix__st9"
               d="M233.7 450.2v30.5l-17.3-10-1.6-11.3c-.1 0 19-9.5 18.9-9.2z"
@@ -453,42 +451,36 @@ const SvgComponent2 = () => {
               d="M281.1 477.6V498l-17.4 10v-20.4zM214.7 459.4l24.5 14.1 24.5 14.1 17.4-10-1.4-.8-16 9.2-46.1-26.6 16.1-9.2-1.4-.8z"
             />
             <path
-            
               className="prefix__st9"
               d="M263.7 487.6V508l-24.5-14.1-24.5-14.1v-20.4l24.5 14.1z"
             />
           </g>
         </g>
       </g>
-      <g >
+      <g>
         <path
-        
           className="prefix__st1"
           d="M383.3 454v63.9l-1.8 1.1-1.8 1-27.1 15.7-1.8 1-1.8 1-6.8 4-1.8 1-1.8 1.1V480z"
         />
         <path
-        
           className="prefix__st2"
           d="M381.5 457.1V519l-1.8 1-27.1 15.7-1.8 1-1.8 1-6.8 4-1.8 1V481z"
         />
         <path
-        
           className="prefix__st1"
           d="M379.7 460.2V520l-27.1 15.7-1.8 1-1.8 1-6.8 4v-59.6z"
         />
         <path className="prefix__st2" d="M376.8 487.9v-20.4l-6 3.4v20.5z" />
         <path
-        
           className="prefix__st6"
           d="M371.5 490.1l4.5-2.6v-18.7l-4.5 2.6z"
         />
         <path className="prefix__st2" d="M364 495.4V475l-6 3.4v20.5z" />
         <path
-        
           className="prefix__st6"
           d="M358.7 497.6l4.5-2.6v-18.7l-4.5 2.5z"
         />
-        <g >
+        <g>
           <path className="prefix__st2" d="M351.2 502.9v-20.5l-6 3.5v20.4z" />
           <path
             className="prefix__st6"
@@ -497,7 +489,7 @@ const SvgComponent2 = () => {
         </g>
       </g>
       <path opacity={0.2} fill="#3f72df" d="M336.9 478v29.7l44.4-26.2v-29.3z" />
-      <g id="pon3"> 
+      <g id="pon3">
         <path fill="#ddc38e" d="M400.9 461.1v2.1l-44.4 26.2v-2.1z" />
         <path className="prefix__st1" d="M356.5 487.3v2.1L336.9 478v-2.1z" />
         <path fill="#c6b79b" d="M400.9 461.1l-44.4 26.2-19.6-11.4 44.4-26.3z" />
