@@ -1,0 +1,57 @@
+#ptn,
+#pgn,
+#prn {
+  position: absolute;
+  left: 0;
+  top: -10%;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  overflow: visible;
+}
+
+#ptn {
+  animation: floating 1s ease-in-out 0s  alternate;
+}
+#pgn {
+  animation: floating 1.3s ease-in-out 0s  alternate;
+}
+#prn {
+  animation: floating 1.6s ease-in-out 0s  alternate;
+}
+#pln {
+  animation: floating 1.9s ease-in-out 0s  alternate;
+}
+#pon {
+  animation: floatingup 2s ease-in-out 0s  alternate;
+}
+#pon1 {
+  animation: floatingup 2.3s ease-in-out 0s  alternate;
+}
+#pon2 {
+  animation: floatingup 2.6s ease-in-out 0s  alternate;
+}
+#pon3 {
+  animation: floatingup 2.9s ease-in-out 0s  alternate;
+}
+#pon4 {
+  animation: floatingup 3.2s ease-in-out 0s  alternate;
+}
+
+@keyframes floating {
+  100% {
+    transform: translate(0, 0);
+  }
+  0% {
+    transform: translate(100%, 0);
+  }
+}
+@keyframes floatingup {
+  100% {
+    transform: translate(0%, 0);
+  }
+  0% {
+    transform: translate(0%, 100%);
+  }
+}
+
