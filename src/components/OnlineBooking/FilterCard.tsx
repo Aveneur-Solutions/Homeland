@@ -1,6 +1,6 @@
 import { SyntheticEvent } from "react";
 import { Menu, Button } from "semantic-ui-react";
-import "./project.css";
+import "./booking.css";
 import { useMediaQuery } from "react-responsive";
 
 interface IProps {
