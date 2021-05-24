@@ -1,5 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 import { IImage } from "../models/image";
+import ITransfer from "../models/transfer";
 import IFlat from "../models/unit";
 import IUser, {
   IUserLogin,
@@ -38,6 +39,9 @@ const User = {
   register: (body: IUserRegister) => request.post("/user/register", body),
   registerWithOtp: (body: IUserLoginWithOtp): Promise<IUser> =>
     request.post("/user/registerWithOtp", body),
+  myBookings : () : Promise<IFlat[]> => request.get("/Customer/myBookings"),
+  myAllotments : () : Promise<IFlat[]> => request.get("/Customer/myAllotments"),
+  myTransfers : () : Promise<ITransfer[]> => request.get("/Customer/myTransfers")
 };
 
 const Flat = {

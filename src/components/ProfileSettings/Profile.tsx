@@ -9,6 +9,32 @@ const Profile = () => {
   });
   return (
     <div>
+      <div className="profile">
+            <div className="profile-img">
+              <img
+                width="100px"
+                style={{ borderRadius: "50px", border: "3px solid var(--primary-color)" }}
+                src={process.env.PUBLIC_URL + "/images/profile.png"}
+                alt=""
+              />
+            </div>
+            <div className="profile-content">
+              <p>NAME: Zunaid</p>
+              <p>ADDRESS: Dick Avenue</p>
+              <p>PHONE: 69420</p>
+              <p>EMAIL: gay@gmail.com</p>
+            </div>
+            <div className="profile-homeland-logo">
+              <img
+                width="100px"
+                style={{marginBottom:"12px"}}
+                src={process.env.PUBLIC_URL + "/images/logo_yellow.png"}
+                alt=""
+              />
+              <p>HOMELAND</p>
+              <p>TOGETHERNESSS IS HAPPINESS</p>
+            </div>
+          </div>
       <div className="profile-headcontainer">
         <div className="profile-header">
           <h1>My Profile</h1>

@@ -13,15 +13,11 @@ const Gallery = () => {
     autoplay: true,
     autoplaySpeed: 2500,
     arrows: false,
-    fade: true,
-    
+    fade: true,  
     pauseOnHover: false
-
   };
-
     return (
-      <>
-      
+      <>     
       <div className="slider">
         <div className="slideroverflowcontrol">
         <Slider {...settings}>

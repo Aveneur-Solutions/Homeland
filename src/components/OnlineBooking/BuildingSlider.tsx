@@ -12,14 +12,11 @@ const BuildingSlider: React.FC<IProps> = ({ flat, action }) => {
     <div className="main-container">
       <div className="image-container">
         <img
-          src={"https://www.homeland.aveneur.com/Images" + flat.images[0].imageLocation}
+          src={"https://www.homeland.aveneur.com/Images" + flat.images[flat.images.length - 1].imageLocation}
           alt=""
           style={{ height: "100%", width: "100%" }}
         />
       </div>
-      {/* <div className="separatingline">
-        <hr className="hrnew" />
-      </div> */}
       <div>
         <Button
           className="nextbutton"

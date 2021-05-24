@@ -1,29 +1,21 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import "./myBookings.css";
-import { bookedItems as booked } from "./bookedItems";
 import { observer } from "mobx-react-lite";
+import { RootStoreContext } from "../../../stores/rootStore";
 
 const MyBookings = () => {
+  const store = useContext(RootStoreContext);
+  const {myBookedFlats,getMyBookedFlats} = store.userStore;
+  useEffect(() => {
+    getMyBookedFlats()
+  }, [getMyBookedFlats])
   return (
     <div className="my-booking">
       <div className="my-booking-container">
         <h1 style={{ textAlign: "center" }}>My Bookings</h1>
         <div className="booking-content">
           <div className="profile">
-            <div className="profile-img">
-              <img
-                width="100px"
-                style={{ borderRadius: "50px", border: "3px solid var(--primary-color)"}}
-                src={process.env.PUBLIC_URL + "/images/profile.png"}
-                alt=""
-              />
-            </div>
-            <div className="profile-content">
-              <p>NAME: Zunaid</p>
-              <p>ADDRESS: Dick Avenue</p>
-              <p>PHONE: 69420</p>
-              <p>EMAIL: gay@gmail.com</p>
-            </div>
+           
             <div className="profile-homeland-logo">
               <img
                 width="100px"
@@ -46,55 +38,22 @@ const MyBookings = () => {
                   <th>Flat Price</th>
                   <th>Booking Price</th>
                 </tr>
-                {booked.map((item, index) => {
+                {myBookedFlats ? myBookedFlats.map((item, index) => {
                   return (
                     <tr
                       style={{ borderBottom: "1px solid #E5E5E5" }}
                       key={index}
                     >
-                      <td>{item.unit}</td>
+                      <td>{item.id}</td>
                       <td>{item.size}</td>
-                      <td>{item.bedrooms}</td>
+                      <td>{item.noOfBedrooms}</td>
                       <td>Tk {item.price}</td>
-                      <td>Tk {item.bprice}</td>
+                      <td>Tk {item.bookingPrice}</td>
                     </tr>
                   );
-                })}
+                }) : <div>You haven't Book any Units yet.</div>}
               </table>
-            </div>
-            <div>
-              <h3 className="headingText">Payment History:</h3>
-            </div>
-            <div className="payment-history">
-              <div>
-                <label>Name of the Bank:</label>
-                <p>&nbsp; Eastern Bank</p>
-              </div>
-              <div>
-                <label>Account Number:</label>
-                <p>&nbsp; 115555444444</p>
-              </div>
-              <div>
-                <label>Paid Amount:</label>
-                <p>&nbsp; 2,00,000</p>
-              </div>
-              <div>
-                <label>Rest of the amount to be paid:</label>
-                <p>&nbsp; 25,00,000</p>
-              </div>
-              <div>
-                <label>Number of Installments Paid:</label>
-                <p>&nbsp; 5</p>
-              </div>
-              <div>
-                <label>Rest of the number of Installments:</label>
-                <p>&nbsp; 40</p>
-              </div>
-              <div>
-                <label>Next date of payment:</label>
-                <p>&nbsp; 02/05/21</p>
-              </div>
-            </div>
+            </div>      
           </div>
         </div>
       </div>
