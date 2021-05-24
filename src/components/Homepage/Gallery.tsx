@@ -4,7 +4,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./gallerystate.css";
 import { observer } from "mobx-react-lite";
-import { useEffect } from "react";
 import Aos from "aos";
 import { RootStoreContext } from "../../stores/rootStore";
 import { IImage } from "../../models/image";
