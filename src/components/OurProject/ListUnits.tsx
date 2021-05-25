@@ -10,7 +10,7 @@ const ListUnits = () => {
     query: "(max-device-width: 1224px)",
   });
 
-  const [src, { blur }] = useProgressiveImg("./profile.png","./profile_main.png");
+  const [src, { blur }] = useProgressiveImg("./profile.png",process.env.PUBLIC_URL + "/images/profile_main.png");
   return (
     <>
       {!isTabletOrMobileDevice ? (
@@ -18,7 +18,7 @@ const ListUnits = () => {
           <div className="projCardSize">
             {ourProject.map((buildno, index) => {
               return (
-                <Card fluid className="projCardSize2">
+                <Card key={index} fluid className="projCardSize2">
                   <div className="projCardSize2">
                     <Card.Content>
                       <Image
@@ -57,10 +57,10 @@ const ListUnits = () => {
         <div className="projCardSize">
           {ourProject.map((buildno, index) => {
             return (
-              <Card fluid className="projCardSize2">
+              <Card key={index} fluid className="projCardSize2">
                 <div className="projCardSize2">
                   <Card.Content>
-                    <Image src={process.env.PUBLIC_URL + buildno.forunits} />
+                    <Image src={src} />
                     <Card.Header>Unit 1.00.1</Card.Header>
                     <Card.Meta>Sqft.: 950</Card.Meta>
                     <Card.Description>
