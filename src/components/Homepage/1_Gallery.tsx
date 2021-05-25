@@ -14,10 +14,8 @@ const Gallery = () => {
     autoplay: true,
     autoplaySpeed: 2500,
     arrows: false,
-    fade: true,
-    
+    fade: true,  
     pauseOnHover: false
-
   };
   const [src0, { blur0 }] = useProgressiveImg("/images/h1.jpg","/h1.jpg");
   const [src1, { blur1 }] = useProgressiveImg("/images/h4.jpg","/h4.jpg");
@@ -25,8 +23,7 @@ const Gallery = () => {
   const [src3, { blur3 }] = useProgressiveImg("/images/o3.jpg","/o3.jpg");
 
     return (
-      <>
-      
+      <>     
       <div className="slider">
         <div className="slideroverflowcontrol">
         <Slider {...settings}>

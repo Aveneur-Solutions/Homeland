@@ -41,7 +41,7 @@ const Cards: React.FC<IProps> = ({ featuredFlats }) => {
                     className="cardhover"
                     src={
                       "https://www.homeland.aveneur.com/Images" +
-                      item.images[0].imageLocation
+                      item.images[item.images.length-1].imageLocation
                     }
                     wrapped
                     ui={false}
