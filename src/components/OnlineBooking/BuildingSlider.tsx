@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "semantic-ui-react";
+import { Button, Image, Segment,Label } from "semantic-ui-react";
 import IFlat from "../../models/unit";
 
 interface IProps {
@@ -10,6 +10,8 @@ interface IProps {
 const BuildingSlider: React.FC<IProps> = ({ flat, action }) => {
   return (
     <div className="main-container">
+        <Segment>
+        <Label style={{position:"absolute", color:"#1e212d", backgroundColor:"goldenrod" }} attached='top right'>Available/Booked</Label>
       <div className="image-container">
         <img
           src={"https://www.homeland.aveneur.com/Images" + flat.images[0].imageLocation}
@@ -17,6 +19,7 @@ const BuildingSlider: React.FC<IProps> = ({ flat, action }) => {
           style={{ height: "100%", width: "100%" }}
         />
       </div>
+      </Segment>
       {/* <div className="separatingline">
         <hr className="hrnew" />
       </div> */}
