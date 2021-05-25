@@ -1,6 +1,6 @@
 
 
-#showcase {
+.showcase {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,7 +9,7 @@
   height: 60vh;
 }
 
-#showcase img{
+.showcase img{
   background-repeat: no-repeat;
 }
 .sectionsproject {
@@ -89,7 +89,7 @@ $sections1: (
 }
 
 @media (max-width: 1000px) {
-  #showcase {
+  .showcase {
     position: absolute;
     height: 40vh;
     width: 100vw;
