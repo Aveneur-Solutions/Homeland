@@ -14,8 +14,9 @@ import TransferForm from "./components/Dropdown/TransferForm/TransferForm";
 import MyAllotments from "./components/Dropdown/MyAllotments/MyAllotments";
 import MyBookings from "./components/Dropdown/MyBookings/MyBookings";
 import Cart from "./components/Cart/Cart";
-import { useContext, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { RootStoreContext } from "./stores/rootStore";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   const rootStore = useContext(RootStoreContext);
@@ -27,6 +28,7 @@ function App() {
 
   return (
     <div className="App">
+      <ToastContainer position="top-right" />
       <Navbar />
       <Switch>
         <Route exact path="/" component={MainHome} />

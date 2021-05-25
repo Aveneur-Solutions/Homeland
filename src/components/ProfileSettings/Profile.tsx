@@ -5,6 +5,8 @@ import "./profile.css";
 import "semantic-ui-css/semantic.min.css";
 import { useMediaQuery } from "react-responsive";
 import { RootStoreContext } from "../../stores/rootStore";
+import { useForm } from "react-hook-form";
+import { IUserChangePassword } from "../../models/user";
 
 const Profile = () => {
   const isTabletOrMobileDevice = useMediaQuery({
@@ -15,7 +17,13 @@ const Profile = () => {
     setEditable(!editable);
   };
   const rootStore = useContext(RootStoreContext);
-  const {user} = rootStore.userStore;
+  const {user, changePassword} = rootStore.userStore;
+  const {register,handleSubmit, formState:{errors},} = useForm<IUserChangePassword>();
+
+  const onChangePass = (data: IUserChangePassword) => {
+    changePassword(data);
+  };
+
   return (
     <div>
       {editable ? (
@@ -41,7 +49,7 @@ const Profile = () => {
                   style={{ backgroundColor: "#1e212d", color: "goldenrod" }}
                   action="submit"
                 >
-                  Save Photo!
+                  Save Photo
                 </Button>
               </div>
             ) : (
@@ -50,7 +58,7 @@ const Profile = () => {
                   style={{ backgroundColor: "#1e212d", color: "goldenrod" }}
                   action="submit"
                 >
-                  Save Photo!
+                  Save Photo
                 </Button>
               </div>
             )}
@@ -60,16 +68,30 @@ const Profile = () => {
             <div className="profile-imageheadcontainer">
               <h2>Change Password</h2>
             </div>
+            <form onSubmit={handleSubmit(onChangePass)}>
             <div className="oldp-container">
               {!isTabletOrMobileDevice ? (
                 <div className="oldp">
-                  <Input fluid placeholder="Old Password..." />
-                  <Input placeholder="New Password..." />
+                  <input id="oldpInput" type="password" placeholder="Old Password" {...register("oldPassword", { required: true })}/>
+                  {errors.oldPassword && <span>Old password is required</span>}
                 </div>
               ) : (
                 <div className="oldpm">
-                  <Input fluid placeholder="Old Password..." />
-                  <Input placeholder="New Password..." />
+                  <input id="oldpInput" type="password" placeholder="Old Password" {...register("oldPassword", { required: true })}/>
+                  {errors.oldPassword && <span>Old Password is required</span>}
+                </div>
+              )}
+              </div>
+              <div className="oldp-container">
+              {!isTabletOrMobileDevice ? (
+                <div className="oldp">
+                  <input id="oldpInput" type="password" placeholder="New Password" {...register("newPassword", { required: true })}/>
+                  {errors.newPassword && <span>New Password is required</span>}
+                </div>
+              ) : (
+                <div className="oldpm">
+                  <input id="oldpInput" type="password" placeholder="New Password" {...register("newPassword", { required: true })}/>
+                  {errors.newPassword && <span>New Password is required</span>}
                 </div>
               )}
             </div>
@@ -79,7 +101,7 @@ const Profile = () => {
                   style={{ backgroundColor: "#1e212d", color: "goldenrod" }}
                   action="submit"
                 >
-                  Change Password !
+                  Change Password
                 </Button>
               </div>
             ) : (
@@ -88,16 +110,51 @@ const Profile = () => {
                   style={{ backgroundColor: "#1e212d", color: "goldenrod" }}
                   action="submit"
                 >
-                  Change Password!
+                  Change Password
                 </Button>
               </div>
             )}
+            </form>
           </div>
 
           {/* NID here */}
           <div className="profile-margin">
             <div className="profile-imageheadcontainer">
-              <h2>NID Information</h2>
+              <h2>Personal Information</h2>
+            </div>
+            <form>
+            <div className="oldp-container">
+              {!isTabletOrMobileDevice ? (
+                <div className="oldp">
+                  <Input placeholder="Name" />
+                </div>
+              ) : (
+                <div className="oldpm">
+                  <Input placeholder="Name" />
+                </div>
+              )}
+            </div>
+            <div className="oldp-container">
+              {!isTabletOrMobileDevice ? (
+                <div className="oldp">
+                  <Input placeholder="Address" />
+                </div>
+              ) : (
+                <div className="oldpm">
+                  <Input placeholder="Address" />
+                </div>
+              )}
+            </div>
+            <div className="oldp-container">
+              {!isTabletOrMobileDevice ? (
+                <div className="oldp">
+                  <Input placeholder="Email Address" />
+                </div>
+              ) : (
+                <div className="oldpm">
+                  <Input placeholder="Email Address" />
+                </div>
+              )}
             </div>
             <div className="oldp-container">
               {!isTabletOrMobileDevice ? (
@@ -116,7 +173,7 @@ const Profile = () => {
                   style={{ backgroundColor: "#1e212d", color: "goldenrod" }}
                   action="submit" onClick={handleEditable}
                 >
-                  SAVE !
+                  Save
                 </Button>
               </div>
             ) : (
@@ -125,10 +182,11 @@ const Profile = () => {
                   style={{ backgroundColor: "#1e212d", color: "goldenrod" }}
                   action="submit"onClick={handleEditable}
                 >
-                  SAVE!
+                  Save
                 </Button>
               </div>
             )}
+            </form>
           </div>
           <div className="profile-bottom-div"></div>
         </div>
@@ -146,21 +204,21 @@ const Profile = () => {
             />
           </div>
           <div className="profile-content">
-            <p>NAME: {user?.fullname}</p>
-            <p>ADDRESS: {}</p>
-            <p>PHONE: {user?.phoneNumber}</p>
-            <p>EMAIL: {}</p>
-          </div>       
+            <p>NAME: &nbsp;{user?.fullname}</p>
+            <p>ADDRESS: &nbsp; Not added yet</p>
+            <p>PHONE: &nbsp; {user?.phoneNumber}</p>
+            <p>EMAIL: &nbsp; Not added yet</p>
+            <p>NID: &nbsp; Not added yet</p>
+          </div>     
             <Button
               onClick={handleEditable}
-              style={{ backgroundColor: "#1e212d", color: "goldenrod" }}
+              style={{backgroundColor: "#1e212d", color: "goldenrod" }}
             >
               Edit Profile
             </Button>
           <div className="profile-homeland-logo">
             <img
               width="100px"
-              style={{ marginBottom: "12px" }}
               src={process.env.PUBLIC_URL + "/images/logo_yellow.png"}
               alt=""
             />

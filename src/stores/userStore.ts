@@ -6,6 +6,7 @@ import IUser, {
   IUserLogin,
   IUserLoginWithOtp,
   IUserRegister,
+  IUserChangePassword,
 } from "../models/user";
 import { RootStore } from "./rootStore";
 
@@ -72,6 +73,14 @@ export default class UserStore {
         this.rootStore.commonStore.setToken(user.token);
       })
     } catch (error) {
+      console.log(error)
+    }
+  }
+
+  @action changePassword = async (body: IUserChangePassword) => {
+    try{
+      await agent.User.changePassword(body);
+    }catch(error){
       console.log(error)
     }
   }
