@@ -20,9 +20,6 @@ const BuildingSlider: React.FC<IProps> = ({ flat, action }) => {
         />
       </div>
       </Segment>
-      {/* <div className="separatingline">
-        <hr className="hrnew" />
-      </div> */}
       <div>
         <Button
           className="nextbutton"
