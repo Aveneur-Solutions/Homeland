@@ -12,3 +12,14 @@
   padding: 0  !important;
   width: 10vw;
 }
+
+.logoimg{
+animation-name: beginImg;
+}
+
+@keyframes beginImg {
+  
+  0% {filter: blur(20px);
+  }
+  100% {filter: blur(0px);}
+}
