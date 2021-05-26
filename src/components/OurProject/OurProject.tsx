@@ -116,7 +116,7 @@ const OurProject = () => {
       ) : (
         <div>
           <div className="project_sectionm">
-            <figure id="showcase">
+            <figure className="showcasem">
               <section className="sectionsproject"></section>
               <section className="sectionsproject"></section>
               <section className="sectionsproject"></section>
