@@ -32,7 +32,6 @@ function App() {
     <div className="App">
       <ToastContainer position="top-right" />
       <Navbar />
-      <ToastContainer position="bottom-right" />
       <Switch>
         <Route exact path="/" component={MainHome} />
         <Route exact path="/ourStory" component={OurStory} />
