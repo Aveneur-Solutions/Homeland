@@ -10,7 +10,7 @@ const UserCard : React.FC<IProps> = ({user,setUnitVisibility}) => {
     return (
         <div style={{marginBottom:"20px"}}>
             <Card centered >
-                <Image size="small" circular centered src='/images/profile.png' wrapped  />
+                <Image size="small" circular centered src='/images/profile_main.png' wrapped  />
                 <Card.Content>
                     <Card.Header>{user.fullname}</Card.Header>
                     <Card.Meta>Phone Number :  {user.phoneNumber}</Card.Meta>
