@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 import { history } from "..";
 import { IImage } from "../models/image";
-import ITransfer from "../models/transfer";
+import ITransfer, { ITransferPost } from "../models/transfer";
 import IFlat from "../models/unit";
 import { toast } from "react-toastify";
 import IUser, {
@@ -29,22 +29,16 @@ axios.interceptors.response.use(undefined, (error) => {
     toast.error("Network error -- make sure API server is running");
     console.log(error);
   }
-  const { status, data, config } = error.response;
-  if (status === 404) {
-    history.push("/notFoundeekdom");
-  }
+  console.log(error);
+  const { status, data, config } = error;
+  
   if (
-    status === 400 &&
-    config.method === "get" &&
-    data.errors.hasOwnProperty("id")
+    error.status === 401 
   ) {
-    history.push("/notFound");
+    console.log(data.errors)
   }
   if (status === 500) {
     toast.error("Server Error Check the terminal for more info");
-  }
-  if (status === 401) {
-    toast.error("You are not logged in please log in to perform this action");
   }
   if (status === 409) {
     console.log(data);
@@ -76,7 +70,8 @@ const User = {
   changePassword: (body: IUserChangePassword) : Promise<IUser> => request.post("/user/changePassword", body),
   myBookings : () : Promise<IFlat[]> => request.get("/Customer/myBookings"),
   myAllotments : () : Promise<IFlat[]> => request.get("/Customer/myAllotments"),
-  myTransfers : () : Promise<ITransfer[]> => request.get("/Customer/myTransfers")
+  myTransfers : () : Promise<ITransfer[]> => request.get("/Customer/myTransfers"),
+  transferNow : (body : ITransferPost) => request.post("flat/TransferNow",body)
 };
 
 const Flat = {

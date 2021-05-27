@@ -5,11 +5,11 @@ import { RootStoreContext } from "../../../stores/rootStore";
 
 const MyAllotments = () => {
   const store = useContext(RootStoreContext);
-  const {myAllottedFlats,getMyTransfers,myTransfers,getMyAllottedFlats} = store.userStore;
+  const {myAllottedFlats,getMyAllottedFlats} = store.userStore;
   useEffect(() => {
     getMyAllottedFlats()
-    getMyTransfers()
-  }, [getMyAllottedFlats,getMyTransfers])
+    
+  }, [getMyAllottedFlats])
   return (
     <div className="my-allotment">
       <div className="my-allotment-container">
@@ -51,30 +51,7 @@ const MyAllotments = () => {
                 }) : <div>You don't have any allotments yet</div>}
               </table>
             </div>
-            <div className="table-1">
-              <h4>Transferred</h4>
-              <table>
-                <tr className="thead">
-                  <th>Unit ID</th>
-                  <th>Transferred to</th>
-                  <th>Date</th>
-                
-                </tr>
-                {myTransfers.length !== 0 ?  myTransfers.map((item, index) => {
-                  return (
-                    <tr
-                      style={{ borderBottom: "1px solid #E5E5E5" }}
-                      key={index}
-                    >
-                      <td>{item.flatId}</td>
-                      <td>{item.transferredTo}</td>
-                      <td>{item.transferDate}</td>
-                      
-                    </tr>
-                  );
-                }) : <div>You haven't transferred any units yet</div>}
-              </table>
-            </div>
+            
             <div className="bottom-content">
               <h5 style={{ textAlign: "center" }}>
                 Number of days left for the down payment
