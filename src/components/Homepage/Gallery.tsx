@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./gallerystate.css";
 import { observer } from "mobx-react-lite";
+import Aos from "aos";
 import { RootStoreContext } from "../../stores/rootStore";
 import { IImage } from "../../models/image";
 interface IProps {
@@ -11,13 +12,15 @@ interface IProps {
 }
 const GalleryState: React.FC<IProps> = ({ images }) => {
 
-  const settings = {
-    className: "center",
-    centerMode: true,
-    infinite: true,
-    centerPadding: "0px",
-    slidesToShow: 3,
-
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
+    const settings = {
+      className: "center",
+      centerMode: true,
+      infinite: true,
+      centerPadding: "0px",
+      slidesToShow: 3,
     slidesToScroll: 1,
     speed: 500,
     autoplay: true,
@@ -36,10 +39,12 @@ const GalleryState: React.FC<IProps> = ({ images }) => {
       },
     ],
   };
+
   return (
 
-    <div className="slider">
+    <div className="slider" data-aos="fade-up">
       <Slider {...settings}
+
         className="slider2">
         {console.log(images.length)}
         {images.map(image => (

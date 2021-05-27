@@ -22,3 +22,8 @@ export interface IUserRegister {
   phoneNumber: string;
   password: string;
 }
+
+export interface IUserChangePassword{
+  oldPassword: string;
+  newPassword: string;
+}

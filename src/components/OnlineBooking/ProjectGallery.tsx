@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "../Homepage/gallery.css";
 import "./booking.css";
 import { useMediaQuery } from "react-responsive";
+import useProgressiveImg from "../OurProject/UseProgressiveImg";
 const ProjectGallery = () => {
   const settings = {
     infinite: true,
@@ -16,6 +17,9 @@ const ProjectGallery = () => {
   const isTabletOrMobileDevice = useMediaQuery({
     query: "(max-device-width: 1224px)",
   });
+  const [src4, { blur4 }] = useProgressiveImg("/o1.jpg",process.env.PUBLIC_URL + "/images/o1.jpg");
+  const [src5, { blur5 }] = useProgressiveImg("/o2.jpg",process.env.PUBLIC_URL + "/images/o2.jpg");
+  const [src6, { blur6 }] = useProgressiveImg("/o3.jpg",process.env.PUBLIC_URL + "/images/o3.jpg");
 
   return (
     <div className="slider">
@@ -25,22 +29,34 @@ const ProjectGallery = () => {
           <div className="gallery_img ">
             <img
               className="logoimg"
-              src={process.env.PUBLIC_URL + "/images/o1.jpg"}
+              src={src4}
               alt=""
+              style={{
+                filter: blur4 ? "blur(20px)" : "none",
+                transition: blur4 ? "none" : "filter 0.3s ease-out"
+              }}
             />
           </div>
           <div className="gallery_img">
-            <img
+          <img
               className="logoimg"
-              src={process.env.PUBLIC_URL + "/images/o2.jpg"}
+              src={src5}
               alt=""
+              style={{
+                filter: blur5 ? "blur(20px)" : "none",
+                transition: blur5 ? "none" : "filter 0.3s ease-out"
+              }}
             />
           </div>
           <div className="gallery_img">
-            <img
+          <img
               className="logoimg"
-              src={process.env.PUBLIC_URL + "/images/o3.jpg"}
+              src={src6}
               alt=""
+              style={{
+                filter: blur6 ? "blur(20px)" : "none",
+                transition: blur6 ? "none" : "filter 0.3s ease-out"
+              }}
             />
           </div>
         </Slider>
@@ -48,25 +64,37 @@ const ProjectGallery = () => {
         <div className="mob-gallery">
           <Slider {...settings}>
             <div className="gallery_img ">
-              <img
-                className="logoimg"
-                src={process.env.PUBLIC_URL + "/images/o1.jpg"}
-                alt=""
-              />
+            <img
+              className="logoimg"
+              src={src4}
+              alt=""
+              style={{
+                filter: blur4 ? "blur(20px)" : "none",
+                transition: blur4 ? "none" : "filter 0.3s ease-out"
+              }}
+            />
             </div>
             <div className="gallery_img">
-              <img
-                className="logoimg"
-                src={process.env.PUBLIC_URL + "/images/o2.jpg"}
-                alt=""
-              />
+            <img
+              className="logoimg"
+              src={src5}
+              alt=""
+              style={{
+                filter: blur5 ? "blur(20px)" : "none",
+                transition: blur5 ? "none" : "filter 0.3s ease-out"
+              }}
+            />
             </div>
             <div className="gallery_img">
-              <img
-                className="logoimg"
-                src={process.env.PUBLIC_URL + "/images/o3.jpg"}
-                alt=""
-              />
+            <img
+              className="logoimg"
+              src={src6}
+              alt=""
+              style={{
+                filter: blur6 ? "blur(20px)" : "none",
+                transition: blur6 ? "none" : "filter 0.3s ease-out"
+              }}
+            />
             </div>
           </Slider>
         </div>
