@@ -1,10 +1,8 @@
 import axios, { AxiosResponse } from "axios";
-import { toast } from "react-toastify";
 import { history } from "..";
 import { IImage } from "../models/image";
 import ITransfer from "../models/transfer";
 import IFlat from "../models/unit";
-import { history } from "../";
 import { toast } from "react-toastify";
 import IUser, {
   IUserChangePassword,
