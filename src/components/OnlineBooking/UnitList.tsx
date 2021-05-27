@@ -9,7 +9,6 @@ import { RootStoreContext } from "../../stores/rootStore";
 interface IProps {
   sortedFlats: IFlat[];
 }
-
 const UnitList: React.FC<IProps> = ({ sortedFlats }) => {
   const isTabletOrMobileDevice = useMediaQuery({
     query: "(max-device-width: 1224px)",
@@ -191,5 +190,4 @@ const UnitList: React.FC<IProps> = ({ sortedFlats }) => {
     </>
   );
 };
-
 export default observer(UnitList);

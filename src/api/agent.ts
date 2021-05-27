@@ -6,6 +6,7 @@ import IUser, {
   IUserLogin,
   IUserLoginWithOtp,
   IUserRegister,
+  IUserSearch,
 } from "../models/user";
 
 axios.interceptors.request.use(
@@ -36,6 +37,7 @@ const User = {
   loginWithOtp: (body: IUserLoginWithOtp): Promise<IUser> =>
     request.post("/user/loginWithOtp", body),
   currentUser: (): Promise<IUser> => request.get("/user"),
+  getUser : (data : IUserSearch) : Promise<IUser> => request.get(`/user/${data.phoneNumber}`),
   register: (body: IUserRegister) => request.post("/user/register", body),
   registerWithOtp: (body: IUserLoginWithOtp): Promise<IUser> =>
     request.post("/user/registerWithOtp", body),

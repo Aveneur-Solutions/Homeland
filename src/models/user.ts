@@ -13,7 +13,9 @@ export default interface IUser {
   token: string;
   fullname: string;
 }
-
+export interface IUserSearch{
+  phoneNumber: string;
+}
 export interface IUserRegister {
   firstName: string;
   lastName: string;
