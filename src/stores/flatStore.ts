@@ -1,8 +1,10 @@
 import { action, makeObservable, observable, runInAction } from "mobx";
+import { toast } from "react-toastify";
 import agent from "../api/agent";
+import { ITransferPost } from "../models/transfer";
 import IFlat from "../models/unit";
 import { RootStore } from "./rootStore";
-
+import {history} from "../";
 export default class FlatStore {
   rootStore: RootStore;
   constructor(rootStore: RootStore) {
@@ -46,7 +48,8 @@ export default class FlatStore {
   };
 
   @action selectFlats = (flat: IFlat) => {
-    this.selectedFlats.push(flat);
+    const temp = this.selectedFlats.filter(x => x.id === flat.id)[0];
+    if(!temp) this.selectedFlats.push(flat);
   };
 
   @action unselectFlats = (flat: IFlat) => {
@@ -88,4 +91,18 @@ export default class FlatStore {
     if (user) localStorage.removeItem(`${user.phoneNumber}`);
     else localStorage.removeItem("userCart");
   };
+
+  @action transferNow = async (data : ITransferPost) => {
+    try{
+      await agent.User.transferNow(data);
+      toast.success("Transfer Complete")
+      history.push("/my-bookings")
+    }catch(error)
+    {
+      console.log(error);
+      toast.error(error.data.errors.error);
+      
+    }
+  }
+
 }

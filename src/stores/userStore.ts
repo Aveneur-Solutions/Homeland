@@ -1,4 +1,5 @@
 import { action, makeObservable, observable, runInAction } from "mobx";
+import { toast } from "react-toastify";
 import agent from "../api/agent";
 import ITransfer from "../models/transfer";
 import IFlat from "../models/unit";
@@ -126,14 +127,19 @@ export default class UserStore {
   @action searchUser = async (data : IUserSearch) => {
     try{
       this.emptyRecieverUser();
+
       const user = await agent.User.getUser(data);
       runInAction(() => {
-        this.recieverUser = user;
-        console.log(user);
+        if(this.user?.phoneNumber !== user.phoneNumber){
+          this.recieverUser = user;
+          console.log(user);
+        }
+        else toast.error("It's your number");
+        
       })
     }catch(error)
     {
-      
+      toast.error("No user exist with this number");
       console.log(error)
     }
   } 
