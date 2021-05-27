@@ -1,18 +1,22 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Menu, Sticky, } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 import { observer } from "mobx-react-lite";
-import HomeStore from "./HomeStore";
 import Overview from "./Overview";
 import Location from "./Location";
 import "./home.css"
 import GalleryState from "./Gallery";
+import { RootStoreContext } from "../../stores/rootStore";
 
 const States = () => {
 
-  const store = useContext(HomeStore);
-  const { setOverviewVisibility, setLocationVisibility, setGalleryVisibility, showGallery, showOverview, showLocation} = store;
-
+  const store = useContext(RootStoreContext);
+  const { setOverviewVisibility, setLocationVisibility, setGalleryVisibility, showGallery, showOverview, showLocation} = store.commonStore;
+ 
+  const { listAllImages, galleryImages } = store.commonStore;
+  useEffect(() => {
+    listAllImages()
+  }, [listAllImages])
 
   return (
     <div>
@@ -41,7 +45,7 @@ const States = () => {
       </Sticky>
           {showOverview && <Overview/>}
           {showLocation && <Location/>}
-          {showGallery && <GalleryState/>}
+          {showGallery && <GalleryState images={galleryImages}/>}
     </div>
   );
 };

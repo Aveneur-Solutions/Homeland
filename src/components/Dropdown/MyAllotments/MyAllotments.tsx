@@ -1,31 +1,21 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import "./myAllotments.css";
-import { allotmentItems as allotment } from "./allotmentItems";
-import { transferredItems as transferred } from "./allotmentItems";
 import { observer } from "mobx-react-lite";
+import { RootStoreContext } from "../../../stores/rootStore";
 
 const MyAllotments = () => {
+  const store = useContext(RootStoreContext);
+  const {myAllottedFlats,getMyTransfers,myTransfers,getMyAllottedFlats} = store.userStore;
+  useEffect(() => {
+    getMyAllottedFlats()
+    getMyTransfers()
+  }, [getMyAllottedFlats,getMyTransfers])
   return (
     <div className="my-allotment">
       <div className="my-allotment-container">
         <h1 style={{ textAlign: "center" }}>My Allotments</h1>
         <div className="allotment-content">
-          <div className="profile">
-            <div className="profile-img">
-              <img
-                width="100px"
-                style={{ borderRadius: "50px", border: "3px solid var(--primary-color)" }}
-                src={process.env.PUBLIC_URL + "/images/profile.png"}
-                alt=""
-              />
-            </div>
-            <div className="profile-content">
-              <p>NAME: Zunaid</p>
-              <p>ADDRESS: Dick Avenue</p>
-              <p>PHONE: 69420</p>
-              <p>EMAIL: gay@gmail.com</p>
-            </div>
-            <div className="profile-homeland-logo">
+        <div className="profile-homeland-logo">
               <img
                 width="100px"
                 style={{marginBottom:"12px"}}
@@ -35,60 +25,54 @@ const MyAllotments = () => {
               <p>HOMELAND</p>
               <p>TOGETHERNESSS IS HAPPINESS</p>
             </div>
-          </div>
           <div className="table-content">
             <h2 className="headingText">Alloted:</h2>
             <div className="table-1">
-              <h4>Select Units To Transfer</h4>
+        
               <table>
                 <tr className="thead">
                   <th>Unit ID</th>
                   <th>Size</th>
                   <th>Bedrooms</th>
                   <th>Price</th>
-                  <th>Transfer</th>
                 </tr>
-                {allotment.map((item, index) => {
+                {myAllottedFlats ?  myAllottedFlats.map((item, index) => {
                   return (
                     <tr
                       style={{ borderBottom: "1px solid #E5E5E5" }}
                       key={index}
                     >
-                      <td>{item.unit}</td>
+                      <td>{item.id}</td>
                       <td>{item.size}</td>
-                      <td>{item.bedrooms}</td>
-                      <td>{item.price}</td>
-                      <td>{item.select}</td>
+                      <td>{item.noOfBedrooms}</td>
+                      <td>Tk {item.price}</td>
                     </tr>
                   );
-                })}
+                }) : <div>You don't have any allotments yet</div>}
               </table>
-              <button className="transfer-button">Next</button>
             </div>
             <div className="table-1">
               <h4>Transferred</h4>
               <table>
                 <tr className="thead">
                   <th>Unit ID</th>
-                  <th>Size</th>
-                  <th>Bedrooms</th>
-                  <th>Price</th>
+                  <th>Transferred to</th>
                   <th>Date</th>
+                
                 </tr>
-                {transferred.map((item, index) => {
+                {myTransfers.length !== 0 ?  myTransfers.map((item, index) => {
                   return (
                     <tr
                       style={{ borderBottom: "1px solid #E5E5E5" }}
                       key={index}
                     >
-                      <td>{item.unit}</td>
-                      <td>{item.size}</td>
-                      <td>{item.bedrooms}</td>
-                      <td>{item.price}</td>
-                      <td>{item.date}</td>
+                      <td>{item.flatId}</td>
+                      <td>{item.transferredTo}</td>
+                      <td>{item.transferDate}</td>
+                      
                     </tr>
                   );
-                })}
+                }) : <div>You haven't transferred any units yet</div>}
               </table>
             </div>
             <div className="bottom-content">
@@ -110,7 +94,7 @@ const MyAllotments = () => {
                 }}
               >
                 You can transfer your allotment through our website only once.
-                Want to transfer allotment?
+                Want to transfer allotment go to Transfer Units?
               </p>
             </div>
           </div>

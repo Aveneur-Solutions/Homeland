@@ -119,11 +119,11 @@ const Navbar = () => {
                   />
                   <Dropdown.Item text="My Bookings" onClick={handleBookings} />
                   <Dropdown.Item
-                    text="Transfer Allotments"
+                    text="Transfer Units"
                     onClick={handleTransfer}
                   />
                   <Dropdown.Item
-                    text="Profile Settings"
+                    text="My Profile"
                     onClick={handleProfile}
                   />
                   <Dropdown.Item text="Logout" onClick={handleLogout} />
@@ -171,11 +171,11 @@ const Navbar = () => {
                   />
                   <Dropdown.Item text="My Bookings" onClick={handleBookings} />
                   <Dropdown.Item
-                    text="Transfer Allotments"
+                    text="Transfer Units"
                     onClick={handleTransfer}
                   />
                   <Dropdown.Item
-                    text="Profile Settings"
+                    text="My Profile"
                     onClick={handleProfile}
                   />
                   <Dropdown.Item text="Logout" onClick={handleLogout} />

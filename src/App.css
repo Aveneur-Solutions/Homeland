@@ -4,8 +4,22 @@
   /* height:100%; */
   padding: 0;
   font-family: 'Montserrat', sans-serif;
+
+  scroll-behavior: smooth;
 }
 
 .ui.button{
-  padding: 0 !important;
+  padding: 0  !important;
+  width: 10vw;
+}
+
+.logoimg{
+animation-name: beginImg;
+}
+
+@keyframes beginImg {
+  
+  0% {filter: blur(20px);
+  }
+  100% {filter: blur(0px);}
 }

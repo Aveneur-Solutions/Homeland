@@ -1,6 +1,6 @@
 import { observer } from "mobx-react-lite";
 import React, { useContext } from "react";
-import { Button } from "semantic-ui-react";
+import { Button, Image, Segment,Label } from "semantic-ui-react";
 import IFlat from "../../models/unit";
 import { RootStoreContext } from "../../stores/rootStore";
 
@@ -15,16 +15,16 @@ const BuildingSlider: React.FC<IProps> = ({ flat, action }) => {
 
   return (
     <div className="main-container">
+        <Segment>
+        <Label style={{position:"absolute", color:"#1e212d", backgroundColor:"goldenrod" }} attached='top right'>Available/Booked</Label>
       <div className="image-container">
         <img
-          src={"https://www.homeland.aveneur.com/Images" + flat.images[0].imageLocation}
+          src={"https://www.homeland.aveneur.com/Images" + flat.images[flat.images.length - 1].imageLocation}
           alt=""
           style={{ height: "100%", width: "100%" }}
         />
       </div>
-      {/* <div className="separatingline">
-        <hr className="hrnew" />
-      </div> */}
+      </Segment>
       <div>
         <Button
           className="nextbutton"

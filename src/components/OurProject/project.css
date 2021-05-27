@@ -1,59 +1,196 @@
-.project_section1{
+.project_section1 {
     height: 90vh;
-}
-.building{
+  }
+  .project_sectionm {
+    height: 90vh;
+  }
+  .building {
     height: 100vh;
     width: 60%;
+    display: flex;
+    justify-content: center;
     /* background-color: yellow; */
     overflow: auto;
-    box-shadow: goldenrod;
-    
-}
-.buildingcontainer{
+    /* margin: 0 auto; */
+    scroll-behavior: smooth;
+  }
+  .buildingm {
+    height: 90vh;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    /* background-color: yellow; */
+    overflow: auto;
+    /* margin: 0 auto; */
+    scroll-behavior: smooth;
+  }
+  /* .building::-webkit-scrollbar {
+      display: none;
+  } */
+  .buildingcontainer {
     width: 100vw;
     /* background-color: blue; */
     /* display:inline-block;
-    align-items: center;
-    justify-content: center; */
-}
-.buildTuples{
+      align-items: center;
+      justify-content: center; */
+  }
+  .buildingcontainerm {
+    width: 100vw;
+    height: 90vh;
+    /* background-color: blue; */
+    /* display:inline-block;
+      align-items: center;
+      justify-content: center; */
+  }
+  .buildTuples {
     margin: 1.5vw;
-}
-.buildTuples1 div{
-
+    z-index: 2vh;
+  }
+  .buildTuples1 div {
     border-radius: 10px;
-    transition: transform .2s;
-}
-.buildTuples1 div:hover{transform: scale(1.1); 
-}
-.ui.grid {
+    transition: transform 0.2s;
+  }
+  .buildTuples1 div:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+  .ui.grid {
     margin: 0;
-}
-.building2{
-    height: 100vh;
+  }
+  .building2 {
+    height: 90vh;
     width: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: white;
-}
-.building3{
-    height: 100vh;
-    width: 40%;
-    background-color: green;
-}
-
-.projectheading{
+  }
+  .building2m {
+    height: 90vh;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+  }
+  .building3 {
+    height: 100%;
+    width: 30%;
+    margin: 0px auto;
+    /* background-color: #1e212d; */
+  }
+  .building3m {
+    height: 80vh;
+    width: 50%;
+    /* margin: 20px auto; */
+    /* background-color: #1e212d; */
+  }
+  
+  .projectheading {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
-}
-.projectheading h1{
+  }
+  .projectheading h1 {
     font-size: 3rem;
-}
-.lineproject{
+  }
+
+  .projectheadingm {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .projectheadingm h1 {
+    font-size: 2rem;
+  }
+
+  .lineproject {
     height: 10px;
     width: 20vw;
     border-radius: 20px;
     background-color: goldenrod;
+  }
+  .projCardContainer {
+    height: 20vh;
+    width: 100%;
+    border-radius: 20px;
+    /* margin: 2% 0; */
+  }
+  .projCardContainerm {
+    /* height: 20vh; */
+    width: 100%;
+    border-radius: 20px;
+    /* margin: 2% 0; */
+  }
+  .unitscroll {
+    height: 62vh;
+    overflow: auto;
+  }
+  .unitscrollm {
+    height: 60vh;
+    overflow: auto;
+  }
+  .projCardSize {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .projCardSize2 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .arrowproj {
+    height: 20%;
+
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  transition: ease-in-out;
+  animation:mymove 1.5s infinite alternate;
+  position: relative;
+  }
+  .arrowproj :hover{
+      cursor: pointer;
+  }
+  .arrowproj img{
+      height: 50%;
+      width: 50%;
+  }
+  
+
+  .arrowprojm {
+    height: 30%;
+    width: 100vw;
+    margin: 70vh 0 0 0 ;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  transition: ease-in-out;
+  animation:mymove 1.5s infinite alternate;
+    position: absolute;
+  }
+  .arrowprojm :hover{
+      cursor: pointer;
+  }
+  .arrowprojm img{
+      height: 0%;
+  }
+  
+  @keyframes mymove {
+    0% {
+      top: 0px;
+    }
+    100% {
+      top: 20px;
+    }
+  }
+  .widthoftuples{
+      /* background-color: greenyellow; */
+      width: 25%;
+  }
+  .widthoftuplesm{
+    /* background-color: greenyellow; */
+    width: 100%;
 }
+  

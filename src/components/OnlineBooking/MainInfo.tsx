@@ -17,24 +17,6 @@ const MainInfo = () => {
       </div>
       {!isTabletOrMobileDevice ? (
         <div>
-          {/* <div className="similar-units">
-            <div>
-              <Button
-                className="nextbutton"
-                type="submit"
-                style={{ backgroundColor: "#1e212d", color: "goldenrod" }}
-              >
-                Add To Cart
-              </Button>
-              <Button
-                className="nextbutton"
-                type="submit"
-                style={{ backgroundColor: "#1e212d", color: "goldenrod" }}
-              >
-                Buy Now
-              </Button>
-            </div>
-          </div> */}
           <div className="sizeofsimilar">
             <div className="similarunitheader">
               <h1>SIMILAR UNITS</h1>
