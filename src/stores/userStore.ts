@@ -6,6 +6,7 @@ import IUser, {
   IUserLogin,
   IUserLoginWithOtp,
   IUserRegister,
+  IUserSearch,
   IUserChangePassword,
 } from "../models/user";
 import { RootStore } from "./rootStore";
@@ -18,6 +19,7 @@ export default class UserStore {
   }
 
   @observable user: IUser | null = null;
+  @observable recieverUser : IUser | null = null;
   @observable myBookedFlats : IFlat[] = [];
   @observable myAllottedFlats : IFlat[] = [];
   @observable myTransfers : ITransfer[] = [];
@@ -90,6 +92,7 @@ export default class UserStore {
      const bookedFlats =  await agent.User.myBookings();
      runInAction(() => {
        this.myBookedFlats = bookedFlats;
+       console.log(this.myBookedFlats)
      }) 
     }catch(error)
     {
@@ -117,5 +120,24 @@ export default class UserStore {
     {
       console.log(error)
     }
+
+  
+  }
+  @action searchUser = async (data : IUserSearch) => {
+    try{
+      this.emptyRecieverUser();
+      const user = await agent.User.getUser(data);
+      runInAction(() => {
+        this.recieverUser = user;
+        console.log(user);
+      })
+    }catch(error)
+    {
+      
+      console.log(error)
+    }
+  } 
+  @action emptyRecieverUser = () => {
+    this.recieverUser = null;
   }
 }
