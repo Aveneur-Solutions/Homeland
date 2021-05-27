@@ -36,7 +36,7 @@ const MainInfo = () => {
         </div>
       ) : (
         <div>
-          <div className="similar-units">
+          {/* <div className="similar-units">
             <div>
               <Button
                 className="atcandbnbutton"
@@ -53,7 +53,7 @@ const MainInfo = () => {
                 Buy Now
               </Button>
             </div>
-          </div>
+          </div> */}
           <div>
             <div className="similarunitheadermobile">
               <h1>SIMILAR UNITS</h1>

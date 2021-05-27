@@ -29,7 +29,7 @@ const OtpAuth: React.FC<IProps> = ({ phoneNo, func, buttonText }) => {
       history.push("/");
     }
     if (booking && user) {
-      history.push("/onlineBooking");
+      history.push("/cart");
     }
     console.log(user);
   }, [user, booking, history, logginIn]);
