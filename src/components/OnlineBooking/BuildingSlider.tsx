@@ -1,6 +1,8 @@
-import React from "react";
+import { observer } from "mobx-react-lite";
+import React, { useContext } from "react";
 import { Button, Image, Segment,Label } from "semantic-ui-react";
 import IFlat from "../../models/unit";
+import { RootStoreContext } from "../../stores/rootStore";
 
 interface IProps {
   flat: IFlat;
@@ -8,6 +10,9 @@ interface IProps {
 }
 
 const BuildingSlider: React.FC<IProps> = ({ flat, action }) => {
+  const rootStore = useContext(RootStoreContext)
+  const {cartItems} = rootStore.flatStore
+
   return (
     <div className="main-container">
         <Segment>
@@ -26,6 +31,7 @@ const BuildingSlider: React.FC<IProps> = ({ flat, action }) => {
           type="submit"
           style={{ backgroundColor: "#1e212d", color: "goldenrod" }}
           onClick={() => action(flat)}
+          disabled={cartItems.some(cartItem => cartItem.id === flat.id) || flat.isBooked}
         >
           Add To Cart
         </Button>
@@ -41,4 +47,4 @@ const BuildingSlider: React.FC<IProps> = ({ flat, action }) => {
   );
 };
 
-export default BuildingSlider;
+export default observer(BuildingSlider);

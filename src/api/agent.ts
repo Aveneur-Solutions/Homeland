@@ -1,4 +1,6 @@
 import axios, { AxiosResponse } from "axios";
+import { toast } from "react-toastify";
+import { history } from "..";
 import { IImage } from "../models/image";
 import ITransfer from "../models/transfer";
 import IFlat from "../models/unit";
@@ -11,6 +13,7 @@ import IUser, {
   IUserRegister,
   IUserSearch,
 } from "../models/user";
+
 
 axios.interceptors.request.use(
   (config) => {
@@ -81,6 +84,8 @@ const User = {
 const Flat = {
   list: (): Promise<IFlat[]> => request.get("/flat"),
   featuredList: (): Promise<IFlat[]> => request.get("/flat"),
+  book: (idBody: { flatIds: string[] }) =>
+    request.post("/flat/bookNow", idBody),
 };
 const Gallery = {
   getAllImages: (): Promise<IImage[]> => request.get("/Adminstrator/Images")
