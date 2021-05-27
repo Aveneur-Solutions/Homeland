@@ -16,6 +16,8 @@ import MyBookings from "./components/Dropdown/MyBookings/MyBookings";
 import Cart from "./components/Cart/Cart";
 import { useContext, useEffect } from "react";
 import { RootStoreContext } from "./stores/rootStore";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const rootStore = useContext(RootStoreContext);
@@ -28,6 +30,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
+      <ToastContainer position="bottom-right" />
       <Switch>
         <Route exact path="/" component={MainHome} />
         <Route exact path="/ourStory" component={OurStory} />

@@ -25,6 +25,7 @@ const Navbar = () => {
   const { normalLogin, bookingLogin, setFeatured } = rootStore.navStore;
   const { getUser, user, logout } = rootStore.userStore;
   const { token } = rootStore.commonStore;
+  const { cartItemCount } = rootStore.flatStore;
 
   const [clicked, setClicked] = useState(false);
   const [allotment, setAllotment] = useState(false);
@@ -80,17 +81,17 @@ const Navbar = () => {
               <Link
                 className={item.cName}
                 to={
-                  item.url === "/onlineBooking" && !user
-                    ? "/onlineBooking"
-                    : item.url
+                  // item.url === "/onlineBooking" && !user
+                  //   ? "/onlineBooking"
+                  item.url
                 }
-                onClick={
-                  item.url === "/onlineBooking" && !user
-                    ? bookingLogin
-                    : item.url === "/ourProject"
-                    ? setFeatured
-                    : () => {}
-                }
+                // onClick={
+                //   item.url === "/onlineBooking" && !user
+                //     ? bookingLogin
+                //     : item.url === "/ourProject"
+                //     ? setFeatured
+                //     : () => {}
+                // }
               >
                 {item.title}
               </Link>
@@ -145,7 +146,9 @@ const Navbar = () => {
         <i
           className="navfont fas fa-cart-plus nav-item"
           onClick={() => history.push("/cart")}
-        ></i>
+        >
+          {cartItemCount}
+        </i>
       </div>
       {!isTabletOrMobileDevice && (
         <div className="login-content">

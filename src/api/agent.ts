@@ -1,10 +1,13 @@
 import axios, { AxiosResponse } from "axios";
+import { toast } from "react-toastify";
+import { history } from "..";
 import IFlat from "../models/unit";
 import IUser, {
   IUserLogin,
   IUserLoginWithOtp,
   IUserRegister,
 } from "../models/user";
+
 
 axios.interceptors.request.use(
   (config) => {
@@ -16,6 +19,27 @@ axios.interceptors.request.use(
     return Promise.reject(error);
   }
 );
+
+axios.interceptors.response.use(undefined, (error) => {
+  if (error.message === "Network Error" && !error.response) {
+    toast.error("Network Error - Please try again later!");
+  }
+  const { config, status, data } = error.response;
+  if (status === 404) {
+    history.push("/notfound");
+  }
+  if (
+    status === 400 &&
+    config.method === "get" &&
+    data.errors.hasOwnProperty("id")
+  ) {
+    history.push("/notfound");
+  }
+  if (status === 500) {
+    toast.error("Server error - check the terminal for more info!");
+  }
+  throw error.response;
+});
 
 axios.defaults.baseURL = "https://www.homeland.aveneur.com/api";
 // axios.defaults.baseURL = "http://localhost:5000/api";
@@ -42,6 +66,8 @@ const User = {
 const Flat = {
   list: (): Promise<IFlat[]> => request.get("/flat"),
   featuredList: (): Promise<IFlat[]> => request.get("/flat"),
+  book: (idBody: { flatIds: string[] }) =>
+    request.post("/flat/bookNow", idBody),
 };
 
 const agent = { User, Flat };
