@@ -1,6 +1,6 @@
 import { observer } from "mobx-react-lite";
 import { Link } from "react-router-dom";
-import { Table, Button } from "semantic-ui-react";
+import { Table, Button, Card, Image, Grid } from "semantic-ui-react";
 import IFlat from "../../models/unit";
 import { useMediaQuery } from "react-responsive";
 import { ChangeEvent, useContext } from "react";
@@ -27,63 +27,90 @@ const UnitList: React.FC<IProps> = ({ sortedFlats }) => {
     <>
       {!isTabletOrMobileDevice ? (
         <div className="tblpc">
-          <Table celled textAlign="center" padded>
-            <Table.Header>
-              <Table.Row>
-                <Table.HeaderCell
-                  style={{ backgroundColor: "#1e212d", color: "goldenrod" }}
-                >
-                  UNIT ID
-                </Table.HeaderCell>
-                <Table.HeaderCell
-                  style={{ backgroundColor: "#1e212d", color: "goldenrod" }}
-                >
-                  SIZE
-                </Table.HeaderCell>
-                <Table.HeaderCell
-                  style={{ backgroundColor: "#1e212d", color: "goldenrod" }}
-                >
-                  PRICE
-                </Table.HeaderCell>
-                <Table.HeaderCell
-                  style={{ backgroundColor: "#1e212d", color: "goldenrod" }}
-                >
-                  BOOKING
-                </Table.HeaderCell>
-                <Table.HeaderCell
-                  style={{ backgroundColor: "#1e212d", color: "goldenrod" }}
-                >
-                  Select
-                </Table.HeaderCell>
-              </Table.Row>
-            </Table.Header>
-            <Table.Body>
-              {sortedFlats.map((item) => (
-                <Table.Row key={item.id}>
-                  <Table.Cell>
-                    <p>{item.id}</p>
-                  </Table.Cell>
-                  <Table.Cell>
-                    <p>{item.size}</p>
-                  </Table.Cell>
-                  <Table.Cell>
-                    <p>{item.price}</p>
-                  </Table.Cell>
-                  <Table.Cell>
-                    <p>{item.bookingPrice}</p>
-                  </Table.Cell>
-                  <Table.Cell>
-                    <input
-                      type="checkbox"
-                      name={item.id}
-                      value={item.id}
-                      onChange={(e) => checkboxHandler(e, item)}
-                    />
-                  </Table.Cell>
-                </Table.Row>
-              ))}
-            </Table.Body>
-          </Table>
+          {sortedFlats.map((flat) => (
+            <Card fluid className="searched-card">
+              <div style={{ display: "flex" }}>
+                <Image
+                  src={
+                    "https://www.homeland.aveneur.com/Images" +
+                    flat.images[flat.images.length - 1].imageLocation
+                  }
+                  className="searched-card-img"
+                  ui={false}
+                />
+                <Card.Content>
+                  <Grid columns={4} divided>
+                    <Grid.Row>
+                      <Grid.Column>
+                        <Card.Header className="cardtoprow  ">
+                          Unit ID<h4 className="cardtoplabel">{flat.id}</h4>
+                        </Card.Header>
+                      </Grid.Column>
+                      <Grid.Column>
+                        <Card.Header className="cardtoprow ">
+                          Size<h4 className="cardtoplabel">{flat.size}</h4>
+                          sqft.
+                        </Card.Header>
+                      </Grid.Column>
+                      <Grid.Column>
+                        <Card.Header className="cardtoprow ">
+                          Price<h4 className="cardtoplabel">{flat.price}</h4>
+                          Tk
+                        </Card.Header>
+                      </Grid.Column>
+                      <Grid.Column>
+                        <Card.Header className="cardtoprow  ">
+                          Building
+                          <h4 className="cardtoplabel">
+                            {flat.buildingNumber}
+                          </h4>
+                        </Card.Header>
+                      </Grid.Column>
+                    </Grid.Row>
+
+                    <Grid.Row>
+                      <Grid.Column>
+                        <Card.Meta className="cardtoprow">
+                          <span className="cardbottomrow">
+                            No. of Bedrooms: {flat.noOfBedrooms}
+                          </span>
+                        </Card.Meta>
+                        <Card.Meta className="cardtoprow">
+                          <span className="cardbottomrow">
+                            Level: {flat.level}
+                          </span>
+                        </Card.Meta>
+                      </Grid.Column>
+                      <Grid.Column>
+                        <Card.Meta className="cardtoprow">
+                          <span className="cardbottomrow">
+                            Net Area: {flat.netArea}
+                          </span>
+                        </Card.Meta>
+                        <Card.Meta className="cardtoprow">
+                          <span className="cardbottomrow">
+                            Common Area: {flat.commonArea}
+                          </span>
+                        </Card.Meta>
+                      </Grid.Column>
+                      <Grid.Column>
+                        <Card.Header className="cardtoprow">
+                          <input
+                            type="checkbox"
+                            className="searched-unit-checkbox"
+                            name={flat.id}
+                            value={flat.id}
+                            onChange={(e) => checkboxHandler(e, flat)}
+                          />
+                          <label htmlFor={flat.id}></label>
+                        </Card.Header>
+                      </Grid.Column>
+                    </Grid.Row>
+                  </Grid>
+                </Card.Content>
+              </div>
+            </Card>
+          ))}
           <div className="projectbottom buttondiv">
             <Link to="./mainInfo">
               <Button
@@ -98,86 +125,95 @@ const UnitList: React.FC<IProps> = ({ sortedFlats }) => {
         </div>
       ) : (
         <div className="tbl">
-          <table>
-            <tr className="tbmh">
-              <th
-                style={{
-                  backgroundColor: "#1e212d",
-                  color: "goldenrod",
-                  textAlign: "center",
-                }}
-              >
-                UNIT ID
-              </th>
-              <th
-                style={{
-                  backgroundColor: "#1e212d",
-                  color: "goldenrod",
-                  textAlign: "center",
-                }}
-              >
-                SIZE
-              </th>
-              <th
-                style={{
-                  backgroundColor: "#1e212d",
-                  color: "goldenrod",
-                  textAlign: "center",
-                }}
-              >
-                PRICE
-              </th>
-              <th
-                style={{
-                  backgroundColor: "#1e212d",
-                  color: "goldenrod",
-                  textAlign: "center",
-                }}
-              >
-                BOOKING
-              </th>
-              <th
-                style={{
-                  backgroundColor: "#1e212d",
-                  color: "goldenrod",
-                  textAlign: "center",
-                }}
-              >
-                Select
-              </th>
-            </tr>
-            <tbody>
-              {sortedFlats.map((item) => (
-                <tr key={item.id}>
-                  <td style={{ textAlign: "center" }}>
-                    <p>{item.id}</p>
-                  </td>
-                  <td style={{ textAlign: "center" }}>
-                    <p>{item.size}</p>
-                  </td>
+          {sortedFlats.map((flat) => (
+            <Card fluid className="searched-card" style={{maxHeight: 200}}>
+              <div style={{ display: "flex" }}>
+                <Image
+                  src={
+                    "https://www.homeland.aveneur.com/Images" +
+                    flat.images[flat.images.length - 1].imageLocation
+                  }
+                  style={{maxHeight: 200}}
+                  className="searched-card-img"
+                  ui={false}
+                />
+                <Card.Content>
+                  <Grid columns={3} divided>
+                    <Grid.Row>
+                      <Grid.Column>
+                        <Card.Header className="cardtoprow  ">
+                          Unit ID<h4 className="cardtoplabel">{flat.id}</h4>
+                        </Card.Header>
+                      </Grid.Column>
+                      <Grid.Column>
+                        <Card.Header className="cardtoprow ">
+                          Size<h4 className="cardtoplabel">{flat.size}</h4>
+                          sqft.
+                        </Card.Header>
+                      </Grid.Column>
+                      <Grid.Column>
+                        <Card.Header className="cardtoprow ">
+                          Price<h4 className="cardtoplabel">{flat.price}</h4>
+                          Tk
+                        </Card.Header>
+                      </Grid.Column>
+                      <Grid.Column>
+                        <Card.Header className="cardtoprow  ">
+                          Building
+                          <h4 className="cardtoplabel">
+                            {flat.buildingNumber}
+                          </h4>
+                        </Card.Header>
+                      </Grid.Column>
+                    </Grid.Row>
 
-                  <td style={{ textAlign: "center" }}>
-                    <p>{item.price}</p>
-                  </td>
-                  <td style={{ textAlign: "center" }}>
-                    <p>{item.bookingPrice}</p>
-                  </td>
-                  <td style={{ textAlign: "center" }}>
-                    <input
-                      type="checkbox"
-                      name={item.id}
-                      value={item.id}
-                      onChange={(e) => checkboxHandler(e, item)}
-                    />
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-          <div className="projectbottommobile buttondiv">
+                    <Grid.Row>
+                      <Grid.Column>
+                        <Card.Meta className="cardtoprow">
+                          <span className="cardbottomrow">
+                            No. of Bedrooms: {flat.noOfBedrooms}
+                          </span>
+                        </Card.Meta>
+                        <Card.Meta className="cardtoprow">
+                          <span className="cardbottomrow">
+                            Level: {flat.level}
+                          </span>
+                        </Card.Meta>
+                      </Grid.Column>
+                      <Grid.Column>
+                        <Card.Meta className="cardtoprow">
+                          <span className="cardbottomrow">
+                            Net Area: {flat.netArea}
+                          </span>
+                        </Card.Meta>
+                        <Card.Meta className="cardtoprow">
+                          <span className="cardbottomrow">
+                            Common Area: {flat.commonArea}
+                          </span>
+                        </Card.Meta>
+                      </Grid.Column>
+                      <Grid.Column>
+                        <Card.Header className="cardtoprow">
+                          <input
+                            type="checkbox"
+                            className="searched-unit-checkbox"
+                            name={flat.id}
+                            value={flat.id}
+                            onChange={(e) => checkboxHandler(e, flat)}
+                          />
+                          <label htmlFor={flat.id}></label>
+                        </Card.Header>
+                      </Grid.Column>
+                    </Grid.Row>
+                  </Grid>
+                </Card.Content>
+              </div>
+            </Card>
+          ))}
+          <div className="projectbottom buttondiv">
             <Link to="./mainInfo">
               <Button
-                className="nextbuttonmobile"
+                className="nextbutton"
                 style={{ backgroundColor: "#1e212d", color: "goldenrod" }}
                 disabled={selectedFlats.length === 0}
               >
