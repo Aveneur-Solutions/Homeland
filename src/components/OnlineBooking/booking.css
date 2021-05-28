@@ -1,142 +1,152 @@
-.filtercontainer{
-    padding: 0% 0% 0% 20%;
+.filtercontainer {
+  padding: 0% 0% 0% 20%;
 }
-.filterpad{
-    padding: 9% 0% 9% 0%;
+.filterpad {
+  padding: 9% 0% 9% 0%;
 }
-.projectbg{
-overflow: hidden;
-width: 100vw;
-height: 150%;
-/* background-color: #fff; */
+.projectbg {
+  overflow: hidden;
+  width: 100vw;
+  height: 150%;
+  /* background-color: #fff; */
 }
-.cardcontainer{
-    padding: 4%;
+.cardcontainer {
+  padding: 4%;
 }
-.ui.vertical.menu{
-    width: 100%;
+.ui.vertical.menu {
+  width: 100%;
 }
-.pR{
-    margin-right: 10px;
+.pR {
+  margin-right: 10px;
 }
-.hsize p{
-    font-size: 10px;
-    /* margin:0% 2% ; */
+.hsize p {
+  font-size: 10px;
+  /* margin:0% 2% ; */
 }
-.tbl{
-    padding: 2%;
+.tbl {
+  padding: 2%;
 }
-.tblpc{
-    margin-top: 2%;
-    margin-right: 2%;
+.tblpc {
+  margin-top: 2%;
+  margin-right: 2%;
 }
-.tbmh{
-    background-color:#1e212d;
+.tbmh {
+  background-color: #1e212d;
 }
-.cardsize{
-    width: 30vw;
-    margin-top: 50px;
-    margin-right: 100px;
-    position: relative;
-    transition: ease-in-out .35s;
+.cardsize {
+  width: 30vw;
+  margin-top: 50px;
+  margin-right: 100px;
+  position: relative;
+  transition: ease-in-out 0.35s;
 }
-.mob-gallery{
-    height: 10vh;
+.mob-gallery {
+  height: 10vh;
 }
-.cardsize:hover{
-    margin-top: 30px;
-    transition: ease-in-out .35s;
-    margin-right: 100px;
+.cardsize:hover {
+  margin-top: 30px;
+  transition: ease-in-out 0.35s;
+  margin-right: 100px;
 }
-.iconselect{
-    text-align: center;
-    padding-top: 3%;
-    font-size: 2rem;color: rgb(126, 126, 126);
-}
-
-.cardtoprow{
-    font-size: .8rem;
-    text-align: center;
-    color: goldenrod;
-}
-.cardtoplabel{
-    text-align: center;
-    color: black;
+.iconselect {
+  text-align: center;
+  padding-top: 3%;
+  font-size: 2rem;
+  color: rgb(126, 126, 126);
 }
 
-.cardbottomrow{
-    font-size: .7rem;
+.cardtoprow {
+  font-size: 0.8rem;
+  text-align: center;
+  color: goldenrod;
 }
-.nextbutton{
-    background: cover;
-    height: 5vh;
-    width: 10vw;
-    border-radius: 5px;border: none;
-    box-shadow: 0px 1px 1px black ;
-    color: white;
-    /* margin-top: 10vh; */
-    font-weight: 900;
-    padding: 80px !important;
-}
-.nextbuttonmobile{
-    background: cover;
-    height: 5vh;
-    width: 20vw;
-    border-radius: 5px;border: none;
-    box-shadow: 0px 1px 1px black ;
-    color: white;
-    font-weight: 900;
-}
-.nextbutton:hover{
-    cursor: pointer;
-    background-color: goldenrod;
-    transition: ease-in .2s;
-    color: white;  
-}
-.projectbottom{
-    margin: 5% auto 10% auto;
-    width: 10vw;
-}
-.projectbottom1{
-    margin: 10% 0% 10% 0%;
-    width: 10vw;
+.cardtoplabel {
+  text-align: center;
+  color: black;
 }
 
-.projectbottommobile{
-    margin: 0% auto 10% auto;
-    width: 20vw;
+.cardbottomrow {
+  font-size: 0.7rem;
 }
-.searchmobile{
-    margin: 5% auto 10% 0%;
-    width: 20vw;
+.nextbutton {
+  background: cover;
+  height: 5vh;
+  width: 10vw;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 1px 1px black;
+  color: white;
+  /* margin-top: 10vh; */
+  font-weight: 900;
+  padding: 80px !important;
 }
-.cardsizeformob{
-    width: 100%;
-    margin-bottom: 5%;
+.nextbuttonmobile {
+  background: cover;
+  height: 5vh;
+  width: 20vw;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 1px 1px black;
+  color: white;
+  font-weight: 900;
 }
-.cardsizeformob1{
-    width: 80%;
-    margin-bottom: 5%;;
+.nextbutton:hover {
+  cursor: pointer;
+  background-color: goldenrod;
+  transition: ease-in 0.2s;
+  color: white;
 }
-.mobilecentercard{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.projectbottom {
+  margin: 5% auto 10% auto;
+  width: 10vw;
+}
+.projectbottom1 {
+  margin: 10% 0% 10% 0%;
+  width: 10vw;
 }
 
- td {
+.projectbottommobile {
+  margin: 0% auto 10% auto;
+  width: 20vw;
+}
+.searchmobile {
+  margin: 5% auto 10% 0%;
+  width: 20vw;
+}
+.cardsizeformob {
+  width: 100%;
+  margin-bottom: 5%;
+}
+.cardsizeformob1 {
+  width: 80%;
+  margin-bottom: 5%;
+}
+.mobilecentercard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+td {
   border: 1px solid black;
 }
-.price{
-    font-size: 2rem;
+.price {
+  font-size: 2rem;
 }
-.size{
-    font-size: 2rem;
+.size {
+  font-size: 2rem;
 }
-.searchhead{
-    font-size: 2.5rem;
+.searchhead {
+  font-size: 2.5rem;
 }
-.projectmainbg{
-    
+.projectmainbg {
   background-image: linear-gradient(#ffffff, #e7e6e1);
+}
+
+.searched-card {
+  max-height: 300px;
+}
+
+.searched-card-img {
+  max-height: 300px;
 }
