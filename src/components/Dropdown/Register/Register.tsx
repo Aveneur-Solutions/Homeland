@@ -2,6 +2,7 @@ import { observer } from "mobx-react-lite";
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import { IUserRegister } from "../../../models/user";
 import { RootStoreContext } from "../../../stores/rootStore";
 import OtpAuth from "../Login/OtpAuth";
@@ -25,20 +26,25 @@ const Register = () => {
   const onRegister = (data: IUserRegister) => {
     if (noMatch !== "") return;
     setPhoneNo(data.phoneNumber);
-    registration(data).then(() => setOtp(true));
+    registration(data)
+      .then(() => setOtp(true))
+      .catch((error) => toast.error(error.data.errors.error));
+  };
+
+  const errorStyle = {
+    color: "red",
   };
 
   return (
     <div className="register">
-      
       <div className="register-container">
-      <Link to="./login">
-        <div className="backbtn">
-          <div className="backbtn1">
-            <h3>{"<"}</h3>
+        <Link to="./login">
+          <div className="backbtn">
+            <div className="backbtn1">
+              <h3>{"<"}</h3>
+            </div>
           </div>
-        </div>
-      </Link>
+        </Link>
         <h1>REGISTER</h1>
         <form onSubmit={handleSubmit(onRegister)}>
           <div className="form-container">
@@ -52,7 +58,9 @@ const Register = () => {
                   required: "First name is required",
                 })}
               ></input>
-              {errors.firstName && <span>{errors.firstName.message}</span>}
+              {errors.firstName && (
+                <span style={errorStyle}>{errors.firstName.message}</span>
+              )}
             </div>
             <div id="uname">
               <label htmlFor="uname">
@@ -64,7 +72,9 @@ const Register = () => {
                   required: "Last name is required",
                 })}
               ></input>
-              {errors.lastName && <span>{errors.lastName.message}</span>}
+              {errors.lastName && (
+                <span style={errorStyle}>{errors.lastName.message}</span>
+              )}
             </div>
             <div id="phone">
               <label htmlFor="phone">
@@ -77,6 +87,9 @@ const Register = () => {
                   required: "Phone number is required",
                 })}
               ></input>
+              {errors.phoneNumber && (
+                <span style={errorStyle}>{errors.phoneNumber.message}</span>
+              )}
             </div>
             <div id="psw">
               <label htmlFor="psw">
@@ -86,9 +99,21 @@ const Register = () => {
                 type="password"
                 {...register("password", {
                   required: "Password is required",
+                  minLength: {
+                    value: 6,
+                    message: "Password must be a minimum of 6 characters",
+                  },
+                  pattern: {
+                    value:
+                      /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/,
+                    message:
+                      "At least 1 uppercase, 1 lowercase, 1 digit and 1 special character is needed",
+                  },
                 })}
               ></input>
-              {errors.password && <span>{errors.password.message}</span>}
+              {errors.password && (
+                <span style={errorStyle}>{errors.password.message}</span>
+              )}
             </div>
             <div id="con-psw">
               <label htmlFor="con-psw">
@@ -105,7 +130,7 @@ const Register = () => {
                   }
                 }}
               ></input>
-              {noMatch !== "" && <span>{noMatch}</span>}
+              {noMatch !== "" && <span style={errorStyle}>{noMatch}</span>}
             </div>
             <div>
               <button type="submit" className="button">
