@@ -84,17 +84,17 @@
         margin-bottom: 20%;
     }
     
-    .profile img{
+    /* .profile img{
         width: 80px;
-    }
+    } */
 
     .allotment-content{
         display: flex;
         flex-direction: column;
     }
-    .profile{
+    /* .profile{
         display: grid;
         grid-template-columns: 1fr 2fr 1fr;
         margin-bottom: 10%;
-    }
+    } */
 }

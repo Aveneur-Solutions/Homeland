@@ -26,7 +26,7 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 1%;
 }
-.profile{
+.booking-profile{
     margin-left: 2vw;
 }
 .booking-content{
@@ -93,7 +93,7 @@
         margin-bottom: 20%;
     }
     
-    .profile img{
+    .booking-profile img{
         width: 80px;
     }
     .profile-homeland-logo{
@@ -104,7 +104,7 @@
         display: flex;
         flex-direction: column;
     }
-    .profile{
+    .booking-profile{
         display: grid;
         grid-template-columns: 1fr 2fr 1fr;
         margin-bottom: 10%;

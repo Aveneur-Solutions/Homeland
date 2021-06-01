@@ -109,7 +109,10 @@ const Cards: React.FC<IProps> = ({ featuredFlats }) => {
                 <Card fluid>
                   <Image
                     className="cardhover"
-                    src={process.env.PUBLIC_URL + "/images/dummy/1.jpg"}
+                    src={
+                      "https://www.homeland.aveneur.com/Images" +
+                      item.images[item.images.length-1].imageLocation
+                    }
                     wrapped
                     ui={false}
                   />

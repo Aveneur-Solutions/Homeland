@@ -36,18 +36,18 @@
 .cardsize {
   width: 30vw;
   margin-top: 50px;
-  margin-right: 100px;
-  position: relative;
+  margin-right: 50px;
   transition: ease-in-out 0.35s;
 }
 .mob-gallery {
   height: 10vh;
 }
+
 .cardsize:hover {
-  margin-top: 30px;
+  transform: translateY(-30px);
   transition: ease-in-out 0.35s;
-  margin-right: 100px;
 }
+
 .iconselect {
   text-align: center;
   padding-top: 3%;
@@ -69,26 +69,14 @@
   font-size: 0.7rem;
 }
 .nextbutton {
-  background: cover;
-  height: 5vh;
-  width: 10vw;
   border-radius: 5px;
   border: none;
   box-shadow: 0px 1px 1px black;
   color: white;
-  /* margin-top: 10vh; */
   font-weight: 900;
-  padding: 80px !important;
 }
 .nextbuttonmobile {
-  background: cover;
-  height: 5vh;
-  width: 20vw;
-  border-radius: 5px;
-  border: none;
-  box-shadow: 0px 1px 1px black;
-  color: white;
-  font-weight: 900;
+  width: 100px !important;
 }
 .nextbutton:hover {
   cursor: pointer;

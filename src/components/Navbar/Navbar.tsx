@@ -80,18 +80,8 @@ const Navbar = () => {
             <li key={index} onClick={handleClick}>
               <Link
                 className={item.cName}
-                to={
-                  // item.url === "/onlineBooking" && !user
-                  //   ? "/onlineBooking"
-                  item.url
-                }
-                // onClick={
-                //   item.url === "/onlineBooking" && !user
-                //     ? bookingLogin
-                //     : item.url === "/ourProject"
-                //     ? setFeatured
-                //     : () => {}
-                // }
+                to={item.url}
+                onClick={item.url === "/onlineBooking" ? setFeatured : () => {}}
               >
                 {item.title}
               </Link>
@@ -122,10 +112,7 @@ const Navbar = () => {
                     text="Transfer Units"
                     onClick={handleTransfer}
                   />
-                  <Dropdown.Item
-                    text="My Profile"
-                    onClick={handleProfile}
-                  />
+                  <Dropdown.Item text="My Profile" onClick={handleProfile} />
                   <Dropdown.Item text="Logout" onClick={handleLogout} />
                 </Dropdown.Menu>
               </Dropdown>
@@ -174,10 +161,7 @@ const Navbar = () => {
                     text="Transfer Units"
                     onClick={handleTransfer}
                   />
-                  <Dropdown.Item
-                    text="My Profile"
-                    onClick={handleProfile}
-                  />
+                  <Dropdown.Item text="My Profile" onClick={handleProfile} />
                   <Dropdown.Item text="Logout" onClick={handleLogout} />
                 </Dropdown.Menu>
               </Dropdown>

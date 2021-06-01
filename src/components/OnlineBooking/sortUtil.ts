@@ -65,6 +65,17 @@ const sortFlats = (
   if (sizeRange.sizeRange4) {
     pushToArray(flats, sortedUnits, "size", 981, 1000);
   }
+  if (
+    !priceRange.priceRange1 &&
+    !priceRange.priceRange2 &&
+    !priceRange.priceRange3 &&
+    !sizeRange.sizeRange1 &&
+    !sizeRange.sizeRange2 &&
+    !sizeRange.sizeRange3 &&
+    !sizeRange.sizeRange4
+  ) {
+    sortedUnits = flats;
+  }
   return sortedUnits;
 };
 
