@@ -7,11 +7,9 @@
 }
 
 .my-booking{
-    background-image: url("./MyBookings.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(98,204,35,0.5158438375350141) 35%, rgba(0,212,255,1) 100%);
+    height: 105vh;
     position: relative;
 }
 
@@ -19,7 +17,7 @@
     border: none;
     width: 60%;
     position: absolute;
-    top: 10%;
+    top: 3%;
     left: 50%;
     transform: translateX(-50%);
     background: var(--background-font-color);
@@ -79,15 +77,16 @@
     color: #000;
 }
 
-@media screen and (max-width: 968px) {
+@media screen and (max-width: 1024px) {
     .my-booking{
-        background: none var(--media-background-color);
+        background: none;
     }
     .my-booking-container{
         top: 0;
         width: 100%;
         left: 50%;
         transform: translateX(-50%);
+        box-shadow: none;
     }
     .my-booking-container h1{
         margin-bottom: 20%;
