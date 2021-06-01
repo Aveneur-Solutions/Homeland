@@ -5,6 +5,7 @@ import IFlat from "../../models/unit";
 import { useMediaQuery } from "react-responsive";
 import { ChangeEvent, useContext } from "react";
 import { RootStoreContext } from "../../stores/rootStore";
+import { history } from "../..";
 
 interface IProps {
   sortedFlats: IFlat[];
@@ -23,94 +24,97 @@ const UnitList: React.FC<IProps> = ({ sortedFlats }) => {
     else unselectFlats(flat);
   };
 
+  const handleCardClick = (flat: IFlat) => {
+    selectFlats(flat);
+    history.push("/maininfo");
+  };
+
   return (
     <>
       {!isTabletOrMobileDevice ? (
-        <div className="tblpc">
-          {sortedFlats.map((flat) => (
-            <Card fluid className="searched-card" key={flat.id}>
-              <div style={{ display: "flex" }}>
-                <Image
-                  src={
-                    "https://www.homeland.aveneur.com/Images" +
-                    flat.images[flat.images.length - 1].imageLocation
-                  }
-                  className="searched-card-img"
-                  ui={false}
-                />
-                <Card.Content>
-                  <Grid columns={4} divided>
-                    <Grid.Row>
-                      <Grid.Column>
-                        <Card.Header className="cardtoprow  ">
-                          Unit ID<h4 className="cardtoplabel">{flat.id}</h4>
-                        </Card.Header>
-                      </Grid.Column>
-                      <Grid.Column>
-                        <Card.Header className="cardtoprow ">
-                          Size<h4 className="cardtoplabel">{flat.size}</h4>
-                          sqft.
-                        </Card.Header>
-                      </Grid.Column>
-                      <Grid.Column>
-                        <Card.Header className="cardtoprow ">
-                          Price<h4 className="cardtoplabel">{flat.price}</h4>
-                          Tk
-                        </Card.Header>
-                      </Grid.Column>
-                      <Grid.Column>
-                        <Card.Header className="cardtoprow  ">
-                          Building
-                          <h4 className="cardtoplabel">
-                            {flat.buildingNumber}
-                          </h4>
-                        </Card.Header>
-                      </Grid.Column>
-                    </Grid.Row>
+        <div className="cardcontainer">
+          <Grid columns={2} divided>
+            {sortedFlats.map((item) => (
+              <div
+                className="cardhover"
+                key={item.id}
+                // onClick={() => handleCardClick(item)}
+              >
+                <Card fluid>
+                  <Image
+                    src={
+                      "https://www.homeland.aveneur.com/Images" +
+                      item.images[item.images.length - 1].imageLocation
+                    }
+                    wrapped
+                    ui={false}
+                  />
+                  <Card.Content>
+                    <Grid columns={3} divided>
+                      <Grid.Row>
+                        <Grid.Column>
+                          <Card.Header className="cardtoprow  ">
+                            Unit ID<h4 className="cardtoplabel">{item.id}</h4>
+                          </Card.Header>
+                        </Grid.Column>
+                        <Grid.Column>
+                          <Card.Header className="cardtoprow ">
+                            Size<h4 className="cardtoplabel">{item.size}</h4>
+                            sqft.
+                          </Card.Header>
+                        </Grid.Column>
+                        <Grid.Column>
+                          <Card.Header className="cardtoprow ">
+                            Price<h4 className="cardtoplabel">{item.price}</h4>
+                            Tk
+                          </Card.Header>
+                        </Grid.Column>
+                      </Grid.Row>
 
-                    <Grid.Row>
-                      <Grid.Column>
-                        <Card.Meta className="cardtoprow">
-                          <span className="cardbottomrow">
-                            No. of Bedrooms: {flat.noOfBedrooms}
-                          </span>
-                        </Card.Meta>
-                        <Card.Meta className="cardtoprow">
-                          <span className="cardbottomrow">
-                            Level: {flat.level}
-                          </span>
-                        </Card.Meta>
-                      </Grid.Column>
-                      <Grid.Column>
-                        <Card.Meta className="cardtoprow">
-                          <span className="cardbottomrow">
-                            Net Area: {flat.netArea}
-                          </span>
-                        </Card.Meta>
-                        <Card.Meta className="cardtoprow">
-                          <span className="cardbottomrow">
-                            Common Area: {flat.commonArea}
-                          </span>
-                        </Card.Meta>
-                      </Grid.Column>
-                      <Grid.Column>
-                        <Card.Header className="cardtoprow">
-                          <input
-                            type="checkbox"
-                            className="searched-unit-checkbox"
-                            name={flat.id}
-                            value={flat.id}
-                            onChange={(e) => checkboxHandler(e, flat)}
-                          />
-                          <label htmlFor={flat.id}></label>
-                        </Card.Header>
-                      </Grid.Column>
-                    </Grid.Row>
-                  </Grid>
-                </Card.Content>
+                      <Grid.Row>
+                        <Grid.Column>
+                          <Card.Meta>
+                            <span className="cardbottomrow">
+                              Building: {item.buildingNumber}
+                            </span>
+                          </Card.Meta>
+                          <Card.Meta>
+                            <span className="cardbottomrow">
+                              Level: {item.level}
+                            </span>
+                          </Card.Meta>
+                        </Grid.Column>
+                        <Grid.Column>
+                          <Card.Meta>
+                            <span className="cardbottomrow">
+                              Net Area: {item.netArea}
+                            </span>
+                          </Card.Meta>
+                          <Card.Meta>
+                            <span className="cardbottomrow">
+                              Common Area: {item.commonArea}
+                            </span>
+                          </Card.Meta>
+                        </Grid.Column>
+                        <Grid.Column>
+                          <Card.Header className="cardtoprow">
+                            <input
+                              type="checkbox"
+                              className="searched-unit-checkbox"
+                              name={item.id}
+                              value={item.id}
+                              onChange={(e) => checkboxHandler(e, item)}
+                            />
+                            <label htmlFor={item.id}></label>
+                          </Card.Header>
+                        </Grid.Column>
+                      </Grid.Row>
+                    </Grid>
+                  </Card.Content>
+                </Card>
               </div>
-            </Card>
-          ))}
+            ))}
+          </Grid>
           <div className="projectbottom buttondiv">
             <Link to="./mainInfo">
               <Button
@@ -126,92 +130,8 @@ const UnitList: React.FC<IProps> = ({ sortedFlats }) => {
       ) : (
         <div className="tbl">
           {sortedFlats.map((item) => (
-            // <Card fluid className="searched-card" style={{maxHeight: 200}}>
-            //   <div style={{ display: "flex" }}>
-            //     <Image
-            //       src={
-            //         "https://www.homeland.aveneur.com/Images" +
-            //         flat.images[flat.images.length - 1].imageLocation
-            //       }
-            //       style={{maxHeight: 200}}
-            //       className="searched-card-img"
-            //       ui={false}
-            //     />
-            //     <Card.Content>
-            //       <Grid columns={3} divided>
-            //         <Grid.Row>
-            //           <Grid.Column>
-            //             <Card.Header className="cardtoprow  ">
-            //               Unit ID<h4 className="cardtoplabel">{flat.id}</h4>
-            //             </Card.Header>
-            //           </Grid.Column>
-            //           <Grid.Column>
-            //             <Card.Header className="cardtoprow ">
-            //               Size<h4 className="cardtoplabel">{flat.size}</h4>
-            //               sqft.
-            //             </Card.Header>
-            //           </Grid.Column>
-            //           <Grid.Column>
-            //             <Card.Header className="cardtoprow ">
-            //               Price<h4 className="cardtoplabel">{flat.price}</h4>
-            //               Tk
-            //             </Card.Header>
-            //           </Grid.Column>
-            //           <Grid.Column>
-            //             <Card.Header className="cardtoprow  ">
-            //               Building
-            //               <h4 className="cardtoplabel">
-            //                 {flat.buildingNumber}
-            //               </h4>
-            //             </Card.Header>
-            //           </Grid.Column>
-            //         </Grid.Row>
-
-            //         <Grid.Row>
-            //           <Grid.Column>
-            //             <Card.Meta className="cardtoprow">
-            //               <span className="cardbottomrow">
-            //                 No. of Bedrooms: {flat.noOfBedrooms}
-            //               </span>
-            //             </Card.Meta>
-            //             <Card.Meta className="cardtoprow">
-            //               <span className="cardbottomrow">
-            //                 Level: {flat.level}
-            //               </span>
-            //             </Card.Meta>
-            //           </Grid.Column>
-            //           <Grid.Column>
-            //             <Card.Meta className="cardtoprow">
-            //               <span className="cardbottomrow">
-            //                 Net Area: {flat.netArea}
-            //               </span>
-            //             </Card.Meta>
-            //             <Card.Meta className="cardtoprow">
-            //               <span className="cardbottomrow">
-            //                 Common Area: {flat.commonArea}
-            //               </span>
-            //             </Card.Meta>
-            //           </Grid.Column>
-            //           <Grid.Column>
-            //             <Card.Header className="cardtoprow">
-            //               <input
-            //                 type="checkbox"
-            //                 className="searched-unit-checkbox"
-            //                 name={flat.id}
-            //                 value={flat.id}
-            //                 onChange={(e) => checkboxHandler(e, flat)}
-            //               />
-            //               <label htmlFor={flat.id}></label>
-            //             </Card.Header>
-            //           </Grid.Column>
-            //         </Grid.Row>
-            //       </Grid>
-            //     </Card.Content>
-            //   </div>
-            // </Card>
             <Card fluid key={item.id}>
               <Image
-                className="cardhover"
                 src={
                   "https://www.homeland.aveneur.com/Images" +
                   item.images[item.images.length - 1].imageLocation
