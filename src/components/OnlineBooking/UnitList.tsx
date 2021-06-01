@@ -1,6 +1,7 @@
+/* eslint-disable jsx-a11y/alt-text */
 import { observer } from "mobx-react-lite";
 import { Link } from "react-router-dom";
-import { Table, Button, Card, Image, Grid } from "semantic-ui-react";
+import { Button, Card, Image, Grid } from "semantic-ui-react";
 import IFlat from "../../models/unit";
 import { useMediaQuery } from "react-responsive";
 import { ChangeEvent, useContext } from "react";
@@ -41,13 +42,12 @@ const UnitList: React.FC<IProps> = ({ sortedFlats }) => {
                 // onClick={() => handleCardClick(item)}
               >
                 <Card fluid>
-                  <Image
+                  <img
                     src={
                       "https://www.homeland.aveneur.com/Images" +
                       item.images[item.images.length - 1].imageLocation
                     }
-                    wrapped
-                    ui={false}
+                    height="400px"
                   />
                   <Card.Content>
                     <Grid columns={3} divided>

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import { Card, Image, Grid } from "semantic-ui-react";
 import "./booking.css";
 import { observer } from "mobx-react-lite";
@@ -37,13 +38,12 @@ const Cards: React.FC<IProps> = ({ featuredFlats }) => {
                 onClick={() => handleCardClick(item)}
               >
                 <Card fluid>
-                  <Image
+                  <img
                     src={
                       "https://www.homeland.aveneur.com/Images" +
                       item.images[item.images.length - 1].imageLocation
                     }
-                    wrapped
-                    ui={false}
+                    height="400px"
                   />
                   <Card.Content>
                     <Grid columns={3} divided>
