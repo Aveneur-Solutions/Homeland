@@ -39,6 +39,14 @@
   margin-right: 50px;
   transition: ease-in-out 0.35s;
 }
+
+.cardhover {
+  width: 30vw;
+  margin-top: 50px;
+  margin-right: 50px;
+  transition: ease-in-out 0.35s;
+}
+
 .mob-gallery {
   height: 10vh;
 }

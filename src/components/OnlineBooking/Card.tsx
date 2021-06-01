@@ -38,10 +38,9 @@ const Cards: React.FC<IProps> = ({ featuredFlats }) => {
               >
                 <Card fluid>
                   <Image
-                    className="cardhover"
                     src={
                       "https://www.homeland.aveneur.com/Images" +
-                      item.images[item.images.length-1].imageLocation
+                      item.images[item.images.length - 1].imageLocation
                     }
                     wrapped
                     ui={false}
@@ -105,13 +104,16 @@ const Cards: React.FC<IProps> = ({ featuredFlats }) => {
         <div>
           {featuredFlats.map((item) => {
             return (
-              <div className="cardsizeformob " key={item.id}>
+              <div
+                className="cardsizeformob "
+                key={item.id}
+                onClick={() => handleCardClick(item)}
+              >
                 <Card fluid>
                   <Image
-                    className="cardhover"
                     src={
                       "https://www.homeland.aveneur.com/Images" +
-                      item.images[item.images.length-1].imageLocation
+                      item.images[item.images.length - 1].imageLocation
                     }
                     wrapped
                     ui={false}
