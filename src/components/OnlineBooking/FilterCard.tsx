@@ -2,6 +2,7 @@ import { SyntheticEvent } from "react";
 import { Menu, Button } from "semantic-ui-react";
 import "./booking.css";
 import { useMediaQuery } from "react-responsive";
+import { nextbutton } from "../customStyles/buttonStyles";
 
 interface IProps {
   onFormSubmit: (e: SyntheticEvent<HTMLFormElement>) => void;
@@ -69,7 +70,7 @@ const FilterCard: React.FC<IProps> = ({
             3400000 - 3600000
           </label>
           <br />
-          <Menu.Item name="Size" className="size"/>
+          <Menu.Item name="Size" className="size" />
           <label>
             <input
               className="pR"
@@ -116,13 +117,19 @@ const FilterCard: React.FC<IProps> = ({
           {/* <br /> */}
           {!isTabletOrMobileDevice ? (
             <div className="projectbottom1 buttondiv1">
-              <Button className="nextbutton" type="submit" style={{backgroundColor:"#1e212d", color:"goldenrod"}}>
+              <Button
+                type="submit"
+                style={nextbutton}
+              >
                 Search
               </Button>
             </div>
           ) : (
             <div className="searchmobile buttondiv1">
-              <Button className="nextbuttonmobile" type="submit" style={{backgroundColor:"#1e212d", color:"goldenrod"}}>
+              <Button
+                type="submit"
+                style={nextbutton}
+              >
                 Search
               </Button>
             </div>

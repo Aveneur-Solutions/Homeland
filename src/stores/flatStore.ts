@@ -14,7 +14,7 @@ export default class FlatStore {
 
   @observable flat: IFlat | null = null;
   @observable flats: IFlat[] = [];
-  @observable featuredFlats: IFlat[] = [];
+  // @observable featuredFlats: IFlat[] = [];
   @observable selectedFlats: IFlat[] = [];
   @observable cartItems: IFlat[] = [];
   @observable cartItemCount = 0;

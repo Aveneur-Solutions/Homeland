@@ -9,8 +9,9 @@
 }
 
 .ui.button{
-  padding: 0  !important;
-  width: 10vw;
+  padding: 0 !important;
+  width: 200px;
+  height: 40px;
 }
 
 .logoimg{

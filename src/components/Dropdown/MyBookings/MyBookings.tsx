@@ -17,7 +17,7 @@ const MyBookings = () => {
       <div className="my-booking-container">
         <h1 style={{ textAlign: "center" }}>My Bookings</h1>
         <div className="booking-content">
-          <div className="profile">
+          <div className="booking-profile">
 
             <div className="profile-homeland-logo">
               <img
