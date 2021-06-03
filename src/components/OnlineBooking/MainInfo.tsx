@@ -36,24 +36,6 @@ const MainInfo = () => {
         </div>
       ) : (
         <div>
-          {/* <div className="similar-units">
-            <div>
-              <Button
-                className="atcandbnbutton"
-                type="submit"
-                style={{ backgroundColor: "#1e212d", color: "goldenrod" }}
-              >
-                Add To Cart
-              </Button>
-              <Button
-                className="atcandbnbutton"
-                type="submit"
-                style={{ backgroundColor: "#1e212d", color: "goldenrod" }}
-              >
-                Buy Now
-              </Button>
-            </div>
-          </div> */}
           <div>
             <div className="similarunitheadermobile">
               <h1>SIMILAR UNITS</h1>
