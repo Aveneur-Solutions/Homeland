@@ -1,18 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import 'react-toastify/dist/ReactToastify.css';
-import App from './App';
-import { Router } from 'react-router-dom';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import "react-toastify/dist/ReactToastify.css";
+import App from "./App";
+import { Router } from "react-router-dom";
 import { createHashHistory } from "history";
+import ScrollToTop from "./scroller/ScrollToTop";
 
 export const history = createHashHistory();
 
 ReactDOM.render(
-    <Router history={history}>
+  <Router history={history}>
+    <ScrollToTop />
     <App />
-    </Router>,
-  document.getElementById('root')
+  </Router>,
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -7,7 +7,7 @@ import { observer } from "mobx-react-lite";
 
 const OnlineBooking = () => {
   const rootStore = useContext(RootStoreContext);
-  const { cartItems, initCart, removeFromCart } = rootStore.flatStore;
+  const { cartItems, bookFlat, removeFromCart } = rootStore.flatStore;
 
   const [clicked, setClicked] = useState(false);
 
@@ -24,7 +24,10 @@ const OnlineBooking = () => {
       <div className="online-booking-container">
         <h1>Online Booking</h1>
         <div className="form-container1">
-          <form action="">
+          <form onSubmit={(e) => {
+            e.preventDefault()
+            bookFlat()
+          }}>
             <div className="table-1">
               <table className="tableBook">
                 <thead>
@@ -62,7 +65,7 @@ const OnlineBooking = () => {
                 </tbody>
               </table>
             </div>
-            <div className="amount">
+            {/* <div className="amount">
               <label htmlFor="number">
                 <b>Amount</b>
               </label>
@@ -83,7 +86,7 @@ const OnlineBooking = () => {
                 })}
               </div>
               <button>Select</button>
-            </div>
+            </div> */}
             <div className="section">
               <div className="checkbox-container">
                 <h4 style={{ textAlign: "center" }}>
@@ -138,7 +141,7 @@ const OnlineBooking = () => {
                   </div>
                 </div>
               </div>
-              <button className="btn">Proceed For Check Out</button>
+              <button type="submit" className="btn">Proceed For Check Out</button>
             </div>
           </form>
         </div>
