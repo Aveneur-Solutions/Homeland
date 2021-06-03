@@ -20,7 +20,9 @@ const OurProject = () => {
   const isTabletOrMobileDevice = useMediaQuery({
     query: "(max-device-width: 1224px)",
   });
+
   const [sortedFlats, setSortedFlats] = useState<IFlat[]>([]);
+  // const [featuredFlats, setFeaturedFlats] = useState<IFlat[]>([]);
 
   const [priceRange, setPriceRange] = useState({
     priceRange1: false,
@@ -69,6 +71,13 @@ const OurProject = () => {
     listflats();
   }, [listflats, setFeatured]);
 
+  const getFeaturedUnits = () => {
+    let flatsCopy = flats.slice();
+    let sortedFlats = flatsCopy.sort((a, b) => a.price - b.price);
+    let featured = sortedFlats.slice(0, 4);
+    return featured;
+  };
+
   return (
     <div className="projectmainbg">
       <ProjectGallery />
@@ -85,7 +94,7 @@ const OurProject = () => {
               />
             </Grid.Column>
             <Grid.Column width={13}>
-              {featured && <Card featuredFlats={flats} />}
+              {featured && <Card featuredFlats={getFeaturedUnits()} />}
               {searchUnit && <UnitList sortedFlats={sortedFlats} />}
             </Grid.Column>
           </Grid>
@@ -98,7 +107,7 @@ const OurProject = () => {
               priceRange={priceRange}
               sizeRange={sizeRange}
             />
-            {featured && <Card featuredFlats={flats} />}
+            {featured && <Card featuredFlats={getFeaturedUnits()} />}
             {searchUnit && <UnitList sortedFlats={sortedFlats} />}
           </div>
         )}

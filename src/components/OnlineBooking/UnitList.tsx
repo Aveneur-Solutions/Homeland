@@ -1,10 +1,12 @@
+/* eslint-disable jsx-a11y/alt-text */
 import { observer } from "mobx-react-lite";
 import { Link } from "react-router-dom";
-import { Table, Button } from "semantic-ui-react";
+import { Button, Card, Image, Grid } from "semantic-ui-react";
 import IFlat from "../../models/unit";
 import { useMediaQuery } from "react-responsive";
 import { ChangeEvent, useContext } from "react";
 import { RootStoreContext } from "../../stores/rootStore";
+import { history } from "../..";
 
 interface IProps {
   sortedFlats: IFlat[];
@@ -17,73 +19,111 @@ const UnitList: React.FC<IProps> = ({ sortedFlats }) => {
   const rootStore = useContext(RootStoreContext);
   const { selectedFlats, selectFlats, unselectFlats } = rootStore.flatStore;
 
-  const checkboxHandler = (e: ChangeEvent<HTMLInputElement>, flat: IFlat) => {
-    const { checked } = e.currentTarget;
-    if (checked) selectFlats(flat);
-    else unselectFlats(flat);
+  const addToSelectedFlats = (flat: IFlat) => {
+    selectFlats(flat);
+  };
+
+  const removeFromSelectedFlats = (flat: IFlat) => {
+    unselectFlats(flat);
+  };
+
+  // const handleCardClick = (flat: IFlat) => {
+  //   selectFlats(flat);
+  //   history.push("/maininfo");
+  // };
+
+  const checkboxStyle = {
+    fontSize: 30,
   };
 
   return (
     <>
       {!isTabletOrMobileDevice ? (
-        <div className="tblpc">
-          <Table celled textAlign="center" padded>
-            <Table.Header>
-              <Table.Row>
-                <Table.HeaderCell
-                  style={{ backgroundColor: "#1e212d", color: "goldenrod" }}
-                >
-                  UNIT ID
-                </Table.HeaderCell>
-                <Table.HeaderCell
-                  style={{ backgroundColor: "#1e212d", color: "goldenrod" }}
-                >
-                  SIZE
-                </Table.HeaderCell>
-                <Table.HeaderCell
-                  style={{ backgroundColor: "#1e212d", color: "goldenrod" }}
-                >
-                  PRICE
-                </Table.HeaderCell>
-                <Table.HeaderCell
-                  style={{ backgroundColor: "#1e212d", color: "goldenrod" }}
-                >
-                  BOOKING
-                </Table.HeaderCell>
-                <Table.HeaderCell
-                  style={{ backgroundColor: "#1e212d", color: "goldenrod" }}
-                >
-                  Select
-                </Table.HeaderCell>
-              </Table.Row>
-            </Table.Header>
-            <Table.Body>
-              {sortedFlats.map((item) => (
-                <Table.Row key={item.id}>
-                  <Table.Cell>
-                    <p>{item.id}</p>
-                  </Table.Cell>
-                  <Table.Cell>
-                    <p>{item.size}</p>
-                  </Table.Cell>
-                  <Table.Cell>
-                    <p>{item.price}</p>
-                  </Table.Cell>
-                  <Table.Cell>
-                    <p>{item.bookingPrice}</p>
-                  </Table.Cell>
-                  <Table.Cell>
-                    <input
-                      type="checkbox"
-                      name={item.id}
-                      value={item.id}
-                      onChange={(e) => checkboxHandler(e, item)}
-                    />
-                  </Table.Cell>
-                </Table.Row>
-              ))}
-            </Table.Body>
-          </Table>
+        <div className="cardcontainer">
+          <Grid columns={2} divided>
+            {sortedFlats.map((item) => (
+              <div className="cardhover" key={item.id}>
+                <Card fluid>
+                  <img
+                    src={
+                      "https://www.homeland.aveneur.com/Images" +
+                      item.images[item.images.length - 1].imageLocation
+                    }
+                    height="400px"
+                  />
+                  <Card.Content>
+                    <Grid columns={3} divided>
+                      <Grid.Row>
+                        <Grid.Column>
+                          <Card.Header className="cardtoprow  ">
+                            Unit ID<h4 className="cardtoplabel">{item.id}</h4>
+                          </Card.Header>
+                        </Grid.Column>
+                        <Grid.Column>
+                          <Card.Header className="cardtoprow ">
+                            Size<h4 className="cardtoplabel">{item.size}</h4>
+                            sqft.
+                          </Card.Header>
+                        </Grid.Column>
+                        <Grid.Column>
+                          <Card.Header className="cardtoprow ">
+                            Price<h4 className="cardtoplabel">{item.price}</h4>
+                            Tk
+                          </Card.Header>
+                        </Grid.Column>
+                      </Grid.Row>
+
+                      <Grid.Row>
+                        <Grid.Column>
+                          <Card.Meta>
+                            <span className="cardbottomrow">
+                              Building: {item.buildingNumber}
+                            </span>
+                          </Card.Meta>
+                          <Card.Meta>
+                            <span className="cardbottomrow">
+                              Level: {item.level}
+                            </span>
+                          </Card.Meta>
+                        </Grid.Column>
+                        <Grid.Column>
+                          <Card.Meta>
+                            <span className="cardbottomrow">
+                              Net Area: {item.netArea}
+                            </span>
+                          </Card.Meta>
+                          <Card.Meta>
+                            <span className="cardbottomrow">
+                              Common Area: {item.commonArea}
+                            </span>
+                          </Card.Meta>
+                        </Grid.Column>
+                        <Grid.Column>
+                          <Card.Header className="cardtoprow">
+                            {selectedFlats.some(
+                              (flat) => flat.id === item.id
+                            ) ? (
+                              <i
+                                className="fas fa-check-circle"
+                                style={checkboxStyle}
+                                onClick={() => removeFromSelectedFlats(item)}
+                              ></i>
+                            ) : (
+                              <i
+                                className="far fa-circle"
+                                style={checkboxStyle}
+                                onClick={() => addToSelectedFlats(item)}
+                              ></i>
+                            )}
+                          </Card.Header>
+                        </Grid.Column>
+                      </Grid.Row>
+                    </Grid>
+                  </Card.Content>
+                </Card>
+              </div>
+            ))}
+          </Grid>
           <div className="projectbottom buttondiv">
             <Link to="./mainInfo">
               <Button
@@ -98,86 +138,89 @@ const UnitList: React.FC<IProps> = ({ sortedFlats }) => {
         </div>
       ) : (
         <div className="tbl">
-          <table>
-            <tr className="tbmh">
-              <th
-                style={{
-                  backgroundColor: "#1e212d",
-                  color: "goldenrod",
-                  textAlign: "center",
-                }}
-              >
-                UNIT ID
-              </th>
-              <th
-                style={{
-                  backgroundColor: "#1e212d",
-                  color: "goldenrod",
-                  textAlign: "center",
-                }}
-              >
-                SIZE
-              </th>
-              <th
-                style={{
-                  backgroundColor: "#1e212d",
-                  color: "goldenrod",
-                  textAlign: "center",
-                }}
-              >
-                PRICE
-              </th>
-              <th
-                style={{
-                  backgroundColor: "#1e212d",
-                  color: "goldenrod",
-                  textAlign: "center",
-                }}
-              >
-                BOOKING
-              </th>
-              <th
-                style={{
-                  backgroundColor: "#1e212d",
-                  color: "goldenrod",
-                  textAlign: "center",
-                }}
-              >
-                Select
-              </th>
-            </tr>
-            <tbody>
-              {sortedFlats.map((item) => (
-                <tr key={item.id}>
-                  <td style={{ textAlign: "center" }}>
-                    <p>{item.id}</p>
-                  </td>
-                  <td style={{ textAlign: "center" }}>
-                    <p>{item.size}</p>
-                  </td>
+          {sortedFlats.map((item) => (
+            <Card fluid key={item.id}>
+              <Image
+                src={
+                  "https://www.homeland.aveneur.com/Images" +
+                  item.images[item.images.length - 1].imageLocation
+                }
+                wrapped
+                ui={false}
+              />
+              <Card.Content>
+                <Grid columns={3} divided>
+                  <Grid.Row>
+                    <Grid.Column>
+                      <Card.Header className="cardtoprow  ">
+                        Unit ID<h4 className="cardtoplabel">{item.id}</h4>
+                      </Card.Header>
+                    </Grid.Column>
+                    <Grid.Column>
+                      <Card.Header className="cardtoprow ">
+                        Size<h4 className="cardtoplabel">{item.size}</h4>
+                        sqft.
+                      </Card.Header>
+                    </Grid.Column>
+                    <Grid.Column>
+                      <Card.Header className="cardtoprow ">
+                        Price<h4 className="cardtoplabel">{item.price}</h4>
+                        Tk
+                      </Card.Header>
+                    </Grid.Column>
+                  </Grid.Row>
 
-                  <td style={{ textAlign: "center" }}>
-                    <p>{item.price}</p>
-                  </td>
-                  <td style={{ textAlign: "center" }}>
-                    <p>{item.bookingPrice}</p>
-                  </td>
-                  <td style={{ textAlign: "center" }}>
-                    <input
-                      type="checkbox"
-                      name={item.id}
-                      value={item.id}
-                      onChange={(e) => checkboxHandler(e, item)}
-                    />
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-          <div className="projectbottommobile buttondiv">
+                  <Grid.Row>
+                    <Grid.Column>
+                      <Card.Meta>
+                        <span className="cardbottomrow">
+                          Building: {item.buildingNumber}
+                        </span>
+                      </Card.Meta>
+                      <Card.Meta>
+                        <span className="cardbottomrow">
+                          Level: {item.level}
+                        </span>
+                      </Card.Meta>
+                    </Grid.Column>
+                    <Grid.Column>
+                      <Card.Meta>
+                        <span className="cardbottomrow">
+                          Net Area: {item.netArea}
+                        </span>
+                      </Card.Meta>
+                      <Card.Meta>
+                        <span className="cardbottomrow">
+                          Common Area: {item.commonArea}
+                        </span>
+                      </Card.Meta>
+                    </Grid.Column>
+                    <Grid.Column>
+                      <Card.Header className="cardtoprow">
+                        {selectedFlats.some((flat) => flat.id === item.id) ? (
+                          <i
+                            className="fas fa-check-circle"
+                            style={checkboxStyle}
+                            onClick={() => removeFromSelectedFlats(item)}
+                          ></i>
+                        ) : (
+                          <i
+                            className="far fa-circle"
+                            style={checkboxStyle}
+                            onClick={() => addToSelectedFlats(item)}
+                          ></i>
+                        )}
+                      </Card.Header>
+                    </Grid.Column>
+                  </Grid.Row>
+                </Grid>
+              </Card.Content>
+            </Card>
+          ))}
+          <div className="projectbottom buttondiv">
             <Link to="./mainInfo">
               <Button
-                className="nextbuttonmobile"
+                className="nextbutton"
                 style={{ backgroundColor: "#1e212d", color: "goldenrod" }}
                 disabled={selectedFlats.length === 0}
               >

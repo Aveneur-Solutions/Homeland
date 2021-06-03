@@ -7,8 +7,8 @@
 }
 
 .register{
-    background-size: cover;
-    background-repeat: no-repeat;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(204,154,35,0.7875525210084033) 35%, rgba(0,212,255,1) 100%);
     height: 100vh;
     position: relative;
 }
@@ -91,14 +91,15 @@ input:focus{
 
 @media screen and (max-width: 968px) {
     .register{
-        background: none var(--media-background-color);
+        background: none;
     }
 
     .register-container{
-        width: 80%;
+        width: 100%;
         left: 50%;
         transform: translateX(-50%);
         position: relative;
+        box-shadow: none;
     }
     #btn{
         width: 100%;

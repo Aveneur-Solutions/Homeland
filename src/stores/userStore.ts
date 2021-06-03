@@ -25,11 +25,12 @@ export default class UserStore {
   @observable myAllottedFlats : IFlat[] = [];
   @observable myTransfers : ITransfer[] = [];
   @observable transferrableFlats : IFlat[] = [];
+
   @action login = async (body: IUserLogin) => {
     try {
       await agent.User.login(body);
     } catch (error) {
-      console.log(error);
+      throw error;
     }
   };
 
@@ -66,6 +67,7 @@ export default class UserStore {
       await agent.User.register(body);
     } catch (error) {
       console.log(error);
+      throw error;
     }
   };
 
@@ -75,19 +77,19 @@ export default class UserStore {
       runInAction(() => {
         this.user = user;
         this.rootStore.commonStore.setToken(user.token);
-      })
+      });
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   @action changePassword = async (body: IUserChangePassword) => {
-    try{
+    try {
       await agent.User.changePassword(body);
-    }catch(error){
-      console.log(error)
+    } catch (error) {
+      console.log(error);
     }
-  }
+  };
 
   @action getMyBookedFlats = async () => {
     try{
@@ -100,52 +102,46 @@ export default class UserStore {
     }catch(error)
     {
       console.log(error)
-    }
-  }
-  @action getMyAllottedFlats = async () => {
-    try{
-     const allottedFlats =  await agent.User.myAllotments();
-     runInAction(() => {
-       this.myAllottedFlats = allottedFlats;
-     }) 
-    }catch(error)
-    {
-      console.log(error)
-    }
-  }
-  @action getMyTransfers = async () => {
-    try{
-     const transfers =  await agent.User.myTransfers();
-     runInAction(() => {
-       this.myTransfers = transfers;
-     }) 
-    }catch(error)
-    {
-      console.log(error)
-    }
 
-  
-  }
-  @action searchUser = async (data : IUserSearch) => {
-    try{
+    }
+  };
+  @action getMyAllottedFlats = async () => {
+    try {
+      const allottedFlats = await agent.User.myAllotments();
+      runInAction(() => {
+        this.myAllottedFlats = allottedFlats;
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  @action getMyTransfers = async () => {
+    try {
+      const transfers = await agent.User.myTransfers();
+      runInAction(() => {
+        this.myTransfers = transfers;
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  @action searchUser = async (data: IUserSearch) => {
+    try {
       this.emptyRecieverUser();
 
       const user = await agent.User.getUser(data);
       runInAction(() => {
-        if(this.user?.phoneNumber !== user.phoneNumber){
+        if (this.user?.phoneNumber !== user.phoneNumber) {
           this.recieverUser = user;
           console.log(user);
-        }
-        else toast.error("It's your number");
-        
-      })
-    }catch(error)
-    {
+        } else toast.error("It's your number");
+      });
+    } catch (error) {
       toast.error("No user exist with this number");
-      console.log(error)
+      console.log(error);
     }
-  } 
+  };
   @action emptyRecieverUser = () => {
     this.recieverUser = null;
-  }
+  };
 }

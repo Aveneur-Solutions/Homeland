@@ -6,6 +6,7 @@ import { RootStoreContext } from "../../../stores/rootStore";
 import OtpAuth from "./OtpAuth";
 import { IUserLogin } from "../../../models/user";
 import { observer } from "mobx-react-lite";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const rootStore = useContext(RootStoreContext);
@@ -22,7 +23,9 @@ const Login = () => {
 
   const onLogin = (data: IUserLogin) => {
     setPhoneNo(data.phoneNumber);
-    login(data).then(() => setOtp(true));
+    login(data)
+      .then(() => setOtp(true))
+      .catch((error) => toast.error(error.data.errors.error));
   };
 
   return (
@@ -39,9 +42,15 @@ const Login = () => {
                 type="text"
                 placeholder="PHONE"
                 defaultValue="+880"
-                {...register("phoneNumber", { required: true })}
+                {...register("phoneNumber", {
+                  required: "Phone number is required",
+                })}
               ></input>
-              {errors.phoneNumber && <span>Phone number is required</span>}
+              {errors.phoneNumber && (
+                <span style={{ color: "red" }}>
+                  {errors.phoneNumber.message}
+                </span>
+              )}
             </div>
             <div id="psw">
               <label htmlFor="psw">
@@ -50,16 +59,17 @@ const Login = () => {
               <input
                 type="password"
                 placeholder="ENTER PASSWORD"
-                {...register("password", { required: true })}
+                {...register("password", { required: "Password is required" })}
               ></input>
-              {errors.password && <span>Password is required</span>}
+              {errors.password && (
+                <span style={{ color: "red" }}>{errors.password.message}</span>
+              )}
             </div>
             <div>
               <button type="submit" className="button">
                 Submit
               </button>
             </div>
-            {/* eikhane chilo div id="links" */}
           </div>
         </form>
         {otp && (

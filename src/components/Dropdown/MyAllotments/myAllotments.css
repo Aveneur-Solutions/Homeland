@@ -7,25 +7,23 @@
 }
 
 .my-allotment{
-    background-image: url("./MyAlottlemts.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 140vh;
+    height: 100vh;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(98,204,35,0.5158438375350141) 35%, rgba(0,212,255,1) 100%);
     position: relative;
 }
 
 .my-allotment-container{
     border: none;
     width: 60%;
+    height: fit-content;
     position: absolute;
-    top: 10%;
+    top: 5%;
     left: 50%;
     transform: translateX(-50%);
     background: var(--background-font-color);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 1%;
-    height: 81%;
 }
 
 .allotment-content{
@@ -84,17 +82,17 @@
         margin-bottom: 20%;
     }
     
-    .profile img{
+    /* .profile img{
         width: 80px;
-    }
+    } */
 
     .allotment-content{
         display: flex;
         flex-direction: column;
     }
-    .profile{
+    /* .profile{
         display: grid;
         grid-template-columns: 1fr 2fr 1fr;
         margin-bottom: 10%;
-    }
+    } */
 }

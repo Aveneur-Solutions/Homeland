@@ -2,6 +2,7 @@ import { SyntheticEvent } from "react";
 import { Menu, Button } from "semantic-ui-react";
 import "./booking.css";
 import { useMediaQuery } from "react-responsive";
+import { nextbutton } from "../customStyles/buttonStyles";
 
 interface IProps {
   onFormSubmit: (e: SyntheticEvent<HTMLFormElement>) => void;
@@ -30,13 +31,17 @@ const FilterCard: React.FC<IProps> = ({
   const isTabletOrMobileDevice = useMediaQuery({
     query: "(max-device-width: 1224px)",
   });
+
+  const hoverStyle = {
+    cursor: "pointer",
+  };
   return (
     <Menu text vertical className="filtercontainer">
       <div className="filterpad">
         <Menu.Item className="searchhead">Search By</Menu.Item>
         <form onSubmit={onFormSubmit}>
           <Menu.Item name="Price" className="price" />
-          <label>
+          <label style={hoverStyle}>
             <input
               className="pR"
               name="priceRange1"
@@ -47,7 +52,7 @@ const FilterCard: React.FC<IProps> = ({
             3000000 - 3199999
           </label>
           <br />
-          <label>
+          <label style={hoverStyle}>
             <input
               className="pR"
               name="priceRange2"
@@ -58,7 +63,7 @@ const FilterCard: React.FC<IProps> = ({
             3200000 - 3399999
           </label>
           <br />
-          <label>
+          <label style={hoverStyle}>
             <input
               className="pR"
               name="priceRange3"
@@ -69,8 +74,8 @@ const FilterCard: React.FC<IProps> = ({
             3400000 - 3600000
           </label>
           <br />
-          <Menu.Item name="Size" className="size"/>
-          <label>
+          <Menu.Item name="Size" className="size" />
+          <label style={hoverStyle}>
             <input
               className="pR"
               name="sizeRange1"
@@ -81,7 +86,7 @@ const FilterCard: React.FC<IProps> = ({
             900 - 920
           </label>
           <br />
-          <label>
+          <label style={hoverStyle}>
             <input
               className="pR"
               name="sizeRange2"
@@ -92,7 +97,7 @@ const FilterCard: React.FC<IProps> = ({
             921 - 950
           </label>
           <br />
-          <label>
+          <label style={hoverStyle}>
             <input
               className="pR"
               name="sizeRange3"
@@ -103,7 +108,7 @@ const FilterCard: React.FC<IProps> = ({
             951 - 980
           </label>
           <br />
-          <label>
+          <label style={hoverStyle}>
             <input
               className="pR"
               name="sizeRange4"
@@ -113,16 +118,15 @@ const FilterCard: React.FC<IProps> = ({
             />
             981 - 1000
           </label>
-          {/* <br /> */}
           {!isTabletOrMobileDevice ? (
             <div className="projectbottom1 buttondiv1">
-              <Button className="nextbutton" type="submit" style={{backgroundColor:"#1e212d", color:"goldenrod"}}>
+              <Button type="submit" style={nextbutton}>
                 Search
               </Button>
             </div>
           ) : (
             <div className="searchmobile buttondiv1">
-              <Button className="nextbuttonmobile" type="submit" style={{backgroundColor:"#1e212d", color:"goldenrod"}}>
+              <Button type="submit" style={nextbutton}>
                 Search
               </Button>
             </div>

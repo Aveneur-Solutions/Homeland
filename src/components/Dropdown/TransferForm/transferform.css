@@ -7,23 +7,21 @@
 }
 
 .online-booking{
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 140vh;
+    height: 100vh;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(98,204,35,0.5158438375350141) 35%, rgba(0,212,255,1) 100%);
     position: relative;
 }
 
 .online-booking-container{
     border: none;
-    width: 50%;
+    width: 45%;
+    height: fit-content;
     position: absolute;
-    top: 2%;
     left: 5%;
     background: var(--background-font-color);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 2%;
-    height: 95%;
 }
 .online-booking-container h1{
     text-align: center;
@@ -106,12 +104,13 @@ td{
 
 @media screen and (max-width: 968px){
     .online-booking{
-        background: none var(--media-background-color);
+        background: none;
     }
     .online-booking-container{
         width: 100%;
         left: 50%;
         transform: translateX(-50%);
+        box-shadow: none;
     }
 }
 
