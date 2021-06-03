@@ -30,7 +30,7 @@ const MyUnits: React.FC<IProps> = ({ bookedUnits, setConfirmTransfer }) => {
     return (
         <div>
             <div className="table-1">
-                <Header textAlign="center" as="h1">Select Units To Transfer</Header>
+                <Header textAlign="center" as="h1">Transfer Available Units</Header>
                 {bookedUnits.length > 0 ?
                     <table>
                         <tr className="thead">

@@ -20,10 +20,12 @@ export default class UserStore {
   }
 
   @observable user: IUser | null = null;
-  @observable recieverUser: IUser | null = null;
-  @observable myBookedFlats: IFlat[] = [];
-  @observable myAllottedFlats: IFlat[] = [];
-  @observable myTransfers: ITransfer[] = [];
+  @observable recieverUser : IUser | null = null;
+  @observable myBookedFlats : IFlat[] = [];
+  @observable myAllottedFlats : IFlat[] = [];
+  @observable myTransfers : ITransfer[] = [];
+  @observable transferrableFlats : IFlat[] = [];
+
   @action login = async (body: IUserLogin) => {
     try {
       await agent.User.login(body);
@@ -90,14 +92,17 @@ export default class UserStore {
   };
 
   @action getMyBookedFlats = async () => {
-    try {
-      const bookedFlats = await agent.User.myBookings();
-      runInAction(() => {
-        this.myBookedFlats = bookedFlats;
-        console.log(this.myBookedFlats);
-      });
-    } catch (error) {
-      console.log(error);
+    try{
+     const bookedFlats =  await agent.User.myBookings();
+     runInAction(() => {
+       this.myBookedFlats = bookedFlats;
+       this.transferrableFlats = bookedFlats.filter(x => !x.isAlreadyTransferred);
+       console.log(this.transferrableFlats)
+     }) 
+    }catch(error)
+    {
+      console.log(error)
+
     }
   };
   @action getMyAllottedFlats = async () => {
