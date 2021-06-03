@@ -8,7 +8,7 @@ import UserSearchForm from './UserSearchForm';
 
 const TransferUnit = () => {
     const store = useContext(RootStoreContext);
-    const { myBookedFlats, getMyBookedFlats, searchUser, recieverUser, emptyRecieverUser } = store.userStore;
+    const { myBookedFlats,transferrableFlats, getMyBookedFlats, searchUser, recieverUser, emptyRecieverUser } = store.userStore;
     const { selectedFlats } = store.flatStore;
     const [unitVisibility, setUnitVisibility] = useState(false);
     const [confirmTransfer, setConfirmTransfer] = useState(false);
@@ -28,7 +28,7 @@ const TransferUnit = () => {
                     <div>
                         <UserSearchForm getUser={searchUser} user={recieverUser!} />
                         {recieverUser && <UserCard setUnitVisibility={setUnitVisibility} user={recieverUser} />}
-                        {unitVisibility && myBookedFlats && <MyUnits bookedUnits={myBookedFlats} setConfirmTransfer={setConfirmTransfer} />}
+                        {unitVisibility && myBookedFlats && <MyUnits bookedUnits={transferrableFlats} setConfirmTransfer={setConfirmTransfer} />}
                     </div>
                 }
                 {confirmTransfer && recieverUser && <ConfirmTransfer  />}

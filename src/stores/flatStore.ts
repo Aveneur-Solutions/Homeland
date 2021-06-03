@@ -100,8 +100,7 @@ export default class FlatStore {
     }catch(error)
     {
       console.log(error);
-      toast.error(error.data.errors.error);
-      
+      toast.error(error.data.errors.error); 
     }
   }
 
