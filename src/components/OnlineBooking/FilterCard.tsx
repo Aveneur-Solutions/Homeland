@@ -31,13 +31,17 @@ const FilterCard: React.FC<IProps> = ({
   const isTabletOrMobileDevice = useMediaQuery({
     query: "(max-device-width: 1224px)",
   });
+
+  const hoverStyle = {
+    cursor: "pointer",
+  };
   return (
     <Menu text vertical className="filtercontainer">
       <div className="filterpad">
         <Menu.Item className="searchhead">Search By</Menu.Item>
         <form onSubmit={onFormSubmit}>
           <Menu.Item name="Price" className="price" />
-          <label>
+          <label style={hoverStyle}>
             <input
               className="pR"
               name="priceRange1"
@@ -48,7 +52,7 @@ const FilterCard: React.FC<IProps> = ({
             3000000 - 3199999
           </label>
           <br />
-          <label>
+          <label style={hoverStyle}>
             <input
               className="pR"
               name="priceRange2"
@@ -59,7 +63,7 @@ const FilterCard: React.FC<IProps> = ({
             3200000 - 3399999
           </label>
           <br />
-          <label>
+          <label style={hoverStyle}>
             <input
               className="pR"
               name="priceRange3"
@@ -71,7 +75,7 @@ const FilterCard: React.FC<IProps> = ({
           </label>
           <br />
           <Menu.Item name="Size" className="size" />
-          <label>
+          <label style={hoverStyle}>
             <input
               className="pR"
               name="sizeRange1"
@@ -82,7 +86,7 @@ const FilterCard: React.FC<IProps> = ({
             900 - 920
           </label>
           <br />
-          <label>
+          <label style={hoverStyle}>
             <input
               className="pR"
               name="sizeRange2"
@@ -93,7 +97,7 @@ const FilterCard: React.FC<IProps> = ({
             921 - 950
           </label>
           <br />
-          <label>
+          <label style={hoverStyle}>
             <input
               className="pR"
               name="sizeRange3"
@@ -104,7 +108,7 @@ const FilterCard: React.FC<IProps> = ({
             951 - 980
           </label>
           <br />
-          <label>
+          <label style={hoverStyle}>
             <input
               className="pR"
               name="sizeRange4"
@@ -114,22 +118,15 @@ const FilterCard: React.FC<IProps> = ({
             />
             981 - 1000
           </label>
-          {/* <br /> */}
           {!isTabletOrMobileDevice ? (
             <div className="projectbottom1 buttondiv1">
-              <Button
-                type="submit"
-                style={nextbutton}
-              >
+              <Button type="submit" style={nextbutton}>
                 Search
               </Button>
             </div>
           ) : (
             <div className="searchmobile buttondiv1">
-              <Button
-                type="submit"
-                style={nextbutton}
-              >
+              <Button type="submit" style={nextbutton}>
                 Search
               </Button>
             </div>

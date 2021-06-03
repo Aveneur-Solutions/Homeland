@@ -19,15 +19,21 @@ const UnitList: React.FC<IProps> = ({ sortedFlats }) => {
   const rootStore = useContext(RootStoreContext);
   const { selectedFlats, selectFlats, unselectFlats } = rootStore.flatStore;
 
-  const checkboxHandler = (e: ChangeEvent<HTMLInputElement>, flat: IFlat) => {
-    const { checked } = e.currentTarget;
-    if (checked) selectFlats(flat);
-    else unselectFlats(flat);
+  const addToSelectedFlats = (flat: IFlat) => {
+    selectFlats(flat);
   };
 
-  const handleCardClick = (flat: IFlat) => {
-    selectFlats(flat);
-    history.push("/maininfo");
+  const removeFromSelectedFlats = (flat: IFlat) => {
+    unselectFlats(flat);
+  };
+
+  // const handleCardClick = (flat: IFlat) => {
+  //   selectFlats(flat);
+  //   history.push("/maininfo");
+  // };
+
+  const checkboxStyle = {
+    fontSize: 30,
   };
 
   return (
@@ -36,11 +42,7 @@ const UnitList: React.FC<IProps> = ({ sortedFlats }) => {
         <div className="cardcontainer">
           <Grid columns={2} divided>
             {sortedFlats.map((item) => (
-              <div
-                className="cardhover"
-                key={item.id}
-                // onClick={() => handleCardClick(item)}
-              >
+              <div className="cardhover" key={item.id}>
                 <Card fluid>
                   <img
                     src={
@@ -98,14 +100,21 @@ const UnitList: React.FC<IProps> = ({ sortedFlats }) => {
                         </Grid.Column>
                         <Grid.Column>
                           <Card.Header className="cardtoprow">
-                            <input
-                              type="checkbox"
-                              className="searched-unit-checkbox"
-                              name={item.id}
-                              value={item.id}
-                              onChange={(e) => checkboxHandler(e, item)}
-                            />
-                            <label htmlFor={item.id}></label>
+                            {selectedFlats.some(
+                              (flat) => flat.id === item.id
+                            ) ? (
+                              <i
+                                className="fas fa-check-circle"
+                                style={checkboxStyle}
+                                onClick={() => removeFromSelectedFlats(item)}
+                              ></i>
+                            ) : (
+                              <i
+                                className="far fa-circle"
+                                style={checkboxStyle}
+                                onClick={() => addToSelectedFlats(item)}
+                              ></i>
+                            )}
                           </Card.Header>
                         </Grid.Column>
                       </Grid.Row>
@@ -188,14 +197,19 @@ const UnitList: React.FC<IProps> = ({ sortedFlats }) => {
                     </Grid.Column>
                     <Grid.Column>
                       <Card.Header className="cardtoprow">
-                        <input
-                          type="checkbox"
-                          className="searched-unit-checkbox"
-                          name={item.id}
-                          value={item.id}
-                          onChange={(e) => checkboxHandler(e, item)}
-                        />
-                        <label htmlFor={item.id}></label>
+                        {selectedFlats.some((flat) => flat.id === item.id) ? (
+                          <i
+                            className="fas fa-check-circle"
+                            style={checkboxStyle}
+                            onClick={() => removeFromSelectedFlats(item)}
+                          ></i>
+                        ) : (
+                          <i
+                            className="far fa-circle"
+                            style={checkboxStyle}
+                            onClick={() => addToSelectedFlats(item)}
+                          ></i>
+                        )}
                       </Card.Header>
                     </Grid.Column>
                   </Grid.Row>
