@@ -37,34 +37,37 @@ const ProjectGallery = () => {
           <div className="gallery_img ">
             <img
               className="logoimg"
-              src={"//d5twn4m6.cdn.imgeng.in" + src4}
+              // src={"//d5twn4m6.cdn.imgeng.in" + src4}
+              src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/o1.jpg"}
               alt=""
-              style={{
-                filter: blur4 ? "blur(20px)" : "none",
-                transition: blur4 ? "none" : "filter 0.3s ease-out",
-              }}
+              // style={{
+              //   filter: blur4 ? "blur(20px)" : "none",
+              //   transition: blur4 ? "none" : "filter 0.3s ease-out",
+              // }}
             />
           </div>
           <div className="gallery_img">
             <img
               className="logoimg"
-              src={"//d5twn4m6.cdn.imgeng.in" + src5}
+              // src={"//d5twn4m6.cdn.imgeng.in" + src5}
+              src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/o2.jpg"}
               alt=""
-              style={{
-                filter: blur5 ? "blur(20px)" : "none",
-                transition: blur5 ? "none" : "filter 0.3s ease-out",
-              }}
+              // style={{
+              //   filter: blur5 ? "blur(20px)" : "none",
+              //   transition: blur5 ? "none" : "filter 0.3s ease-out",
+              // }}
             />
           </div>
           <div className="gallery_img">
             <img
               className="logoimg"
-              src={"//d5twn4m6.cdn.imgeng.in" + src6}
+              // src={"//d5twn4m6.cdn.imgeng.in" + src6}
+              src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/o3.jpg"}
               alt=""
-              style={{
-                filter: blur6 ? "blur(20px)" : "none",
-                transition: blur6 ? "none" : "filter 0.3s ease-out",
-              }}
+              // style={{
+              //   filter: blur6 ? "blur(20px)" : "none",
+              //   transition: blur6 ? "none" : "filter 0.3s ease-out",
+              // }}
             />
           </div>
         </Slider>
@@ -74,34 +77,37 @@ const ProjectGallery = () => {
             <div className="gallery_img ">
               <img
                 className="logoimg"
-                src={src4}
+                // src={src4}
+                src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/o1.jpg"}
                 alt=""
-                style={{
-                  filter: blur4 ? "blur(20px)" : "none",
-                  transition: blur4 ? "none" : "filter 0.3s ease-out",
-                }}
+                // style={{
+                //   filter: blur4 ? "blur(20px)" : "none",
+                //   transition: blur4 ? "none" : "filter 0.3s ease-out",
+                // }}
               />
             </div>
             <div className="gallery_img">
               <img
                 className="logoimg"
-                src={"//d5twn4m6.cdn.imgeng.in" + src5}
+                // src={"//d5twn4m6.cdn.imgeng.in" + src5}
+                src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/o2.jpg"}
                 alt=""
-                style={{
-                  filter: blur5 ? "blur(20px)" : "none",
-                  transition: blur5 ? "none" : "filter 0.3s ease-out",
-                }}
+                // style={{
+                //   filter: blur5 ? "blur(20px)" : "none",
+                //   transition: blur5 ? "none" : "filter 0.3s ease-out",
+                // }}
               />
             </div>
             <div className="gallery_img">
               <img
                 className="logoimg"
-                src={"//d5twn4m6.cdn.imgeng.in" + src6}
+                // src={"//d5twn4m6.cdn.imgeng.in" + src6}
+                src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/o3.jpg"}
                 alt=""
-                style={{
-                  filter: blur6 ? "blur(20px)" : "none",
-                  transition: blur6 ? "none" : "filter 0.3s ease-out",
-                }}
+                // style={{
+                //   filter: blur6 ? "blur(20px)" : "none",
+                //   transition: blur6 ? "none" : "filter 0.3s ease-out",
+                // }}
               />
             </div>
           </Slider>
