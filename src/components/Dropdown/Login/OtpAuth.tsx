@@ -2,6 +2,7 @@ import { observer } from "mobx-react-lite";
 import { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router";
+import { history } from "../../..";
 import { IUserLoginWithOtp } from "../../../models/user";
 import { RootStoreContext } from "../../../stores/rootStore";
 
@@ -15,8 +16,6 @@ const OtpAuth: React.FC<IProps> = ({ phoneNo, func, buttonText }) => {
   const rootStore = useContext(RootStoreContext);
   const { user } = rootStore.userStore;
   const { logginIn, booking } = rootStore.navStore;
-
-  const history = useHistory();
 
   const {
     register,
