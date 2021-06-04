@@ -50,7 +50,7 @@ const Gallery = () => {
               </div>
               <img
                 className="logoimg"
-                src={"//d5twn4m6.cdn.imgeng.in/" + src0}
+                src={"//d5twn4m6.cdn.imgeng.in" + src0}
                 // src={process.env.PUBLIC_URL + "/images/h1.jpg"}
                 alt=""
                 style={{
@@ -84,7 +84,7 @@ const Gallery = () => {
               </div>
               <img
                 className="logoimg"
-                src={"//d5twn4m6.cdn.imgeng.in/" + src1}
+                src={"//d5twn4m6.cdn.imgeng.in" + src1}
                 // src={process.env.PUBLIC_URL + "/images/h1.jpg"}
                 alt=""
                 style={{
@@ -120,7 +120,7 @@ const Gallery = () => {
               </div>
               <img
                 className="logoimg"
-                src={"//d5twn4m6.cdn.imgeng.in/" + src2}
+                src={"//d5twn4m6.cdn.imgeng.in" + src2}
                 // src={process.env.PUBLIC_URL + "/images/h1.jpg"}
                 alt=""
                 style={{
@@ -158,7 +158,7 @@ const Gallery = () => {
               </div>
               <img
                 className="logoimg"
-                src={"//d5twn4m6.cdn.imgeng.in/" + src3}
+                src={"//d5twn4m6.cdn.imgeng.in" + src3}
                 // src={process.env.PUBLIC_URL + "/images/h1.jpg"}
                 alt=""
                 style={{
