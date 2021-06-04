@@ -3,7 +3,7 @@ import "./booking.scss";
 import "./project.css";
 import { Grid, Image, Card, Icon } from "semantic-ui-react";
 // import "aos/dist/aos.css";
-import useProgressiveImg from "./UseProgressiveImg"
+// import useProgressiveImg from "./UseProgressiveImg"
 import { useEffect } from "react";
 import Aos from "aos";
 import { ourProject } from "./buildings";
@@ -19,8 +19,8 @@ const OurProject = () => {
   const isTabletOrMobileDevice = useMediaQuery({
     query: "(max-device-width: 1224px)",
   });
-  const [src, { blur }] = useProgressiveImg("/DownArrow1.png", process.env.PUBLIC_URL + "/images/DownArrow.png");
-  const [src1, { blur1 }] = useProgressiveImg("/profile.png", process.env.PUBLIC_URL + "/images/profile_main.png");
+  // const [src, { blur }] = useProgressiveImg("/DownArrow1.png", process.env.PUBLIC_URL + "/images/DownArrow.png");
+  // const [src1, { blur1 }] = useProgressiveImg("/profile.png", process.env.PUBLIC_URL + "/images/profile_main.png");
   const { setNothingVisibility, setImageVisibility, showImage, showNothing } =
     store;
 
@@ -49,12 +49,12 @@ const OurProject = () => {
                 duration={250}
               >
                 <img
-                  src={"//d5twn4m6.cdn.imgeng.in"+src}
+                  src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/images/DownArrow.png"}
                   alt=""
-                  style={{
-                    filter: blur ? "blur(20px)" : "none",
-                    transition: blur ? "none" : "filter 0.3s ease-out"
-                  }}
+                  // style={{
+                  //   filter: blur ? "blur(20px)" : "none",
+                  //   transition: blur ? "none" : "filter 0.3s ease-out"
+                  // }}
                 />
               </Link>
             </div>
@@ -77,11 +77,11 @@ const OurProject = () => {
                             <Grid.Column className="buildTuples1" padded>
                               <div onClick={() => setImageVisibility()}>
                                 <Image
-                                  src={src1}
-                                  style={{
-                                    filter: blur1 ? "blur(20px)" : "none",
-                                    transition: blur1 ? "none" : "filter 0.3s ease-out"
-                                  }}
+                                  src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/images/profile_main.png"}
+                                  // style={{
+                                  //   filter: blur1 ? "blur(20px)" : "none",
+                                  //   transition: blur1 ? "none" : "filter 0.3s ease-out"
+                                  // }}
                                 />
                                 <h4>{buildno.txt}</h4>
                               </div>
@@ -130,12 +130,12 @@ const OurProject = () => {
                 duration={250}
               >
                 <img
-                  src={src}
+                  src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/images/DownArrow.png"}
                   alt=""
-                  style={{
-                    filter: blur ? "blur(20px)" : "none",
-                    transition: blur ? "none" : "filter 0.3s ease-out"
-                  }}
+                  // style={{
+                  //   filter: blur ? "blur(20px)" : "none",
+                  //   transition: blur ? "none" : "filter 0.3s ease-out"
+                  // }}
                 />
               </Link>
             </div>
@@ -158,11 +158,11 @@ const OurProject = () => {
                             <Grid.Column className="buildTuples1" padded>
                               <div onClick={() => setImageVisibility()}>
                                 <Image
-                                  src={src1}
-                                  style={{
-                                    filter: blur1 ? "blur(20px)" : "none",
-                                    transition: blur1 ? "none" : "filter 0.3s ease-out"
-                                  }}
+                                  src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/images/profile_main.png"}
+                                  // style={{
+                                  //   filter: blur1 ? "blur(20px)" : "none",
+                                  //   transition: blur1 ? "none" : "filter 0.3s ease-out"
+                                  // }}
                                 />
                                 <h4>{buildno.txt}</h4>
                               </div>

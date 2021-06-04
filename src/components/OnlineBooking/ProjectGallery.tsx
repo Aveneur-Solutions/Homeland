@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "../Homepage/gallery.css";
 import "./booking.css";
 import { useMediaQuery } from "react-responsive";
-import useProgressiveImg from "../OurProject/UseProgressiveImg";
+// import useProgressiveImg from "../OurProject/UseProgressiveImg";
 const ProjectGallery = () => {
   const settings = {
     infinite: true,
@@ -17,18 +17,18 @@ const ProjectGallery = () => {
   const isTabletOrMobileDevice = useMediaQuery({
     query: "(max-device-width: 1224px)",
   });
-  const [src4, { blur4 }] = useProgressiveImg(
-    "/o1.jpg",
-    process.env.PUBLIC_URL + "/images/o1.jpg"
-  );
-  const [src5, { blur5 }] = useProgressiveImg(
-    "/o2.jpg",
-    process.env.PUBLIC_URL + "/images/o2.jpg"
-  );
-  const [src6, { blur6 }] = useProgressiveImg(
-    "/o3.jpg",
-    process.env.PUBLIC_URL + "/images/o3.jpg"
-  );
+  // const [src4, { blur4 }] = useProgressiveImg(
+  //   "/o1.jpg",
+  //   process.env.PUBLIC_URL + "/images/o1.jpg"
+  // );
+  // const [src5, { blur5 }] = useProgressiveImg(
+  //   "/o2.jpg",
+  //   process.env.PUBLIC_URL + "/images/o2.jpg"
+  // );
+  // const [src6, { blur6 }] = useProgressiveImg(
+  //   "/o3.jpg",
+  //   process.env.PUBLIC_URL + "/images/o3.jpg"
+  // );
 
   return (
     <div className="slider">
@@ -38,7 +38,7 @@ const ProjectGallery = () => {
             <img
               className="logoimg"
               // src={"//d5twn4m6.cdn.imgeng.in" + src4}
-              src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/o1.jpg"}
+              src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/images/o1.jpg"}
               alt=""
               // style={{
               //   filter: blur4 ? "blur(20px)" : "none",
@@ -50,7 +50,7 @@ const ProjectGallery = () => {
             <img
               className="logoimg"
               // src={"//d5twn4m6.cdn.imgeng.in" + src5}
-              src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/o2.jpg"}
+              src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/images/o2.jpg"}
               alt=""
               // style={{
               //   filter: blur5 ? "blur(20px)" : "none",
@@ -62,7 +62,7 @@ const ProjectGallery = () => {
             <img
               className="logoimg"
               // src={"//d5twn4m6.cdn.imgeng.in" + src6}
-              src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/o3.jpg"}
+              src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/images/o3.jpg"}
               alt=""
               // style={{
               //   filter: blur6 ? "blur(20px)" : "none",
@@ -78,7 +78,7 @@ const ProjectGallery = () => {
               <img
                 className="logoimg"
                 // src={src4}
-                src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/o1.jpg"}
+                src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/images/o1.jpg"}
                 alt=""
                 // style={{
                 //   filter: blur4 ? "blur(20px)" : "none",
@@ -90,7 +90,7 @@ const ProjectGallery = () => {
               <img
                 className="logoimg"
                 // src={"//d5twn4m6.cdn.imgeng.in" + src5}
-                src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/o2.jpg"}
+                src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/images/o2.jpg"}
                 alt=""
                 // style={{
                 //   filter: blur5 ? "blur(20px)" : "none",
@@ -102,7 +102,7 @@ const ProjectGallery = () => {
               <img
                 className="logoimg"
                 // src={"//d5twn4m6.cdn.imgeng.in" + src6}
-                src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/o3.jpg"}
+                src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/images/o3.jpg"}
                 alt=""
                 // style={{
                 //   filter: blur6 ? "blur(20px)" : "none",

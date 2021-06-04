@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Card, Button, Image, Grid } from "semantic-ui-react";
 import { ourProject } from "./buildings";
 import { useMediaQuery } from "react-responsive";
-import useProgressiveImg from "./UseProgressiveImg";
+// import useProgressiveImg from "./UseProgressiveImg";
 
 
 const ListUnits = () => {
@@ -10,7 +10,7 @@ const ListUnits = () => {
     query: "(max-device-width: 1224px)",
   });
 
-  const [src, { blur }] = useProgressiveImg("./profile.png",process.env.PUBLIC_URL + "/images/profile_main.png");
+  // const [src, { blur }] = useProgressiveImg("./profile.png",process.env.PUBLIC_URL + "/images/profile_main.png");
   return (
     <>
       {!isTabletOrMobileDevice ? (
@@ -26,7 +26,8 @@ const ListUnits = () => {
                           filter: blur ? "blur(20px)" : "none",
                           transition: blur ? "none" : "filter 0.3s ease-out",
                         }}
-                        src={src}
+                        // src={src}
+                        src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/images/profile_main.png"}
                         // src={process.env.PUBLIC_URL + buildno.forunits}
                       />
                       
