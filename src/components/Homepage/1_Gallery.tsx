@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./gallery.css";
-import useProgressiveImg from "../OurProject/UseProgressiveImg";
+// import useProgressiveImg from "../OurProject/UseProgressiveImg";
 
 const Gallery = () => {
   const settings = {
@@ -17,10 +17,10 @@ const Gallery = () => {
     fade: true,
     pauseOnHover: false,
   };
-  const [src0, { blur0 }] = useProgressiveImg("/images/h1.jpg", "/h1.jpg");
-  const [src1, { blur1 }] = useProgressiveImg("/images/h4.jpg", "/h4.jpg");
-  const [src2, { blur2 }] = useProgressiveImg("/images/o2.jpg", "/o2.jpg");
-  const [src3, { blur3 }] = useProgressiveImg("/images/o3.jpg", "/o3.jpg");
+  // const [src0, { blur0 }] = useProgressiveImg("/images/h1.jpg", "/h1.jpg");
+  // const [src1, { blur1 }] = useProgressiveImg("/images/h4.jpg", "/h4.jpg");
+  // const [src2, { blur2 }] = useProgressiveImg("/images/o2.jpg", "/o2.jpg");
+  // const [src3, { blur3 }] = useProgressiveImg("/images/o3.jpg", "/o3.jpg");
 
   return (
     <>
