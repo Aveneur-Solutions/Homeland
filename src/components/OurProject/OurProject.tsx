@@ -49,7 +49,7 @@ const OurProject = () => {
                 duration={250}
               >
                 <img
-                  src={src}
+                  src={"//d5twn4m6.cdn.imgeng.in"+src}
                   alt=""
                   style={{
                     filter: blur ? "blur(20px)" : "none",
