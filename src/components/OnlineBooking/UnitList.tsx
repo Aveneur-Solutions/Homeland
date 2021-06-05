@@ -4,9 +4,8 @@ import { Link } from "react-router-dom";
 import { Button, Card, Image, Grid } from "semantic-ui-react";
 import IFlat from "../../models/unit";
 import { useMediaQuery } from "react-responsive";
-import { ChangeEvent, useContext } from "react";
+import { useContext } from "react";
 import { RootStoreContext } from "../../stores/rootStore";
-import { history } from "../..";
 
 interface IProps {
   sortedFlats: IFlat[];

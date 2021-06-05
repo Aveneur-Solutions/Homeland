@@ -1,5 +1,4 @@
 import axios, { AxiosResponse } from "axios";
-import { history } from "..";
 import { IImage } from "../models/image";
 import ITransfer, { ITransferPost } from "../models/transfer";
 import IFlat from "../models/unit";
@@ -11,7 +10,6 @@ import IUser, {
   IUserRegister,
   IUserSearch,
 } from "../models/user";
-
 
 axios.interceptors.request.use(
   (config) => {
@@ -31,11 +29,9 @@ axios.interceptors.response.use(undefined, (error) => {
   }
   console.log(error);
   const { status, data, config } = error;
-  
-  if (
-    error.status === 401 
-  ) {
-    console.log(data.errors)
+
+  if (error.status === 401) {
+    console.log(data.errors);
   }
   if (status === 500) {
     toast.error("Server Error Check the terminal for more info");
@@ -63,15 +59,21 @@ const User = {
   loginWithOtp: (body: IUserLoginWithOtp): Promise<IUser> =>
     request.post("/user/loginWithOtp", body),
   currentUser: (): Promise<IUser> => request.get("/user"),
-  getUser : (data : IUserSearch) : Promise<IUser> => request.get(`/user/${data.phoneNumber}`),
+  getUser: (data: IUserSearch): Promise<IUser> =>
+    request.get(`/user/${data.phoneNumber}`),
   register: (body: IUserRegister) => request.post("/user/register", body),
   registerWithOtp: (body: IUserLoginWithOtp): Promise<IUser> =>
     request.post("/user/registerWithOtp", body),
-  changePassword: (body: IUserChangePassword) : Promise<IUser> => request.post("/user/changePassword", body),
-  myBookings : () : Promise<IFlat[]> => request.get("/Customer/myBookings"),
-  myAllotments : () : Promise<IFlat[]> => request.get("/Customer/myAllotments"),
-  myTransfers : () : Promise<ITransfer[]> => request.get("/Customer/myTransfers"),
-  transferNow : (body : ITransferPost) => request.post("flat/TransferNow",body)
+  resendOtp: (body: { phoneNumber: string }) =>
+    request.post("/user/resendOtp", body),
+  resetPassword: (body: { newPassword: string }) =>
+    request.post("/user/resetPassword", body),
+  changePassword: (body: IUserChangePassword): Promise<IUser> =>
+    request.post("/user/changePassword", body),
+  myBookings: (): Promise<IFlat[]> => request.get("/Customer/myBookings"),
+  myAllotments: (): Promise<IFlat[]> => request.get("/Customer/myAllotments"),
+  myTransfers: (): Promise<ITransfer[]> => request.get("/Customer/myTransfers"),
+  transferNow: (body: ITransferPost) => request.post("flat/TransferNow", body),
 };
 
 const Flat = {
@@ -81,8 +83,8 @@ const Flat = {
     request.post("/flat/bookNow", idBody),
 };
 const Gallery = {
-  getAllImages: (): Promise<IImage[]> => request.get("/Adminstrator/Images")
-}
+  getAllImages: (): Promise<IImage[]> => request.get("/Adminstrator/Images"),
+};
 
 const agent = { User, Flat, Gallery };
 

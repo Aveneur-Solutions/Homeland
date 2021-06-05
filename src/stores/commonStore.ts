@@ -64,7 +64,7 @@ export default class CommonStore {
         this.projectImages = images.filter(
           (image) => image.section === "projects"
         );
-        console.log(this.galleryImages)
+        // console.log(this.galleryImages)
       });
     } catch (error) {
       console.log(error);

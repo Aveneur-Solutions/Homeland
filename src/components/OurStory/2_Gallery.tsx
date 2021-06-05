@@ -3,7 +3,6 @@ import "slick-carousel/slick/slick-theme.css";
 import "../Homepage/gallery.css";
 import ReactPlayer from "react-player";
 import { useMediaQuery } from "react-responsive";
-import { Embed } from "semantic-ui-react";
 const Gallery_2 = () => {
   const isTabletOrMobileDevice = useMediaQuery({
     query: "(max-device-width: 1224px)",
