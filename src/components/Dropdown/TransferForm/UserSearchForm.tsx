@@ -1,6 +1,5 @@
-import React, { Component, useContext, useEffect } from "react";
+import React from "react";
 import "./transferform.css";
-import { RootStoreContext } from "../../../stores/rootStore";
 import { observer } from "mobx-react-lite";
 import { useForm } from "react-hook-form";
 import IUser, { IUserSearch } from "../../../models/user";
@@ -13,7 +12,6 @@ const TransferForm: React.FC<IProps> = ({ user, getUser }) => {
   const {
     register,
     handleSubmit,
-    getValues,
     formState: { errors },
   } = useForm<IUserSearch>();
   const searchUser = (data: IUserSearch) => {

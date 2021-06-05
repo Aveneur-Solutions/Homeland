@@ -4,13 +4,12 @@ import "./ourStory.css";
 import { ourStory } from "./storyInfo";
 import SvgComponent1 from "./logosvg1";
 import Aos from "aos";
-import React, { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import "aos/dist/aos.css";
 import { useMediaQuery } from "react-responsive";
 import Storytexts from "./Storytexts";
 
 const OurStory = () => {
-  const containerRef = useRef(null);
   const isTabletOrMobileDevice = useMediaQuery({
     query: "(max-device-width: 1224px)",
   });

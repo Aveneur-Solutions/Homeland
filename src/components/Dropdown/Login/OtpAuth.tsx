@@ -1,7 +1,6 @@
 import { observer } from "mobx-react-lite";
 import { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { useHistory } from "react-router";
 import { history } from "../../..";
 import { IUserLoginWithOtp } from "../../../models/user";
 import { RootStoreContext } from "../../../stores/rootStore";
@@ -31,7 +30,7 @@ const OtpAuth: React.FC<IProps> = ({ phoneNo, func, buttonText }) => {
       history.push("/cart");
     }
     console.log(user);
-  }, [user, booking, history, logginIn]);
+  }, [user, booking, logginIn]);
 
   const onSubmit = (data: IUserLoginWithOtp) => {
     func(data).catch((error) => console.log(error));

@@ -7,7 +7,7 @@ import OtpAuth from "./OtpAuth";
 import { IUserLogin } from "../../../models/user";
 import { observer } from "mobx-react-lite";
 import { toast } from "react-toastify";
-import ForgotPassword from "./ForgotPassword";
+import ForgotPassword from "./ForgotPassword/ForgotPassword";
 
 const Login = () => {
   const rootStore = useContext(RootStoreContext);
@@ -33,11 +33,6 @@ const Login = () => {
   return (
     <div className="login">
       <div className="login-container">
-        {forgot && (
-          <div onClick={() => setForgot(false)}>
-            <i className="fas fa-chevron-left" style={{color: "goldenrod", fontSize: 30}}></i>
-          </div>
-        )}
         <h1>{!forgot ? "LOG IN" : "FORGOT PASSWORD?"}</h1>
         {!forgot ? (
           <>
@@ -103,7 +98,7 @@ const Login = () => {
               </div>
             </div>
           </>
-        ) : <ForgotPassword />}
+        ) : <ForgotPassword setForgot={setForgot} />}
       </div>
     </div>
   );

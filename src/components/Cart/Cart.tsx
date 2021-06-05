@@ -1,23 +1,11 @@
-import { BookingItem as book } from "./BookingItem";
-import { Method } from "./PaymentItems";
 import "./onlinebooking.css";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { RootStoreContext } from "../../stores/rootStore";
 import { observer } from "mobx-react-lite";
 
 const OnlineBooking = () => {
   const rootStore = useContext(RootStoreContext);
   const { cartItems, bookFlat, removeFromCart } = rootStore.flatStore;
-
-  const [clicked, setClicked] = useState(false);
-
-  // useEffect(() => {
-  //   initCart();
-  // }, [initCart]);
-
-  const handleClick = () => {
-    setClicked(!clicked);
-  };
 
   return (
     <div className="online-booking">

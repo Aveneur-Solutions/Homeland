@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react-lite';
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { RootStoreContext } from '../../../stores/rootStore';
 import ConfirmTransfer from './ConfirmTransfer';
 import MyUnits from './MyUnits';
@@ -9,7 +9,6 @@ import UserSearchForm from './UserSearchForm';
 const TransferUnit = () => {
     const store = useContext(RootStoreContext);
     const { myBookedFlats, getMyBookedFlats, searchUser, recieverUser, emptyRecieverUser } = store.userStore;
-    const { selectedFlats } = store.flatStore;
     const [unitVisibility, setUnitVisibility] = useState(false);
     const [confirmTransfer, setConfirmTransfer] = useState(false);
     useEffect(() => {
@@ -18,7 +17,7 @@ const TransferUnit = () => {
             emptyRecieverUser();
         };
 
-    }, [getMyBookedFlats])
+    }, [getMyBookedFlats, emptyRecieverUser])
     return (
         <div className="online-booking">
           

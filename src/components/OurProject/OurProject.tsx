@@ -1,8 +1,7 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import "./booking.scss";
 import "./project.css";
-import { Grid, Image, Card, Icon } from "semantic-ui-react";
-// import "aos/dist/aos.css";
+import { Grid, Image } from "semantic-ui-react";
 // import useProgressiveImg from "./UseProgressiveImg"
 import { useEffect } from "react";
 import Aos from "aos";
@@ -21,7 +20,7 @@ const OurProject = () => {
   });
   // const [src, { blur }] = useProgressiveImg("/DownArrow1.png", process.env.PUBLIC_URL + "/images/DownArrow.png");
   // const [src1, { blur1 }] = useProgressiveImg("/profile.png", process.env.PUBLIC_URL + "/images/profile_main.png");
-  const { setNothingVisibility, setImageVisibility, showImage, showNothing } =
+  const { setImageVisibility, showNothing } =
     store;
 
   useEffect(() => {

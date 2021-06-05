@@ -1,13 +1,9 @@
 import { observer } from 'mobx-react-lite'
-import React, { useContext, useEffect } from 'react'
+import { useContext, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
-import { toast } from 'react-toastify'
 import { Header, Segment } from 'semantic-ui-react'
 import { ITransferPost } from '../../../models/transfer'
-import IFlat from '../../../models/unit'
-import IUser from '../../../models/user'
 import { RootStoreContext } from '../../../stores/rootStore'
-import UserCard from './UserCard'
 
 const ConfirmTransfer = () => {
     const store = useContext(RootStoreContext)
@@ -22,7 +18,7 @@ const ConfirmTransfer = () => {
     const handleTransfer = (data : ITransferPost) => {
         data.recieverPhoneNumber = user?.phoneNumber;
         let flatIds : string[] = [];
-        selectedFlats.map(flat => {
+        selectedFlats.forEach(flat => {
             flatIds.push(flat.id)
         })
         data.flatIds = flatIds;

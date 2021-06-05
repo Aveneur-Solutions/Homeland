@@ -24,6 +24,7 @@ export default class UserStore {
   @observable myBookedFlats: IFlat[] = [];
   @observable myAllottedFlats: IFlat[] = [];
   @observable myTransfers: ITransfer[] = [];
+
   @action login = async (body: IUserLogin) => {
     try {
       await agent.User.login(body);
@@ -88,6 +89,25 @@ export default class UserStore {
       console.log(error);
     }
   };
+
+  @action resendOtp = async (phoneNo: string) => {
+    try {
+      const body = {
+        phoneNumber: phoneNo,
+      };
+      await agent.User.resendOtp(body);
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  @action resetPassword = async (body: {newPassword: string}) => {
+    try {
+      await agent.User.resetPassword(body)
+    } catch (error) {
+      throw error
+    }
+  }
 
   @action getMyBookedFlats = async () => {
     try {

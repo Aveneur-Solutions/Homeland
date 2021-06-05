@@ -1,7 +1,7 @@
 import { observer } from "mobx-react-lite";
 import React, { useContext } from "react";
 import { useMediaQuery } from "react-responsive";
-import { Button, Image, Segment, Label } from "semantic-ui-react";
+import { Button, Segment, Label } from "semantic-ui-react";
 import IFlat from "../../models/unit";
 import { RootStoreContext } from "../../stores/rootStore";
 import { nextbutton, nextbuttonmobile } from "../customStyles/buttonStyles";
