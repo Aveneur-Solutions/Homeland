@@ -25,13 +25,13 @@ const TransferUnit = () => {
             <div className="online-booking-container">
             {confirmTransfer && <button className="btn" onClick={() => setConfirmTransfer(false)}>Back to transfer</button>}
                 {!confirmTransfer &&
-                    <div className="transfer-form-container" style={{display: 'flex'}}>
-                        <div style={{width: '100%'}}><UserSearchForm getUser={searchUser} user={recieverUser!} /></div>
-                        <div className={recieverUser ? "border-true" : "border-false"} style={{padding: '5px'}}>
+                    <>
+                       <UserSearchForm getUser={searchUser} user={recieverUser!} />
+                        
                             {recieverUser && <UserCard setUnitVisibility={setUnitVisibility} user={recieverUser} />}
                             {unitVisibility && myBookedFlats && <MyUnits bookedUnits={transferrableFlats} setConfirmTransfer={setConfirmTransfer} />}
-                        </div>
-                    </div>
+                        
+                    </>
                 }
                 {confirmTransfer && recieverUser && <ConfirmTransfer  />}
             </div>
