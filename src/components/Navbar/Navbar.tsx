@@ -69,7 +69,7 @@ const Navbar = () => {
   return (
     <Menu pointing className="NavbarItems">
       <Link to={"/"} className="forlink">
-        <SvgComponent />
+        <SvgComponent/>
       </Link>
       <div className="menu-icon" onClick={handleClick}>
         <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
