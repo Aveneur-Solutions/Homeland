@@ -91,8 +91,9 @@ const Navbar = () => {
         {isTabletOrMobileDevice && (
           <li>
             {user ? (
-              <Dropdown className="dropname-mob " text={user.fullname}>
+              <Dropdown className="dropname-mob" text={user.fullname}>
                 <Dropdown.Menu
+                  onClick={handleClick}
                   className="dropmenu-mob"
                   style={{
                     backgroundColor: "white",
