@@ -7,15 +7,15 @@ import { RootStoreContext } from '../../../stores/rootStore'
 
 const ConfirmTransfer = () => {
     const store = useContext(RootStoreContext)
-    const { selectedFlats, unselectFlats, clearSelectedFlats ,transferNow} = store.flatStore;
+    const { selectedFlats, unselectFlats, clearSelectedFlats, transferNow } = store.flatStore;
     const { recieverUser: user } = store.userStore;
-    const {register,handleSubmit, formState: { errors }} = useForm<ITransferPost>();
+    const { register, handleSubmit, formState: { errors } } = useForm<ITransferPost>();
     useEffect(() => {
         return () => {
             clearSelectedFlats()
         }
     }, [clearSelectedFlats])
-    const handleTransfer = (data : ITransferPost) => {
+    const handleTransfer = (data: ITransferPost) => {
         data.recieverPhoneNumber = user?.phoneNumber;
         let flatIds : string[] = [];
         selectedFlats.forEach(flat => {
@@ -65,7 +65,7 @@ const ConfirmTransfer = () => {
                     </tbody>
                 </table>
                 <Segment textAlign="center">
-                <Header>Reciever Details</Header>
+                    <Header>Reciever Details</Header>
                     <div style={{ marginLeft: "32px", marginTop: "10px" }} className="profile-content">
                         <p>NAME: &nbsp;{user?.fullname}</p>
                         <p>ADDRESS: &nbsp; Not added yet</p>
@@ -74,9 +74,12 @@ const ConfirmTransfer = () => {
                 </Segment>
                 <Segment>
                     <form onSubmit={handleSubmit(handleTransfer)}>
-                        <input type="password"  {...register("password", { required: true })}/>
+                        <label htmlFor="password">
+                            <b>Enter Your Password again to complete the transfer:</b>
+                        </label>
+                        <input type="password"  {...register("password", { required: true })} />
                         {errors.password && <span>Password must not be empty</span>}
-                        <input type="submit" value="Transfer" className="btn"/>
+                        <input type="submit" value="Transfer" className="btn" />
                     </form>
                 </Segment>
 

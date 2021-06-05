@@ -7,10 +7,10 @@
 }
 
 .online-booking{
-    height: 100vh;
-    background: rgb(2,0,36);
+    height: 89vh;
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(98,204,35,0.5158438375350141) 35%, rgba(0,212,255,1) 100%);
     position: relative;
+    overflow: auto;
 }
 
 .online-booking-container{

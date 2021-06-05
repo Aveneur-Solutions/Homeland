@@ -341,7 +341,7 @@
 }
 
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1024px) {
   .NavbarItems {
     position: relative;
     background: rgba(249, 194, 39, 255);
@@ -426,4 +426,9 @@
   .right-content {
     display: none;
   }
+
+  .forlink{
+    padding: 5%;
+  }
 }
+

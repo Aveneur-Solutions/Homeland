@@ -12,6 +12,7 @@ export default interface IFlat {
   downPaymentDays: number;
   netArea: number;
   commonArea: number;
+  isAlreadyTransferred : boolean;
   images: IImage[];
 }
 

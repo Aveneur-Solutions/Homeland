@@ -25,18 +25,16 @@ const TransferForm: React.FC<IProps> = ({ user, getUser }) => {
         <form onSubmit={handleSubmit(searchUser)}>
           <div id="phone">
             <label htmlFor="phone">
-              <b>New allottee's Phone :</b>
+              <b>Enter Reciever's Phone Number :</b>
             </label>
             <div style={{display:"flex"}}>
               <span style={{marginTop:"12px",fontSize:"20px"}}>+88</span>
             <input style={{marginLeft:"5px",fontSize:"20px"}} type="text"  {...register("phoneNumber", { required: true })}></input>
-            </div>
-            
+            </div>           
             {errors.phoneNumber && <span>Enter a phonenumber</span>}
             <div><input className="btn" type="submit" value="Search" /></div>
           </div>
         </form>
-
       </div>
     </div>
   );
