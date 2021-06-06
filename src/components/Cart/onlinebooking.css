@@ -27,16 +27,16 @@
     text-align: center;
 }
 
-input[type=email], input[type=password], input[type=text] {
+/* input[type=email], input[type=password], input[type=text] {
     width: 100%;
     border: none;
     border-bottom: 1px solid var(--secondary-color);
     margin-top: 10px;
     padding: 2px;
-}
-input:focus{
+} */
+/* input:focus{
     outline: none;
-}
+} */
 .form-container1 div{
     margin: 4%;
 }
@@ -63,16 +63,16 @@ td{
     border-bottom: 1px solid grey;
 }
 
-.amount{
+/* .amount{
     padding: 2% 0%;
     font-weight: 300;
 }
 .amount input{
     margin-left: 20px;
     height: 22px;
-}
+} */
 
-.visa-logo{
+/* .visa-logo{
     width: 6%;
     border: 2px solid #adb5bd;
     cursor: pointer;
@@ -108,7 +108,7 @@ td{
 .select-payment button:hover{
     background: var(--hover-color);
     transition-duration: .2s;
-}
+} */
 
 .checkbox-container{
     width: 100%;
@@ -145,7 +145,7 @@ td{
     margin-top: 3%;
 }
 
-@media screen and (max-width: 968px){
+@media screen and (max-width: 1024px){
     .online-booking{
         background: none var(--media-background-color);
     }

@@ -37,7 +37,7 @@ const ConfirmTransfer = () => {
                             <th>Bedrooms</th>
                             <th>Price</th>
                             <th>Price</th>
-                            <th>select</th>
+                            <th>Remove</th>
                         </tr>
                     </thead>
                     <tbody>
