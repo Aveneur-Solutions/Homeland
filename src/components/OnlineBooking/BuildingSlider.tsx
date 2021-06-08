@@ -61,12 +61,12 @@ const BuildingSlider: React.FC<IProps> = ({ flat, action }) => {
             >
               Add To Cart
             </Button>
-            <Button
+            {/* <Button
               type="submit"
               style={nextbutton}
             >
               Buy Now
-            </Button>
+            </Button> */}
           </>
         ) : (
           <>
@@ -81,12 +81,12 @@ const BuildingSlider: React.FC<IProps> = ({ flat, action }) => {
             >
               Add To Cart
             </Button>
-            <Button
+            {/* <Button
               type="submit"
               style={nextbuttonmobile}
             >
               Buy Now
-            </Button>
+            </Button> */}
           </>
         )}
       </div>
