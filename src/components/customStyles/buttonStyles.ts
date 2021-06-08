@@ -9,5 +9,5 @@ export const nextbutton = {
 
 export const nextbuttonmobile = {
   ...nextbutton,
-  width: "100px",
+  width: "150px",
 };

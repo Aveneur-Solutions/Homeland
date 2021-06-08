@@ -82,6 +82,10 @@
 .menu-icon {
   display: none;
 }
+.cart-icon{
+  display: none;
+  color: goldenrod;
+}
 
 .login-content button {
   background-color: transparent;
@@ -341,7 +345,7 @@
 }
 
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1024px) {
   .NavbarItems {
     position: relative;
     background: rgba(249, 194, 39, 255);
@@ -404,11 +408,19 @@
   }
 
   .menu-icon {
+    padding: 2%;
     display: block;
     position: absolute;
-    top: 0;
     right: 0;
-    transform: translate(-100%, 60%);
+    transform: translateY(auto);
+    cursor: pointer;
+  }
+  .cart-icon{
+    padding: 2%;
+    display: block;
+    position: absolute;
+    left: 0;
+    transform: translateY(auto);
     cursor: pointer;
   }
 
@@ -425,5 +437,9 @@
   }
   .right-content {
     display: none;
+  }
+
+  .forlink{
+    padding: 5%;
   }
 }

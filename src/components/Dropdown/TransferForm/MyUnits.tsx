@@ -10,7 +10,7 @@ interface IProps {
 }
 const MyUnits: React.FC<IProps> = ({ bookedUnits, setConfirmTransfer }) => {
     const store = useContext(RootStoreContext);
-    const { selectFlats, unselectFlats, clearSelectedFlats, selectedFlats } = store.flatStore;
+    const { selectFlats, unselectFlats } = store.flatStore;
     const [checkCount, setCheckCount] = useState(0);
     const checkboxHandler = (event: React.ChangeEvent<HTMLInputElement>, flat: IFlat) => {
         const { checked } = event.currentTarget;

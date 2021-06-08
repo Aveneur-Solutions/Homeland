@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 import { Button, Card, Image, Grid } from "semantic-ui-react";
 import IFlat from "../../models/unit";
 import { useMediaQuery } from "react-responsive";
-import { ChangeEvent, useContext } from "react";
+import { useContext } from "react";
 import { RootStoreContext } from "../../stores/rootStore";
-import { history } from "../..";
+import { cartButtonStyle, imageContainer } from "./Card/cardStyles";
+import CartButton from "./Card/CartButton";
 
 interface IProps {
   sortedFlats: IFlat[];
@@ -17,7 +18,8 @@ const UnitList: React.FC<IProps> = ({ sortedFlats }) => {
   });
 
   const rootStore = useContext(RootStoreContext);
-  const { selectedFlats, selectFlats, unselectFlats } = rootStore.flatStore;
+  const { selectedFlats, selectFlats, unselectFlats, addToCart, cartItems } =
+    rootStore.flatStore;
 
   const addToSelectedFlats = (flat: IFlat) => {
     selectFlats(flat);
@@ -44,13 +46,28 @@ const UnitList: React.FC<IProps> = ({ sortedFlats }) => {
             {sortedFlats.map((item) => (
               <div className="cardhover" key={item.id}>
                 <Card fluid>
-                  <img
-                    src={
-                      "https://www.homeland.aveneur.com/Images" +
-                      item.images[item.images.length - 1].imageLocation
-                    }
-                    height="400px"
-                  />
+                  <div style={{ ...imageContainer, height: 400 }}>
+                    <img
+                      src={
+                        "https://www.homeland.aveneur.com/Images" +
+                        item.images[item.images.length - 1].imageLocation
+                      }
+                      height="100%"
+                      width="100%"
+                    />
+                    {!item.isBooked && (
+                      <CartButton
+                        style={cartButtonStyle}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          addToCart(item);
+                        }}
+                        disabled={cartItems.some(
+                          (cartItem) => cartItem.id === item.id
+                        )}
+                      />
+                    )}
+                  </div>
                   <Card.Content>
                     <Grid columns={3} divided>
                       <Grid.Row>
@@ -140,14 +157,28 @@ const UnitList: React.FC<IProps> = ({ sortedFlats }) => {
         <div className="tbl">
           {sortedFlats.map((item) => (
             <Card fluid key={item.id}>
-              <Image
-                src={
-                  "https://www.homeland.aveneur.com/Images" +
-                  item.images[item.images.length - 1].imageLocation
-                }
-                wrapped
-                ui={false}
-              />
+              <div style={imageContainer}>
+                <img
+                  src={
+                    "https://www.homeland.aveneur.com/Images" +
+                    item.images[item.images.length - 1].imageLocation
+                  }
+                  height="100%"
+                  width="100%"
+                />
+                {!item.isBooked && (
+                  <CartButton
+                    style={cartButtonStyle}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      addToCart(item);
+                    }}
+                    disabled={cartItems.some(
+                      (cartItem) => cartItem.id === item.id
+                    )}
+                  />
+                )}
+              </div>
               <Card.Content>
                 <Grid columns={3} divided>
                   <Grid.Row>

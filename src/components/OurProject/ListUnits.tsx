@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Card, Button, Image, Grid } from "semantic-ui-react";
 import { ourProject } from "./buildings";
 import { useMediaQuery } from "react-responsive";

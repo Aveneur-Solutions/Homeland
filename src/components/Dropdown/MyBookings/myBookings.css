@@ -7,10 +7,10 @@
 }
 
 .my-booking{
-    background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(98,204,35,0.5158438375350141) 35%, rgba(0,212,255,1) 100%);
-    height: 105vh;
+    height: 89vh;
     position: relative;
+    overflow:auto;
 }
 
 .my-booking-container{

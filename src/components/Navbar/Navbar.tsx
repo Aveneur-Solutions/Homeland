@@ -1,7 +1,7 @@
 import { observer } from "mobx-react-lite";
-import React, { useContext, useEffect, useState } from "react";
-import { Link, useHistory } from "react-router-dom";
-import { Dropdown, Transition, Menu } from "semantic-ui-react";
+import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { Dropdown, Menu } from "semantic-ui-react";
 import { RootStoreContext } from "../../stores/rootStore";
 import SvgComponent from "./logosvg";
 import { MenuItems } from "./MenuItems";
@@ -10,19 +10,19 @@ import { history } from "../..";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const isDesktopOrLaptop = useMediaQuery({
-    query: "(min-device-width: 1224px)",
-  });
-  const isBigScreen = useMediaQuery({ query: "(min-device-width: 1824px)" });
-  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
+  // const isDesktopOrLaptop = useMediaQuery({
+  //   query: "(min-device-width: 1224px)",
+  // });
+  // const isBigScreen = useMediaQuery({ query: "(min-device-width: 1824px)" });
+  // const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
   const isTabletOrMobileDevice = useMediaQuery({
     query: "(max-device-width: 1224px)",
   });
-  const isPortrait = useMediaQuery({ query: "(orientation: portrait)" });
-  const isRetina = useMediaQuery({ query: "(min-resolution: 2dppx)" });
+  // const isPortrait = useMediaQuery({ query: "(orientation: portrait)" });
+  // const isRetina = useMediaQuery({ query: "(min-resolution: 2dppx)" });
 
   const rootStore = useContext(RootStoreContext);
-  const { normalLogin, bookingLogin, setFeatured } = rootStore.navStore;
+  const { normalLogin, setFeatured } = rootStore.navStore;
   const { getUser, user, logout } = rootStore.userStore;
   const { token } = rootStore.commonStore;
   const { cartItemCount } = rootStore.flatStore;
@@ -68,7 +68,15 @@ const Navbar = () => {
 
   return (
     <Menu pointing className="NavbarItems">
-      <Link to={"/"} className="forlink">
+      <div className="cart-icon">
+        <i
+          className="navfont fas fa-cart-plus nav-item"
+          onClick={() => history.push("/cart")}
+        >
+          {cartItemCount}
+        </i>
+      </div>
+      <Link to={"/"} className="forlink" onClick={() => setClicked(false)}>
         <SvgComponent />
       </Link>
       <div className="menu-icon" onClick={handleClick}>
@@ -91,8 +99,9 @@ const Navbar = () => {
         {isTabletOrMobileDevice && (
           <li>
             {user ? (
-              <Dropdown className="dropname-mob " text={user.fullname}>
+              <Dropdown className="dropname-mob" text={user.fullname}>
                 <Dropdown.Menu
+                  onClick={handleClick}
                   className="dropmenu-mob"
                   style={{
                     backgroundColor: "white",

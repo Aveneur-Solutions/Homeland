@@ -1,7 +1,7 @@
 import { observer } from "mobx-react-lite";
 import React, { useContext } from "react";
 import { useMediaQuery } from "react-responsive";
-import { Button, Image, Segment, Label } from "semantic-ui-react";
+import { Button, Segment, Label } from "semantic-ui-react";
 import IFlat from "../../models/unit";
 import { RootStoreContext } from "../../stores/rootStore";
 import { nextbutton, nextbuttonmobile } from "../customStyles/buttonStyles";
@@ -58,14 +58,18 @@ const BuildingSlider: React.FC<IProps> = ({ flat, action }) => {
                 flat.isBooked
               }
             >
+              <i
+                className="fas fa-cart-plus"
+                style={{ color: "goldenrod", marginRight: 5 }}
+              />
               Add To Cart
             </Button>
-            <Button
+            {/* <Button
               type="submit"
               style={nextbutton}
             >
               Buy Now
-            </Button>
+            </Button> */}
           </>
         ) : (
           <>
@@ -78,14 +82,18 @@ const BuildingSlider: React.FC<IProps> = ({ flat, action }) => {
                 flat.isBooked
               }
             >
+              <i
+                className="fas fa-cart-plus"
+                style={{ color: "goldenrod", marginRight: 5 }}
+              />
               Add To Cart
             </Button>
-            <Button
+            {/* <Button
               type="submit"
               style={nextbuttonmobile}
             >
               Buy Now
-            </Button>
+            </Button> */}
           </>
         )}
       </div>

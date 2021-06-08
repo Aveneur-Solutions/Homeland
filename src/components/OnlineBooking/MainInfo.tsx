@@ -1,7 +1,5 @@
-import React from "react";
 import BuildingInfo from "./BuildingInfo";
 import { useMediaQuery } from "react-responsive";
-import { Button, Card, Grid, Image } from "semantic-ui-react";
 import { observer } from "mobx-react-lite";
 import SimilarUnits from "./SimilarUnits";
 

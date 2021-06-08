@@ -13,7 +13,7 @@ import Profile from "./components/ProfileSettings/Profile";
 import MyAllotments from "./components/Dropdown/MyAllotments/MyAllotments";
 import MyBookings from "./components/Dropdown/MyBookings/MyBookings";
 import Cart from "./components/Cart/Cart";
-import React, { useContext, useEffect } from "react";
+import{ useContext, useEffect } from "react";
 import { RootStoreContext } from "./stores/rootStore";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';

@@ -30,7 +30,7 @@ const OtpAuth: React.FC<IProps> = ({ phoneNo, func, buttonText }) => {
       history.push("/cart");
     }
     console.log(user);
-  }, [user, booking, history, logginIn]);
+  }, [user, booking, logginIn]);
 
   const onSubmit = (data: IUserLoginWithOtp) => {
     func(data).catch((error) => console.log(error));

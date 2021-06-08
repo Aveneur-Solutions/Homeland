@@ -92,6 +92,25 @@ export default class UserStore {
     }
   };
 
+  @action resendOtp = async (phoneNo: string) => {
+    try {
+      const body = {
+        phoneNumber: phoneNo,
+      };
+      await agent.User.resendOtp(body);
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  @action resetPassword = async (body: {newPassword: string}) => {
+    try {
+      await agent.User.resetPassword(body)
+    } catch (error) {
+      throw error
+    }
+  }
+
   @action getMyBookedFlats = async () => {
     try{
      const bookedFlats =  await agent.User.myBookings();

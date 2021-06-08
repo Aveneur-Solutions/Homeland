@@ -25,7 +25,6 @@ const OnlineBooking = () => {
     setLoading(true);
     cancelOrder().then(() => setLoading(false));
   }
-
   return (
     <div className="online-booking">
       <div className="online-booking-container">

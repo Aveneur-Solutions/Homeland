@@ -342,27 +342,29 @@
     padding: 50px 20px 50px 20px;
   }
 
-  .centerbangla {
-    position: absolute;
-    margin: 10vh 18vw;
-    height: 40vh;
-    width: 60vw;
-}
-.shelf {
-  height: 21rem;
-  width: 15rem;
-}
-.door {
-  width: 7.5rem;
-  height: 20rem;
-  display: flex;
-  box-sizing: border-box;
-  padding: 1rem;
-  background-color: #fff;
-  align-items: center;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
-  outline: 1px solid transparent;
-}
+    .centerbangla {
+      position: absolute;
+      margin: 10vh 18vw;
+      height: 40vh;
+      width: 60vw;
+  }
+  .shelf {
+    height: 21rem;
+    width: 15rem;
+  }
+  .door {
+    width: 7.5rem;
+    height: 20rem;
+    display: flex;
+    box-sizing: border-box;
+    padding: 1rem;
+    background-color: #fff;
+    align-items: center;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    outline: 1px solid transparent;
+  }
+  .sloganhead{
+    font-size: 1.2rem;
+  }
 
 }
-
