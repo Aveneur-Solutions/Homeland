@@ -4,7 +4,7 @@ import "./booking.css";
 import { observer } from "mobx-react-lite";
 import IFlat from "../../models/unit";
 import { useMediaQuery } from "react-responsive";
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { RootStoreContext } from "../../stores/rootStore";
 import { history } from "../..";
 
@@ -29,7 +29,7 @@ const Cards: React.FC<IProps> = ({ featuredFlats }) => {
     <div className="cardcontainer">
       <h2>Featured Units</h2>
       {!isTabletOrMobileDevice ? (
-        <Grid columns={2} divided>
+        <Grid columns={3}>
           {featuredFlats.map((item) => {
             return (
               <div
@@ -43,7 +43,7 @@ const Cards: React.FC<IProps> = ({ featuredFlats }) => {
                       "https://www.homeland.aveneur.com/Images" +
                       item.images[item.images.length - 1].imageLocation
                     }
-                    height="400px"
+                    height="250px"
                   />
                   <Card.Content>
                     <Grid columns={3} divided>

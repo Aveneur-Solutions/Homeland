@@ -6,6 +6,7 @@ import { observer } from "mobx-react-lite";
 import { SyntheticEvent, useContext, useEffect, useState } from "react";
 import { RootStoreContext } from "../../stores/rootStore";
 import UnitList from "./UnitList";
+import AvailableUnits from './AvailableUnits'
 import IFlat from "../../models/unit";
 import sortFlats from "./sortUtil";
 import { useMediaQuery } from "react-responsive";
@@ -95,6 +96,7 @@ const OurProject = () => {
             </Grid.Column>
             <Grid.Column width={13}>
               {featured && <Card featuredFlats={getFeaturedUnits()} />}
+              <AvailableUnits />
               {searchUnit && <UnitList sortedFlats={sortedFlats} />}
             </Grid.Column>
           </Grid>
