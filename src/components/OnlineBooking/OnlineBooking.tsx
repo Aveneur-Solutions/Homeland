@@ -75,7 +75,7 @@ const OurProject = () => {
   const getFeaturedUnits = () => {
     let flatsCopy = flats.slice();
     let sortedFlats = flatsCopy.sort((a, b) => a.price - b.price);
-    let featured = sortedFlats.slice(0, 4);
+    let featured = sortedFlats.slice(0, 3);
     return featured;
   };
 
