@@ -68,6 +68,14 @@ const Navbar = () => {
 
   return (
     <Menu pointing className="NavbarItems">
+      <div className="cart-icon">
+        <i
+          className="navfont fas fa-cart-plus nav-item"
+          onClick={() => history.push("/cart")}
+        >
+          {cartItemCount}
+        </i>
+      </div>
       <Link to={"/"} className="forlink" onClick={() => setClicked(false)}>
         <SvgComponent />
       </Link>
