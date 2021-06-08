@@ -10,6 +10,8 @@ import IUser, {
   IUserRegister,
   IUserSearch,
 } from "../models/user";
+import { IPaymentRequest, IPaymentResponse } from "../models/payment";
+import { IOrder, IOrderCancel, IOrderResponse } from "../models/order";
 
 axios.interceptors.request.use(
   (config) => {
@@ -36,14 +38,11 @@ axios.interceptors.response.use(undefined, (error) => {
   if (status === 500) {
     toast.error("Server Error Check the terminal for more info");
   }
-  if (status === 409) {
-    console.log(data);
-  }
   throw error.response;
 });
 
-axios.defaults.baseURL = "https://www.homeland.aveneur.com/api";
-// axios.defaults.baseURL = "http://localhost:5000/api";
+// axios.defaults.baseURL = "https://www.homeland.aveneur.com/api";
+axios.defaults.baseURL = "https://localhost:5001/api";
 
 const responseBody = (response: AxiosResponse) => response.data;
 
@@ -64,16 +63,19 @@ const User = {
   register: (body: IUserRegister) => request.post("/user/register", body),
   registerWithOtp: (body: IUserLoginWithOtp): Promise<IUser> =>
     request.post("/user/registerWithOtp", body),
+  myBookings : () : Promise<IFlat[]> => request.get("/Customer/myBookings"),
+  myAllotments : () : Promise<IFlat[]> => request.get("/Customer/myAllotments"),
+  myTransfers : () : Promise<ITransfer[]> => request.get("/Customer/myTransfers"),
+  transferNow : (body : ITransferPost) => request.post("flat/TransferNow",body),
+  placeOrder : (body : IOrder) : Promise<IOrderResponse> => request.post("flat/placeOrder",body),
+  cancelOrder : (body : IOrderCancel)  => request.del(`flat/cancelOrder/${body.orderId}`),
+  payment : (body : IPaymentRequest) : Promise<IPaymentResponse> => request.post("Payment/Payment",body)
   resendOtp: (body: { phoneNumber: string }) =>
     request.post("/user/resendOtp", body),
   resetPassword: (body: { newPassword: string }) =>
     request.post("/user/resetPassword", body),
   changePassword: (body: IUserChangePassword): Promise<IUser> =>
     request.post("/user/changePassword", body),
-  myBookings: (): Promise<IFlat[]> => request.get("/Customer/myBookings"),
-  myAllotments: (): Promise<IFlat[]> => request.get("/Customer/myAllotments"),
-  myTransfers: (): Promise<ITransfer[]> => request.get("/Customer/myTransfers"),
-  transferNow: (body: ITransferPost) => request.post("flat/TransferNow", body),
 };
 
 const Flat = {

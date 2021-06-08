@@ -18,6 +18,7 @@ import { RootStoreContext } from "./stores/rootStore";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import TransferUnit from "./components/Dropdown/TransferForm/TransferUnit";
+import FailedPayment from "./components/Cart/FailedPayment";
 
 function App() {
   const rootStore = useContext(RootStoreContext);
@@ -45,6 +46,7 @@ function App() {
         <Route exact path="/my-allotments" component={MyAllotments} />
         <Route exact path="/my-bookings" component={MyBookings} />
         <Route exact path="/my-profile" component={Profile} />
+        <Route exact path="/failedPayment" component={FailedPayment} />
       </Switch>
     </div>
   );

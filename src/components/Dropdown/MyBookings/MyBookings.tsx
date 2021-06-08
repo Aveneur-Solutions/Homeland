@@ -78,7 +78,7 @@ const MyBookings = () => {
 
                       </tr>
                     );
-                  }) : <div>You haven't transferred any units yet</div>}
+                  }) : <tr>You haven't transferred any units yet</tr>}
                 </table>
               </div>
             </div>

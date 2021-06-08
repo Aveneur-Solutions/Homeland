@@ -1,6 +1,7 @@
 import { action, makeObservable, observable, runInAction } from "mobx";
 import { toast } from "react-toastify";
 import agent from "../api/agent";
+import { IPaymentRequest } from "../models/payment";
 import ITransfer from "../models/transfer";
 import IFlat from "../models/unit";
 import IUser, {
@@ -147,7 +148,6 @@ export default class UserStore {
   @action searchUser = async (data: IUserSearch) => {
     try {
       this.emptyRecieverUser();
-
       const user = await agent.User.getUser(data);
       runInAction(() => {
         if (this.user?.phoneNumber !== user.phoneNumber) {
@@ -163,4 +163,26 @@ export default class UserStore {
   @action emptyRecieverUser = () => {
     this.recieverUser = null;
   };
+  @action makePayment = async () => {
+
+    let paymentRequest : IPaymentRequest = {
+      orderId : this.rootStore.flatStore.orderId,
+      successUrl : window.location.origin.concat("/#/my-bookings"),
+      failedUrl : window.location.origin.concat("/#/failedPayment")
+    }
+
+    console.log(paymentRequest);
+    try{
+      var response =  await agent.User.payment(paymentRequest);
+      if(response.status === "SUCCESS") {
+        window.location.replace(response.gatewayPageURL);
+        console.log(response)
+      }
+      else toast.error(response.status+"=>"+response.failedReason)
+    }catch(error)
+    {
+      toast.error(error.data.errors.error)
+      console.log(paymentRequest.orderId)
+    }
+  }
 }
