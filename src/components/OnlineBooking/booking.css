@@ -51,8 +51,9 @@
   height: 10vh;
 }
 
-.cardsize:hover {
-  transform: translateY(-30px);
+.cardsize:hover img {
+  /* transform: translateY(-30px); */
+  transform: scale(1.2);
   transition: ease-in-out 0.35s;
 }
 

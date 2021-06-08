@@ -59,6 +59,10 @@ const BuildingSlider: React.FC<IProps> = ({ flat, action }) => {
                 flat.isBooked
               }
             >
+              <i
+                className="fas fa-cart-plus"
+                style={{ color: "goldenrod", marginRight: 5 }}
+              />
               Add To Cart
             </Button>
             {/* <Button
@@ -79,6 +83,10 @@ const BuildingSlider: React.FC<IProps> = ({ flat, action }) => {
                 flat.isBooked
               }
             >
+              <i
+                className="fas fa-cart-plus"
+                style={{ color: "goldenrod", marginRight: 5 }}
+              />
               Add To Cart
             </Button>
             {/* <Button
