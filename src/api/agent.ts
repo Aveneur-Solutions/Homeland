@@ -11,6 +11,8 @@ import IUser, {
   IUserRegister,
   IUserSearch,
 } from "../models/user";
+import { IPaymentRequest, IPaymentResponse } from "../models/payment";
+import { IOrder, IOrderResponse } from "../models/order";
 
 
 axios.interceptors.request.use(
@@ -47,7 +49,7 @@ axios.interceptors.response.use(undefined, (error) => {
 });
 
 axios.defaults.baseURL = "https://www.homeland.aveneur.com/api";
-// axios.defaults.baseURL = "http://localhost:5000/api";
+// axios.defaults.baseURL = "https://localhost:5001/api";
 
 const responseBody = (response: AxiosResponse) => response.data;
 
@@ -71,7 +73,9 @@ const User = {
   myBookings : () : Promise<IFlat[]> => request.get("/Customer/myBookings"),
   myAllotments : () : Promise<IFlat[]> => request.get("/Customer/myAllotments"),
   myTransfers : () : Promise<ITransfer[]> => request.get("/Customer/myTransfers"),
-  transferNow : (body : ITransferPost) => request.post("flat/TransferNow",body)
+  transferNow : (body : ITransferPost) => request.post("flat/TransferNow",body),
+  placeOrder : (body : IOrder) : Promise<IOrderResponse> => request.post("flat/placeOrder",body),
+  payment : (body : IPaymentRequest) : Promise<IPaymentResponse> => request.post("Payment/Payment",body)
 };
 
 const Flat = {

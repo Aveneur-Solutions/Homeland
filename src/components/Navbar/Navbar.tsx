@@ -81,7 +81,7 @@ const Navbar = () => {
               <Link
                 className={item.cName}
                 to={item.url}
-                onClick={item.url === "/onlineBooking" ? setFeatured : () => {}}
+                onClick={item.url === "/onlineBooking" ? setFeatured : () => { }}
               >
                 {item.title}
               </Link>
@@ -130,12 +130,15 @@ const Navbar = () => {
         <i className="navfont fab fa-facebook-square"></i>
         <i className="navfont fas fa-phone"></i>
         <h6>02 4881 1616</h6>
-        <i
-          className="navfont fas fa-cart-plus nav-item"
-          onClick={() => history.push("/cart")}
-        >
-          {cartItemCount}
-        </i>
+        
+        {user && (<i
+            className="navfont fas fa-cart-plus nav-item"
+            onClick={() => history.push("/cart")}
+          >
+            {cartItemCount}
+          </i>)
+        }
+
       </div>
       {!isTabletOrMobileDevice && (
         <div className="login-content">

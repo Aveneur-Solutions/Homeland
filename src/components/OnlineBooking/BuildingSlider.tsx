@@ -18,7 +18,6 @@ const BuildingSlider: React.FC<IProps> = ({ flat, action }) => {
   const isTabletOrMobileDevice = useMediaQuery({
     query: "(max-device-width: 1000px)",
   });
-
   return (
     <div className="main-container">
       <Segment>
