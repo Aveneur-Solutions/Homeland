@@ -6,3 +6,6 @@ export interface IOrder{
 export interface IOrderResponse{
     transactionID : string
 }
+export interface IOrderCancel{
+    orderId : string
+}

@@ -5,7 +5,7 @@ import { ITransferPost } from "../models/transfer";
 import IFlat from "../models/unit";
 import { RootStore } from "./rootStore";
 import {history} from "../";
-import { IOrder } from "../models/order";
+import { IOrder, IOrderCancel } from "../models/order";
 export default class FlatStore {
   rootStore: RootStore;
   constructor(rootStore: RootStore) {
@@ -31,7 +31,6 @@ export default class FlatStore {
       this.totalAmount = this.totalAmount + element.bookingPrice;
     });
   };
-
   @action listflats = async () => {
     try {
       const flats = await agent.Flat.list();
@@ -82,14 +81,12 @@ export default class FlatStore {
     this.totalAmount = this.totalAmount - flat.bookingPrice;
     this.saveCart();
   };
-
   @action emptyCart = () => {
     this.cartItems = [];
     this.cartItemCount = 0;
     this.totalAmount = 0;
     localStorage.removeItem("userCart");
   };
-
   @action bookFlat = async () => {
     const user = this.rootStore.userStore.user;
     if (user) {
@@ -123,7 +120,6 @@ export default class FlatStore {
       toast.error(error.data.errors.error); 
     }
   }
-
   @action placeOrder = async () => {
     var flatIds = this.cartItems.map(x => x.id);
     var order : IOrder = {
@@ -146,5 +142,21 @@ export default class FlatStore {
       toast.error(error.data.errors.error);
     }
   }
-
+  @action cancelOrder = async () => {
+    var orderCancel : IOrderCancel = {
+      orderId : this.orderId
+    }
+    try{
+     var result = await agent.User.cancelOrder(orderCancel);
+      runInAction(() => {
+         this.orderPlaced = false;
+         this.emptyCart();
+         toast.success("Order was cancelled successfully");
+      })
+    }catch(error)
+    {
+      console.log(error)
+     // toast.error(error.data.errors.error);
+    }
+  }
 }

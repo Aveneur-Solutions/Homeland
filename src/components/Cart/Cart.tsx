@@ -7,7 +7,7 @@ import { Button } from "semantic-ui-react";
 
 const OnlineBooking = () => {
   const rootStore = useContext(RootStoreContext);
-  const { cartItems, cartItemCount, placeOrder, removeFromCart, totalAmount, orderPlaced } = rootStore.flatStore;
+  const { cartItems, cartItemCount, placeOrder, removeFromCart, totalAmount, orderPlaced,cancelOrder } = rootStore.flatStore;
   const { makePayment } = rootStore.userStore;
   const [loading, setLoading] = useState(false);
   const handleRemoveClicked = (item: IFlat) => {
@@ -22,7 +22,8 @@ const OnlineBooking = () => {
     makePayment().then(() => setLoading(false));
   }
   const handleCancelClicked = () => {
-
+    setLoading(true);
+    cancelOrder().then(() => setLoading(false));
   }
 
   return (
@@ -85,7 +86,7 @@ const OnlineBooking = () => {
                 </div>
               }
               {orderPlaced && <div className="section">
-              <Button  color="red" onClick={() => handleCancelClicked()} className="btn">Cancel Order</Button>
+              <Button  color="red" loading={loading} onClick={() => handleCancelClicked()} className="btn">Cancel Order</Button>
                 <Button loading={loading} color="yellow" onClick={() => handlePaymentClicked()} className="btn">Make Payment</Button>
               </div>}
 

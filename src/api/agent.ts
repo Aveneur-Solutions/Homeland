@@ -12,7 +12,7 @@ import IUser, {
   IUserSearch,
 } from "../models/user";
 import { IPaymentRequest, IPaymentResponse } from "../models/payment";
-import { IOrder, IOrderResponse } from "../models/order";
+import { IOrder, IOrderCancel, IOrderResponse } from "../models/order";
 
 
 axios.interceptors.request.use(
@@ -42,14 +42,11 @@ axios.interceptors.response.use(undefined, (error) => {
   if (status === 500) {
     toast.error("Server Error Check the terminal for more info");
   }
-  if (status === 409) {
-    console.log(data);
-  }
   throw error.response;
 });
 
-axios.defaults.baseURL = "https://www.homeland.aveneur.com/api";
-// axios.defaults.baseURL = "https://localhost:5001/api";
+// axios.defaults.baseURL = "https://www.homeland.aveneur.com/api";
+axios.defaults.baseURL = "https://localhost:5001/api";
 
 const responseBody = (response: AxiosResponse) => response.data;
 
@@ -75,6 +72,7 @@ const User = {
   myTransfers : () : Promise<ITransfer[]> => request.get("/Customer/myTransfers"),
   transferNow : (body : ITransferPost) => request.post("flat/TransferNow",body),
   placeOrder : (body : IOrder) : Promise<IOrderResponse> => request.post("flat/placeOrder",body),
+  cancelOrder : (body : IOrderCancel)  => request.del(`flat/cancelOrder/${body.orderId}`),
   payment : (body : IPaymentRequest) : Promise<IPaymentResponse> => request.post("Payment/Payment",body)
 };
 
