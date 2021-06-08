@@ -69,7 +69,7 @@ const User = {
   transferNow : (body : ITransferPost) => request.post("flat/TransferNow",body),
   placeOrder : (body : IOrder) : Promise<IOrderResponse> => request.post("flat/placeOrder",body),
   cancelOrder : (body : IOrderCancel)  => request.del(`flat/cancelOrder/${body.orderId}`),
-  payment : (body : IPaymentRequest) : Promise<IPaymentResponse> => request.post("Payment/Payment",body)
+  payment : (body : IPaymentRequest) : Promise<IPaymentResponse> => request.post("Payment/Payment",body),
   resendOtp: (body: { phoneNumber: string }) =>
     request.post("/user/resendOtp", body),
   resetPassword: (body: { newPassword: string }) =>
