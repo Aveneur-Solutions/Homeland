@@ -7,7 +7,6 @@ const OrderDetails = () => {
     return (
       <div className="main-order">
         <Container className="order-container">
-          <h1 style={{ textAlign: "center" }}>Order Summary</h1>
           <OrderTable/>
         </Container>
       </div>
