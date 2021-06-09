@@ -7,9 +7,6 @@
 }
 
 .online-booking{
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     position: relative;
 }
 
@@ -167,4 +164,29 @@ td{
     .online-booking-container{
         width: 80%;
     }
+}
+
+/* ********** Order Details page CSS ****************** */
+.main-order{
+    position: relative;
+    height: 89vh;
+    background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%,rgba(204, 154, 35, 0.7875525210084033) 35%,rgba(0, 212, 255, 1) 100%
+  );
+}
+.order-container{
+    transform: translate(35%, 5%);
+    position: absolute;
+    padding: 20px;
+    border: none;
+    border-radius: 3%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    overflow: auto;
+    height: 80vh;
+    background: whitesmoke;
+}
+
+/* ********** Order Table page CSS ****************** */
+.orderdeets{
+    width: 100%;
+    text-align: center;
 }
