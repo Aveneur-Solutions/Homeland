@@ -4,6 +4,7 @@ import { observer } from "mobx-react-lite";
 import { RootStoreContext } from "../../../stores/rootStore";
 import { Header } from "semantic-ui-react";
 import { history } from "../../..";
+import {format} from 'date-fns'
 
 const MyBookings = () => {
   const store = useContext(RootStoreContext);
@@ -74,7 +75,7 @@ const MyBookings = () => {
                       >
                         <td>{item.flatId}</td>
                         <td>{item.transferredTo}</td>
-                        <td>{item.transferDate}</td>
+                        <td>{format(new Date(item.transferDate), "dd MMM yyyy")}</td>
 
                       </tr>
                     );
