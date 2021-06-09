@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
-import { Card, Image, Grid, Button } from "semantic-ui-react";
+import { Card, Grid } from "semantic-ui-react";
 import "../booking.css";
 import { observer } from "mobx-react-lite";
 import IFlat from "../../../models/unit";
