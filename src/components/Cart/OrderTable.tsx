@@ -1,13 +1,9 @@
 import React from 'react'
-import { useMediaQuery } from "react-responsive";
 import Logo from '../Navbar/logosvg';
 import Keanu from './keanu.png'
 import "./onlinebooking.css";
 
 const OrderTable = () => {
-  const isTabletOrMobileDevice = useMediaQuery({
-    query: "(max-device-width: 1224px)",
-  });
     return (
           <>
             <div className="order-table-container">

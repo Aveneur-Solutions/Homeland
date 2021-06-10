@@ -37,8 +37,8 @@ const FilterCard: React.FC<IProps> = ({
   };
   return (
     <Menu text vertical className="filtercontainer">
+      <Menu.Item className="searchhead">Search By</Menu.Item>
       <div className="filterpad">
-        <Menu.Item className="searchhead">Search By</Menu.Item>
         <form onSubmit={onFormSubmit}>
           <Menu.Item name="Price" className="price" />
           <label style={hoverStyle}>
