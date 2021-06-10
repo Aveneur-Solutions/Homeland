@@ -5,7 +5,8 @@ import { ITransferPost } from "../models/transfer";
 import IFlat from "../models/unit";
 import { RootStore } from "./rootStore";
 import { history } from "../";
-import { IOrder, IOrderCancel } from "../models/order";
+import { IOrder, IOrderCancel, IOrderDetails } from "../models/order";
+
 export default class FlatStore {
   rootStore: RootStore;
   constructor(rootStore: RootStore) {
@@ -22,7 +23,8 @@ export default class FlatStore {
   @observable cartItemCount = 0;
   @observable orderId: string = "";
   @observable orderPlaced: boolean = false;
-
+  @observable orderDetails: IOrderDetails | null = null;
+  
   @action initCart = () => {
     const cartItems = localStorage.getItem("userCart");
     if (cartItems) this.cartItems = JSON.parse(cartItems);
@@ -30,6 +32,7 @@ export default class FlatStore {
     this.cartItems.forEach((element) => {
       this.totalAmount = this.totalAmount + element.bookingPrice;
     });
+    if (this.cartItemCount === 0) this.unpaidOrder();
   };
   @action listflats = async () => {
     try {
@@ -43,7 +46,7 @@ export default class FlatStore {
   };
 
   @action selectFlats = (flat: IFlat) => {
-    const temp = this.selectedFlats.filter((x) => x.id === flat.id)[0];
+    const temp = this.selectedFlats.filter(x => x.id === flat.id)[0];
     if (!temp) this.selectedFlats.push(flat);
   };
 
@@ -68,8 +71,10 @@ export default class FlatStore {
     this.cartItems.push(flat);
     this.cartItemCount = this.cartItemCount + 1;
     this.totalAmount = this.totalAmount + flat.bookingPrice;
-    this.saveCart();
-    toast.success("Added to cart");
+    if (!this.orderPlaced) {
+      this.saveCart();
+      toast.success("Added to cart");
+    }
   };
 
   @action removeFromCart = (flat: IFlat) => {
@@ -112,49 +117,68 @@ export default class FlatStore {
   @action transferNow = async (data: ITransferPost) => {
     try {
       await agent.User.transferNow(data);
-      toast.success("Transfer Complete");
-      history.push("/my-bookings");
+      toast.success("Transfer Complete")
+      history.push("/my-bookings")
     } catch (error) {
       console.log(error);
       toast.error(error.data.errors.error);
     }
   };
+  
   @action placeOrder = async () => {
-    var flatIds = this.cartItems.map((x) => x.id);
+    var flatIds = this.cartItems.map(x => x.id);
     var order: IOrder = {
       orderId: Date.now().toString(),
       amount: this.totalAmount,
-      flatIds: flatIds,
-    };
+      flatIds: flatIds
+    }
     this.orderId = order.orderId;
-    console.log(order);
+    console.log(order)
     try {
-      await agent.User.placeOrder(order);
-      runInAction(() => {
+       await agent.User.placeOrder(order);
+       runInAction(() => {
         this.orderPlaced = true;
         localStorage.removeItem("userCart");
         toast.success("Order placed successfully");
-      });
+      })
       console.log(order);
     } catch (error) {
-      console.log(error);
       toast.error(error.data.errors.error);
     }
   };
   @action cancelOrder = async () => {
     var orderCancel: IOrderCancel = {
-      orderId: this.orderId,
-    };
+      orderId: this.orderId
+    }
     try {
-      await agent.User.cancelOrder(orderCancel);
+       await agent.User.cancelOrder(orderCancel);
       runInAction(() => {
         this.orderPlaced = false;
         this.emptyCart();
         toast.success("Order was cancelled successfully");
-      });
+      })
+    } catch (error) {
+      console.log(error)
+      // toast.error(error.data.errors.error);
+    }
+  }
+  @action unpaidOrder = async () => {
+    try {
+      var order = await agent.User.unpaidOrder();
+      runInAction(() => {
+        if (order.flats) {
+          this.orderDetails = order;
+          this.orderPlaced = true;
+          this.orderId = order.orderId
+          order.flats.forEach((flat) => {
+            this.addToCart(flat);
+          })
+        }
+
+      
+      })
     } catch (error) {
       console.log(error);
-      // toast.error(error.data.errors.error);
     }
   };
 }
