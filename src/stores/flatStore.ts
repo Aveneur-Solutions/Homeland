@@ -6,6 +6,7 @@ import IFlat from "../models/unit";
 import { RootStore } from "./rootStore";
 import { history } from "../";
 import { IOrder, IOrderCancel, IOrderDetails } from "../models/order";
+
 export default class FlatStore {
   rootStore: RootStore;
   constructor(rootStore: RootStore) {
@@ -23,11 +24,12 @@ export default class FlatStore {
   @observable orderId: string = "";
   @observable orderPlaced: boolean = false;
   @observable orderDetails: IOrderDetails | null = null;
+  
   @action initCart = () => {
     const cartItems = localStorage.getItem("userCart");
     if (cartItems) this.cartItems = JSON.parse(cartItems);
     this.cartItemCount = this.cartItems.length;
-    this.cartItems.forEach(element => {
+    this.cartItems.forEach((element) => {
       this.totalAmount = this.totalAmount + element.bookingPrice;
     });
     if (this.cartItemCount === 0) this.unpaidOrder();
@@ -121,7 +123,8 @@ export default class FlatStore {
       console.log(error);
       toast.error(error.data.errors.error);
     }
-  }
+  };
+  
   @action placeOrder = async () => {
     var flatIds = this.cartItems.map(x => x.id);
     var order: IOrder = {
@@ -133,7 +136,7 @@ export default class FlatStore {
     console.log(order)
     try {
        await agent.User.placeOrder(order);
-      runInAction(() => {
+       runInAction(() => {
         this.orderPlaced = true;
         localStorage.removeItem("userCart");
         toast.success("Order placed successfully");
@@ -142,7 +145,7 @@ export default class FlatStore {
     } catch (error) {
       toast.error(error.data.errors.error);
     }
-  }
+  };
   @action cancelOrder = async () => {
     var orderCancel: IOrderCancel = {
       orderId: this.orderId
@@ -177,5 +180,5 @@ export default class FlatStore {
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 }

@@ -3,6 +3,7 @@
 }
 .filterpad {
   padding: 9% 0% 9% 0%;
+  width: 10vw;
 }
 .projectbg {
   overflow: hidden;
@@ -135,6 +136,7 @@ td {
 }
 .searchhead {
   font-size: 2.5rem;
+  text-align: center;
 }
 .projectmainbg {
   background-image: linear-gradient(#ffffff, #e7e6e1);
@@ -146,4 +148,21 @@ td {
 
 .searched-card-img {
   max-height: 300px;
+}
+
+@media screen and (max-width: 600px) {
+    .slider{
+      display: none;
+    }
+}
+@media screen and (max-width: 1024px) {
+  .filterpad{
+    display: flex;
+    justify-content: left;
+    margin-left: 10%;
+    width: 100%;
+  }
+  .filtercontainer{
+    padding: 0;
+  }
 }
