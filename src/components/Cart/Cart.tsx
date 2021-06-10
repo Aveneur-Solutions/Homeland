@@ -10,6 +10,7 @@ const OnlineBooking = () => {
   const { cartItems, cartItemCount, placeOrder, removeFromCart, totalAmount, orderPlaced,cancelOrder } = rootStore.flatStore;
   const { makePayment } = rootStore.userStore;
   const [loading, setLoading] = useState(false);
+
   const handleRemoveClicked = (item: IFlat) => {
     removeFromCart(item);
   };
