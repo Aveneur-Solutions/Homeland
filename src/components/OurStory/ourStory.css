@@ -133,18 +133,24 @@ text-align: center;
     margin-top: -20vh;
 }
 .projectbutton{
-height: 5vh;
-width: 15vw;
-margin-left: -1.3%;
-border: none;
-color: goldenrod;
-background-color: #1e212d ;
-border-radius: 10px;
-font-weight: bolder;
+    height: 5vh;
+    width: 15vw;
+    margin-left: -1.3%;
+    border: none;
+    color: goldenrod;
+    background-color: #1e212d ;
+    border-radius: 10px;
+    font-weight: bolder;
+}
+.projectlink{
+    z-index: 10000;
 }
 .projectbutton:hover{
+    background: goldenrod;
+    color: honeydew;
     cursor: pointer;
-    }
+    transition: 0.3s ease-in-out;
+}
 @media screen and (max-width: 1024px) {
 
 .main-logo{

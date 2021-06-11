@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import "aos/dist/aos.css";
 import { useMediaQuery } from "react-responsive";
 import Storytexts from "./Storytexts";
+import { Link } from "react-router-dom";
 
 const OurStory = () => {
   const isTabletOrMobileDevice = useMediaQuery({
@@ -73,7 +74,9 @@ const OurStory = () => {
             </div>
           </div>
           <div className="projectbutton-container">
-            <button className="projectbutton"> Look At Our Projects</button>
+            <Link className="projectlink" to="/ourProject">
+              <button className="projectbutton"> Look At Our Projects</button>
+            </Link>
           </div>
         </>
       ) : (
@@ -109,7 +112,7 @@ const OurStory = () => {
               </p>
             </div>
           </div>
-          
+
           <div className="logoContainer">
             <div className="main-logo">
               <SvgComponent1 />
