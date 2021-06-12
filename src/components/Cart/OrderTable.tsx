@@ -9,7 +9,7 @@ const OrderTable = () => {
         <div className="order-table-container">
           <h1 style={{ textAlign: "start" }}>Your Order is Confirmed!</h1>
           <div style={{ marginBottom: "5%" }}>
-            <strong>Hi Zunaid,</strong>
+            <strong>Hi Zunnu mama,</strong>
             <p>Your order has been confirmed and will be shipping soon</p>
           </div>
           <hr />
@@ -33,7 +33,7 @@ const OrderTable = () => {
           <div className="order-table-image">
             <div className="order-item">
               <img src={Keanu} alt="keanu" />
-              <p>Keanu Reeves</p>
+              <p>Keanu Reeves sex toy</p>
             </div>
             <div>
               <h4>Qty 1</h4>
