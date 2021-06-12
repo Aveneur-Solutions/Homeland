@@ -22,6 +22,7 @@ const OnlineBooking = () => {
 
   const { makePayment } = rootStore.userStore;
   const [loading, setLoading] = useState(false);
+  const [cancelloading, setCancel] = useState(false)
 
   const handleRemoveClicked = (item: IFlat) => {
     removeFromCart(item);
@@ -38,7 +39,7 @@ const OnlineBooking = () => {
   };
 
   const handlePaymentClicked = () => {
-    setLoading(true);
+    setCancel(true);
     makePayment().then(() => setLoading(false));
   };
 
@@ -64,7 +65,7 @@ const OnlineBooking = () => {
                       <th>Bedrooms</th>
                       <th>Price</th>
                       <th>Booking Price</th>
-                      {!orderPlaced && <th>Select</th>}
+                      {!orderPlaced && <th>Remove</th>}
                     </tr>
                   </thead>
                   <tbody>
@@ -95,8 +96,8 @@ const OnlineBooking = () => {
                 </table>
               </div>
               <div className="profile-content">
-                <p>Total Units: &nbsp;{cartItemCount}</p>
-                <p>Total Amount: &nbsp; {totalAmount}</p>
+                <strong>Total Units: &nbsp;{cartItemCount}</strong>
+                <strong>Total Amount: &nbsp; {totalAmount}</strong>
               </div>
               {!orderPlaced && (
                 <div className="section">
@@ -121,7 +122,7 @@ const OnlineBooking = () => {
                     Cancel Order
                   </Button>
                   <Button
-                    loading={loading}
+                    loading={cancelloading}
                     color="yellow"
                     onClick={() => handlePaymentClicked()}
                     className="btn"
