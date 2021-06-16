@@ -31,7 +31,7 @@ function App() {
 
   return (
     <div className="App">
-      <ToastContainer position="top-right" />
+      <ToastContainer position="bottom-right" />
       <Navbar />
       <Switch>
         <Route exact path="/" component={MainHome} />

@@ -67,123 +67,133 @@ const Navbar = () => {
   };
 
   return (
-    <Menu pointing className="NavbarItems">
-      <div className="cart-icon">
-        <i
-          className="navfont fas fa-cart-plus nav-item"
-          onClick={() => history.push("/cart")}
-        >
-          {cartItemCount}
-        </i>
-      </div>
-      <Link to={"/"} className="forlink" onClick={() => setClicked(false)}>
-        <SvgComponent />
-      </Link>
-      <div className="menu-icon" onClick={handleClick}>
-        <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
-      </div>
-      <ul className={clicked ? "nav-menu active" : "nav-menu"}>
-        {MenuItems.map((item, index) => {
-          return (
-            <li key={index} onClick={handleClick}>
-              <Link
-                className={item.cName}
-                to={item.url}
-                onClick={item.url === "/onlineBooking" ? setFeatured : () => {}}
-              >
-                {item.title}
-              </Link>
-            </li>
-          );
-        })}
-        {isTabletOrMobileDevice && (
-          <li>
-            {user ? (
-              <Dropdown className="dropname-mob" text={user.fullname}>
-                <Dropdown.Menu
-                  onClick={handleClick}
-                  className="dropmenu-mob"
-                  style={{
-                    backgroundColor: "white",
-                    top: "50px",
-                    right: "0",
-                    left: "10px",
-                    width: "20px",
-                    fontWeight: 900,
-                  }}
+    <div className="main-nav-container">
+      <Menu pointing className="NavbarItems">
+        <div className="cart-icon">
+          <i
+            className="navfont fas fa-cart-plus nav-item"
+            onClick={() => history.push("/cart")}
+          >
+            {cartItemCount}
+          </i>
+        </div>
+        <Link to={"/"} className="forlink" onClick={() => setClicked(false)}>
+          <SvgComponent />
+        </Link>
+        <div className="menu-icon" onClick={handleClick}>
+          <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
+        </div>
+        <ul className={clicked ? "nav-menu active" : "nav-menu"}>
+          {MenuItems.map((item, index) => {
+            return (
+              <li key={index} onClick={handleClick}>
+                <Link
+                  className={item.cName}
+                  to={item.url}
+                  onClick={
+                    item.url === "/onlineBooking" ? setFeatured : () => {}
+                  }
                 >
-                  <Dropdown.Item
-                    text="My Allotments "
-                    onClick={handleAllotment}
-                  />
-                  <Dropdown.Item text="My Bookings" onClick={handleBookings} />
-                  <Dropdown.Item
-                    text="Transfer Units"
-                    onClick={handleTransfer}
-                  />
-                  <Dropdown.Item text="My Profile" onClick={handleProfile} />
-                  <Dropdown.Item text="Logout" onClick={handleLogout} />
-                </Dropdown.Menu>
-              </Dropdown>
+                  {item.title}
+                </Link>
+              </li>
+            );
+          })}
+          {isTabletOrMobileDevice && (
+            <li>
+              {user ? (
+                <Dropdown className="dropname-mob" text={user.fullname}>
+                  <Dropdown.Menu
+                    onClick={handleClick}
+                    className="dropmenu-mob"
+                    style={{
+                      backgroundColor: "white",
+                      top: "50px",
+                      right: "0",
+                      left: "10px",
+                      width: "20px",
+                      fontWeight: 900,
+                    }}
+                  >
+                    <Dropdown.Item
+                      text="My Allotments "
+                      onClick={handleAllotment}
+                    />
+                    <Dropdown.Item
+                      text="My Bookings"
+                      onClick={handleBookings}
+                    />
+                    <Dropdown.Item
+                      text="Transfer Units"
+                      onClick={handleTransfer}
+                    />
+                    <Dropdown.Item text="My Profile" onClick={handleProfile} />
+                    <Dropdown.Item text="Logout" onClick={handleLogout} />
+                  </Dropdown.Menu>
+                </Dropdown>
+              ) : (
+                <Link to="/login" onClick={handleClick}>
+                  LOGIN
+                </Link>
+              )}
+            </li>
+          )}
+        </ul>
+        <div className="right-content">
+          <h6>CONTACT US</h6>
+          <i className="navfont fab fa-youtube"></i>
+          <i className="navfont fab fa-facebook-square"></i>
+          <i className="navfont fas fa-phone"></i>
+          <h6>02 4881 1616</h6>
+
+          <i
+            className="navfont fas fa-cart-plus nav-item"
+            onClick={() => history.push("/cart")}
+          >
+            {cartItemCount}
+          </i>
+        </div>
+        {!isTabletOrMobileDevice && (
+          <div className="login-content">
+            {user ? (
+              <div className="foruser">
+                <Dropdown className="dropname" text={user.fullname}>
+                  <Dropdown.Menu
+                    className="dropmenu"
+                    style={{
+                      backgroundColor: "goldenrod",
+                      top: "50px",
+                      right: "0",
+                      left: "20px",
+                      width: "20px",
+                    }}
+                  >
+                    <Dropdown.Item
+                      text="My Allotments "
+                      onClick={handleAllotment}
+                    />
+                    <Dropdown.Item
+                      text="My Bookings"
+                      onClick={handleBookings}
+                    />
+                    <Dropdown.Item
+                      text="Transfer Units"
+                      onClick={handleTransfer}
+                    />
+                    <Dropdown.Item text="My Profile" onClick={handleProfile} />
+                    <Dropdown.Item text="Logout" onClick={handleLogout} />
+                  </Dropdown.Menu>
+                </Dropdown>
+              </div>
             ) : (
-              <Link to="/login" onClick={handleClick}>
-                LOGIN
+              <Link to="/login">
+                <button onClick={normalLogin}>LOG IN</button>
               </Link>
             )}
-          </li>
+          </div>
         )}
-      </ul>
-      <div className="right-content">
-        <h6>CONTACT US</h6>
-        <i className="navfont fab fa-youtube"></i>
-        <i className="navfont fab fa-facebook-square"></i>
-        <i className="navfont fas fa-phone"></i>
-        <h6>02 4881 1616</h6>
-
-        <i
-          className="navfont fas fa-cart-plus nav-item"
-          onClick={() => history.push("/cart")}
-        >
-          {cartItemCount}
-        </i>
-      </div>
-      {!isTabletOrMobileDevice && (
-        <div className="login-content">
-          {user ? (
-            <div className="foruser">
-              <Dropdown className="dropname" text={user.fullname}>
-                <Dropdown.Menu
-                  className="dropmenu"
-                  style={{
-                    backgroundColor: "goldenrod",
-                    top: "50px",
-                    right: "0",
-                    left: "20px",
-                    width: "20px",
-                  }}
-                >
-                  <Dropdown.Item
-                    text="My Allotments "
-                    onClick={handleAllotment}
-                  />
-                  <Dropdown.Item text="My Bookings" onClick={handleBookings} />
-                  <Dropdown.Item
-                    text="Transfer Units"
-                    onClick={handleTransfer}
-                  />
-                  <Dropdown.Item text="My Profile" onClick={handleProfile} />
-                  <Dropdown.Item text="Logout" onClick={handleLogout} />
-                </Dropdown.Menu>
-              </Dropdown>
-            </div>
-          ) : (
-            <Link to="/login">
-              <button onClick={normalLogin}>LOG IN</button>
-            </Link>
-          )}
-        </div>
-      )}
-    </Menu>
+      </Menu>
+    </div>
   );
 };
 
