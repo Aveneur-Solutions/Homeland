@@ -24,7 +24,7 @@ export default class FlatStore {
   @observable orderId: string = "";
   @observable orderPlaced: boolean = false;
   @observable orderDetails: IOrderDetails | null = null;
-  
+
   @action initCart = () => {
     const cartItems = localStorage.getItem("userCart");
     if (cartItems) this.cartItems = JSON.parse(cartItems);
@@ -33,6 +33,9 @@ export default class FlatStore {
       this.totalAmount = this.totalAmount + element.bookingPrice;
     });
     if (this.cartItemCount === 0) this.unpaidOrder();
+    setTimeout(() => {
+      this.emptyCart();
+    }, 5000);
   };
   @action listflats = async () => {
     try {
@@ -46,7 +49,7 @@ export default class FlatStore {
   };
 
   @action selectFlats = (flat: IFlat) => {
-    const temp = this.selectedFlats.filter(x => x.id === flat.id)[0];
+    const temp = this.selectedFlats.filter((x) => x.id === flat.id)[0];
     if (!temp) this.selectedFlats.push(flat);
   };
 
@@ -63,17 +66,24 @@ export default class FlatStore {
 
   saveCart = () => {
     localStorage.setItem("userCart", JSON.stringify(this.cartItems));
+    setTimeout(() => {
+      this.emptyCart();
+    }, 300000); //300000
   };
 
   @action addToCart = (flat: IFlat) => {
     let exists = this.cartItems.some((item) => item.id === flat.id);
     if (exists) return;
-    this.cartItems.push(flat);
-    this.cartItemCount = this.cartItemCount + 1;
-    this.totalAmount = this.totalAmount + flat.bookingPrice;
-    if (!this.orderPlaced) {
-      this.saveCart();
-      toast.success("Added to cart");
+    if (this.cartItems.length < 4) {
+      this.cartItems.push(flat);
+      this.cartItemCount = this.cartItemCount + 1;
+      this.totalAmount = this.totalAmount + flat.bookingPrice;
+      if (!this.orderPlaced) {
+        this.saveCart();
+        toast.success("Added to cart");
+      }
+    } else {
+      toast.info("You can not book more than 4 units");
     }
   };
 
@@ -117,30 +127,30 @@ export default class FlatStore {
   @action transferNow = async (data: ITransferPost) => {
     try {
       await agent.User.transferNow(data);
-      toast.success("Transfer Complete")
-      history.push("/my-bookings")
+      toast.success("Transfer Complete");
+      history.push("/my-bookings");
     } catch (error) {
       console.log(error);
       toast.error(error.data.errors.error);
     }
   };
-  
+
   @action placeOrder = async () => {
-    var flatIds = this.cartItems.map(x => x.id);
+    var flatIds = this.cartItems.map((x) => x.id);
     var order: IOrder = {
       orderId: Date.now().toString(),
       amount: this.totalAmount,
-      flatIds: flatIds
-    }
+      flatIds: flatIds,
+    };
     this.orderId = order.orderId;
-    console.log(order)
+    console.log(order);
     try {
-       await agent.User.placeOrder(order);
-       runInAction(() => {
+      await agent.User.placeOrder(order);
+      runInAction(() => {
         this.orderPlaced = true;
         localStorage.removeItem("userCart");
         toast.success("Order placed successfully");
-      })
+      });
       console.log(order);
     } catch (error) {
       toast.error(error.data.errors.error);
@@ -148,20 +158,20 @@ export default class FlatStore {
   };
   @action cancelOrder = async () => {
     var orderCancel: IOrderCancel = {
-      orderId: this.orderId
-    }
+      orderId: this.orderId,
+    };
     try {
-       await agent.User.cancelOrder(orderCancel);
+      await agent.User.cancelOrder(orderCancel);
       runInAction(() => {
         this.orderPlaced = false;
         this.emptyCart();
         toast.success("Order was cancelled successfully");
-      })
+      });
     } catch (error) {
-      console.log(error)
+      console.log(error);
       // toast.error(error.data.errors.error);
     }
-  }
+  };
   @action unpaidOrder = async () => {
     try {
       var order = await agent.User.unpaidOrder();
@@ -169,14 +179,12 @@ export default class FlatStore {
         if (order.flats) {
           this.orderDetails = order;
           this.orderPlaced = true;
-          this.orderId = order.orderId
+          this.orderId = order.orderId;
           order.flats.forEach((flat) => {
             this.addToCart(flat);
-          })
+          });
         }
-
-      
-      })
+      });
     } catch (error) {
       console.log(error);
     }
