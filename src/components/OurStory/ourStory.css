@@ -9,7 +9,9 @@
 .vdosize-mob{
     width: 100vw;
     height: 26vh;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .our-story{
@@ -41,8 +43,7 @@
 .vdosize{
     width: 100vw;
     height: 60vh;
-    background-color: black;
-    border-radius: 50px 0px 0px 50px;
+    border: none;
     overflow: hidden;
     position: relative;
 }
@@ -153,10 +154,40 @@ text-align: center;
 }
 @media screen and (max-width: 1024px) {
 
-.main-logo{
-    display: block;
-    width: 60vw;
-    height: 40vh;
-    margin: 0px auto 0px auto;
+    .main-logo{
+        display: block;
+        width: 60vw;
+        height: 40vh;
+        margin: 0px auto 0px auto;
+    }
+        .vdosize-mob{
+            width: 59vw;
+            height: 26vh;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .projectbutton-container{
+            padding: 0;
+            margin-top: -40vh;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .projectbutton{
+            display: block;
+            width: 50vw;
+            padding: 2%;
+        }   
 }
+@media screen and (max-width: 600px) {
+    .projectbutton{
+        height: 10vh;
+    }
+}
+@media screen and (max-width: 300px) {
+    .projectbutton{
+        width: 70vw;
+        height: 10vh;
+    }
 }

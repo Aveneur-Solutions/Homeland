@@ -27,11 +27,11 @@ const Gallery_2 = () => {
             url="https://youtu.be/-1AH7tF2IOI"
           /> */}
           <ReactPlayer
-            className="vdosize"
-            width="60vw"
+            className="react-player"
+            width="52.7vw"
             height="58.5vh"
             playing={true}
-            playbackRate={0.5}
+            playbackRate={0.5}s
             url="https://www.youtube.com/watch?v=-1AH7tF2IOI"
             // controls={true}
             modestbranding={false}
@@ -41,8 +41,8 @@ const Gallery_2 = () => {
         <div className="vdosize-mob">
           <ReactPlayer
             className="vdosize"
-            width="100vw"
-            height="30vh"
+            width="79vw"
+            height="25vh"
             playing={true}
             playbackRate={0.5}
             url="https://www.youtube.com/watch?v=-1AH7tF2IOI"

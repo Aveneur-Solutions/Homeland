@@ -112,11 +112,15 @@ const OurStory = () => {
               </p>
             </div>
           </div>
-
           <div className="logoContainer">
             <div className="main-logo">
               <SvgComponent1 />
             </div>
+          </div>
+          <div className="projectbutton-container">
+            <Link className="projectlink" to="/ourProject">
+              <button className="projectbutton"> Look At Our Projects</button>
+            </Link>
           </div>
         </>
       )}
