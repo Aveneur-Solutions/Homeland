@@ -141,7 +141,7 @@ const UnitList: React.FC<IProps> = ({ sortedFlats }) => {
               </div>
             ))}
           </Grid>
-          <div className="projectbottom buttondiv">
+          {/* <div className="projectbottom buttondiv">
             <Link to="./mainInfo">
               <Button
                 className="nextbutton"
@@ -151,7 +151,7 @@ const UnitList: React.FC<IProps> = ({ sortedFlats }) => {
                 Next
               </Button>
             </Link>
-          </div>
+          </div> */}
         </div>
       ) : (
         <div className="tbl">
@@ -248,7 +248,7 @@ const UnitList: React.FC<IProps> = ({ sortedFlats }) => {
               </Card.Content>
             </Card>
           ))}
-          <div className="projectbottom buttondiv">
+          {/* <div className="projectbottom buttondiv">
             <Link to="./mainInfo">
               <Button
                 className="nextbutton"
@@ -258,7 +258,7 @@ const UnitList: React.FC<IProps> = ({ sortedFlats }) => {
                 Next
               </Button>
             </Link>
-          </div>
+          </div> */}
         </div>
       )}
     </>
