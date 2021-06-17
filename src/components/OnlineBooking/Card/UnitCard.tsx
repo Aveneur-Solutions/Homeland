@@ -1,3 +1,4 @@
+import { observer } from "mobx-react-lite";
 import { useContext } from "react";
 import { useMediaQuery } from "react-responsive";
 import { Card, Grid } from "semantic-ui-react";
@@ -103,4 +104,4 @@ const UnitCard: React.FC<IProps> = ({ item }) => {
   );
 };
 
-export default UnitCard;
+export default observer(UnitCard);

@@ -23,7 +23,7 @@ import OrderDetails from './components/Cart/OrderDetails'
 
 function App() {
   const rootStore = useContext(RootStoreContext);
-  const { initCart } = rootStore.flatStore;
+  const { initCart, emptyCart } = rootStore.flatStore;
 
   useEffect(() => {
     initCart();
