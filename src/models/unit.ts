@@ -13,6 +13,7 @@ export default interface IFlat {
   netArea: number;
   commonArea: number;
   isAlreadyTransferred : boolean;
+  isSold: boolean;
   images: IImage[];
 }
 

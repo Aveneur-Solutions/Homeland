@@ -41,7 +41,7 @@ export default class FlatStore {
     try {
       const flats = await agent.Flat.list();
       runInAction(() => {
-        this.flats = flats;
+        this.flats = flats.filter(x => !x.isBooked && !x.isSold);
       });
     } catch (error) {
       console.log(error);
