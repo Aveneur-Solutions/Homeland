@@ -80,7 +80,7 @@ const OurProject = () => {
 
   const getAvailableUnits = () => {
     let flatsCopy = flats.slice();
-    let availableUnits = flatsCopy.filter((flat) => !flat.isBooked);
+    let availableUnits = flatsCopy.filter((flat) => !flat.isBooked && !flat.isSold);
     return availableUnits.slice(0, 3);
   };
 

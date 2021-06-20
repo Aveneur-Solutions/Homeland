@@ -116,7 +116,7 @@ export default class UserStore {
      const bookedFlats =  await agent.User.myBookings();
      runInAction(() => {
        this.myBookedFlats = bookedFlats;
-       this.transferrableFlats = bookedFlats.filter(x => !x.isAlreadyTransferred);
+       this.transferrableFlats = bookedFlats.filter(x => !x.isAlreadyTransferred && !x.isSold);
        console.log(this.transferrableFlats)
      }) 
     }catch(error)
@@ -148,6 +148,8 @@ export default class UserStore {
   @action searchUser = async (data: IUserSearch) => {
     try {
       this.emptyRecieverUser();
+      // console.log(data.phoneNumber.slice(0,3))
+      data.phoneNumber = data.phoneNumber.slice(0,3) === "+88" ?data.phoneNumber.slice(3,14) : data.phoneNumber;
       const user = await agent.User.getUser(data);
       runInAction(() => {
         if (this.user?.phoneNumber !== user.phoneNumber) {
@@ -156,7 +158,7 @@ export default class UserStore {
         } else toast.error("It's your number");
       });
     } catch (error) {
-      toast.error("No user exist with this number");
+      toast.error("No user exists with this number, please ask the recipient to register.");
       console.log(error);
     }
   };
