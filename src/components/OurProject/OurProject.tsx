@@ -18,7 +18,7 @@ const OurProject = () => {
     query: "(max-device-width: 1224px)",
   });
   const rootStore = useContext(RootStoreContext);
-  const { setImageVisibility, showNothing,getBuildingList,buildingList,currentBuilding,setCurrentBuilding} = rootStore.projectStore;
+  const {getBuildingList,buildingList,currentBuilding,setCurrentBuilding} = rootStore.projectStore;
 
   useEffect(() => {
     Aos.init({ duration: 1000 });
@@ -48,10 +48,6 @@ const OurProject = () => {
                 <img
                   src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/images/DownArrow.png"}
                   alt=""
-                  // style={{
-                  //   filter: blur ? "blur(20px)" : "none",
-                  //   transition: blur ? "none" : "filter 0.3s ease-out"
-                  // }}
                 />
               </Link>
             </div>
@@ -144,20 +140,16 @@ const OurProject = () => {
               <Grid columns={2}>
                 <div className="buildingm">
                   <Grid columns={1} padded data-aos="fade-up">
-                    {ourProject.map((buildno, index) => {
+                    {buildingList.map((building, index) => {
                       return (
                         <div className="widthoftuplesm">
                           <div key={index} className="buildTuples">
                             <Grid.Column className="buildTuples1" padded>
-                              <div onClick={() => setImageVisibility()}>
+                              <div onClick={() => setCurrentBuilding(building)}>
                                 <Image
-                                  src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/images/profile_main.png"}
-                                  // style={{
-                                  //   filter: blur1 ? "blur(20px)" : "none",
-                                  //   transition: blur1 ? "none" : "filter 0.3s ease-out"
-                                  // }}
+                                   src={"https://www.homeland.aveneur.com/Images" + building.image}
                                 />
-                                <h4>{buildno.txt}</h4>
+                                <h4>Building Number : {building.buildingNumber}</h4>
                               </div>
                             </Grid.Column>
                           </div>
@@ -166,7 +158,7 @@ const OurProject = () => {
                     })}
                   </Grid>
                 </div>
-                {showNothing ? (
+                {!currentBuilding ? (
                   <div className="building2m">
                     <SvgComponent2 data-aos="fade-up" />
                   </div>

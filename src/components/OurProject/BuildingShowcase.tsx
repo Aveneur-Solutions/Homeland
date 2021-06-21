@@ -28,9 +28,6 @@ const BuildingShowcase = () => {
                   <span className="date">Available {currentBuilding?.flats.filter(x => !x.isBooked && !x.isSold).length}</span>
                   <span className="date">Booked {currentBuilding?.flats.filter(x => x.isBooked).length}</span>
                 </Card.Meta>
-                <Card.Description>
-                  This South facing house provides good breeze.
-                </Card.Description>
               </Card.Content>
             </Card>
             <div className="unitscroll">
@@ -38,9 +35,7 @@ const BuildingShowcase = () => {
             </div>
           </div>
         </div>
-      ) : (
-        
-        // MOBILE VIEW CODE STARTS FROM BELOW
+      ) : (        
         <div className="building3m">
           <div className="projCardContainerm">
             <Card fluid>
@@ -55,9 +50,6 @@ const BuildingShowcase = () => {
                 <span className="date">Available {currentBuilding?.flats.filter(x => !x.isBooked && !x.isSold).length}</span>
                   <span className="date">Booked {currentBuilding?.flats.filter(x => x.isBooked).length}</span>
                 </Card.Meta>
-                <Card.Description>
-                  This South facing house provides good breeze.
-                </Card.Description>
               </Card.Content>
             </Card>
             <div className="unitscrollm">
@@ -69,5 +61,4 @@ const BuildingShowcase = () => {
     </>
   );
 };
-
 export default observer(BuildingShowcase) ;

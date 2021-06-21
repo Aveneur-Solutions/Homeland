@@ -10,6 +10,7 @@ import sortFlats from "./sortUtil";
 import { useMediaQuery } from "react-responsive";
 import "./booking.css";
 import { Link } from "react-router-dom";
+import { history } from "../..";
 
 const OurProject = () => {
   const rootStore = useContext(RootStoreContext);
@@ -129,7 +130,6 @@ const OurProject = () => {
         )}
         {searchUnit && (
           <div className="projectbottom buttondiv">
-            <Link to="./mainInfo">
               <Button
                 className="nextbutton"
                 style={{
@@ -140,10 +140,11 @@ const OurProject = () => {
                   borderRadius: "100px",
                 }}
                 disabled={selectedFlats.length === 0}
+                onClick={() => history.push("/mainInfo")}
               >
                 Next
               </Button>
-            </Link>
+            
           </div>
         )}
       </div>

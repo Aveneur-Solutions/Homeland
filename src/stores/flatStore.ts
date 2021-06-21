@@ -86,7 +86,7 @@ export default class FlatStore {
         toast.success("Added to cart");
       }
     } else {
-      toast.info("You can not book more than 4 units");
+      toast.error("You can not book more than 4 units");
     }
   };
 
