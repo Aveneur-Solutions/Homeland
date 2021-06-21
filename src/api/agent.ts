@@ -12,6 +12,7 @@ import IUser, {
 } from "../models/user";
 import { IPaymentRequest, IPaymentResponse } from "../models/payment";
 import { IOrder, IOrderCancel, IOrderDetails, IOrderResponse } from "../models/order";
+import { IBuilding } from "../models/building";
 
 axios.interceptors.request.use(
   (config) => {
@@ -85,10 +86,13 @@ const Flat = {
   book: (idBody: { flatIds: string[] }) =>
     request.post("/flat/bookNow", idBody),
 };
+const Building = {
+  list : () : Promise<IBuilding[]> => request.get("/flat/buildings")
+}
 const Gallery = {
   getAllImages: (): Promise<IImage[]> => request.get("/Adminstrator/Images"),
 };
 
-const agent = { User, Flat, Gallery };
+const agent = { User, Flat, Gallery,Building };
 
 export default agent;

@@ -1,44 +1,43 @@
 import { Card, Button, Image, Grid } from "semantic-ui-react";
-import { ourProject } from "./buildings";
 import { useMediaQuery } from "react-responsive";
+import IFlat from "../../models/unit";
+import { useContext } from "react";
+import { RootStoreContext } from "../../stores/rootStore";
 // import useProgressiveImg from "./UseProgressiveImg";
+interface IProps{
+  units : IFlat[]
+}
 
-
-const ListUnits = () => {
+const ListUnits : React.FC<IProps> = ({units}) => {
   const isTabletOrMobileDevice = useMediaQuery({
     query: "(max-device-width: 1224px)",
   });
-
+  const rootStore = useContext(RootStoreContext);
+  const { viewFlatDetails } = rootStore.flatStore;
   // const [src, { blur }] = useProgressiveImg("./profile.png",process.env.PUBLIC_URL + "/images/profile_main.png");
   return (
     <>
       {!isTabletOrMobileDevice ? (
         <Grid columns={1}>
           <div className="projCardSize">
-            {ourProject.map((buildno, index) => {
+            { units && units.map((unit, index) => {
               return (
                 <Card key={index} fluid className="projCardSize2">
                   <div className="projCardSize2">
                     <Card.Content>
                       <Image
-                        // style={{
-                        //   filter: blur ? "blur(20px)" : "none",
-                        //   transition: blur ? "none" : "filter 0.3s ease-out",
-                        // }}
-                        // src={src}
-                        src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/images/profile_main.png"}
-                        // src={process.env.PUBLIC_URL + buildno.forunits}
-                      />
-                      
-                      <Card.Header>Unit 1.00.1</Card.Header>
-                      <Card.Meta>Sqft.: 950</Card.Meta>
+                        src={"https://www.homeland.aveneur.com/Images" + unit.images[unit.images.length - 1].imageLocation}
+                      />   
+                      <Card.Header>Unit {unit.id}</Card.Header>
+                      <Card.Meta>Sqft.: {unit.size}</Card.Meta>
                       <Card.Description>
-                        <strong>Price: 3,000,000</strong>
+                        <strong>Price: {unit.price}</strong> <br/>
+                        <strong>Booking Price : {unit.bookingPrice}</strong>
                       </Card.Description>
                     </Card.Content>
                     <Card.Content extra>
                       <div className="ui two buttons">
-                        <Button basic color="green">
+                        <Button basic color="green" onClick={() => viewFlatDetails(unit)}>
                           View
                         </Button>
                         <Button basic color="red">
@@ -55,22 +54,23 @@ const ListUnits = () => {
       ) : (
         // MOBILE CODE SECTION FROM BELOW
         <div className="projCardSize">
-          {ourProject.map((buildno, index) => {
+          {units && units.map((unit, index) => {
             return (
               <Card key={index} fluid className="projCardSize2">
                 <div className="projCardSize2">
                   <Card.Content>
                     {/* <Image src={src} /> */}
-                    src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/images/profile_main.png"}
-                    <Card.Header>Unit 1.00.1</Card.Header>
-                    <Card.Meta>Sqft.: 950</Card.Meta>
+                    src={"https://www.homeland.aveneur.com/Images" + unit.images[unit.images.length - 1].imageLocation}
+                    <Card.Header>Unit {unit.id}</Card.Header>
+                    <Card.Meta>Sqft.: {unit.size}</Card.Meta>
                     <Card.Description>
-                      <strong>Price: 3,000,000</strong>
+                      <strong>Price: {unit.price}</strong>
+                      <strong>Booking Price : {unit.bookingPrice}</strong>
                     </Card.Description>
                   </Card.Content>
                   <Card.Content extra>
                     <div className="ui two buttons">
-                      <Button basic color="green">
+                      <Button basic color="green" onClick={() => viewFlatDetails(unit)}>
                         View
                       </Button>
                       <Button basic color="red">
