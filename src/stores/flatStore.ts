@@ -52,7 +52,10 @@ export default class FlatStore {
     const temp = this.selectedFlats.filter((x) => x.id === flat.id)[0];
     if (!temp) this.selectedFlats.push(flat);
   };
-
+  @action viewFlatDetails = (flat : IFlat) => {
+    this.selectFlats(flat);
+    history.push("/mainInfo");
+  }
   @action unselectFlats = (flat: IFlat) => {
     let temp = this.selectedFlats.slice();
     const index = temp.indexOf(flat);
@@ -83,7 +86,7 @@ export default class FlatStore {
         toast.success("Added to cart");
       }
     } else {
-      toast.info("You can not book more than 4 units");
+      toast.error("You can not book more than 4 units");
     }
   };
 
