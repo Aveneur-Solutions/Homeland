@@ -21,6 +21,11 @@
   font-weight: 900;
   z-index:200;
   position: relative;
+  transition: 0.5s ease all;
+}
+.NavbarItems.onscroll{
+  background-color: rgba(30, 33, 45, 0.7) !important;
+  transition: 0.5s ease all;
 }
 .ui.pointing.menu{
   margin: 0% 0%;
@@ -28,7 +33,7 @@
 }
 .forlink {
   /* margin: 40% 0%; */
-    transform: -15%;
+  transform: -15%;
   padding: 0%;
   width: 8%;
   position: absolute;

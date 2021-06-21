@@ -31,6 +31,16 @@ const Navbar = () => {
   const [allotment, setAllotment] = useState(false);
   const [bookings, setBookings] = useState(false);
   const [transfer, setTransfer] = useState(false);
+  const [scroll, setScroll] = useState(false)
+
+  const changeBackground = () => {
+    if(window.scrollY >= 96.3){
+      setScroll(true)
+    } else{
+      setScroll(false)
+    }
+  }
+  window.addEventListener("scroll", changeBackground);
 
   useEffect(() => {
     if (token && !user) {
@@ -68,7 +78,12 @@ const Navbar = () => {
 
   return (
     <div className="main-nav-container">
-      <Menu pointing className="NavbarItems">
+      <Menu
+        pointing
+        className={
+          scroll ? "NavbarItems onscroll" : "NavbarItems"
+        }
+      >
         <div className="cart-icon">
           <i
             className="navfont fas fa-cart-plus nav-item"

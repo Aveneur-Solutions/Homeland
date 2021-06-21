@@ -20,7 +20,6 @@ const States = () => {
 
   return (
     <div>
-      <Sticky>
       <Menu pointing
       className="ponting">
         <Menu.Item
@@ -42,7 +41,6 @@ const States = () => {
           className = "navfont"
         />
       </Menu>
-      </Sticky>
           {showOverview && <Overview/>}
           {showLocation && <Location/>}
           {showGallery && <GalleryState images={galleryImages}/>}
