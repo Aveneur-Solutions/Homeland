@@ -5,7 +5,6 @@ import { Grid, Image } from "semantic-ui-react";
 // import useProgressiveImg from "./UseProgressiveImg"
 import { useEffect } from "react";
 import Aos from "aos";
-import { ourProject } from "./buildings";
 import { observer } from "mobx-react-lite";
 import SvgComponent2 from "./SvgProj";
 import BuildingShowcase from "./BuildingShowcase";
@@ -31,7 +30,7 @@ const OurProject = () => {
 
         <div>
           
-          <div className="project_section1">
+          {/* <div className="project_section1">
             <figure className="showcase">
               <section className="sectionsproject"></section>
               <section className="sectionsproject"></section>
@@ -51,7 +50,7 @@ const OurProject = () => {
                 />
               </Link>
             </div>
-          </div>
+          </div> */}
           <Element name="firstInsideContainer">
             <div className="projectheading" data-aos="fade-down">
               <h1>Check out our projects</h1>
@@ -93,18 +92,10 @@ const OurProject = () => {
           </Element>
         </div>
         </>
-
-
-
-
 // MOBILE RESPONSIVE CODE IS HERE
-
-
-
-
       ) : (
         <div>
-          <div className="project_sectionm">
+          {/* <div className="project_sectionm">
             <figure className="showcasem">
               <section className="sectionsproject"></section>
               <section className="sectionsproject"></section>
@@ -128,7 +119,7 @@ const OurProject = () => {
                 />
               </Link>
             </div>
-          </div>
+          </div> */}
           <Element name="firstInsideContainer">
             <div className="projectheadingm" data-aos="fade-down">
               <h1>Check out our projects</h1>

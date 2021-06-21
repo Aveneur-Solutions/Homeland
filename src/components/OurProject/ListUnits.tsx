@@ -4,7 +4,6 @@ import IFlat from "../../models/unit";
 import { useContext, useState } from "react";
 import { RootStoreContext } from "../../stores/rootStore";
 import { observer } from "mobx-react-lite";
-// import useProgressiveImg from "./UseProgressiveImg";
 interface IProps {
   units: IFlat[]
 }
@@ -78,10 +77,9 @@ const ListUnits: React.FC<IProps> = ({ units }) => {
           {units && units.map((unit, index) => {
             return (
               <Card key={index} fluid className="projCardSize2">
-                <div style={{ padding: "2%" }}>
-                  {unit.isBooked ? <h1>Booked</h1> : unit.isSold ? <h1>Sold</h1> : <h1>Available</h1>}
-                </div>
-
+                <div style={(!unit.isBooked && !unit.isSold) ? taglineAvailable : tagline}>
+                    {unit.isBooked ? <h1>Booked</h1> : unit.isSold ? <h1>Sold</h1> : <h1>Available</h1>}
+                  </div>
                 <div className="projCardSize2">
                   <Card.Content>
                     <Image src={"https://www.homeland.aveneur.com/Images" + unit.images[unit.images.length - 1].imageLocation} />
@@ -98,9 +96,10 @@ const ListUnits: React.FC<IProps> = ({ units }) => {
                       <Button basic color="green" onClick={() => viewFlatDetails(unit)}>
                         View
                       </Button>
-                      <Button basic color="red">
-                        Add to Cart
-                      </Button>
+                      {(!unit.isBooked && !unit.isSold) &&
+                        <Button size="tiny" basic color="red" disabled={cartItems.some((cartItem) => cartItem.id === unit.id)} onClick={() => handleAddToCart(unit)}>
+                          {cartItems.some((cartItem) => cartItem.id === unit.id) ? "Added to Cart" : "Add to Cart"}
+                        </Button>}
                     </div>
                   </Card.Content>
                 </div>
