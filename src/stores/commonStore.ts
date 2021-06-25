@@ -27,8 +27,8 @@ export default class CommonStore {
   @observable showOverview = true;
   @observable showLocation = false;
   @observable showGallery = false;
-
-
+  
+  
   @action setOverviewVisibility = () => {
     this.showOverview = true;
     this.showLocation = false;

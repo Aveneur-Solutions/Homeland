@@ -4,6 +4,7 @@ import ITransfer, { ITransferPost } from "../models/transfer";
 import IFlat from "../models/unit";
 import { toast } from "react-toastify";
 import IUser, {
+  IProfileUpdate,
   IUserChangePassword,
   IUserLogin,
   IUserLoginWithOtp,
@@ -13,6 +14,7 @@ import IUser, {
 import { IPaymentRequest, IPaymentResponse } from "../models/payment";
 import { IOrder, IOrderCancel, IOrderDetails, IOrderResponse } from "../models/order";
 import { IBuilding } from "../models/building";
+import { createUpdateProfileFormData } from "../Helper/formDataUtil";
 
 axios.interceptors.request.use(
   (config) => {
@@ -53,6 +55,16 @@ const request = {
   put: (url: string, body: {}) => axios.put(url, body).then(responseBody),
   del: (url: string) => axios.delete(url).then(responseBody),
 };
+const form = {
+  profileUpdateForm: (url: string, data: IProfileUpdate) => {
+    const formData = createUpdateProfileFormData(data);
+    return axios
+      .put(url, formData, {
+        headers: { "Content-type": "multipart/form-data" },
+      })
+      .then(responseBody);
+  }
+};
 
 const User = {
   login: (body: IUserLogin) => request.post("/user/login", body),
@@ -78,6 +90,7 @@ const User = {
     request.post("/user/resetPassword", body),
   changePassword: (body: IUserChangePassword): Promise<IUser> =>
     request.post("/user/changePassword", body),
+   updateProfile : (body : IProfileUpdate) => form.profileUpdateForm("User/UpdateProfile",body)
 };
 
 const Flat = {

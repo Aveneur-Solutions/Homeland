@@ -68,7 +68,7 @@ const ConfirmTransfer = () => {
                     <Header>Reciever Details</Header>
                     <div style={{ marginLeft: "32px", marginTop: "10px" }} className="profile-content">
                         <p>NAME: &nbsp;{user?.fullname}</p>
-                        <p>ADDRESS: &nbsp; Not added yet</p>
+                        <p>ADDRESS: &nbsp; {user?.address}</p>
                         <p>PHONE: &nbsp; {user?.phoneNumber}</p>
                     </div>
                 </Segment>

@@ -10,6 +10,7 @@ import IUser, {
   IUserRegister,
   IUserSearch,
   IUserChangePassword,
+  IProfileUpdate,
 } from "../models/user";
 import { RootStore } from "./rootStore";
 
@@ -26,7 +27,7 @@ export default class UserStore {
   @observable myAllottedFlats : IFlat[] = [];
   @observable myTransfers : ITransfer[] = [];
   @observable transferrableFlats : IFlat[] = [];
-
+  @observable baseImageUrl = "https://www.homeland.aveneur.com/Images";
   @action login = async (body: IUserLogin) => {
     try {
       await agent.User.login(body);
@@ -83,15 +84,25 @@ export default class UserStore {
       console.log(error);
     }
   };
-
+  @action updateProfile = async (body : IProfileUpdate) => {
+    try{
+      await agent.User.updateProfile(body);
+      toast.success("Profile Updated");
+    }catch(error)
+    {
+      console.log(error);
+    }
+    
+  }
   @action changePassword = async (body: IUserChangePassword) => {
     try {
       await agent.User.changePassword(body);
+      toast.success("Password Updated!");
     } catch (error) {
+      toast.error(error.data.errors.error);
       console.log(error);
     }
   };
-
   @action resendOtp = async (phoneNo: string) => {
     try {
       const body = {
@@ -102,7 +113,6 @@ export default class UserStore {
       throw error;
     }
   };
-
   @action resetPassword = async (body: {newPassword: string}) => {
     try {
       await agent.User.resetPassword(body)
