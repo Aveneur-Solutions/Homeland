@@ -12,6 +12,18 @@ export default interface IUser {
   phoneNumber: string;
   token: string;
   fullname: string;
+  email : string;
+  address : string;
+  nid : string;
+  profileImage : string;
+}
+export interface IProfileUpdate{
+  firstName: string;
+  lastName: string;
+  email : string;
+  address : string;
+  nid : string;
+  profileImage : File[];
 }
 export interface IUserSearch{
   phoneNumber: string;
