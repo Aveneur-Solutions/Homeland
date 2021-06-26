@@ -8,6 +8,7 @@ import { IUserLogin } from "../../../models/user";
 import { observer } from "mobx-react-lite";
 import { toast } from "react-toastify";
 import ForgotPassword from "./ForgotPassword/ForgotPassword";
+import LoginForm from "./LoginForm";
 
 const Login = () => {
   const rootStore = useContext(RootStoreContext);
@@ -36,51 +37,13 @@ const Login = () => {
         <h1>{!forgot ? "LOG IN" : "FORGOT PASSWORD?"}</h1>
         {!forgot ? (
           <>
-            <form onSubmit={handleSubmit(onLogin)}>
-              <div className="form-container">
-                <div id="uname">
-                  <label htmlFor="uname">
-                    <b>PHONE</b>
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="PHONE"
-                    defaultValue="+880"
-                    {...register("phoneNumber", {
-                      required: "Phone number is required",
-                    })}
-                  ></input>
-                  {errors.phoneNumber && (
-                    <span style={{ color: "red" }}>
-                      {errors.phoneNumber.message}
-                    </span>
-                  )}
-                </div>
-                <div id="psw">
-                  <label htmlFor="psw">
-                    <b>PASSWORD</b>
-                  </label>
-                  <input
-                    type="password"
-                    placeholder="ENTER PASSWORD"
-                    {...register("password", {
-                      required: "Password is required",
-                    })}
-                  ></input>
-                  {errors.password && (
-                    <span style={{ color: "red" }}>
-                      {errors.password.message}
-                    </span>
-                  )}
-                </div>
-                <div>
-                  <button type="submit" className="button">
-                    Submit
-                  </button>
-                </div>
-              </div>
-            </form>
-            {otp && (
+            {!otp ? (
+              <LoginForm
+                onSubmit={handleSubmit(onLogin)}
+                register={register}
+                errors={errors}
+              />
+            ) : (
               <OtpAuth
                 phoneNo={phoneNo}
                 func={loginWithOtp}
@@ -98,7 +61,9 @@ const Login = () => {
               </div>
             </div>
           </>
-        ) : <ForgotPassword setForgot={setForgot} />}
+        ) : (
+          <ForgotPassword setForgot={setForgot} />
+        )}
       </div>
     </div>
   );
