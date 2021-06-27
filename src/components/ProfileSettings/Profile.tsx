@@ -29,11 +29,6 @@ const Profile = () => {
     <div>
       {editable ? (
         <div className="profile-container">
-          <div className="profile-headcontainer">
-            <div className="profile-header">
-              <h1>My Profile</h1>
-            </div>
-          </div>
           {/* Image here */}
           <div className="profile-margin">
             

@@ -21,7 +21,8 @@ justify-content: center;
     /* background-color: orangered; */
 }
 .profile-margin{
-    margin:1%;
+    margin: 2% auto 0 auto;
+    width: 50%;
 }
 .profile-image{
     margin: 1% 0%;
@@ -33,12 +34,12 @@ justify-content: center;
     width: 25%;
     height: 30%;
 }
-.oldpm{
+/* .oldpm{
     display: grid;
     margin: 1% 0%;
     width: 50%;
     height: 30%;
-}
+} */
 .oldp-container Button{
     width: 12%;
 }
@@ -57,6 +58,7 @@ justify-content: center;
     align-items: center;
     flex-direction: column;
     justify-content: space-evenly;
+    position: relative;
 }
 .profile Button{
     width: 10%;
@@ -82,4 +84,82 @@ justify-content: center;
     border-radius: .28571429rem;
     transition: box-shadow .1s ease,border-color .1s ease;
     box-shadow: none;
+}
+
+input{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.profile-content{
+    background: goldenrod;
+    padding: 2%;
+    border-radius: 5%;
+}
+.profile-info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+.profile-info p{
+    font-size: small;
+    margin-bottom: -3%;
+}
+
+.profile-img{
+    margin-bottom: -8%;
+    z-index: 100;
+}
+.profile-img img {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.change-password{
+    width: 50%;
+    margin: 15% auto 0 auto;
+    height: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+    .profile{
+        height: 100%;
+        padding: 2%;
+    }
+    .btn-container{
+        display: grid;
+        grid-template-rows: repeat(2, 50px);
+        margin-top: 2%;
+    }
+    .profile-content{
+        padding: 5%;
+        /* overflow: auto; */
+    }
+    .profile-img{
+        margin-bottom: -10%;
+    }
+    .profile-img img{
+        width: 150px;
+    }
+    .profile-margin{
+        width: 100%;
+        padding: 10px;
+    }
+    .change-password{
+        width: 100%;
+    }
+    .profile-margin{
+        margin: -1% auto 0 auto;
+        width: 100%;
+    } 
+}
+
+@media screen and (max-width: 600px) {
+     .profile-img{
+        margin-bottom: -15%;
+    }
 }
