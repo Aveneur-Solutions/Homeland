@@ -13,7 +13,7 @@ interface IProps {
 
 const OtpAuth: React.FC<IProps> = ({ phoneNo, func, buttonText }) => {
   const rootStore = useContext(RootStoreContext);
-  const { user } = rootStore.userStore;
+  const { user, resendOtp } = rootStore.userStore;
   const { logginIn, booking } = rootStore.navStore;
 
   const {
@@ -53,6 +53,13 @@ const OtpAuth: React.FC<IProps> = ({ phoneNo, func, buttonText }) => {
       <button type="submit" className="button">
         {buttonText}
       </button>
+      <p
+        className="forget-link"
+        style={{ textAlign: "center", marginTop: 10 }}
+        onClick={() => resendOtp(phoneNo).catch((error) => console.log(error))}
+      >
+        Resend OTP
+      </p>
     </form>
   );
 };
