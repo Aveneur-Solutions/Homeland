@@ -1,7 +1,7 @@
 import { Card, Button, Image, Grid } from "semantic-ui-react";
 import { useMediaQuery } from "react-responsive";
 import IFlat from "../../models/unit";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { RootStoreContext } from "../../stores/rootStore";
 import { observer } from "mobx-react-lite";
 interface IProps {

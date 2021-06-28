@@ -9,7 +9,7 @@ import { observer } from "mobx-react-lite";
 import SvgComponent2 from "./SvgProj";
 import BuildingShowcase from "./BuildingShowcase";
 import { useMediaQuery } from "react-responsive";
-import { Link, Element } from "react-scroll";
+import { Element } from "react-scroll";
 import { RootStoreContext } from "../../stores/rootStore";
 
 const OurProject = () => {

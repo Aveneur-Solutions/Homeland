@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { observer } from "mobx-react-lite";
-import { Link } from "react-router-dom";
-import { Button, Card, Grid } from "semantic-ui-react";
+import { Card, Grid } from "semantic-ui-react";
 import IFlat from "../../models/unit";
 import { useMediaQuery } from "react-responsive";
 import { useContext } from "react";
