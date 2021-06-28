@@ -155,6 +155,17 @@ td {
   max-height: 300px;
 }
 
+.available-units-list {
+  color: goldenrod;
+  font-size: 20px;
+  transition: ease-in 0.2s;
+}
+
+.available-units-list:hover {
+  color: rgb(185, 141, 30);
+  transition: ease-in 0.2s;
+}
+
 @media screen and (max-width: 600px) {
     .slider{
       display: none;

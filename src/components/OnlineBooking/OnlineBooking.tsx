@@ -81,7 +81,9 @@ const OurProject = () => {
 
   const getAvailableUnits = () => {
     let flatsCopy = flats.slice();
-    let availableUnits = flatsCopy.filter((flat) => !flat.isBooked && !flat.isSold);
+    let availableUnits = flatsCopy.filter(
+      (flat) => !flat.isBooked && !flat.isSold
+    );
     return availableUnits.slice(0, 3);
   };
 
@@ -103,8 +105,29 @@ const OurProject = () => {
             <Grid.Column width={13}>
               {featured && (
                 <>
-                  <Cards featuredFlats={getFeaturedUnits()} header="Featured Units" />
-                  <Cards featuredFlats={getAvailableUnits()} header="Available Units" />
+                  <Cards
+                    featuredFlats={getFeaturedUnits()}
+                    header="Featured Units"
+                  />
+                  <Cards
+                    featuredFlats={getAvailableUnits()}
+                    header="Available Units"
+                  />
+                  <div
+                    style={{
+                      display: "flex",
+                      width: "100%",
+                      justifyContent: "center",
+                      height: 50,
+                    }}
+                  >
+                    <Link
+                      to="/available-units"
+                      className="available-units-list"
+                    >
+                      VIEW ALL <i className="fas fa-chevron-right" />
+                    </Link>
+                  </div>
                 </>
               )}
               {searchUnit && <UnitList sortedFlats={sortedFlats} />}
@@ -121,8 +144,26 @@ const OurProject = () => {
             />
             {featured && (
               <>
-                <Cards featuredFlats={getFeaturedUnits()} header="Featured Units" />
-                <Cards featuredFlats={getAvailableUnits()} header="Available Units" />
+                <Cards
+                  featuredFlats={getFeaturedUnits()}
+                  header="Featured Units"
+                />
+                <Cards
+                  featuredFlats={getAvailableUnits()}
+                  header="Available Units"
+                />
+                <div
+                  style={{
+                    display: "flex",
+                    width: "100%",
+                    justifyContent: "center",
+                    height: 50,
+                  }}
+                >
+                  <Link to="/available-units" className="available-units-list">
+                    VIEW ALL <i className="fas fa-chevron-right" />
+                  </Link>
+                </div>
               </>
             )}
             {searchUnit && <UnitList sortedFlats={sortedFlats} />}
@@ -130,21 +171,20 @@ const OurProject = () => {
         )}
         {searchUnit && (
           <div className="projectbottom buttondiv">
-              <Button
-                className="nextbutton"
-                style={{
-                  backgroundColor: "#1e212d",
-                  color: "goldenrod",
-                  width: 60,
-                  height: 60,
-                  borderRadius: "100px",
-                }}
-                disabled={selectedFlats.length === 0}
-                onClick={() => history.push("/mainInfo")}
-              >
-                Next
-              </Button>
-            
+            <Button
+              className="nextbutton"
+              style={{
+                backgroundColor: "#1e212d",
+                color: "goldenrod",
+                width: 60,
+                height: 60,
+                borderRadius: "100px",
+              }}
+              disabled={selectedFlats.length === 0}
+              onClick={() => history.push("/mainInfo")}
+            >
+              Next
+            </Button>
           </div>
         )}
       </div>

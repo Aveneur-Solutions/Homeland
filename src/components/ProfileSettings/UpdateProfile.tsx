@@ -20,7 +20,6 @@ const UpdateProfile: React.FC<IProps> = ({ handleEditable, user, imageUrl }) => 
     const {
         register,
         handleSubmit,
-        reset,
         formState: { errors, isDirty },
     } = useForm<IProfileUpdate>();
     const { updateProfile } = useContext(RootStoreContext).userStore;
