@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import "./booking.scss";
 import "./project.css";
-import { Container, Grid, Image } from "semantic-ui-react";
+import { Container, Grid, Image, Sticky } from "semantic-ui-react";
 // import useProgressiveImg from "./UseProgressiveImg"
 import { useEffect } from "react";
 import Aos from "aos";
@@ -27,6 +27,7 @@ const OurProject = () => {
   return (
     <>
       {!isTabletOrMobileDevice && !isMobileView ? (
+        // DESKTOP RESPONSIVE CODE IS HERE
         <>
           <Element name="firstInsideContainer">
             <div className="projectheading" data-aos="fade-down">
@@ -67,15 +68,42 @@ const OurProject = () => {
                     <SvgComponent2 data-aos="fade-up" />
                   </div>
                 ) : (
-                  <div
-                    style={{
-                      width: "40%",
-                      height: "100vh",
-                      overflowY: "auto",
-                    }}
-                  >
-                    <div style={{ width: "100%" }}>
-                      <ListUnits units={currentBuilding?.flats!} />
+                  <div style={{ width: "40%" }}>
+                    <Sticky>
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-evenly",
+                          alignItems: "center",
+                        }}
+                      >
+                        <strong>
+                          Available{" "}
+                          {
+                            currentBuilding?.flats.filter(
+                              (x) => !x.isBooked && !x.isSold
+                            ).length
+                          }
+                        </strong>
+                        <strong>
+                          Booked{" "}
+                          {
+                            currentBuilding?.flats.filter((x) => x.isBooked)
+                              .length
+                          }
+                        </strong>
+                      </div>
+                    </Sticky>
+                    <div
+                      style={{
+                        width: "100%",
+                        height: "100vh",
+                        overflowY: "auto",
+                      }}
+                    >
+                      <div style={{ width: "100%" }}>
+                        <ListUnits units={currentBuilding?.flats!} />
+                      </div>
                     </div>
                   </div>
                 )}
@@ -121,9 +149,36 @@ const OurProject = () => {
                 {!currentBuilding ? (
                   <SvgComponent2 data-aos="fade-up" />
                 ) : (
-                  <div style={{ height: "90vh", overflowY: "auto" }}>
-                    <ListUnits units={currentBuilding?.flats!} />
-                  </div>
+                  <>
+                    <Sticky>
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-evenly",
+                          alignItems: "center",
+                        }}
+                      >
+                        <strong>
+                          Available{" "}
+                          {
+                            currentBuilding?.flats.filter(
+                              (x) => !x.isBooked && !x.isSold
+                            ).length
+                          }
+                        </strong>
+                        <strong>
+                          Booked{" "}
+                          {
+                            currentBuilding?.flats.filter((x) => x.isBooked)
+                              .length
+                          }
+                        </strong>
+                      </div>
+                    </Sticky>
+                    <div style={{ height: "90vh", overflowY: "auto" }}>
+                      <ListUnits units={currentBuilding?.flats!} />
+                    </div>
+                  </>
                 )}
               </Grid.Column>
             </Grid.Row>
@@ -140,9 +195,7 @@ const OurProject = () => {
           </div>
           <Grid>
             <Grid.Row>
-              <div
-                style={{ width: "100%", height: "76vh", overflowY: "scroll" }}
-              >
+              <div style={{ width: "100%", height: "76vh", overflowY: "auto" }}>
                 <Grid.Column>
                   {buildingList.map((building, index) => {
                     return (
@@ -163,13 +216,46 @@ const OurProject = () => {
                   })}
                 </Grid.Column>
               </div>
-              <Grid.Column tablet={16}>
+              <Grid.Column width={16}>
                 {!currentBuilding ? (
                   <SvgComponent2 data-aos="fade-up" />
                 ) : (
-                  <div style={{ width: "100%", height: "70vh", overflowY: "auto" }}>
-                    <ListUnits units={currentBuilding?.flats!} />
-                  </div>
+                  <>
+                    <Sticky>
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-evenly",
+                          alignItems: "center",
+                        }}
+                      >
+                        <strong>
+                          Available{" "}
+                          {
+                            currentBuilding?.flats.filter(
+                              (x) => !x.isBooked && !x.isSold
+                            ).length
+                          }
+                        </strong>
+                        <strong>
+                          Booked{" "}
+                          {
+                            currentBuilding?.flats.filter((x) => x.isBooked)
+                              .length
+                          }
+                        </strong>
+                      </div>
+                    </Sticky>
+                    <div
+                      style={{
+                        width: "100%",
+                        height: "70vh",
+                        overflowY: "auto",
+                      }}
+                    >
+                      <ListUnits units={currentBuilding?.flats!} />
+                    </div>
+                  </>
                 )}
               </Grid.Column>
             </Grid.Row>
