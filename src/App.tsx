@@ -24,7 +24,7 @@ import AvailableUnits from "./components/OnlineBooking/AvailableUnits";
 
 function App() {
   const rootStore = useContext(RootStoreContext);
-  const { initCart, emptyCart } = rootStore.flatStore;
+  const { initCart, /*emptyCart*/ } = rootStore.flatStore;
 
   useEffect(() => {
     initCart();

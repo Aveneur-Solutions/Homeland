@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import IFlat from "../../models/unit";
 
 interface PriceRange {

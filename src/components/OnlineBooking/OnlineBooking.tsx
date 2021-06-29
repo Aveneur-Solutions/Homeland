@@ -18,9 +18,8 @@ const OurProject = () => {
     rootStore.navStore;
   const { flats, listflats, selectedFlats } = rootStore.flatStore;
 
-  const isTabletOrMobileDevice = useMediaQuery({
-    query: "(max-device-width: 1224px)",
-  });
+  const isMobileScreen = useMediaQuery({ query: "(max-width: 600px)" });
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
 
   const [sortedFlats, setSortedFlats] = useState<IFlat[]>([]);
   // const [featuredFlats, setFeaturedFlats] = useState<IFlat[]>([]);
@@ -91,7 +90,7 @@ const OurProject = () => {
     <div className="projectmainbg">
       {/* <ProjectGallery /> */}
       <div className="projectbg" style={{ position: "relative" }}>
-        {!isTabletOrMobileDevice ? (
+        {!isTabletOrMobile && !isMobileScreen ? (
           <Grid style={{ minHeight: "89vh" }}>
             <Grid.Column width={3}>
               <FilterCard
@@ -133,7 +132,7 @@ const OurProject = () => {
               {searchUnit && <UnitList sortedFlats={sortedFlats} />}
             </Grid.Column>
           </Grid>
-        ) : (
+        ) : isTabletOrMobile && !isMobileScreen ? (
           <div style={{ marginTop: 30 }}>
             <FilterCard
               onFormSubmit={onFormSubmit}
@@ -143,15 +142,21 @@ const OurProject = () => {
               sizeRange={sizeRange}
             />
             {featured && (
-              <>
-                <Cards
-                  featuredFlats={getFeaturedUnits()}
-                  header="Featured Units"
-                />
-                <Cards
-                  featuredFlats={getAvailableUnits()}
-                  header="Available Units"
-                />
+              <Grid>
+                <Grid.Row columns={2}>
+                  <Grid.Column>
+                    <Cards
+                      featuredFlats={getFeaturedUnits()}
+                      header="Featured Units"
+                    />
+                  </Grid.Column>
+                  <Grid.Column>
+                    <Cards
+                      featuredFlats={getAvailableUnits()}
+                      header="Available Units"
+                    />
+                  </Grid.Column>
+                </Grid.Row>
                 <div
                   style={{
                     display: "flex",
@@ -164,7 +169,48 @@ const OurProject = () => {
                     VIEW ALL <i className="fas fa-chevron-right" />
                   </Link>
                 </div>
-              </>
+              </Grid>
+            )}
+            {searchUnit && <UnitList sortedFlats={sortedFlats} />}
+          </div>
+        ) : (
+          <div style={{ marginTop: 30 }}>
+            <FilterCard
+              onFormSubmit={onFormSubmit}
+              onPriceChange={onPriceChange}
+              onSizeChange={onSizeChange}
+              priceRange={priceRange}
+              sizeRange={sizeRange}
+            />
+            {featured && (
+              <Grid>
+                <Grid.Row columns={1}>
+                  <Grid.Column>
+                    <Cards
+                      featuredFlats={getFeaturedUnits()}
+                      header="Featured Units"
+                    />
+                  </Grid.Column>
+                  <Grid.Column>
+                    <Cards
+                      featuredFlats={getAvailableUnits()}
+                      header="Available Units"
+                    />
+                  </Grid.Column>
+                </Grid.Row>
+                <div
+                  style={{
+                    display: "flex",
+                    width: "100%",
+                    justifyContent: "center",
+                    height: 50,
+                  }}
+                >
+                  <Link to="/available-units" className="available-units-list">
+                    VIEW ALL <i className="fas fa-chevron-right" />
+                  </Link>
+                </div>
+              </Grid>
             )}
             {searchUnit && <UnitList sortedFlats={sortedFlats} />}
           </div>
