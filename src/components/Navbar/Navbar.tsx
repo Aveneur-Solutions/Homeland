@@ -117,7 +117,7 @@ const Navbar = () => {
           {isTabletOrMobileDevice && (
             <li>
               {user ? (
-                <Dropdown className="dropname-mob" text={"Hi"+user.fullname.split(" ")[0]}>
+                <Dropdown className="dropname-mob" text={"Hi, " +  user.fullname.split(" ")[0]}>
                   <Dropdown.Menu
                     onClick={handleClick}
                     className="dropmenu-mob"

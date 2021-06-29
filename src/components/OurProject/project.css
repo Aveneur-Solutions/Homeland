@@ -28,7 +28,7 @@
       display: none;
   } */
   .buildingcontainer {
-    width: 100vw;
+    /* width: 100vw; */
     /* background-color: blue; */
     /* display:inline-block;
       align-items: center;
@@ -42,16 +42,16 @@
       align-items: center;
       justify-content: center; */
   }
-  .buildTuples {
+  /* .buildTuples {
     margin: 1.5vw;
     z-index: 2vh;
-  }
-  .buildTuples1 div {
-    border-radius: 10px;
-    transition: transform 0.2s;
+  } */
+  .buildTuples1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .buildTuples1 div:hover {
-    transform: scale(1.1);
     cursor: pointer;
   }
   .ui.grid {
@@ -81,7 +81,7 @@
   }
   .building3m {
     height: 80vh;
-    width: 50%;
+    width: 100%;
     /* margin: 20px auto; */
     /* background-color: #1e212d; */
   }

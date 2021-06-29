@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { Card, Image } from "semantic-ui-react";
-import ListUnits from "./ListUnits";
 import { useMediaQuery } from "react-responsive";
 import { RootStoreContext } from "../../stores/rootStore";
 import { observer } from "mobx-react-lite";
@@ -30,9 +29,6 @@ const BuildingShowcase = () => {
                 </Card.Meta>
               </Card.Content>
             </Card>
-            <div className="unitscroll">
-              <ListUnits units={currentBuilding?.flats!}/>
-            </div>
           </div>
         </div>
       ) : (        
@@ -52,9 +48,6 @@ const BuildingShowcase = () => {
                 </Card.Meta>
               </Card.Content>
             </Card>
-            <div className="unitscrollm">
-              <ListUnits units={currentBuilding?.flats!}/>
-            </div>
           </div>
         </div>
       )}
