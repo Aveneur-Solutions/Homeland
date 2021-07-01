@@ -12,6 +12,8 @@ import { useMediaQuery } from "react-responsive";
 import { Element } from "react-scroll";
 import { RootStoreContext } from "../../stores/rootStore";
 import ListUnits from "./ListUnits";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 const OurProject = () => {
   const isMobileView = useMediaQuery({ query: "(max-device-width: 600px)" });
@@ -19,7 +21,7 @@ const OurProject = () => {
     query: "(max-device-width: 1224px)",
   });
   const rootStore = useContext(RootStoreContext);
-  const {getBuildingList,buildingList,currentBuilding,setCurrentBuilding} = rootStore.projectStore;
+  const {getBuildingList,buildingList,currentBuilding,setCurrentBuilding, emptyCurrentBuilding} = rootStore.projectStore;
   useEffect(() => {
     Aos.init({ duration: 1000 });
     getBuildingList();
@@ -195,7 +197,7 @@ const OurProject = () => {
           </div>
           <Grid>
             <Grid.Row>
-              <div style={{ width: "100%", height: "76vh", overflowY: "auto" }}>
+              {/* <div style={{ width: "100%", height: "76vh", overflowY: "auto" }}>
                 <Grid.Column>
                   {buildingList.map((building, index) => {
                     return (
@@ -215,12 +217,37 @@ const OurProject = () => {
                     );
                   })}
                 </Grid.Column>
-              </div>
+              </div> */}
               <Grid.Column width={16}>
                 {!currentBuilding ? (
-                  <SvgComponent2 data-aos="fade-up" />
+                  <div
+                    style={{ width: "100%", height: "76vh", overflowY: "auto" }}
+                  >
+                    <Grid.Column>
+                      {buildingList.map((building, index) => {
+                        return (
+                          <div
+                            key={index}
+                            className="buildTuples1"
+                            onClick={() => setCurrentBuilding(building)}
+                          >
+                            <Image
+                              src={
+                                "https://www.homeland.aveneur.com/Images" +
+                                building.image
+                              }
+                            />
+                            <h4>Building Number : {building.buildingNumber}</h4>
+                          </div>
+                        );
+                      })}
+                    </Grid.Column>
+                  </div>
                 ) : (
                   <>
+                  <div style={{cursor: 'pointer'}}>
+                    <FontAwesomeIcon icon={faArrowLeft} onClick={() => emptyCurrentBuilding()}/>
+                  </div>
                     <Sticky>
                       <div
                         style={{
