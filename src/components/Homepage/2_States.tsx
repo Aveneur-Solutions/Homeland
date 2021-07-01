@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { Menu } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 import { observer } from "mobx-react-lite";

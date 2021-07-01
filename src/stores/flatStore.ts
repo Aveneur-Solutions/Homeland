@@ -16,7 +16,6 @@ export default class FlatStore {
 
   @observable flat: IFlat | null = null;
   @observable flats: IFlat[] = [];
-  // @observable featuredFlats: IFlat[] = [];
   @observable selectedFlats: IFlat[] = [];
   @observable cartItems: IFlat[] = [];
   @observable totalAmount: number = 0;
@@ -24,6 +23,25 @@ export default class FlatStore {
   @observable orderId: string = "";
   @observable orderPlaced: boolean = false;
   @observable orderDetails: IOrderDetails | null = null;
+  @observable similarUnits: IFlat[] = [];
+
+  getAverageSize = (array: IFlat[]) => {
+    let sumOfSize = 0;
+    array.forEach((flat) => {
+      sumOfSize = sumOfSize + flat.size;
+    });
+    return sumOfSize / this.selectedFlats.length;
+  }
+
+  @action listSimilarUnits = () => {
+    let avgSize = this.getAverageSize(this.selectedFlats)
+    let simUnits = this.flats.filter(
+      (flat) => flat.size <= avgSize + 50 && flat.size >= avgSize - 50
+    );
+    console.log(simUnits)
+    this.similarUnits = simUnits.slice(0,3)
+    console.log(this.similarUnits)
+  };
 
   @action initCart = () => {
     const cartItems = localStorage.getItem("userCart");
@@ -37,11 +55,12 @@ export default class FlatStore {
       this.emptyCart();
     }, 5000);
   };
+
   @action listflats = async () => {
     try {
       const flats = await agent.Flat.list();
       runInAction(() => {
-        this.flats = flats.filter(x => !x.isBooked && !x.isSold);
+        this.flats = flats.filter((x) => !x.isBooked && !x.isSold);
       });
     } catch (error) {
       console.log(error);
@@ -52,10 +71,12 @@ export default class FlatStore {
     const temp = this.selectedFlats.filter((x) => x.id === flat.id)[0];
     if (!temp) this.selectedFlats.push(flat);
   };
-  @action viewFlatDetails = (flat : IFlat) => {
+
+  @action viewFlatDetails = (flat: IFlat) => {
     this.selectFlats(flat);
     history.push("/mainInfo");
-  }
+  };
+
   @action unselectFlats = (flat: IFlat) => {
     let temp = this.selectedFlats.slice();
     const index = temp.indexOf(flat);
@@ -99,12 +120,14 @@ export default class FlatStore {
     this.totalAmount = this.totalAmount - flat.bookingPrice;
     this.saveCart();
   };
+
   @action emptyCart = () => {
     this.cartItems = [];
     this.cartItemCount = 0;
     this.totalAmount = 0;
     localStorage.removeItem("userCart");
   };
+
   @action bookFlat = async () => {
     const user = this.rootStore.userStore.user;
     if (user) {
@@ -159,6 +182,7 @@ export default class FlatStore {
       toast.error(error.data.errors.error);
     }
   };
+
   @action cancelOrder = async () => {
     var orderCancel: IOrderCancel = {
       orderId: this.orderId,
@@ -175,6 +199,7 @@ export default class FlatStore {
       // toast.error(error.data.errors.error);
     }
   };
+
   @action unpaidOrder = async () => {
     try {
       var order = await agent.User.unpaidOrder();

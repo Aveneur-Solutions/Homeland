@@ -56,7 +56,11 @@
 }
 
 .cardsize:hover img {
-  /* transform: translateY(-30px); */
+  transform: scale(1.2);
+  transition: ease-in-out 0.35s;
+}
+
+.similarcards:hover img {
   transform: scale(1.2);
   transition: ease-in-out 0.35s;
 }
@@ -169,19 +173,21 @@ td {
 }
 
 @media screen and (max-width: 600px) {
-    .slider{
-      display: none;
-    }
+  .slider {
+    width: 100vw;
+    height: auto;
+    overflow: hidden;
+  }
 }
 @media screen and (max-width: 1024px) {
-  .filterpad{
+  .filterpad {
     display: flex;
     flex-direction: column;
     justify-content: left;
     margin-left: 10%;
     width: 100%;
   }
-  .filtercontainer{
+  .filtercontainer {
     padding: 0;
   }
 }

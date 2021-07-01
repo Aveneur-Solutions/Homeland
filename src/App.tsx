@@ -13,18 +13,18 @@ import Profile from "./components/ProfileSettings/Profile";
 import MyAllotments from "./components/Dropdown/MyAllotments/MyAllotments";
 import MyBookings from "./components/Dropdown/MyBookings/MyBookings";
 import Cart from "./components/Cart/Cart";
-import{ useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { RootStoreContext } from "./stores/rootStore";
 import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 import TransferUnit from "./components/Dropdown/TransferForm/TransferUnit";
 import FailedPayment from "./components/Cart/FailedPayment";
-import OrderDetails from './components/Cart/OrderDetails'
+import OrderDetails from "./components/Cart/OrderDetails";
 import AvailableUnits from "./components/OnlineBooking/AvailableUnits";
 
 function App() {
   const rootStore = useContext(RootStoreContext);
-  const { initCart, /*emptyCart*/ } = rootStore.flatStore;
+  const { initCart } = rootStore.flatStore;
 
   useEffect(() => {
     initCart();

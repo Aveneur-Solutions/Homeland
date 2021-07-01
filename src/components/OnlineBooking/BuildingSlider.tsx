@@ -19,14 +19,12 @@ const BuildingSlider: React.FC<IProps> = ({ flat, action }) => {
     query: "(max-device-width: 1000px)",
   });
   return (
-    <div className="main-container">
+    <div className={!isTabletOrMobileDevice ? "main-container" : "main-container-mob"}>
       <Segment>
         {flat.isBooked && (
           <Label
             style={{
               position: "absolute",
-              // color: "#1e212d",
-              // backgroundColor: "goldenrod",
               color: "white",
               backgroundColor: "red",
             }}
@@ -35,16 +33,29 @@ const BuildingSlider: React.FC<IProps> = ({ flat, action }) => {
             Booked
           </Label>
         )}
-        <div className="image-container">
-          <img
-            src={
-              "https://www.homeland.aveneur.com/Images" +
-              flat.images[flat.images.length - 1].imageLocation
-            }
-            alt=""
-            style={{ height: "100%", width: "100%" }}
-          />
-        </div>
+        {!isTabletOrMobileDevice ? (
+          <div className="image-container">
+            <img
+              src={
+                "https://www.homeland.aveneur.com/Images" +
+                flat.images[flat.images.length - 1].imageLocation
+              }
+              alt=""
+              style={{ height: "100%", width: "100%" }}
+            />
+          </div>
+        ) : (
+          <div className="image-container-mob">
+            <img
+              src={
+                "https://www.homeland.aveneur.com/Images" +
+                flat.images[flat.images.length - 1].imageLocation
+              }
+              alt=""
+              style={{ height: "100%", width: "100%" }}
+            />
+          </div>
+        )}
       </Segment>
       <div>
         {!isTabletOrMobileDevice ? (

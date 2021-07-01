@@ -1,8 +1,13 @@
 import { observer } from "mobx-react-lite";
 import { Card, Image, Grid } from "semantic-ui-react";
 import { useMediaQuery } from "react-responsive";
+import IFlat from "../../models/unit";
 
-const SimilarUnits = () => {
+interface IProps {
+  unit: IFlat;
+}
+
+const SimilarUnits: React.FC<IProps> = ({ unit }) => {
   const isTabletOrMobileDevice = useMediaQuery({
     query: "(max-device-width: 1224px)",
   });
@@ -12,29 +17,32 @@ const SimilarUnits = () => {
         <div className="pccentercard">
           <div className="similarcards">
             <Card fluid>
-              <Image
-                // className="cardhover"
-                src={process.env.PUBLIC_URL + "/images/dummy/1.jpg"}
-                wrapped
-                ui={false}
+              <img
+                className="cardimg"
+                src={
+                  "https://www.homeland.aveneur.com/Images" +
+                  unit.images[unit.images.length - 1].imageLocation
+                }
+                // wrapped
+                // ui={false}
               />
               <Card.Content>
                 <Grid columns={3}>
                   <Grid.Row>
                     <Grid.Column>
                       <Card.Header className="cardtoprow  ">
-                        Unit ID<h4 className="cardtoplabel">1</h4>
+                        Unit ID<h4 className="cardtoplabel">{unit.id}</h4>
                       </Card.Header>
                     </Grid.Column>
                     <Grid.Column>
                       <Card.Header className="cardtoprow ">
-                        Size<h4 className="cardtoplabel">1</h4>
+                        Size<h4 className="cardtoplabel">{unit.size}</h4>
                         sqft.
                       </Card.Header>
                     </Grid.Column>
                     <Grid.Column>
                       <Card.Header className="cardtoprow ">
-                        Price<h4 className="cardtoplabel">1</h4>
+                        Price<h4 className="cardtoplabel">{unit.price}</h4>
                         Tk
                       </Card.Header>
                     </Grid.Column>
@@ -43,18 +51,26 @@ const SimilarUnits = () => {
                   <Grid.Row>
                     <Grid.Column>
                       <Card.Meta>
-                        <span className="cardbottomrow">Building: 1</span>
+                        <span className="cardbottomrow">
+                          Building: {unit.buildingNumber}
+                        </span>
                       </Card.Meta>
                       <Card.Meta>
-                        <span className="cardbottomrow">Level: 1</span>
+                        <span className="cardbottomrow">
+                          Level: {unit.level}
+                        </span>
                       </Card.Meta>
                     </Grid.Column>
                     <Grid.Column>
                       <Card.Meta>
-                        <span className="cardbottomrow">Net Area: 1</span>
+                        <span className="cardbottomrow">
+                          Net Area: {unit.netArea}
+                        </span>
                       </Card.Meta>
                       <Card.Meta>
-                        <span className="cardbottomrow">Common Area: 1</span>
+                        <span className="cardbottomrow">
+                          Common Area: {unit.commonArea}
+                        </span>
                       </Card.Meta>
                     </Grid.Column>
                   </Grid.Row>
@@ -67,29 +83,32 @@ const SimilarUnits = () => {
         <div className="mobilecentercard">
           <div className="cardsizeformob1">
             <Card fluid>
-              <Image
+              <img
                 // className="cardhover"
-                src={process.env.PUBLIC_URL + "/images/dummy/1.jpg"}
-                wrapped
-                ui={false}
+                src={
+                  "https://www.homeland.aveneur.com/Images" +
+                  unit.images[unit.images.length - 1].imageLocation
+                }
+                // wrapped
+                // ui={false}
               />
               <Card.Content>
                 <Grid columns={3} divided>
                   <Grid.Row>
                     <Grid.Column>
                       <Card.Header className="cardtoprow  ">
-                        Unit ID<h4 className="cardtoplabel">1</h4>
+                        Unit ID<h4 className="cardtoplabel">{unit.id}</h4>
                       </Card.Header>
                     </Grid.Column>
                     <Grid.Column>
                       <Card.Header className="cardtoprow ">
-                        Size<h4 className="cardtoplabel">1</h4>
+                        Size<h4 className="cardtoplabel">{unit.size}</h4>
                         sqft.
                       </Card.Header>
                     </Grid.Column>
                     <Grid.Column>
                       <Card.Header className="cardtoprow ">
-                        Price<h4 className="cardtoplabel">1</h4>
+                        Price<h4 className="cardtoplabel">{unit.price}</h4>
                         Tk
                       </Card.Header>
                     </Grid.Column>
@@ -98,18 +117,26 @@ const SimilarUnits = () => {
                   <Grid.Row>
                     <Grid.Column>
                       <Card.Meta>
-                        <span className="cardbottomrow">Building: 1</span>
+                        <span className="cardbottomrow">
+                          Building: {unit.buildingNumber}
+                        </span>
                       </Card.Meta>
                       <Card.Meta>
-                        <span className="cardbottomrow">Level: 1</span>
+                        <span className="cardbottomrow">
+                          Level: {unit.level}
+                        </span>
                       </Card.Meta>
                     </Grid.Column>
                     <Grid.Column>
                       <Card.Meta>
-                        <span className="cardbottomrow">Net Area: 1</span>
+                        <span className="cardbottomrow">
+                          Net Area: {unit.netArea}
+                        </span>
                       </Card.Meta>
                       <Card.Meta>
-                        <span className="cardbottomrow">Common Area: 1</span>
+                        <span className="cardbottomrow">
+                          Common Area: {unit.commonArea}
+                        </span>
                       </Card.Meta>
                     </Grid.Column>
                   </Grid.Row>

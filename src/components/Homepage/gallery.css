@@ -122,7 +122,7 @@
 }
 
 .gallery_img img {
-  height: 70vh;
+  height: auto;
   width: 100vw;
   overflow: hidden;
 }
@@ -242,13 +242,13 @@
     overflow: hidden;
   }
   .gallery_img img {
-    height: 60vh;
+    height: auto;
     width: 20vw;
     overflow: hidden;
   }
   .slider {
     width: 100vw;
-    height: 60vh;
+    height: auto;
     overflow: hidden;
   }
   .slick-prev,

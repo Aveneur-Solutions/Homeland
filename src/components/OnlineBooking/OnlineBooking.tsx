@@ -216,7 +216,10 @@ const OurProject = () => {
           </div>
         )}
         {searchUnit && (
-          <div className="projectbottom buttondiv">
+          <div
+            className="projectbottom buttondiv"
+            style={{ pointerEvents: "none" }}
+          >
             <Button
               className="nextbutton"
               style={{
@@ -225,6 +228,7 @@ const OurProject = () => {
                 width: 60,
                 height: 60,
                 borderRadius: "100px",
+                pointerEvents: "auto",
               }}
               disabled={selectedFlats.length === 0}
               onClick={() => history.push("/mainInfo")}

@@ -7,6 +7,7 @@ import sortFlats from "./sortUtil";
 import IFlat from "../../models/unit";
 import UnitList from "./UnitList";
 import { history } from "../..";
+import { observer } from "mobx-react-lite";
 
 const AvailableUnits = () => {
   const rootStore = useContext(RootStoreContext);
@@ -63,6 +64,9 @@ const AvailableUnits = () => {
 
   useEffect(() => {
     listflats();
+    return(() => {
+
+    })
   }, [listflats]);
 
   return (
@@ -81,8 +85,13 @@ const AvailableUnits = () => {
               />
             </Grid.Column>
             <Grid.Column width={13}>
-              <UnitList sortedFlats={flats.filter((flat) => !flat.isBooked)} />
-              {searchUnit && <UnitList sortedFlats={sortedFlats} />}
+              {!searchUnit ? (
+                <UnitList
+                  sortedFlats={flats.filter((flat) => !flat.isBooked)}
+                />
+              ) : (
+                <UnitList sortedFlats={sortedFlats} />
+              )}
             </Grid.Column>
           </Grid>
         ) : (
@@ -94,11 +103,17 @@ const AvailableUnits = () => {
               priceRange={priceRange}
               sizeRange={sizeRange}
             />
-            <UnitList sortedFlats={flats.filter((flat) => !flat.isBooked)} />
-            {searchUnit && <UnitList sortedFlats={sortedFlats} />}
+            {!searchUnit ? (
+              <UnitList sortedFlats={flats.filter((flat) => !flat.isBooked)} />
+            ) : (
+              <UnitList sortedFlats={sortedFlats} />
+            )}
           </div>
         )}
-        <div className="projectbottom buttondiv">
+        <div
+          className="projectbottom buttondiv"
+          style={{ pointerEvents: "none" }}
+        >
           <Button
             className="nextbutton"
             style={{
@@ -107,9 +122,13 @@ const AvailableUnits = () => {
               width: 60,
               height: 60,
               borderRadius: "100px",
+              pointerEvents: "auto"
             }}
             disabled={selectedFlats.length === 0}
-            onClick={() => history.push("/mainInfo")}
+            onClick={() => {
+              console.log("kisu");
+              history.push("/mainInfo");
+            }}
           >
             Next
           </Button>
@@ -119,4 +138,4 @@ const AvailableUnits = () => {
   );
 };
 
-export default AvailableUnits;
+export default observer(AvailableUnits);
