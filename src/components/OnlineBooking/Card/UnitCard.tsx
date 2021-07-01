@@ -37,6 +37,7 @@ const UnitCard: React.FC<IProps> = ({ item }) => {
               "https://www.homeland.aveneur.com/Images" +
               item.images[item.images.length - 1].imageLocation
             }
+            alt="#"
             height="100%"
             width="100%"
           />

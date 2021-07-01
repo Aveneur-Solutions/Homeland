@@ -3,6 +3,14 @@
   height: 100vh;
   overflow: hidden;
 }
+
+.slider1-mob {
+  width: 100vw;
+  height: auto;
+  padding-bottom: 5rem;
+  overflow: hidden;
+}
+
 .slider1 .slick-prev{
   top: 45vh;
 }
@@ -28,9 +36,25 @@
   align-items: center;
   background-image: linear-gradient(#ffffff, #ffffff);
 }
+
+.main-container-mob {
+  width: 100vw;
+  padding-top: 4rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .image-container{
   width: 80vw;
   height: 80vh;
+}
+
+.image-container-mob {
+  width: 80vw;
+  height: auto;
 }
 
 .similar-units{

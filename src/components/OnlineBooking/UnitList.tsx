@@ -7,6 +7,7 @@ import { useContext } from "react";
 import { RootStoreContext } from "../../stores/rootStore";
 import { cartButtonStyle, imageContainer } from "./Card/cardStyles";
 import CartButton from "./Card/CartButton";
+import { useEffect } from "react";
 
 interface IProps {
   sortedFlats: IFlat[];
@@ -17,8 +18,14 @@ const UnitList: React.FC<IProps> = ({ sortedFlats }) => {
   });
 
   const rootStore = useContext(RootStoreContext);
-  const { selectedFlats, selectFlats, unselectFlats, addToCart, cartItems } =
-    rootStore.flatStore;
+  const {
+    selectedFlats,
+    selectFlats,
+    unselectFlats,
+    addToCart,
+    clearSelectedFlats,
+    cartItems,
+  } = rootStore.flatStore;
 
   const addToSelectedFlats = (flat: IFlat) => {
     selectFlats(flat);
@@ -28,13 +35,15 @@ const UnitList: React.FC<IProps> = ({ sortedFlats }) => {
     unselectFlats(flat);
   };
 
-  // const handleCardClick = (flat: IFlat) => {
-  //   selectFlats(flat);
-  //   history.push("/maininfo");
-  // };
+  useEffect(() => {
+    return () => {
+      clearSelectedFlats();
+    };
+  }, [clearSelectedFlats]);
 
   const checkboxStyle = {
     fontSize: 30,
+    cursor: "pointer",
   };
 
   return (

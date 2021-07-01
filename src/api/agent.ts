@@ -33,7 +33,7 @@ axios.interceptors.response.use(undefined, (error) => {
     console.log(error);
   }
   console.log(error);
-  const { status, data, config } = error;
+  const { status, data } = error;
 
   if (error.status === 401) {
     console.log(data.errors);

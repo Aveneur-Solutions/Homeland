@@ -2,11 +2,22 @@ import BuildingInfo from "./BuildingInfo";
 import { useMediaQuery } from "react-responsive";
 import { observer } from "mobx-react-lite";
 import SimilarUnits from "./SimilarUnits";
+import { useContext } from "react";
+import { RootStoreContext } from "../../stores/rootStore";
+import { useEffect } from "react";
 
 const MainInfo = () => {
+  const rootStore = useContext(RootStoreContext);
+  const { listSimilarUnits, similarUnits } = rootStore.flatStore;
+
   const isTabletOrMobileDevice = useMediaQuery({
     query: "(max-device-width: 1224px)",
   });
+
+  useEffect(() => {
+    listSimilarUnits();
+  }, [listSimilarUnits]);
+
   return (
     <div>
       <BuildingInfo />
@@ -23,14 +34,12 @@ const MainInfo = () => {
 
           <div className="sizeofsimilar">
             <div className="Similarcontainer">
-              <SimilarUnits />
-              <SimilarUnits />
-              <SimilarUnits />
+              {similarUnits.map((unit) => (
+                <SimilarUnits key={unit.id} unit={unit} />
+              ))}
             </div>
           </div>
-          <div className="finaldivproject">
-
-          </div>
+          <div className="finaldivproject"></div>
         </div>
       ) : (
         <div>
@@ -39,9 +48,9 @@ const MainInfo = () => {
               <h1>SIMILAR UNITS</h1>
             </div>
             <div>
-              <SimilarUnits />
-              <SimilarUnits />
-              <SimilarUnits />
+              {similarUnits.map((unit) => (
+                <SimilarUnits key={unit.id} unit={unit} />
+              ))}
             </div>
           </div>
         </div>
