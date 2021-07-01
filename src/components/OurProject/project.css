@@ -1,3 +1,6 @@
+.main-card-container{
+  background: #e5e5e5;
+}
 .project_section1 {
     height: 90vh;
   }
@@ -28,7 +31,7 @@
       display: none;
   } */
   .buildingcontainer {
-    width: 100vw;
+    /* width: 100vw; */
     /* background-color: blue; */
     /* display:inline-block;
       align-items: center;
@@ -42,16 +45,16 @@
       align-items: center;
       justify-content: center; */
   }
-  .buildTuples {
+  /* .buildTuples {
     margin: 1.5vw;
     z-index: 2vh;
-  }
-  .buildTuples1 div {
-    border-radius: 10px;
-    transition: transform 0.2s;
+  } */
+  .buildTuples1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .buildTuples1 div:hover {
-    transform: scale(1.1);
     cursor: pointer;
   }
   .ui.grid {
@@ -81,7 +84,7 @@
   }
   .building3m {
     height: 80vh;
-    width: 50%;
+    width: 100%;
     /* margin: 20px auto; */
     /* background-color: #1e212d; */
   }
@@ -108,7 +111,7 @@
     height: 10px;
     width: 20vw;
     border-radius: 20px;
-    background-color: goldenrod;
+    background-color: rgb(218, 165, 32);
   }
   .projCardContainer {
     height: 20vh;
@@ -131,7 +134,11 @@
     overflow: auto;
   }
   .projCardSize {
-    width: 80%;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .projCardSize.mobo {
+    width: 100%;
     margin: 0 auto;
   }
   .projCardSize2 {
