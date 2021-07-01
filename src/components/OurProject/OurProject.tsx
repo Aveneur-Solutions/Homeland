@@ -27,7 +27,7 @@ const OurProject = () => {
     getBuildingList();
   }, [getBuildingList]);
   return (
-    <>
+    <div className="main-card-container">
       {!isTabletOrMobileDevice && !isMobileView ? (
         // DESKTOP RESPONSIVE CODE IS HERE
         <>
@@ -79,7 +79,7 @@ const OurProject = () => {
                           alignItems: "center",
                         }}
                       >
-                        <strong>
+                        <strong style={{ color: "green" }}>
                           Available{" "}
                           {
                             currentBuilding?.flats.filter(
@@ -87,7 +87,7 @@ const OurProject = () => {
                             ).length
                           }
                         </strong>
-                        <strong>
+                        <strong style={{ color: "red" }}>
                           Booked{" "}
                           {
                             currentBuilding?.flats.filter((x) => x.isBooked)
@@ -197,27 +197,6 @@ const OurProject = () => {
           </div>
           <Grid>
             <Grid.Row>
-              {/* <div style={{ width: "100%", height: "76vh", overflowY: "auto" }}>
-                <Grid.Column>
-                  {buildingList.map((building, index) => {
-                    return (
-                      <div
-                        key={index}
-                        className="buildTuples1"
-                        onClick={() => setCurrentBuilding(building)}
-                      >
-                        <Image
-                          src={
-                            "https://www.homeland.aveneur.com/Images" +
-                            building.image
-                          }
-                        />
-                        <h4>Building Number : {building.buildingNumber}</h4>
-                      </div>
-                    );
-                  })}
-                </Grid.Column>
-              </div> */}
               <Grid.Column width={16}>
                 {!currentBuilding ? (
                   <div
@@ -245,9 +224,12 @@ const OurProject = () => {
                   </div>
                 ) : (
                   <>
-                  <div style={{cursor: 'pointer'}}>
-                    <FontAwesomeIcon icon={faArrowLeft} onClick={() => emptyCurrentBuilding()}/>
-                  </div>
+                    <div style={{ cursor: "pointer" }}>
+                      <FontAwesomeIcon
+                        icon={faArrowLeft}
+                        onClick={() => emptyCurrentBuilding()}
+                      />
+                    </div>
                     <Sticky>
                       <div
                         style={{
@@ -289,7 +271,7 @@ const OurProject = () => {
           </Grid>
         </Container>
       )}
-    </>
+    </div>
   );
 };
 

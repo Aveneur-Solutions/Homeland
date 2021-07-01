@@ -1,4 +1,4 @@
-import { Card, Button, Image, Grid } from "semantic-ui-react";
+import { Card, Button, Image, Grid, Icon } from "semantic-ui-react";
 import { useMediaQuery } from "react-responsive";
 import IFlat from "../../models/unit";
 import { useContext } from "react";
@@ -38,34 +38,87 @@ const ListUnits: React.FC<IProps> = ({ units }) => {
             {units && units.map((unit, index) => {
               return (
                 <Card key={index} fluid className="projCardSize2">
-                  <div style={(!unit.isBooked && !unit.isSold) ? taglineAvailable : tagline}>
-                    {unit.isBooked ? <h1>Booked</h1> : unit.isSold ? <h1>Sold</h1> : <h1>Available</h1>}
+                  <div
+                    style={
+                      !unit.isBooked && !unit.isSold
+                        ? taglineAvailable
+                        : tagline
+                    }
+                  >
+                    {unit.isBooked ? (
+                      <h1>Booked</h1>
+                    ) : unit.isSold ? (
+                      <h1>Sold</h1>
+                    ) : (
+                      <h1>Available</h1>
+                    )}
                   </div>
-                  <div className="projCardSize2">
-                    <Card.Content>
-                      <Image
-                        src={"https://www.homeland.aveneur.com/Images" + unit.images[unit.images.length - 1].imageLocation}
-                      />
-                      <Card.Header>Unit {unit.id}</Card.Header>
-                      <Card.Meta>Sqft.: {unit.size}</Card.Meta>
-                      <Card.Description>
-                        <strong>Price: {unit.price}</strong> <br />
-                        <strong>Booking Price : {unit.bookingPrice}</strong>
-                      </Card.Description>
-                    </Card.Content>
-                    <Card.Content extra>
-                      <div className="ui two buttons">
-                        <Button basic color="green" onClick={() => viewFlatDetails(unit)}>
-                          View
+                  <Image
+                    src={
+                      "https://www.homeland.aveneur.com/Images" +
+                      unit.images[unit.images.length - 1].imageLocation
+                    }
+                  />
+                  <Card.Content>
+                    <Card.Header>Unit {unit.id}</Card.Header>
+                    <Card.Meta>Sqft.: {unit.size}</Card.Meta>
+                    <Card.Description>
+                      <strong>Price: {unit.price}</strong> <br />
+                      <strong>Booking Price : {unit.bookingPrice}</strong>
+                    </Card.Description>
+                  </Card.Content>
+                  <Card.Content extra>
+                    <Grid columns={2}>
+                      <Grid.Column widescreen={8}>
+                        {/* <Button
+                            size="large"
+                            basic
+                            color="green"
+                            onClick={() => viewFlatDetails(unit)}
+                          >
+                            View
+                          </Button> */}
+                        <Button
+                          animated="vertical"
+                          size="large"
+                          style={{
+                            background: "rgb(30, 33, 45)",
+                            color: "white",
+                          }}
+                          onClick={() => viewFlatDetails(unit)}
+                        >
+                          <Button.Content hidden>
+                            <Icon name="building" />
+                          </Button.Content>
+                          <Button.Content visible>View</Button.Content>
                         </Button>
-                        {(!unit.isBooked && !unit.isSold) &&
-
-                          <Button basic color="red" disabled={cartItems.some((cartItem) => cartItem.id === unit.id)} onClick={() => handleAddToCart(unit)}>
-                            {cartItems.some((cartItem) => cartItem.id === unit.id) ? "Added to Cart" : "Add to Cart"}
-                          </Button>}
-                      </div>
-                    </Card.Content>
-                  </div>
+                      </Grid.Column>
+                      <Grid.Column widescreen={8}>
+                        {!unit.isBooked && !unit.isSold && (
+                          <Button
+                            animated="vertical"
+                            size="large"
+                            style={{ background: "rgb(218, 165, 32)", color: 'white'}}
+                            disabled={cartItems.some(
+                              (cartItem) => cartItem.id === unit.id
+                            )}
+                            onClick={() => handleAddToCart(unit)}
+                          >
+                            <Button.Content hidden>
+                              <Icon name="shop" />
+                            </Button.Content>
+                            <Button.Content visible>
+                              {cartItems.some(
+                                (cartItem) => cartItem.id === unit.id
+                              )
+                                ? "Added to Cart"
+                                : "Add to Cart"}
+                            </Button.Content>
+                          </Button>
+                        )}
+                      </Grid.Column>
+                    </Grid>
+                  </Card.Content>
                 </Card>
               );
             })}
@@ -73,36 +126,72 @@ const ListUnits: React.FC<IProps> = ({ units }) => {
         </Grid>
       ) : (
         // MOBILE CODE SECTION FROM BELOW
-        <div className="projCardSize">
+        <div className="projCardSize mobo">
           {units && units.map((unit, index) => {
             return (
               <Card key={index} fluid className="projCardSize2">
-                <div style={(!unit.isBooked && !unit.isSold) ? taglineAvailable : tagline}>
-                    {unit.isBooked ? <h1>Booked</h1> : unit.isSold ? <h1>Sold</h1> : <h1>Available</h1>}
-                  </div>
-                <div className="projCardSize2">
-                  <Card.Content>
-                    <Image src={"https://www.homeland.aveneur.com/Images" + unit.images[unit.images.length - 1].imageLocation} />
-
-                    <Card.Header>Unit {unit.id}</Card.Header>
-                    <Card.Meta>Sqft.: {unit.size}</Card.Meta>
-                    <Card.Description>
-                      <strong>Price: {unit.price}</strong>
-                      <strong>Booking Price : {unit.bookingPrice}</strong>
-                    </Card.Description>
-                  </Card.Content>
-                  <Card.Content extra>
-                    <div className="ui two buttons">
-                      <Button basic color="green" onClick={() => viewFlatDetails(unit)}>
+                <div
+                  style={
+                    !unit.isBooked && !unit.isSold ? taglineAvailable : tagline
+                  }
+                >
+                  {unit.isBooked ? (
+                    <h1>Booked</h1>
+                  ) : unit.isSold ? (
+                    <h1>Sold</h1>
+                  ) : (
+                    <h1>Available</h1>
+                  )}
+                </div>
+                <Image
+                  src={
+                    "https://www.homeland.aveneur.com/Images" +
+                    unit.images[unit.images.length - 1].imageLocation
+                  }
+                />
+                <Card.Content>
+                  <Card.Header>Unit {unit.id}</Card.Header>
+                  <Card.Meta>Sqft.: {unit.size}</Card.Meta>
+                  <Card.Description>
+                    <strong>Price: {unit.price}</strong>
+                    <strong>Booking Price : {unit.bookingPrice}</strong>
+                  </Card.Description>
+                </Card.Content>
+                <Card.Content extra>
+                  <Grid columns={2}>
+                    <Grid.Column tablet={8} mobile={16}>
+                      <Button
+                        size="mini"
+                        style={{
+                          background: "rgb(30, 33, 45)",
+                          color: "white",
+                        }}
+                        onClick={() => viewFlatDetails(unit)}
+                      >
                         View
                       </Button>
-                      {(!unit.isBooked && !unit.isSold) &&
-                        <Button size="tiny" basic color="red" disabled={cartItems.some((cartItem) => cartItem.id === unit.id)} onClick={() => handleAddToCart(unit)}>
-                          {cartItems.some((cartItem) => cartItem.id === unit.id) ? "Added to Cart" : "Add to Cart"}
-                        </Button>}
-                    </div>
-                  </Card.Content>
-                </div>
+                    </Grid.Column>
+                    <Grid.Column tablet={8} mobile={16}>
+                      {!unit.isBooked && !unit.isSold && (
+                        <Button
+                          size="mini"
+                          style={{
+                            background: "rgb(218, 165, 32)",
+                            color: "white",
+                          }}
+                          disabled={cartItems.some(
+                            (cartItem) => cartItem.id === unit.id
+                          )}
+                          onClick={() => handleAddToCart(unit)}
+                        >
+                          {cartItems.some((cartItem) => cartItem.id === unit.id)
+                            ? "Added to Cart"
+                            : "Add to Cart"}
+                        </Button>
+                      )}
+                    </Grid.Column>
+                  </Grid>
+                </Card.Content>
               </Card>
             );
           })}

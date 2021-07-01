@@ -1,3 +1,6 @@
+.main-card-container{
+  background: #e5e5e5;
+}
 .project_section1 {
     height: 90vh;
   }
@@ -108,7 +111,7 @@
     height: 10px;
     width: 20vw;
     border-radius: 20px;
-    background-color: goldenrod;
+    background-color: rgb(218, 165, 32);
   }
   .projCardContainer {
     height: 20vh;
@@ -131,7 +134,11 @@
     overflow: auto;
   }
   .projCardSize {
-    width: 80%;
+    width: 70%;
+    margin: 0 auto;
+  }
+  .projCardSize.mobo {
+    width: 100%;
     margin: 0 auto;
   }
   .projCardSize2 {
