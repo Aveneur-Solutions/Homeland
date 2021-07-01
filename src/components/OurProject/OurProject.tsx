@@ -79,6 +79,9 @@ const OurProject = () => {
                           alignItems: "center",
                         }}
                       >
+                        <strong>
+                          Building Number: {currentBuilding.buildingNumber}
+                        </strong>
                         <strong style={{ color: "green" }}>
                           Available{" "}
                           {
@@ -161,6 +164,9 @@ const OurProject = () => {
                         }}
                       >
                         <strong>
+                          Building Number: {currentBuilding.buildingNumber}
+                        </strong>
+                        <strong style={{ color: "green" }}>
                           Available{" "}
                           {
                             currentBuilding?.flats.filter(
@@ -168,7 +174,7 @@ const OurProject = () => {
                             ).length
                           }
                         </strong>
-                        <strong>
+                        <strong style={{ color: "red" }}>
                           Booked{" "}
                           {
                             currentBuilding?.flats.filter((x) => x.isBooked)
@@ -239,6 +245,9 @@ const OurProject = () => {
                         }}
                       >
                         <strong>
+                          Building Number: {currentBuilding.buildingNumber}
+                        </strong>
+                        <strong style={{ color: "green" }}>
                           Available{" "}
                           {
                             currentBuilding?.flats.filter(
@@ -246,7 +255,7 @@ const OurProject = () => {
                             ).length
                           }
                         </strong>
-                        <strong>
+                        <strong style={{ color: "red" }}>
                           Booked{" "}
                           {
                             currentBuilding?.flats.filter((x) => x.isBooked)
