@@ -70,14 +70,6 @@ const ListUnits: React.FC<IProps> = ({ units }) => {
                   <Card.Content extra>
                     <Grid columns={2}>
                       <Grid.Column widescreen={8}>
-                        {/* <Button
-                            size="large"
-                            basic
-                            color="green"
-                            onClick={() => viewFlatDetails(unit)}
-                          >
-                            View
-                          </Button> */}
                         <Button
                           animated="vertical"
                           size="large"

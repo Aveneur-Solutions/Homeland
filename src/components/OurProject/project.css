@@ -12,9 +12,7 @@
     width: 60%;
     display: flex;
     justify-content: center;
-    /* background-color: yellow; */
     overflow: auto;
-    /* margin: 0 auto; */
     scroll-behavior: smooth;
   }
   .buildingm {
@@ -53,9 +51,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: radial-gradient(#111 50%, #000 100%);
+    color: #e5e5e5;
+    overflow: hidden;
+    margin-bottom: 2%;
   }
-  .buildTuples1 div:hover {
+  .building-view{
+    margin: 0;
+    text-align: center;
+    color: rgb(218, 165, 32);
+    font-size: 1.2rem;
     cursor: pointer;
+  }
+  .building-img:hover {
+    cursor: pointer;
+    transform: scale(1.1) translateY(-20px);
+    transition: all 0.3s ease-out;
+    opacity: 0.3;
   }
   .ui.grid {
     margin: 0;
@@ -199,5 +211,11 @@
   .widthoftuplesm{
     /* background-color: greenyellow; */
     width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    .main-card-container{
+        min-height: 100vh; 
+    } 
 }
   

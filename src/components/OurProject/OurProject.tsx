@@ -49,14 +49,26 @@ const OurProject = () => {
                             <Grid.Column className="buildTuples1" padded>
                               <div onClick={() => setCurrentBuilding(building)}>
                                 <Image
+                                  className="building-img"
                                   src={
                                     "https://www.homeland.aveneur.com/Images" +
                                     building.image
                                   }
                                 />
-                                <h4>
+                                <p
+                              onClick={() => setCurrentBuilding(building)}
+                              className="building-view"
+                              >View
+                              </p>
+                                <p
+                                  style={{
+                                    fontSize: "1.3rem",
+                                    textAlign: "center",
+                                    padding: "2%",
+                                  }}
+                                >
                                   Building Number {building.buildingNumber}
-                                </h4>
+                                </p>
                               </div>
                             </Grid.Column>
                           </div>
@@ -144,7 +156,21 @@ const OurProject = () => {
                             building.image
                           }
                         />
-                        <h4>Building Number : {building.buildingNumber}</h4>
+                        <p
+                          onClick={() => setCurrentBuilding(building)}
+                          className="building-view"
+                        >
+                          View
+                        </p>
+                        <p
+                          style={{
+                            fontSize: "1.3rem",
+                            textAlign: "center",
+                            padding: "2%",
+                          }}
+                        >
+                          Building Number {building.buildingNumber}
+                        </p>
                       </div>
                     );
                   })}
@@ -222,7 +248,21 @@ const OurProject = () => {
                                 building.image
                               }
                             />
-                            <h4>Building Number : {building.buildingNumber}</h4>
+                            <p
+                              onClick={() => setCurrentBuilding(building)}
+                              className="building-view"
+                            >
+                              View
+                            </p>
+                            <p
+                              style={{
+                                fontSize: "1.3rem",
+                                textAlign: "center",
+                                padding: "2%",
+                              }}
+                            >
+                              Building Number {building.buildingNumber}
+                            </p>
                           </div>
                         );
                       })}
