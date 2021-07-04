@@ -45,7 +45,7 @@ const OurProject = () => {
                 duration={250}
               >
                 <img
-                  src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/images/DownArrow.png"}
+                  src={process.env.PUBLIC_URL + "/images/DownArrow.png"}
                   alt=""
                 />
               </Link>
@@ -110,7 +110,7 @@ const OurProject = () => {
                 duration={250}
               >
                 <img
-                  src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/images/DownArrow.png"}
+                  src={process.env.PUBLIC_URL + "/images/DownArrow.png"}
                   alt=""
                   // style={{
                   //   filter: blur ? "blur(20px)" : "none",
