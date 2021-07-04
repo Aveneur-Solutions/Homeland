@@ -36,7 +36,7 @@ const Overview = () => {
       <div>
         <img
           className="overviewimg"
-          src={process.env.PUBLIC_URL + "/images/overview.png.webp"}
+          src={process.env.PUBLIC_URL + "/images/overview.png"}
           alt="Homeland-topview"
         />
       </div>
