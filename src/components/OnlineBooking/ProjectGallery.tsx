@@ -37,8 +37,8 @@ const ProjectGallery = () => {
           <div className="gallery_img ">
             <img
               className="logoimg"
-              // src={"//d5twn4m6.cdn.imgeng.in" + src4}
-              src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/images/o1.jpg"}
+              // src={"" + src4}
+              src={process.env.PUBLIC_URL + "/images/o1.jpg"}
               alt=""
               // style={{
               //   filter: blur4 ? "blur(20px)" : "none",
@@ -49,8 +49,8 @@ const ProjectGallery = () => {
           <div className="gallery_img">
             <img
               className="logoimg"
-              // src={"//d5twn4m6.cdn.imgeng.in" + src5}
-              src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/images/o2.jpg"}
+              // src={"" + src5}
+              src={process.env.PUBLIC_URL + "/images/o2.jpg"}
               alt=""
               // style={{
               //   filter: blur5 ? "blur(20px)" : "none",
@@ -61,8 +61,8 @@ const ProjectGallery = () => {
           <div className="gallery_img">
             <img
               className="logoimg"
-              // src={"//d5twn4m6.cdn.imgeng.in" + src6}
-              src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/images/o3.jpg"}
+              // src={"" + src6}
+              src={process.env.PUBLIC_URL + "/images/o3.jpg"}
               alt=""
               // style={{
               //   filter: blur6 ? "blur(20px)" : "none",
@@ -78,7 +78,7 @@ const ProjectGallery = () => {
               <img
                 className="logoimg"
                 // src={src4}
-                src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/images/o1.jpg"}
+                src={process.env.PUBLIC_URL + "/images/o1.jpg"}
                 alt=""
                 // style={{
                 //   filter: blur4 ? "blur(20px)" : "none",
@@ -89,8 +89,8 @@ const ProjectGallery = () => {
             <div className="gallery_img">
               <img
                 className="logoimg"
-                // src={"//d5twn4m6.cdn.imgeng.in" + src5}
-                src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/images/o2.jpg"}
+                // src={"" + src5}
+                src={process.env.PUBLIC_URL + "/images/o2.jpg"}
                 alt=""
                 // style={{
                 //   filter: blur5 ? "blur(20px)" : "none",
@@ -101,8 +101,8 @@ const ProjectGallery = () => {
             <div className="gallery_img">
               <img
                 className="logoimg"
-                // src={"//d5twn4m6.cdn.imgeng.in" + src6}
-                src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/images/o3.jpg"}
+                // src={"" + src6}
+                src={process.env.PUBLIC_URL + "/images/o3.jpg"}
                 alt=""
                 // style={{
                 //   filter: blur6 ? "blur(20px)" : "none",

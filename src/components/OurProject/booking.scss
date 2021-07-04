@@ -77,22 +77,22 @@ $sections1: (
     0%,
     20%,
     100% {
-      background: url("//d5twn4m6.cdn.imgeng.in/images/p1.jpg") #{$bg}#{"%"} 0%;
+      background: url("./p1.jpg") #{$bg}#{"%"} 0%;
       -webkit-clip-path: polygon($clip-01);
     }
     25%,
     45% {
-      background: url("//d5twn4m6.cdn.imgeng.in/images/p2.jpg") #{$bg}#{"%"} 0%;
+      background: url("./p2.jpg") #{$bg}#{"%"} 0%;
       -webkit-clip-path: polygon($clip-02);
     }
     50%,
     70% {
-      background: url("//d5twn4m6.cdn.imgeng.in/images/p3.jpg") #{$bg}#{"%"} 0%;
+      background: url("./p3.jpg") #{$bg}#{"%"} 0%;
       -webkit-clip-path: polygon($clip-03);
     }
     75%,
     95% {
-      background: url("//d5twn4m6.cdn.imgeng.in/images/p3.jpg") #{$bg}#{"%"} 0%;
+      background: url("./p3.jpg") #{$bg}#{"%"} 0%;
       -webkit-clip-path: polygon($clip-04);
     }
   }

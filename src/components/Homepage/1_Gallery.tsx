@@ -49,9 +49,9 @@ const Gallery = () => {
               </div>
               <img
                 className="logoimg"
-                // src={"//d5twn4m6.cdn.imgeng.in" + src0}
-                src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/images/h1.jpg"}
-                // src={process.env.PUBLIC_URL + "/images/h1.jpg"}
+                // src={"" + src0}
+                src={process.env.PUBLIC_URL + "/images/h1.jpg"}
+                // src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/images/h1.jpg"}
                 alt=""
                 // style={{
                 //   filter: blur0 ? "blur(20px)" : "none",
@@ -84,8 +84,8 @@ const Gallery = () => {
               </div>
               <img
                 className="logoimg"
-                // src={"//d5twn4m6.cdn.imgeng.in" + src1}
-                src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/images/h4.jpg"}
+                // src={"" + src1}
+                src={process.env.PUBLIC_URL + "/images/h4.jpg"}
                 // src={process.env.PUBLIC_URL + "/images/h1.jpg"}
                 alt=""
                 // style={{
@@ -121,8 +121,8 @@ const Gallery = () => {
               </div>
               <img
                 className="logoimg"
-                // src={"//d5twn4m6.cdn.imgeng.in" + src2}
-                src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/images/o2.jpg"}
+                // src={"" + src2}
+                src={process.env.PUBLIC_URL + "/images/o2.jpg"}
                 // src={process.env.PUBLIC_URL + "/images/h1.jpg"}
                 alt=""
                 // style={{
@@ -160,8 +160,8 @@ const Gallery = () => {
               </div>
               <img
                 className="logoimg"
-                // src={"//d5twn4m6.cdn.imgeng.in" + src3}
-                src={process.env.PUBLIC_URL + "//d5twn4m6.cdn.imgeng.in/images/o3.jpg"}
+                // src={"" + src3}
+                src={process.env.PUBLIC_URL + "/images/o3.jpg"}
                 // src={process.env.PUBLIC_URL + "/images/h1.jpg"}
                 alt=""
                 // style={{
