@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import { observer } from "mobx-react-lite";
 import { useContext } from "react";
 import { useMediaQuery } from "react-responsive";

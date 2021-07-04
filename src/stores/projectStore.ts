@@ -39,4 +39,7 @@ export default class ProjectStore {
      @action setCurrentBuilding = (building : IBuilding) => {
        this.currentBuilding = building;
      }
+     @action emptyCurrentBuilding = () => {
+         this.currentBuilding = null
+     }
 }
