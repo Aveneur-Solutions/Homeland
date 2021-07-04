@@ -51,22 +51,6 @@
     background-color: rgb(46, 42, 42);
 }
 
-.allotment-down-payment{
-     width: 100%;
-    display: flex;
-    justify-content: center;
-}
-.allotment-down-payment div{
-    background-color: var(--primary-color);
-    border-radius: 3px;
-    width: 5%;
-    padding: 1%;
-    display: flex;
-    justify-content: center;
-    color: red;
-    font-weight: 800;
-}
-
 @media screen and (max-width: 968px) {
     .my-allotment{
         background: none;   

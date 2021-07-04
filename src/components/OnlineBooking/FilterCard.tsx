@@ -36,7 +36,12 @@ const FilterCard: React.FC<IProps> = ({
     cursor: "pointer",
   };
   return (
-    <Menu text vertical className="filtercontainer" style={{paddingTop: "7%"}}>
+    <Menu
+      text
+      vertical
+      className="filtercontainer"
+      style={{ paddingTop: "7%" }}
+    >
       <Menu.Item className="searchhead">Search By</Menu.Item>
       <div className="filterpad">
         <form onSubmit={onFormSubmit}>

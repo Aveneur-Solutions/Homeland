@@ -58,7 +58,7 @@ justify-content: center;
     align-items: center;
     flex-direction: column;
     justify-content: space-evenly;
-    position: relative;
+    /* position: relative; */
 }
 .profile Button{
     width: 10%;
@@ -98,7 +98,8 @@ input{
 .profile-content{
     background: goldenrod;
     padding: 2%;
-    border-radius: 5%;
+    border-radius: 2%;
+    width: 50%;
 }
 .profile-info{
     display: flex;
@@ -137,7 +138,7 @@ input{
     }
     .profile-content{
         padding: 5%;
-        /* overflow: auto; */
+        width: 80%;
     }
     .profile-img{
         margin-bottom: -10%;
@@ -161,5 +162,8 @@ input{
 @media screen and (max-width: 600px) {
      .profile-img{
         margin-bottom: -15%;
+    }
+    .profile-content{
+        width: 100%;
     }
 }
