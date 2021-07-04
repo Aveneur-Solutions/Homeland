@@ -94,7 +94,7 @@ const OurProject = () => {
                         <strong>
                           Building Number: {currentBuilding.buildingNumber}
                         </strong>
-                        <strong style={{ color: "green" }}>
+                        <strong style={{ color: 'green' }}>
                           Available{" "}
                           {
                             currentBuilding?.flats.filter(
@@ -113,8 +113,8 @@ const OurProject = () => {
                     </Sticky>
                     <div
                       style={{
-                        width: "100%",
-                        height: "100vh",
+                        width: "95%",
+                        height: "75vh",
                         overflowY: "auto",
                       }}
                     >

@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import "./myAllotments.css";
 import { observer } from "mobx-react-lite";
 import { RootStoreContext } from "../../../stores/rootStore";
+import EmptyTable from "../../EmptyCartTable/EmptyTable";
 
 const MyAllotments = () => {
   const store = useContext(RootStoreContext);
@@ -13,7 +14,11 @@ const MyAllotments = () => {
   return (
     <div className="my-allotment">
       <div className="my-allotment-container">
-        <h1 style={{ textAlign: "center" }}>My Allotments</h1>
+        {myAllottedFlats.length > 0 ? (
+          <h1 style={{ textAlign: "center" }}>My Allotments</h1>
+        ) : (
+          <h1 style={{ textAlign: "center" }}>Empty Allotments</h1>
+        )}
         <div className="allotment-content">
           <div className="profile-homeland-logo">
             <img
@@ -50,9 +55,7 @@ const MyAllotments = () => {
                     );
                   })
                 ) : (
-                  <div style={{textAlign: 'center'}}>
-                    <p>You don't have any allotments yet</p>
-                  </div>
+                  <EmptyTable />
                 )}
               </table>
             </div>

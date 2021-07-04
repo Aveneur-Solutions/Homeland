@@ -1,5 +1,6 @@
 .main-card-container{
   background: #e5e5e5;
+  min-height: 89vh;
 }
 .project_section1 {
     height: 90vh;
@@ -8,7 +9,7 @@
     height: 90vh;
   }
   .building {
-    height: 100vh;
+    height: 75vh;
     width: 60%;
     display: flex;
     justify-content: center;
@@ -78,7 +79,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
   }
   .building2m {
     height: 90vh;

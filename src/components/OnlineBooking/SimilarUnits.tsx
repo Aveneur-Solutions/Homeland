@@ -1,5 +1,6 @@
+/* eslint-disable jsx-a11y/alt-text */
 import { observer } from "mobx-react-lite";
-import { Card, Image, Grid } from "semantic-ui-react";
+import { Card, Grid } from "semantic-ui-react";
 import { useMediaQuery } from "react-responsive";
 import IFlat from "../../models/unit";
 

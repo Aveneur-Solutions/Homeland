@@ -16,10 +16,13 @@ const MyBookings = () => {
   return (
     <div className="my-booking">
       <div className="my-booking-container">
-        <h1 style={{ textAlign: "center" }}>My Bookings</h1>
+        {myBookedFlats.length > 0 ? (
+          <h1 style={{ textAlign: "center" }}>My Bookings</h1>
+        ) : (
+          <h1 style={{ textAlign: "center" }}>Empty Bookings</h1>
+        )}
         <div className="booking-content">
           <div className="booking-profile">
-
             <div className="profile-homeland-logo">
               <img
                 width="100px"
@@ -34,7 +37,7 @@ const MyBookings = () => {
           <div className="table-content">
             <h3 className="headingText">My Units:</h3>
             <div className="table-1">
-              {myBookedFlats.length > 0 ?
+              {myBookedFlats.length > 0 ? (
                 <table>
                   <tr className="thead">
                     <th>Unit ID</th>
@@ -56,8 +59,18 @@ const MyBookings = () => {
                     </tr>
                   ))}
                 </table>
-                : <Header textAlign="center" as="h3"> You don't have any booked units.</Header>}
-                <button className="btn" onClick={() => history.push("/transfer-form")}>Transfer</button>
+              ) : (
+                <Header textAlign="center" as="h3">
+                  {" "}
+                  You don't have any booked units.
+                </Header>
+              )}
+              <button
+                className="btn"
+                onClick={() => history.push("/transfer-form")}
+              >
+                Transfer
+              </button>
               <div className="table-1" style={{ marginTop: "20px" }}>
                 <h4>Transfer History</h4>
                 <table>
@@ -65,21 +78,29 @@ const MyBookings = () => {
                     <th>Unit ID</th>
                     <th>Transferred to</th>
                     <th>Date</th>
-
                   </tr>
-                  {myTransfers.length !== 0 ? myTransfers.map((item, index) => {
-                    return (
-                      <tr
-                        style={{ borderBottom: "1px solid #E5E5E5" }}
-                        key={index}
-                      >
-                        <td>{item.flatId}</td>
-                        <td>{item.transferredTo}</td>
-                        <td>{format(new Date(item.transferDate), "dd MMM yyyy")}</td>
-
-                      </tr>
-                    );
-                  }) : <tr>You haven't transferred any units yet</tr>}
+                  {myTransfers.length !== 0 ? (
+                    myTransfers.map((item, index) => {
+                      return (
+                        <tr
+                          style={{ borderBottom: "1px solid #E5E5E5" }}
+                          key={index}
+                        >
+                          <td>{item.flatId}</td>
+                          <td>{item.transferredTo}</td>
+                          <td>
+                            {format(new Date(item.transferDate), "dd MMM yyyy")}
+                          </td>
+                        </tr>
+                      );
+                    })
+                  ) : (
+                    <tr>
+                      <td>---</td>
+                      <td>---</td>
+                      <td>---</td>
+                    </tr>
+                  )}
                 </table>
               </div>
             </div>

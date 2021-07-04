@@ -5,6 +5,7 @@ import { observer } from "mobx-react-lite";
 import IFlat from "../../models/unit";
 import { Button } from "semantic-ui-react";
 import { history } from "../..";
+import EmptyCart from "../EmptyCartTable/EmptyCart";
 
 const OnlineBooking = () => {
   const rootStore = useContext(RootStoreContext);
@@ -51,7 +52,7 @@ const OnlineBooking = () => {
   return (
     <div className="online-booking">
       <div className="online-booking-container">
-        {orderPlaced ? <h1>Order Summary</h1> : <h1>Online Booking</h1>}
+        {orderPlaced ? <h1>Order Summary</h1> : ""}
 
         <div className="form-container1">
           {cartItemCount > 0 ? (
@@ -132,8 +133,8 @@ const OnlineBooking = () => {
                 </div>
               )}
             </div>
-          ) : (
-            <div>Empty Cart</div>
+          ) : ( 
+            <EmptyCart />
           )}
         </div>
       </div>
