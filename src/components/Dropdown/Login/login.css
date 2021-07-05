@@ -14,7 +14,10 @@
 .forget-link:hover {
   color: #1e70bf;
 }
-
+.forg-reg-div{
+  display: flex;
+  justify-content: space-between;
+}
 .login {
   background: linear-gradient(
     90deg,

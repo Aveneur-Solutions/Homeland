@@ -50,7 +50,7 @@ const Login = () => {
                 buttonText="Login"
               />
             )}
-            <div id="links">
+            <div id="links" className="forg-reg-div">
               <div className="forget-pas">
                 <span className="forget-link" onClick={() => setForgot(true)}>
                   Forget Password?

@@ -66,9 +66,10 @@ export default class UserStore {
 
   @action registration = async (body: IUserRegister) => {
     try {
-      await agent.User.register(body);
+     const result = await agent.User.register(body);
+     console.log(result);
     } catch (error) {
-      console.log(error);
+      console.log(error.data.errors.error);
       throw error;
     }
   };
