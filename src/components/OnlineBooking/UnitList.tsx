@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/alt-text */
 import { observer } from "mobx-react-lite";
 import { Card, Grid } from "semantic-ui-react";
 import IFlat from "../../models/unit";
@@ -7,11 +6,11 @@ import { useContext } from "react";
 import { RootStoreContext } from "../../stores/rootStore";
 import { cartButtonStyle, imageContainer } from "./Card/cardStyles";
 import CartButton from "./Card/CartButton";
-import { useEffect } from "react";
 
 interface IProps {
   sortedFlats: IFlat[];
 }
+
 const UnitList: React.FC<IProps> = ({ sortedFlats }) => {
   const isTabletOrMobileDevice = useMediaQuery({
     query: "(max-device-width: 1224px)",
@@ -23,7 +22,6 @@ const UnitList: React.FC<IProps> = ({ sortedFlats }) => {
     selectFlats,
     unselectFlats,
     addToCart,
-    clearSelectedFlats,
     cartItems,
   } = rootStore.flatStore;
 
@@ -34,12 +32,6 @@ const UnitList: React.FC<IProps> = ({ sortedFlats }) => {
   const removeFromSelectedFlats = (flat: IFlat) => {
     unselectFlats(flat);
   };
-
-  useEffect(() => {
-    return () => {
-      clearSelectedFlats();
-    };
-  }, [clearSelectedFlats]);
 
   const checkboxStyle = {
     fontSize: 30,
@@ -60,6 +52,7 @@ const UnitList: React.FC<IProps> = ({ sortedFlats }) => {
                         "https://www.homeland.aveneur.com/Images" +
                         item.images[item.images.length - 1].imageLocation
                       }
+                      alt="Unit loading"
                       height="100%"
                       width="100%"
                     />
@@ -171,6 +164,7 @@ const UnitList: React.FC<IProps> = ({ sortedFlats }) => {
                     "https://www.homeland.aveneur.com/Images" +
                     item.images[item.images.length - 1].imageLocation
                   }
+                  alt="Unit loading"
                   height="100%"
                   width="100%"
                 />
