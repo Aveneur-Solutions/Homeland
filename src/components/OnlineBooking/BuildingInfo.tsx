@@ -6,6 +6,7 @@ import "./building.css";
 import BuildingSlider from "./BuildingSlider";
 import { RootStoreContext } from "../../stores/rootStore";
 import { useMediaQuery } from "react-responsive";
+import { observer } from "mobx-react-lite";
 
 const BuildingInfo = () => {
   const settings1 = {
@@ -44,4 +45,4 @@ const BuildingInfo = () => {
   );
 };
 
-export default BuildingInfo;
+export default observer(BuildingInfo);
