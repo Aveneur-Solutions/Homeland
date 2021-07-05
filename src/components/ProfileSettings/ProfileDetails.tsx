@@ -23,7 +23,7 @@ const ProfileDetails: React.FC<IProps> = ({ user, handleEditable, imageUrl ,hand
             borderRadius: "50%",
             border: "3px solid var(--primary-color)",
           }}
-          src={"https://www.homeland.aveneur.com/Images" + user?.profileImage}
+          src={imageUrl + user?.profileImage}
           alt=""
         />
       </div>
