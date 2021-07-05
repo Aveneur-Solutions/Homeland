@@ -20,6 +20,7 @@ const OurProject = () => {
   const isTabletOrMobileDevice = useMediaQuery({
     query: "(max-device-width: 1224px)",
   });
+
   const rootStore = useContext(RootStoreContext);
   const {getBuildingList,buildingList,currentBuilding,setCurrentBuilding, emptyCurrentBuilding} = rootStore.projectStore;
   useEffect(() => {
@@ -47,7 +48,7 @@ const OurProject = () => {
                         <div className="widthoftuples">
                           <div key={index} className="buildTuples">
                             <Grid.Column className="buildTuples1" padded>
-                              <div onClick={() => setCurrentBuilding(building)}>
+                              <div>
                                 <Image
                                   className="building-img"
                                   src={
@@ -64,7 +65,7 @@ const OurProject = () => {
                                   style={{
                                     fontSize: "1.3rem",
                                     textAlign: "center",
-                                    padding: "2%",
+                                    padding: "2%"
                                   }}
                                 >
                                   Building Number {building.buildingNumber}

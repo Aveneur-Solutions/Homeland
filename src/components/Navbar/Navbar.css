@@ -130,11 +130,12 @@
   width: 10vw;
 }
 .dropname{
-  color: white;
+  color:azure;
   margin-top: 2px;
   margin-right: -20vw;
   margin-left: 30%;
   width: 100%;
+  font-weight: 900;
 }
 .dropname-mob{
   color: white;

@@ -31,7 +31,7 @@ const MyBookings = () => {
                 alt=""
               />
               <p>HOMELAND</p>
-              <p>TOGETHERNESSS IS HAPPINESS</p>
+              <p>TOGETHERNESS IS HAPPINESS</p>
             </div>
           </div>
           <div className="table-content">
