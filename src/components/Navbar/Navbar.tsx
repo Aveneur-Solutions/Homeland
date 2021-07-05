@@ -80,9 +80,7 @@ const Navbar = () => {
     <div className="main-nav-container">
       <Menu
         pointing
-        className={
-          scroll ? "NavbarItems onscroll" : "NavbarItems"
-        }
+        className={scroll ? "NavbarItems onscroll" : "NavbarItems"}
       >
         <div className="cart-icon">
           <i
@@ -117,7 +115,10 @@ const Navbar = () => {
           {isTabletOrMobileDevice && (
             <li>
               {user ? (
-                <Dropdown className="dropname-mob" text={"Hi, " +  user.fullname.split(" ")[0]}>
+                <Dropdown
+                  className="dropname-mob"
+                  text={"Hi, " + user.fullname.split(" ")[0]}
+                >
                   <Dropdown.Menu
                     onClick={handleClick}
                     className="dropmenu-mob"
@@ -141,6 +142,10 @@ const Navbar = () => {
                     <Dropdown.Item
                       text="Transfer Units"
                       onClick={handleTransfer}
+                    />
+                    <Dropdown.Item
+                      text="Announcements"
+                      onClick={() => history.push("/announcements")}
                     />
                     <Dropdown.Item text="My Profile" onClick={handleProfile} />
                     <Dropdown.Item text="Logout" onClick={handleLogout} />
@@ -172,7 +177,10 @@ const Navbar = () => {
           <div className="login-content">
             {user ? (
               <div className="foruser">
-                <Dropdown className="dropname" text={"Hi, "+user.fullname.split(" ")[0]}>
+                <Dropdown
+                  className="dropname"
+                  text={"Hi, " + user.fullname.split(" ")[0]}
+                >
                   <Dropdown.Menu
                     className="dropmenu"
                     style={{
@@ -194,6 +202,10 @@ const Navbar = () => {
                     <Dropdown.Item
                       text="Transfer Units"
                       onClick={handleTransfer}
+                    />
+                    <Dropdown.Item
+                      text="Announcements"
+                      onClick={() => history.push("/announcements")}
                     />
                     <Dropdown.Item text="My Profile" onClick={handleProfile} />
                     <Dropdown.Item text="Logout" onClick={handleLogout} />

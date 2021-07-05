@@ -21,6 +21,7 @@ import TransferUnit from "./components/Dropdown/TransferForm/TransferUnit";
 import FailedPayment from "./components/Cart/FailedPayment";
 import OrderDetails from "./components/Cart/OrderDetails";
 import AvailableUnits from "./components/OnlineBooking/AvailableUnits";
+import Announcement from "./components/Dropdown/Announcement/Announcement";
 
 function App() {
   const rootStore = useContext(RootStoreContext);
@@ -51,6 +52,7 @@ function App() {
         <Route exact path="/my-profile" component={Profile} />
         <Route exact path="/failedPayment" component={FailedPayment} />
         <Route exact path="/orderDetails" component={OrderDetails} />
+        <Route exact path="/announcements" component={Announcement} />
       </Switch>
     </div>
   );
