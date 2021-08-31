@@ -31,10 +31,11 @@ const Gallery_2 = () => {
             width="52.7vw"
             height="58.5vh"
             playing={true}
-            playbackRate={0.5}s
+            playbackRate={1.0}s
             url="https://www.youtube.com/watch?v=-1AH7tF2IOI"
             // controls={true}
             modestbranding={false}
+            muted={true}
           />
         </div>
       ) : (
